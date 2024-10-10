@@ -14,7 +14,7 @@ const oderRoomSchema = new db.mongoose.Schema(
         status: { type: Number, required: false, default: 0 },
     },
     {
-        collection: 'OrderRoom'
+        collection: 'DatPhong'
     }
 );
 // tao model

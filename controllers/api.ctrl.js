@@ -2,6 +2,7 @@ var mdPhong = require('../model/phong_model');
 var mdLoaiPhong = require('../model/loaiPhong_model');
 var mdAccount = require('../model/account_model');
 var mdOrderRoom = require('../model/datPhong_model');
+var mdKhachSan = require('../model/khachSan_model');
 const bcrypt = require("bcrypt");
 
 //Account
@@ -64,7 +65,44 @@ exports.xemPhong = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server' });
     }
 }
-
+exports.themPhong = async(req, res, next) => {
+    try {
+        console.log(req.body);
+        const { IdPhong, IdLoaiPhong, IdKhuyenMai, soPhong, soTang, moTaPhong, anhPhong, tinhTrangPhong } = req.body;
+        const newRoom = mdPhong.phongModel.create({
+            IdPhong: IdPhong,
+            IdLoaiPhong: IdLoaiPhong,
+            IdKhuyenMai: IdKhuyenMai,
+            soPhong: soPhong,
+            soTang: soTang,
+            moTaPhong: moTaPhong,
+            anhPhong: anhPhong,
+            tinhTrangPhong: tinhTrangPhong
+        });
+        res.status(201).json({msg: 'add room succ'});
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' });
+    }
+}
+//Thêm loại phòng
+exports.themLoaiPhong = async (req, res, next) => {
+    try {
+        console.log(req.body);
+        const { IdKhachSan, tenLoaiPhong, moTaLoaiPhong, anhLoaiPhong, soLuongPhong, dienTich, tienNghi } = req.body;
+        const newTypeRoom = mdLoaiPhong.loaiPhongModel.create({
+            IdKhachSan: IdKhachSan,
+            tenLoaiPhong: tenLoaiPhong,
+            moTaLoaiPhong: moTaLoaiPhong,
+            anhLoaiPhong: anhLoaiPhong,
+            soLuongPhong: soLuongPhong,
+            dienTich: dienTich,
+            tienNghi: tienNghi
+        });
+        return res.status(201).json({msg: 'Add room type succ'});
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' });
+    }
+}
 //Loại phòng
 exports.showLoaiPhong = async (req, res, next) => {
     try {
@@ -124,6 +162,46 @@ exports.showOrderRoom = async (req, res, next) => {
             return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
         }
         res.status(200).json({ orderroom });
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' + error });
+    }
+}
+//Khách sạn
+exports.showKhachSan = async (req, res, next) => {
+    try {
+        const khachSan = await mdKhachSan.khachSanModel.find();
+        if (!khachSan) {
+            return res.status(404).json({ error: 'Không tồn tại' });
+        }
+        res.status(200).json(khachSan);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' + error });
+    }
+}
+exports.themKhachSan = async (req, res, next) => {
+    try {
+        console.log(req.body);
+        const {
+            tenKhachSan,
+            diaChi,
+            sdt,
+            email,
+            danhGia,
+            moTaKhachSan,
+            anhKhachSan
+        } = req.body;
+        const newHotel = mdKhachSan.khachSanModel.create({
+            tenKhachSan: tenKhachSan,
+            diaChi: diaChi,
+            sdt: sdt,
+            email: email,
+            danhGia: danhGia,
+            moTaKhachSan: moTaKhachSan,
+            anhKhachSan: anhKhachSan
+        });
+        res.status(201).json({
+            msg: 'Add hotel succ'
+        });
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
     }

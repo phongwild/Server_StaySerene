@@ -1,16 +1,15 @@
+const { default: mongoose } = require('mongoose');
 var db = require('./db');
 //định nghĩa khuôn mẫu
 const typeRoomSchema = new db.mongoose.Schema(
     {
-        IdLoaiPhong: { type: Number, required: true },
-        IdKhachSan: { type: Number, required: true },
-        tenLoaiPhong: { type: Number, required: true },
-        moTaLoaiPhong: { type: String, required: false },
-        anhLoaiPhong: { type: String, required: false },
-        soLuongPhong: { type: Number, required: false},
-        giaPhong: { type: Number, required: true },
-        dienTich: { type: Number, required: false },
-        tienNghi: { type: String, required: false }
+        IdKhachSan: { type: mongoose.Schema.ObjectId, required: true, ref:'KhachSan' },
+        tenLoaiPhong: { type: String, required: true },
+        moTaLoaiPhong: { type: String, required: false, default: "" },
+        anhLoaiPhong: { type: String, required: false, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"},
+        soLuongPhong: { type: Number, required: false, default:10},
+        dienTich: { type: Number, required: false, default: 10.5 },
+        tienNghi: { type: String, required: false, default: "" }
     },
     {
         collection: 'LoaiPhong'
