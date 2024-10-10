@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+header nav span {
+    color: white;
+}
+
+aside {
+    background-color: #1d3c6a;
+    color: white;
+    width: 200px;
+    padding: 20px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+}
+
+.filter-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-section button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #1d3c6a;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-section .date-picker {
+    display: flex;
+    align-items: center;
+}
+
+.filter-section .date-picker label {
+    margin-right: 10px;
+}
+
+.filter-section .date-picker input {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.filter-section .date-picker button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1d3c6a;
+    color: white;
+    cursor: pointer;
+}
+
+.stats-section {
+    background-color: #e8e8e8;
+    padding: 20px;
+}
+
+.stats-section h2 {
+    margin-top: 0;
+}
+
+.stats-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.stats-section table, th, td {
+    border: 1px solid #ddd;
+}
+
+.stats-section th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.stats-section tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.stats-section tr:hover {
+    background-color: #ddd;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.report-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1d3c6a;
+    color: white;
+    cursor: pointer;
+}

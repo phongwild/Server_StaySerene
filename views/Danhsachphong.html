@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management</title>
+    <link rel="stylesheet" href="Danhsachphong.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>StaySerene</h1>
+            <nav>
+                <a href="#">Thuê phòng khách sạn</a>
+                <a href="#">Lịch sử thuê phòng</a>
+                <div class="user-info">
+                    <span>Duy Hung</span>
+                    <span>Lịch sử thuê phòng</span>
+                </div>
+            </nav>
+        </header>
+
+        <aside>
+            <h2>Quản Lý Khách Sạn</h2>
+            <ul>
+                <li><a href="Danhsachphong.html">Quản lý phòng</a></li>
+                <li><a href="Danhsachkhachhang.html">Quản lý khách hàng</a></li>
+                <li><a href="#">Lịch sử đặt phòng</a></li>
+                <li><a href="Thongkethunhap.html">Thống kê thu nhập</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section class="statistics">
+                <h3>Thống kê thu nhập</h3>
+                <div class="filter-options">
+                    <button>Theo ngày</button>
+                    <button>Theo tháng</button>
+                    <button>Theo quý</button>
+                    <button>Theo năm</button>
+                    <div class="date-select">
+                        <label for="date">Chọn ngày</label>
+                        <input type="date" id="date" value="2024-10-10">
+                    </div>
+                    <button>Thống kê</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã phòng</th>
+                            <th>Tên phòng</th>
+                            <th>Thời gian đặt phòng</th>
+                            <th>Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>R001</td>
+                            <td>Phòng gia đình</td>
+                            <td>10-10-2024</td>
+                            <td>650,000</td>
+                        </tr>
+                        <tr>
+                            <td>R001</td>
+                            <td>Phòng gia đình</td>
+                            <td>10-10-2024</td>
+                            <td>650,000</td>
+                        </tr>
+                        <tr>
+                            <td>R001</td>
+                            <td>Phòng gia đình</td>
+                            <td>10-10-2024</td>
+                            <td>650,000</td>
+                        </tr>
+                        <tr>
+                            <td>R001</td>
+                            <td>Phòng gia đình</td>
+                            <td>10-10-2024</td>
+                            <td>650,000</td>
+                        </tr>
+                        <tr>
+                            <td>R001</td>
+                            <td>Phòng gia đình</td>
+                            <td>10-10-2024</td>
+                            <td>650,000</td>
+                        </tr>
+                        <tr>
+                            <td>R001</td>
+                            <td>Phòng gia đình</td>
+                            <td>10-10-2024</td>
+                            <td>650,000</td>
+                        </tr>
+                        <tr>
+                            <td>R001</td>
+                            <td>Phòng gia đình</td>
+                            <td>10-10-2024</td>
+                            <td>650,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="total-revenue">
+                    <span>Tổng doanh thu: </span><strong>4,550,000 đ</strong>
+                </div>
+                <button class="report-button">Báo cáo</button>
+            </section>
+
+            <section class="room-management">
+                <h3>Quản lý phòng</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="room-name">Tên phòng:</label>
+                        <input type="text" id="room-name" value="Phòng gia đình">
+                    </div>
+                    <div class="form-group">
+                        <label for="room-type">Kiểu phòng:</label>
+                        <select id="room-type">
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="room-price">Giá phòng:</label>
+                        <input type="text" id="room-price" value="400,000">
+                    </div>
+                    <div class="form-group">
+                        <label for="room-status">Tình trạng:</label>
+                        <select id="room-status">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button">Thêm</button>
+                        <button type="button">Cập nhật</button>
+                        <button type="button">Xóa</button>
+                        <button type="button">Tìm kiếm</button>
+                    </div>
+                </form>
+
+                <table class="room-list">
+                    <thead>
+                        <tr>
+                            <th>Mã phòng</th>
+                            <th>Tên phòng</th>
+                            <th>Kiểu phòng</th>
+                            <th>Giá phòng</th>
+                            <th>Tình trạng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>R001</td>
+                            <td>Phòng trang trọng</td>
+                            <td>1</td>
+                            <td>400,000</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>R002</td>
+                            <td>Phòng Tiêu Chuẩn</td>
+                            <td>1</td>
+                            <td>200,000</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>R003</td>
+                            <td>Phòng Cao Cấp</td>
+                            <td>1</td>
+                            <td>1,200,000</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>R004</td>
+                            <td>Phòng Mini</td>
+                            <td>2</td>
+                            <td>200,000</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>R005</td>
+                            <td>Phòng Nghỉ Ngơi</td>
+                            <td>2</td>
+                            <td>400,000</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>R006</td>
+                            <td>Phòng Lãng Mạn</td>
+                            <td>2</td>
+                            <td>520,000</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>R007</td>
+                            <td>Phòng Thư Giãn</td>
+                            <td>2</td>
+                            <td>640,000</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>R008</td>
+                            <td>Phòng Tình Nhân</td>
+                            <td>2</td>
+                            <td>560,000</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
