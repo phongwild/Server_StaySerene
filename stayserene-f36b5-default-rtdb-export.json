@@ -1,0 +1,135 @@
+{
+  "Phong": [
+    {
+      "IdPhong": 1,
+      "IdLoaiPhong": 1,
+      "anhPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+      "moTaPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus semper nisl quis maximus hendrerit. Aliquam accumsan velit libero, nec placerat metus porttitor et.",
+      "soPhong": 1,
+      "tinhTrangPhong": true
+    },
+    {
+      "IdPhong": 2,
+      "IdLoaiPhong": 1,
+      "anhPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+      "moTaPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus semper nisl quis maximus hendrerit. Aliquam accumsan velit libero, nec placerat metus porttitor et.",
+      "soPhong": 1,
+      "tinhTrangPhong": true
+    },
+    {
+      "IdPhong": 3,
+      "IdLoaiPhong": 1,
+      "anhPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+      "moTaPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus semper nisl quis maximus hendrerit. Aliquam accumsan velit libero, nec placerat metus porttitor et.",
+      "soPhong": 1,
+      "tinhTrangPhong": true
+    },
+    {
+      "IdPhong": 4,
+      "IdLoaiPhong": 1,
+      "anhPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+      "moTaPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus semper nisl quis maximus hendrerit. Aliquam accumsan velit libero, nec placerat metus porttitor et.",
+      "soPhong": 1,
+      "tinhTrangPhong": true
+    }
+  ],
+  "LoaiPhong": [
+    {
+      "IdLoaiPhong": 1,
+      "IdHotel": 1,
+      "tenLoaiPhong":"Phòng đơn",
+      "giaPhong": 500000,
+      "dienTich": 15,
+      "tienNghi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "moTaLoaiPhong":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+    },
+    {
+      "IdLoaiPhong": 2,
+      "IdHotel": 1,
+      "tenLoaiPhong": "Phòng đôi",
+      "giaPhong": 750000,
+      "dienTich": 20,
+      "tienNghi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "moTaLoaiPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+    },
+    {
+      "IdLoaiPhong": 3,
+      "IdHotel": 1,
+      "tenLoaiPhong": "Phòng vip",
+      "giaPhong": 2000000,
+      "dienTich": 30,
+      "tienNghi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "moTaLoaiPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+    },
+    {
+      "IdLoaiPhong": 4,
+      "IdHotel": 1,
+      "tenLoaiPhong": "Phòng tổng thống",
+      "giaPhong": 10000000,
+      "dienTich": 50,
+      "tienNghi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "moTaLoaiPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+    }
+  ],
+  "KhachSan":[
+    {
+      "IdHotel":1,
+      "tenKhachSan":"Abcxyz",
+      "diaChi": "HN",
+      "sdtKhachSan":"0987654321",
+      "emailKhachSan": "abcxyz@gmail.com",
+      "danhGia": 4.5,
+      "moTaKhachSan": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "anhKhachSan": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+    },
+    {
+      "IdHotel": 2,
+      "tenKhachSan": "Abcxyz",
+      "diaChi": "HN",
+      "sdtKhachSan": "0987654321",
+      "emailKhachSan": "abcxyz@gmail.com",
+      "danhGia": 4.5,
+      "moTaKhachSan": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "anhKhachSan": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+    },
+    {
+      "IdHotel": 3,
+      "tenKhachSan": "Abcxyz",
+      "diaChi": "HN",
+      "sdtKhachSan": "0987654321",
+      "emailKhachSan": "abcxyz@gmail.com",
+      "danhGia": 4.5,
+      "moTaKhachSan": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "anhKhachSan": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+    }
+  ],
+  "Account":[
+    {
+      "Uid": 1,
+      "Username": "Admin",
+      "sdt":"0987654321",
+      "email":"abcxyz@gmail.com",
+      "password":"admin",
+      "ngaySinh": "1/1/2001",
+      "gioiTinh": "???",
+      "quocTich": "VN",
+      "avt":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s",
+      "role":0
+    },
+    {
+      "Uid": 1,
+      "Username": "Admin",
+      "sdt": "0987654321",
+      "email": "abcxyz@gmail.com",
+      "password": "admin",
+      "ngaySinh": "1/1/2001",
+      "gioiTinh": "???",
+      "quocTich": "VN",
+      "avt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s"
+    }
+  ]
+}

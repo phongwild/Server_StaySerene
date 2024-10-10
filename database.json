@@ -1,0 +1,26 @@
+[
+    {
+        "IdUser": 1,
+        "username": "abcxyz",
+        "sdt": 1234567890,
+        "diaChi": "HN",
+        "email": "abcxyz@gmail.com",
+        "ngaySinh": "19/10/2004",
+        "gioiTinh": "Nam",
+        "quocTich": "VN",
+        "avtUser": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s",
+        "role": 1
+    },
+    {
+        "IdUser": 2,
+        "username": "abcxyz",
+        "sdt": 1234567890,
+        "diaChi": "HN",
+        "email": "abcxyz@gmail.com",
+        "ngaySinh": "19/10/2004",
+        "gioiTinh": "Nam",
+        "quocTich": "VN",
+        "avtUser": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s",
+        "role": 2
+    }
+]
