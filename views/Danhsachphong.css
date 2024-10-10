@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+header .user-info {
+    display: flex;
+    gap: 1rem;
+}
+
+aside
+{
+    background-color: #343a40;
+    color: white;
+    padding: 1rem;
+}
+
+aside h2 {
+    margin: 0 0 1rem 0;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin: 1rem 0;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.statistics, .room-management {
+    margin-bottom: 2rem;
+}
+
+.statistics h3, .room-management h3 {
+    margin-top: 0;
+}
+
+.filter-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-options button, .form-buttons button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-options button:hover, .form-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.filter-options .date-select {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-options input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+table thead {
+    background-color: #343a40;
+    color: white;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.total-revenue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.report-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.report-button:hover {
+    background-color: #0056b3;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group input, .form-group select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
