@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebaa"
+  },
+  "tenKhachSan": "Muong Thanh",
+  "diaChi": "Hà Nội",
+  "sdt": 987654321,
+  "email": "abc@gmail.com",
+  "danhGia": 3.5,
+  "moTaKhachSan": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "anhKhachSan": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6707edc85b04485f284f5cdb"
+  },
+  "tenKhachSan": "Bình Minh",
+  "diaChi": "Hà Nội",
+  "sdt": 987654321,
+  "email": "abc@gmail.com",
+  "danhGia": 3.5,
+  "moTaKhachSan": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "anhKhachSan": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6707edf94f41774885ae7adc"
+  },
+  "tenKhachSan": "Thiền am bên bờ zũ trụ",
+  "diaChi": "Hà Nội",
+  "sdt": 987654321,
+  "email": "abc@gmail.com",
+  "danhGia": 3.5,
+  "moTaKhachSan": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "anhKhachSan": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+  "__v": 0
+}]

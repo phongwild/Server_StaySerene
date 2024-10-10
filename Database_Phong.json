@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "6707f776154e83aec63c05ff"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2a4676a25b7900e503a"
+  },
+  "soPhong": 10,
+  "soTang": 1,
+  "moTaPhong": "",
+  "anhPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+  "tinhTrangPhong": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6707f78b154e83aec63c0602"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f5f7cc798d4a3ca46da6"
+  },
+  "soPhong": 5,
+  "soTang": 1,
+  "moTaPhong": "",
+  "anhPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+  "tinhTrangPhong": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6707f795154e83aec63c0604"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f605cc798d4a3ca46da8"
+  },
+  "soPhong": 3,
+  "soTang": 1,
+  "moTaPhong": "",
+  "anhPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+  "tinhTrangPhong": 0,
+  "__v": 0
+}]

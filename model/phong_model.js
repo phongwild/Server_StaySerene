@@ -3,9 +3,8 @@ var db = require('./db');
 //định nghĩa khuôn mẫu
 const roomSchema = new db.mongoose.Schema(
     {
-        IdPhong: { type: Number, required: true },
         IdLoaiPhong: { type: mongoose.Schema.ObjectId, required: true, ref: 'LoaiPhong' },
-        IdKhuyenMai: { type: mongoose.Schema.ObjectId, required: false, ref: 'KhuyenMai' , default: ""},
+        IdKhuyenMai: { type: mongoose.Schema.ObjectId, required: false, ref: 'KhuyenMai', default: "6707fq2a4676a25b7900e503a"},
         soPhong: { type: Number, required: true },
         soTang: { type: Number, required: false, default: 1 },
         moTaPhong: { type: String, required: false, default: "" },
