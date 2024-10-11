@@ -14,7 +14,7 @@ const userSchema = new db.mongoose.Schema(
         ngaySinh: { type: String, required: false, default: "" },
         gioiTinh: { type: String, required: false, default: "" },
         quocTich: { type: String, required: false, default: "" },
-        avtUser: { type: String, required: false, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s" },
+        avt: { type: String, required: false, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s" },
         role: { type: Number, required: false, default:1 },
         token: { type: String, required: false },
         cccd: {type: Number, required: false, default: 987654321}
