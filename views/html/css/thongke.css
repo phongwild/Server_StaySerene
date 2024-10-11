@@ -3,12 +3,12 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
+    display: flex;
+
 }
 
 .container {
     display: flex;
-    flex-direction: column;
-    height: 100vh;
 }
 
 header {

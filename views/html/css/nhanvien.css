@@ -7,41 +7,11 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    height: 100vh;
 }
 
 .container {
     width: 100%;
     display: flex;
-}
-
-.sidebar {
-    width: 20%;
-    background-color: #f4f4f4;
-    padding: 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar h2 {
-    margin-bottom: 30px;
-    font-size: 20px;
-}
-
-.sidebar ul {
-    list-style-type: none;
-}
-
-.sidebar ul li {
-    margin-bottom: 15px;
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
 }
 
 .main-content {
@@ -83,22 +53,6 @@ input, select {
     margin-bottom: 10px;
 }
 
-.button-group {
-    display: flex;
-    gap: 10px;
-}
-
-button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
 
 .table-section h3 {
     margin-bottom: 15px;
