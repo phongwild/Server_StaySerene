@@ -5,7 +5,7 @@ var mdw = require('../middleware/api.auth');
 
 //Home: http://localhost:3000/api/
 router.get('/', function(req, res, next){
-    res.render('api')
+    res.json({ message: 'Welcome to the API!' });
 });
 //Login http://localhost:3000/api/login
 router.post('/login', apiCtrl.doLogin);
@@ -27,6 +27,12 @@ router.post('/orderroom', apiCtrl.OrderRoom);
 router.get('/orderroom/:Uid', apiCtrl.showOrderRoom);
 //Xem khách sạn: http://localhost:3000/api/hotel
 router.get('/hotel', apiCtrl.showKhachSan);
+//Xem khách sạn theo id: http://localhost:3000/api/hotel/:id
+router.get('/hotel/:id', apiCtrl.getKhachSanById);
 //Thêm khách sạn: http://localhost:3000/api/hotel
 router.post('/hotel', apiCtrl.themKhachSan);
+//Xóa khách sạn: http://localhost:3000/api/hotel/:id
+router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
+router.put('/hotel/:id', apiCtrl.suaKhachSan);
+
 module.exports = router;
