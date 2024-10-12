@@ -1,115 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh Sách Phòng</title>
-    <style>
-        /* Reset CSS (để đảm bảo các trình duyệt hiển thị giống nhau) */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Định dạng chung cho bảng */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        /* Định dạng cho header */
-        th {
-            background-color: #f2f2f2;
-            text-align: left;
-            padding: 12px 15px;
-        }
-
-        /* Định dạng cho các hàng */
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        /* Định dạng cho các ô dữ liệu */
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        /* Định dạng cho ảnh */
-        img {
-            max-width: 100px;
-        }
-
-        .btn-edit,
-        .btn-delete {
-            padding: 5px 10px;
-            border: none;
-            background-color: #4CAF50;
-            /* Màu xanh lá */
-            color: white;
-            cursor: pointer;
-            margin-right: 5px;
-        }
-
-        .btn-delete {
-            background-color: #f44336;
-            /* Màu đỏ */
-        }
-    </style>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
-    <h1>Danh Sách Phòng</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID Phòng</th>
-                <th>Loại Phòng</th>
-                <th>Số Phòng</th>
-                <th>Số Tầng</th>
-                <th>Mô Tả Phòng</th>
-                <th>Ảnh Phòng</th>
-                <th>Tình Trạng</th>
-                <th>Giá Phòng</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% for (const room of rooms) { %>
-                <tr>
-                    <td>
-                        <%= room._id %>
-                    </td>
-                    <td>
-                        <%- room.IdLoaiPhong.tenLoai || 'N/A' %>
-                    </td>
-                    <td>
-                        <%= room.soPhong %>
-                    </td>
-                    <td>
-                        <%= room.soTang %>
-                    </td>
-                    <td>
-                        <%= room.moTaPhong %>
-                    </td>
-                    <td><img src="<%= room.anhPhong %>" alt="<%= room.soPhong %>"></td>
-                    <td>
-                        <%= room.tinhTrangPhong===0 ? 'Trống' : 'Đã Đặt' %>
-                    </td>
-                    <td>
-                        <%= room.giaPhong %> VNĐ
-                    </td>
-                    <td>
-                        <button class="btn-edit">Sửa</button>
-                        <button class="btn-delete">Xóa</button>
-                    </td>
-                </tr>
-                <% } %>
-        </tbody>
-    </table>
-</body>
+    <h1>Hosting api StaySerene</h1>
+    <h3>Xem tk: <a href=" http://localhost:3000/api/account">http://localhost:3000/api/account</a></h3>
+    <h3>Xem phòng: <a href=" http://localhost:3000/api/rooms">http://localhost:3000/api/rooms</a></h3>
+    <h3>Xem loại phòng: <a href=" http://localhost:3000/api/typeroom">http://localhost:3000/api/typeroom</a></h3>
+    <h3>Xem khách sạn: <a href=" http://localhost:3000/api/hotel">http://localhost:3000/api/hotel</a></h3>
+</body> 
 
 </html>

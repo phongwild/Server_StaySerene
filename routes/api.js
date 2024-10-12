@@ -3,19 +3,11 @@ var router = express.Router();
 var apiCtrl = require('../controllers/api.ctrl');
 var mdw = require('../middleware/api.auth');
 const { phongModel } = require('../model/phong_model');
+const upload = require('../controllers/fileUpload');
 
 //Home: http://localhost:3000/api/
-router.get('/', async function(req, res, next){
-    try {
-        const rooms = await phongModel.find();
-        if(Array.isArray(rooms)){
-            res.render('api', {rooms});
-        }else res.status(404).json({msg: 'Lỗi'});
-    } catch (error) {
-        res.status(500).send('Error fetching accounts');
-        console.error(error);
-    }
-   
+router.get('/', async function (req, res, next) {
+    res.render('api');
 });
 //Login http://localhost:3000/api/login
 router.post('/login', apiCtrl.doLogin);
@@ -29,6 +21,8 @@ router.get('/rooms', apiCtrl.xemPhong);
 router.post('/rooms', apiCtrl.themPhong);
 //Xoá phòng:http://localhost:3000/api/rooms/{id}
 router.delete('/rooms/:id', apiCtrl.xoaPhong);
+//Update phòng
+router.put('/rooms/:id', apiCtrl.updatePhong);
 //Thêm Loại Phòng: http://localhost:3000/api/typeroom
 router.post('/typeroom', apiCtrl.themLoaiPhong);
 //Xem loại phòng: http://localhost:3000/api/typeroom
@@ -43,4 +37,6 @@ router.get('/hotel', apiCtrl.showKhachSan);
 router.post('/hotel', apiCtrl.themKhachSan);
 //Xoá khách sạn: http://localhost:3000/api/hotel/{id}
 router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
+//Update khách sạn
+router.put('/hotel/:id', apiCtrl.updateKhachsan);
 module.exports = router;
