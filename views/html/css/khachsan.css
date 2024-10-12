@@ -13,7 +13,6 @@ body {
     display: flex; 
     height: 100vh; /* Make the container full height of the viewport */
 }
-
 .sidebar {
     width: 250px;
     background-color: #2c3e50;
@@ -49,13 +48,14 @@ body {
 
 .main-content {
     flex: 1; 
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     overflow-y: auto; 
     background-color: #fff;
 }
 
 header {
-    display: flex;
+    display: flex;  
     justify-content: flex-end;
     background-color: #ecf0f1;
     padding: 10px;
@@ -68,7 +68,7 @@ header .header-left {
     justify-content: flex-end;
 }
 
-h1 {
+.main-content h1 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -140,6 +140,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     pointer-events: auto; 
+    margin-bottom: 20px;
 }
 
 table th,
@@ -156,4 +157,7 @@ table th {
 
 table tbody tr:nth-child(even) {
     background-color: #ecf0f1;
+}
+.sidebar .namepage{
+    background-color: #1abc9c;
 }
