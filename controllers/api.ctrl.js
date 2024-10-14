@@ -176,7 +176,7 @@ exports.showKhachSan = async (req, res, next) => {
         }
         
         const result = khachSan.map(hotel => ({
-            maKhachSan: hotel._id,
+            _id: hotel._id,
             tenKhachSan: hotel.tenKhachSan,
             diaChi: hotel.diaChi,
             sdt: hotel.sdt,

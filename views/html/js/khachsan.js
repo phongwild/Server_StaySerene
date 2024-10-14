@@ -31,19 +31,27 @@ async function fetchHotels() {
 }
 
 // Hiển thị danh sách khách sạn
+// Hiển thị danh sách khách sạn
 function displayHotels(hotels) {
     const customerList = document.getElementById('customer-list');
     customerList.innerHTML = '';
     hotels.forEach(hotel => {
         const row = document.createElement('tr');
-        row.setAttribute('data-id', hotel.maKhachSan || hotel._id); 
+        row.setAttribute('data-id', hotel._id || 'N/A');
         row.setAttribute('onclick', 'showHotelDetails(this)');
+
+        const shortId = (hotel._id || 'N/A').length > 8 ? 
+            (hotel._id || 'N/A').substring(0, 8) + '...' : 
+            hotel._id || 'N/A';
+
         const moTaKhachSan = hotel.moTaKhachSan.length > 30 ? 
-        hotel.moTaKhachSan.substring(0, 30) + '...' : 
-        hotel.moTaKhachSan;
+            hotel.moTaKhachSan.substring(0, 30) + '...' : 
+            hotel.moTaKhachSan;
+
         row.setAttribute('data-full-description', hotel.moTaKhachSan);
+
         row.innerHTML = `
-            <td>${hotel.maKhachSan || hotel._id || 'N/A'}</td>
+            <td>${shortId}</td> <!-- Hiển thị mã khách sạn rút gọn -->
             <td>${hotel.tenKhachSan}</td>
             <td>${hotel.diaChi}</td>
             <td>${hotel.sdt}</td>
@@ -52,11 +60,12 @@ function displayHotels(hotels) {
             <td>${moTaKhachSan}</td>
             <td><img src="${hotel.anhKhachSan}" alt="${hotel.tenKhachSan}" style="width:100px;height:auto;"></td>
         `;
+
         customerList.appendChild(row);
     });
 }
 
-// Lấy danh sách khách sạn khi tài liệu được tải
+
 document.addEventListener('DOMContentLoaded', fetchHotels);
 
 // Tìm kiếm khách sạn
@@ -73,12 +82,12 @@ function searchHotels() {
     });
 }
 
-// Hàm loại bỏ dấu
+// loại bỏ dấu khi tìm kiếm
 function removeDiacritics(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-// Thêm khách hàng mới
+// Thêm khách sạn mới
 async function addCustomer() {
     const tenKhachSan = document.getElementById('name').value;
     const diaChi = document.getElementById('diachi').value;
@@ -163,10 +172,10 @@ async function fetchHotelDescription(hotelId) {
     try {
         const response = await fetch(`${apiUrl}/${hotelId}`);
         const hotel = await response.json();
-        return hotel.moTaKhachSan; // Trả về mô tả đầy đủ
+        return hotel.moTaKhachSan;
     } catch (error) {
         console.error('Error fetching hotel description:', error);
-        return ''; // Trả về chuỗi rỗng nếu có lỗi
+        return ''; 
     }
 }
 
