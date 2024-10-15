@@ -23,14 +23,13 @@ async function fetchHotels() {
     try {
         const response = await fetch(apiUrl);
         const hotels = await response.json();
-        console.log(hotels); 
+        currentHotels = hotels;
         displayHotels(hotels);
     } catch (error) {
         console.error('Error fetching hotels:', error);
     }
 }
 
-// Hiển thị danh sách khách sạn
 // Hiển thị danh sách khách sạn
 function displayHotels(hotels) {
     const customerList = document.getElementById('customer-list');
@@ -89,6 +88,7 @@ function removeDiacritics(str) {
 
 // Thêm khách sạn mới
 async function addCustomer() {
+    const hotelId = document.getElementById('makhachsan').value; 
     const tenKhachSan = document.getElementById('name').value;
     const diaChi = document.getElementById('diachi').value;
     const sdt = document.getElementById('sdt').value;
@@ -114,6 +114,13 @@ async function addCustomer() {
 
     if (!isValidRating(danhGia)) {
         alert('Đánh giá phải lớn hơn 0 và nhỏ hơn hoặc bằng 5.');
+        return;
+    }
+
+    const hotelExists = currentHotels.some(hotel => hotel._id === hotelId);
+    if (hotelExists) {
+        alert(`Bạn không thể thêm . Mã khách sạn ${hotelId} đã tồn tại.`);
+        document.getElementById('customer-form').reset();
         return;
     }
 

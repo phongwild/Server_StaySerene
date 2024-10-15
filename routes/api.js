@@ -21,6 +21,10 @@ router.post('/rooms', apiCtrl.themPhong);
 router.post('/typeroom', apiCtrl.themLoaiPhong);
 //Xem loại phòng: http://localhost:3000/api/typeroom
 router.get('/typeroom', apiCtrl.showLoaiPhong);
+// Xóa loại phòng: http://localhost:3000/api/typeroom/:id
+router.delete('/typeroom/:id', apiCtrl.xoaLoaiPhong);
+// Sửa loại phòng: http://localhost:3000/api/typeroom/:id
+router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
 //Đặt phòng: http://localhost:3000/api/orderroom
 router.post('/orderroom', apiCtrl.OrderRoom);
 //Xem phòng đặt theo Uid: http://localhost:3000/api/orderroom/{Uid}
@@ -33,6 +37,7 @@ router.get('/hotel/:id', apiCtrl.getKhachSanById);
 router.post('/hotel', apiCtrl.themKhachSan);
 //Xóa khách sạn: http://localhost:3000/api/hotel/:id
 router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
+//Sửa khách sạn: http://localhost:3000/api/hotel/:id
 router.put('/hotel/:id', apiCtrl.suaKhachSan);
 
 module.exports = router;

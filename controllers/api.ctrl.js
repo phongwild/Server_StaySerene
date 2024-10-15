@@ -103,6 +103,25 @@ exports.themLoaiPhong = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server' });
     }
 }
+//sửa loại phòng 
+exports.suaLoaiPhong = async (req, res, next) => {
+    try {
+        const id = req.params.id; 
+        const updatedData = req.body; 
+
+        const updatedRoomType = await mdLoaiPhong.loaiPhongModel.findByIdAndUpdate(id, updatedData, { new: true });
+
+        if (!updatedRoomType) {
+            return res.status(404).json({ error: 'Không tìm thấy loại phòng với ID đã cho' });
+        }
+
+        res.status(200).json({ msg: 'Cập nhật loại phòng thành công', updatedRoomType });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+
 //Loại phòng
 exports.showLoaiPhong = async (req, res, next) => {
     try {
@@ -115,6 +134,21 @@ exports.showLoaiPhong = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server' });
     }
 }
+// Xóa loại phòng
+exports.xoaLoaiPhong = async (req, res, next) => {
+    try {
+        const id = req.params.id; 
+        const deletedTypeRoom = await mdLoaiPhong.loaiPhongModel.findByIdAndDelete(id);
+        if (!deletedTypeRoom) {
+            return res.status(404).json({ error: 'Không tìm thấy loại phòng với ID đã cho' });
+        }
+        res.status(200).json({ msg: 'Xóa loại phòng thành công', id });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
 
 //Đặt phòng
 exports.OrderRoom = async (req, res, next) => {

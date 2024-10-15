@@ -1,110 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quan ly loai phong</title>
     <link rel="stylesheet" href="../css/loaiphong.css">
 </head>
+
 <body>
     <div class="container">
         <div class="sidebar">
             <h2>StaySerene</h2>
             <ul>
-                <li><a href="khachhang.html" id="khachhang" >Quản lý khách hàng</a></li>
+                <li><a href="khachhang.html" id="khachhang">Quản lý khách hàng</a></li>
                 <li><a href="nhanvien.html" id="nhanvien">Quản lý nhân viên</a></li>
-                <li><a href="khachsan.html"id="khachsan">Quản lý khách sạn</a></li>
-                <li><a href="loaiphong.html"id="loaiphong" class="namepage">Quản lý loại phòng</a></li>
-                <li><a href="phong.html"id="phong">Quản lý phòng</a></li>
+                <li><a href="khachsan.html" id="khachsan">Quản lý khách sạn</a></li>
+                <li><a href="loaiphong.html" id="loaiphong" class="namepage">Quản lý loại phòng</a></li>
+                <li><a href="phong.html" id="phong">Quản lý phòng</a></li>
                 <li><a href="dichvu.html" id="dichvu">Quản lý dịch vụ</a></li>
-                <li><a href="lichsu.html"id="lichsu">Lịch sử đặt phòng</a></li>
-                <li><a href="phanhoi.html"id="phanhoi">Phản hồi của khách hàng</a></li>
-                <li><a href="chamsoc.html" id="chamsoc" >Chăm sóc khách hàng</a></li>
-                <li><a href="thongke.html"id="thongke">Thống kê</a></li>
+                <li><a href="lichsu.html" id="lichsu">Lịch sử đặt phòng</a></li>
+                <li><a href="phanhoi.html" id="phanhoi">Phản hồi của khách hàng</a></li>
+                <li><a href="chamsoc.html" id="chamsoc">Chăm sóc khách hàng</a></li>
+                <li><a href="thongke.html" id="thongke">Thống kê</a></li>
             </ul>
         </div>
-        
+
         <div class="main-content" id="main-content">
             <div class="main-content">
-                <h1>Quản lý khách sạn</h1>
+                <h1>Quản lý loại phòng</h1>
                 <div class="form-section">
                     <form id="customer-form">
                         <div class="form-group">
-                            <label for="makhachsan">Mã khách sạn :</label>
-                            <input type="text" id="makhachsan" name="makhachsan" disabled>
+                            <label for="maloaiphong">Mã loại phòng :</label>
+                            <input type="text" id="maloaiphong" name="maloaiphong" disabled>
                         </div>
-    
+
                         <div class="form-group">
-                            <label for="tenkhachsan">Tên khách sạn :</label>
-                            <input type="text" id="name" name="name">
+                            <label for="makhachsan">Thông tin khách sạn :</label>
+                            <div class="form-maks">
+                                <input type="text" id="makhachsan" class="makhachsan" placeholder="Nhập mã khách sạn" />
+                                <select type="text" id="tenkhachsan" class="tenkhachsan" placeholder="Tên khách sạn" autocomplete="off">
+                                    <option value="">Chọn khách sạn</option>
+                                </select>
+                            </div>
+
                         </div>
-    
+
                         <div class="form-group">
-                            <label for="diachi">Địa chỉ :</label>
-                            <input type="text" id="diachi" name="diachi">
+                            <label for="tenloaiphong">Tên loại phòng :</label>
+                            <input type="text" id="tenloaiphong" name="tenloaiphong">
                         </div>
-    
+
                         <div class="form-group">
-                            <label for="sdt">SĐT :</label>
-                            <input type="text" id="sdt" name="sdt">
+                            <label for="motaloaiphong">Mô tả loại phòng :</label>
+                            <input type="text" id="motaloaiphong" name="motaloaiphong">
                         </div>
-    
+
                         <div class="form-group">
-                            <label for="email">Email :</label>
-                            <input type="email" id="email" name="email">
+                            <label for="anhloaiphong">Ảnh loại phòng :</label>
+                            <input type="text" id="anhloaiphong" name="anhloaiphong">
                         </div>
-    
+
                         <div class="form-group">
-                            <label for="danhgia">Đánh giá :</label>
-                            <input type="text" id="danhgia" name="danhgia">
+                            <label for="soluongphong">Số lượng phòng :</label>
+                            <input type="number" id="soluongphong" name="soluongphong">
                         </div>
-    
+
                         <div class="form-group">
-                            <label for="motakhachsan">Mô tả khách sạn :</label>
-                            <input type="text" id="motakhachsan" name="motakhachsan">
+                            <label for="dientich">Diện tích :</label>
+                            <input type="number" id="dientich" name="dientich">
                         </div>
-    
+
                         <div class="form-group">
-                            <label for="anhkhachsan">Ảnh khách sạn :</label>
-                            <input type="url" id="anhkhachsan" name="anhkhachsan">
+                            <label for="tiennghi">Tiện nghi :</label>
+                            <input type="text" id="tiennghi" name="tiennghi">
                         </div>
-    
+
                         <div class="button-group">
-                            <button type="button" onclick="addCustomer()">Thêm</button>
-                            <button type="button" onclick="editCustomer()">Cập nhật</button>
-                            <button type="button" onclick="deleteCustomer()">Xóa</button>
+                            <button type="button" onclick="addTyperoom()">Thêm</button>
+                            <button type="button" onclick="editTyperoom()">Cập nhật</button>
+                            <button type="button"
+                                onclick="deleteTyperoom(document.getElementById('maloaiphong').value)">Xóa</button>
                             <div class="form-search">
-                                <label for="search">Tìm kiếm:</label>
-                                <input type="text" id="search" name="search">
+                                <input type="text" id="search-maloaiphong" placeholder="Tìm kiếm Mã Loại Phòng">
+                                <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Mã Khách Sạn">
+                                <input type="text" id="search-tenloaiphong" placeholder="Tìm kiếm Tên Loại Phòng">
+                                <button id="search-button">Tìm Kiếm</button>
+
                             </div>
                         </div>
                     </form>
                 </div>
-    
+
                 <div class="table-section">
-                    <h3>Danh sách khách sạn</h3>
+                    <h3>Danh sách loại phòng</h3>
                     <table>
                         <thead>
                             <tr>
+                                <th>Mã loại phòng</th>
                                 <th>Mã khách sạn</th>
-                                <th>Tên khách sạn</th>
-                                <th>Địa chỉ</th>
-                                <th>SĐT</th>
-                                <th>Email</th>
-                                <th>Đánh giá</th>
-                                <th>Mô tả khách sạn</th>
-                                <th>Ảnh Khách sạn</th>
+                                <th>Tên loại</th>
+                                <th>Số lượng</th>
+                                <th>Ảnh loại phòng</th>
                             </tr>
                         </thead>
-                        <tbody id="customer-list">
-                            <tr data-id="6707ed79df6d7c9585d8baa" onclick="showHotelDetails(this)"> 
-                                <td>6707ed79df6d7c9585d8baa</td>
-                                <td>Muong Thanh</td>
-                                <td>Hà Nội</td>
-                                <td>987654321</td>
-                                <td>abc@gmail.com</td>
-                                <td>3.5</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                        <tbody id="typeroom-list">
+                            <tr data-id="6707f2a4676a25b7900e503a" onclick="showTypeRoomDetails(this)">
+                                <td>6707f2a4676a25b7900e503a</td>
+                                <td>6707ed79df6d7c9585d8ebaa</td>
+                                <td>Phòng đơn</td>
+                                <td>10</td>
                                 <td><img src="image-url.jpg" alt="Hotel Image" /></td>
                             </tr>
                         </tbody>
@@ -113,5 +119,7 @@
             </div>
         </div>
     </div>
+    <script src="../js/loaiphong.js"></script>
 </body>
+
 </html>
