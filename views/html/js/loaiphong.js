@@ -1,9 +1,9 @@
 const apiUrl = 'http://192.168.1.5:3000/api/typeroom';
-const apiKhachSanUrl = 'http://192.168.1.5:3000/api/hotel'; 
+const apiKhachSanUrl = 'http://192.168.1.5:3000/api/hotel';
 
 async function fetchKhachSan(IdKhachSan) {
     try {
-        const response = await fetch(`${apiKhachSanUrl}/${IdKhachSan}`); 
+        const response = await fetch(`${apiKhachSanUrl}/${IdKhachSan}`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -27,41 +27,48 @@ async function fetchAllKhachSan() {
     }
 }
 
+async function fetchTypeRooms() {
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const typeRooms = await response.json();
+        renderTypeRooms(typeRooms);
+    } catch (error) {
+        console.error('Error fetching type rooms:', error);
+    }
+}
+
 async function updateHotelName() {
     const IdKhachSan = this.value.trim();
     const selectElement = document.getElementById('tenkhachsan');
 
-    // Clear the dropdown before populating
     selectElement.innerHTML = '<option value="">Chọn khách sạn</option>';
 
-    // Fetch all hotels to populate the dropdown
     const allHotels = await fetchAllKhachSan();
-    
-    // Populate the dropdown with all hotels
+
     allHotels.forEach(hotel => {
         const option = document.createElement('option');
-        option.value = hotel._id; 
-        option.textContent = hotel.tenKhachSan;  
+        option.value = hotel._id;
+        option.textContent = hotel.tenKhachSan;
         selectElement.appendChild(option);
     });
 
-    // Check if the entered hotel ID is valid
     if (IdKhachSan) {
         const khachSan = await fetchKhachSan(IdKhachSan);
         if (khachSan) {
-            // Display the hotel name corresponding to the entered ID
             const option = document.createElement('option');
             option.value = khachSan._id;
             option.textContent = khachSan.tenKhachSan;
             selectElement.appendChild(option);
-            option.selected = true; // Set this option as selected
+            option.selected = true; 
         } else {
-            // If the hotel ID is not found, show an error message
             const option = document.createElement('option');
             option.value = '';
-            option.textContent = 'Khách sạn không tồn tại'; // This will be shown if ID is not valid
+            option.textContent = 'Khách sạn không tồn tại'; 
             selectElement.appendChild(option);
-            option.selected = true; // Select this option if ID is not valid
+            option.selected = true; 
         }
     }
 }
@@ -73,7 +80,7 @@ document.getElementById('makhachsan').addEventListener('input', debounce(updateH
 
 function debounce(func, delay) {
     let timeout;
-    return function(...args) {
+    return function (...args) {
         const context = this;
         clearTimeout(timeout);
         timeout = setTimeout(() => func.apply(context, args), delay);
@@ -103,19 +110,6 @@ function validateForm() {
     }
 
     return true;
-}
-
-async function fetchTypeRooms() {
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const typeRooms = await response.json();
-        renderTypeRooms(typeRooms);
-    } catch (error) {
-        console.error('Error fetching type rooms:', error);
-    }
 }
 
 function renderTypeRooms(typeRooms) {
@@ -149,37 +143,30 @@ async function showTypeRoomDetails(room) {
     document.getElementById('soluongphong').value = soLuongPhong;
     document.getElementById('dientich').value = dienTich;
     document.getElementById('tiennghi').value = tienNghi;
-
-    // First, populate all hotels
     await populateHotels();
-
-    // Then, set the selected hotel based on the room's hotel ID
     const selectElement = document.getElementById('tenkhachsan');
     const options = selectElement.options;
-
-    // Set the selected hotel
     for (let option of options) {
         if (option.value === IdKhachSan) {
-            option.selected = true; // Select the hotel corresponding to the room
+            option.selected = true; 
             break;
         }
     }
 }
 async function populateHotels() {
     try {
-        const response = await fetch(apiKhachSanUrl); // Fetch all hotels
+        const response = await fetch(apiKhachSanUrl);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const hotels = await response.json();
 
         const select = document.getElementById('tenkhachsan');
-        select.innerHTML = '<option value="">Chọn khách sạn</option>'; // Clear previous options
-
+        select.innerHTML = '<option value="">Chọn khách sạn</option>'; 
         hotels.forEach(hotel => {
             const option = document.createElement('option');
-            option.value = hotel._id; // Assuming _id is the hotel ID
-            option.textContent = hotel.tenKhachSan; // Assuming tenKhachSan is the hotel name
+            option.value = hotel._id; 
+            option.textContent = hotel.tenKhachSan; 
             select.appendChild(option);
         });
     } catch (error) {
@@ -209,8 +196,8 @@ async function addTyperoom() {
     const IdKhachSan = document.getElementById('makhachsan').value.trim();
     const khachSan = await fetchKhachSan(IdKhachSan);
     if (!khachSan) {
-        alert('Mã khách sạn không tồn tại!'); 
-        return; 
+        alert('Mã khách sạn không tồn tại!');
+        return;
     }
     const newTypeRoom = {
         IdKhachSan: document.getElementById('makhachsan').value,
@@ -254,8 +241,8 @@ async function editTyperoom() {
     const IdKhachSan = document.getElementById('makhachsan').value.trim();
     const khachSan = await fetchKhachSan(IdKhachSan);
     if (!khachSan) {
-        alert('Mã khách sạn không tồn tại!'); 
-        return; 
+        alert('Mã khách sạn không tồn tại!');
+        return;
     }
     const updatedTypeRoom = {
         _id: document.getElementById('maloaiphong').value,
@@ -282,13 +269,15 @@ async function editTyperoom() {
         }
 
         fetchTypeRooms();
-        alert('Sửa thông tin loại phòng thành công !'); 
+        alert('Sửa thông tin loại phòng thành công !');
     } catch (error) {
         console.error('Error updating type room:', error);
+        alert('Thông tin loại phòng không tồn tại !');
     }
     document.getElementById('customer-form').reset();
 
 }
+
 async function deleteTyperoom(id) {
     if (!id) {
         console.error('ID is undefined, cannot delete type room.');
@@ -321,21 +310,19 @@ function searchTypeRooms() {
     const searchMakhachsan = removeDiacritics(document.getElementById('search-makhachsan').value.toLowerCase().trim());
     const searchMaloaiphong = removeDiacritics(document.getElementById('search-maloaiphong').value.toLowerCase().trim());
     const searchTenloaiphong = removeDiacritics(document.getElementById('search-tenloaiphong').value.toLowerCase().trim());
-    
+
     const rows = document.querySelectorAll('#typeroom-list tr');
-    
+
     rows.forEach(row => {
         const cells = row.getElementsByTagName('td');
         const makhachsan = removeDiacritics(cells[1].textContent.toLowerCase());
         const maloai = removeDiacritics(cells[0].textContent.toLowerCase());
         const tenloai = removeDiacritics(cells[2].textContent.toLowerCase());
 
-        // Chỉ hiển thị hàng nếu không có ô tìm kiếm nào được nhập, hoặc ô đó khớp
         const matchesMakhachsan = searchMakhachsan === '' || makhachsan.includes(searchMakhachsan);
         const matchesMaloaiphong = searchMaloaiphong === '' || maloai.includes(searchMaloaiphong);
         const matchesTenloaiphong = searchTenloaiphong === '' || tenloai.includes(searchTenloaiphong);
 
-        // Hiển thị hàng nếu tất cả các điều kiện khớp
         row.style.display = (matchesMakhachsan && matchesMaloaiphong && matchesTenloaiphong) ? '' : 'none';
     });
 }
@@ -346,25 +333,24 @@ function removeDiacritics(str) {
 }
 
 // Kết nối sự kiện tìm kiếm
-document.getElementById('search-button').addEventListener('click', function(event) {
-    event.preventDefault(); 
+document.getElementById('search-button').addEventListener('click', function (event) {
+    event.preventDefault();
     searchTypeRooms();
 });
 async function populateHotels() {
     try {
-        const response = await fetch(apiKhachSanUrl); // Fetch all hotels
+        const response = await fetch(apiKhachSanUrl);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const hotels = await response.json();
 
         const select = document.getElementById('tenkhachsan');
-        select.innerHTML = '<option value="">Chọn khách sạn</option>'; // Clear previous options
-
+        select.innerHTML = '<option value="">Chọn khách sạn</option>';
         hotels.forEach(hotel => {
             const option = document.createElement('option');
-            option.value = hotel._id; // Assuming _id is the hotel ID
-            option.textContent = hotel.tenKhachSan; // Assuming tenKhachSan is the hotel name
+            option.value = hotel._id;
+            option.textContent = hotel.tenKhachSan;
             select.appendChild(option);
         });
     } catch (error) {
@@ -373,9 +359,9 @@ async function populateHotels() {
 }
 
 
-document.getElementById('tenkhachsan').addEventListener('change', function() {
+document.getElementById('tenkhachsan').addEventListener('change', function () {
     const selectedOption = this.options[this.selectedIndex];
-    const selectedHotelId = selectedOption.value; 
+    const selectedHotelId = selectedOption.value;
 
     document.getElementById('makhachsan').value = selectedHotelId;
 });
