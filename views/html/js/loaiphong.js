@@ -92,7 +92,7 @@ function validateForm() {
     const tenloaiphong = document.getElementById('tenloaiphong').value.trim();
     const anhloaiphong = document.getElementById('anhloaiphong').value.trim();
     const soluongphong = parseInt(document.getElementById('soluongphong').value, 10);
-    const dientich = parseFloat(document.getElementById('dientich').value);
+    const giaLoaiPhong = parseFloat(document.getElementById('giaLoaiPhong').value);
 
     if (!makhachsan || !tenloaiphong || !anhloaiphong) {
         alert('Vui lòng nhập đầy đủ thông tin !');
@@ -104,14 +104,13 @@ function validateForm() {
         return false;
     }
 
-    if (isNaN(dientich) || dientich < 0) {
-        alert('Diện tích phải lớn hơn hoặc bằng 0!');
+    if (isNaN(giaLoaiPhong) || giaLoaiPhong < 0) {
+        alert('Giá loại phòng phải lớn hơn hoặc bằng 0!');
         return false;
     }
 
     return true;
 }
-
 function renderTypeRooms(typeRooms) {
     const typeRoomList = document.getElementById('typeroom-list');
     typeRoomList.innerHTML = '';
@@ -133,7 +132,7 @@ function renderTypeRooms(typeRooms) {
 }
 
 async function showTypeRoomDetails(room) {
-    const { _id, IdKhachSan, tenLoaiPhong, moTaLoaiPhong, anhLoaiPhong, soLuongPhong, dienTich, tienNghi } = room;
+    const { _id, IdKhachSan, tenLoaiPhong, moTaLoaiPhong, anhLoaiPhong, soLuongPhong, giaLoaiPhong, tienNghi } = room;
 
     document.getElementById('maloaiphong').value = _id;
     document.getElementById('makhachsan').value = IdKhachSan;
@@ -141,7 +140,7 @@ async function showTypeRoomDetails(room) {
     document.getElementById('motaloaiphong').value = moTaLoaiPhong;
     document.getElementById('anhloaiphong').value = anhLoaiPhong;
     document.getElementById('soluongphong').value = soLuongPhong;
-    document.getElementById('dientich').value = dienTich;
+    document.getElementById('giaLoaiPhong').value = giaLoaiPhong;  
     document.getElementById('tiennghi').value = tienNghi;
     await populateHotels();
     const selectElement = document.getElementById('tenkhachsan');
@@ -205,7 +204,7 @@ async function addTyperoom() {
         moTaLoaiPhong: document.getElementById('motaloaiphong').value,
         anhLoaiPhong: document.getElementById('anhloaiphong').value,
         soLuongPhong: parseInt(document.getElementById('soluongphong').value, 10),
-        dienTich: parseFloat(document.getElementById('dientich').value),
+        giaLoaiPhong: parseFloat(document.getElementById('giaLoaiPhong').value),  
         tienNghi: document.getElementById('tiennghi').value
     };
 
@@ -251,7 +250,7 @@ async function editTyperoom() {
         moTaLoaiPhong: document.getElementById('motaloaiphong').value,
         anhLoaiPhong: document.getElementById('anhloaiphong').value,
         soLuongPhong: parseInt(document.getElementById('soluongphong').value, 10),
-        dienTich: parseFloat(document.getElementById('dientich').value),
+        giaLoaiPhong: parseFloat(document.getElementById('giaLoaiPhong').value), 
         tienNghi: document.getElementById('tiennghi').value
     };
 

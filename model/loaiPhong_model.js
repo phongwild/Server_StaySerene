@@ -8,7 +8,7 @@ const typeRoomSchema = new db.mongoose.Schema(
         moTaLoaiPhong: { type: String, required: false, default: "" },
         anhLoaiPhong: { type: String, required: false, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"},
         soLuongPhong: { type: Number, required: false, default:10},
-        dienTich: { type: Number, required: false, default: 10.5 },
+        giaLoaiPhong: { type: Number, required: true, default: 1000 },  
         tienNghi: { type: String, required: false, default: "" }
     },
     {
