@@ -1,0 +1,172 @@
+[
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebaa"
+        },
+        "username": "user1",
+        "sdt": 123456789,
+        "diaChi": "123 Street A",
+        "email": "user1@example.com",
+        "password": "$2b$10$abcd1234abcd5678abcd90",
+        "ngaySinh": "2000-01-01",
+        "gioiTinh": "Nam",
+        "quocTich": "Vietnam",
+        "avtUser": "https://randomuser.me/api/portraits/men/1.jpg",
+        "role": 1,
+        "token": null,
+        "cccd": 987654321
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebab"
+        },
+        "username": "user2",
+        "sdt": 123456789,
+        "diaChi": "456 Street B",
+        "email": "user2@example.com",
+        "password": "$2b$10$abcd5678abcd1234abcd90",
+        "ngaySinh": "1995-02-10",
+        "gioiTinh": "Nam",
+        "quocTich": "USA",
+        "avtUser": "https://randomuser.me/api/portraits/men/2.jpg",
+        "role": 2,
+        "token": null,
+        "cccd": 123456789
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebac"
+        },
+        "username": "user3",
+        "sdt": 987654321,
+        "diaChi": "789 Street C",
+        "email": "user3@example.com",
+        "password": "$2b$10$abcd1234abcd5678abcd90",
+        "ngaySinh": "1990-05-15",
+        "gioiTinh": "Nữ",
+        "quocTich": "Canada",
+        "avtUser": "https://randomuser.me/api/portraits/women/1.jpg",
+        "role": 1,
+        "token": null,
+        "cccd": 456789123
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebad"
+        },
+        "username": "user4",
+        "sdt": 123123123,
+        "diaChi": "101 Street D",
+        "email": "user4@example.com",
+        "password": "$2b$10$abcd5678abcd1234abcd90",
+        "ngaySinh": "1985-09-25",
+        "gioiTinh": "Nam",
+        "quocTich": "Australia",
+        "avtUser": "https://randomuser.me/api/portraits/men/3.jpg",
+        "role": 2,
+        "token": null,
+        "cccd": 789456123
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebae"
+        },
+        "username": "user5",
+        "sdt": 987654321,
+        "diaChi": "202 Street E",
+        "email": "user5@example.com",
+        "password": "$2b$10$abcd1234abcd5678abcd90",
+        "ngaySinh": "1992-12-12",
+        "gioiTinh": "Nữ",
+        "quocTich": "UK",
+        "avtUser": "https://randomuser.me/api/portraits/women/2.jpg",
+        "role": 1,
+        "token": null,
+        "cccd": 654321987
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebaf"
+        },
+        "username": "user6",
+        "sdt": 321654987,
+        "diaChi": "303 Street F",
+        "email": "user6@example.com",
+        "password": "$2b$10$abcd5678abcd1234abcd90",
+        "ngaySinh": "2001-03-03",
+        "gioiTinh": "Nam",
+        "quocTich": "Germany",
+        "avtUser": "https://randomuser.me/api/portraits/men/4.jpg",
+        "role": 2,
+        "token": null,
+        "cccd": 654987321
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebb0"
+        },
+        "username": "user7",
+        "sdt": 123789456,
+        "diaChi": "404 Street G",
+        "email": "user7@example.com",
+        "password": "$2b$10$abcd1234abcd5678abcd90",
+        "ngaySinh": "1998-06-06",
+        "gioiTinh": "Nữ",
+        "quocTich": "France",
+        "avtUser": "https://randomuser.me/api/portraits/women/3.jpg",
+        "role": 1,
+        "token": null,
+        "cccd": 321654789
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebb1"
+        },
+        "username": "user8",
+        "sdt": 987321654,
+        "diaChi": "505 Street H",
+        "email": "user8@example.com",
+        "password": "$2b$10$abcd5678abcd1234abcd90",
+        "ngaySinh": "1993-07-07",
+        "gioiTinh": "Nam",
+        "quocTich": "Italy",
+        "avtUser": "https://randomuser.me/api/portraits/men/5.jpg",
+        "role": 2,
+        "token": null,
+        "cccd": 987654123
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebb2"
+        },
+        "username": "user9",
+        "sdt": 456123789,
+        "diaChi": "606 Street I",
+        "email": "user9@example.com",
+        "password": "$2b$10$abcd1234abcd5678abcd90",
+        "ngaySinh": "1991-09-09",
+        "gioiTinh": "Nữ",
+        "quocTich": "Spain",
+        "avtUser": "https://randomuser.me/api/portraits/women/4.jpg",
+        "role": 1,
+        "token": null,
+        "cccd": 789654321
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebb3"
+        },
+        "username": "user10",
+        "sdt": 789123456,
+        "diaChi": "707 Street J",
+        "email": "user10@example.com",
+        "password": "$2b$10$abcd5678abcd1234abcd90",
+        "ngaySinh": "1999-10-10",
+        "gioiTinh": "Nam",
+        "quocTich": "Japan",
+        "avtUser": "https://randomuser.me/api/portraits/men/6.jpg",
+        "role": 2,
+        "token": null,
+        "cccd": 456987321
+    }
+]
