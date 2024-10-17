@@ -129,21 +129,21 @@ exports.updatePhong = async (req, res, next) => {
     try {
         const id = req.params.id;
         const updateData = req.body;
-        const updateRoom = await mdPhong.phongModel.findByIdAndUpdate(id, updateData, {new: true});
+        const updateRoom = await mdPhong.phongModel.findByIdAndUpdate(id, updateData, { new: true });
         if (!updateRoom) {
             return res.status(404).send('Không tìm thấy phòng');
         }
         res.status(200).json(updateRoom);
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: 'Lỗi server' });   
+        return res.status(500).json({ error: 'Lỗi server' });
     }
 }
 //sửa loại phòng 
 exports.suaLoaiPhong = async (req, res, next) => {
     try {
-        const id = req.params.id; 
-        const updatedData = req.body; 
+        const id = req.params.id;
+        const updatedData = req.body;
 
         const updatedRoomType = await mdLoaiPhong.loaiPhongModel.findByIdAndUpdate(id, updatedData, { new: true });
 
@@ -173,7 +173,7 @@ exports.showLoaiPhong = async (req, res, next) => {
 // Xóa loại phòng
 exports.xoaLoaiPhong = async (req, res, next) => {
     try {
-        const id = req.params.id; 
+        const id = req.params.id;
         const deletedTypeRoom = await mdLoaiPhong.loaiPhongModel.findByIdAndDelete(id);
         if (!deletedTypeRoom) {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng với ID đã cho' });
@@ -240,11 +240,11 @@ exports.showOrderRoom = async (req, res, next) => {
 exports.showKhachSan = async (req, res, next) => {
     try {
         const khachSan = await mdKhachSan.khachSanModel.find();
-        console.log(khachSan); 
+        console.log(khachSan);
         if (!khachSan || khachSan.length === 0) {
             return res.status(404).json({ error: 'Không tồn tại' });
         }
-        
+
         const result = khachSan.map(hotel => ({
             _id: hotel._id,
             tenKhachSan: hotel.tenKhachSan,
@@ -280,10 +280,7 @@ exports.themKhachSan = async (req, res, next) => {
     try {
         console.log(req.body);
         const { tenKhachSan, diaChi, sdt, email, danhGia, moTaKhachSan, anhKhachSan } = req.body;
-        // if (!req.file) {
-        //     res.status(403).json({ msg: 'File not upload' });
-        //     return;
-        // }
+
         const newHotel = mdKhachSan.khachSanModel.create({
             tenKhachSan: tenKhachSan,
             diaChi: diaChi,
@@ -298,9 +295,40 @@ exports.themKhachSan = async (req, res, next) => {
         }
         res.status(201).json({
             msg: 'Add hotel succ',
-            maKhachSan: newHotel._id 
+            maKhachSan: newHotel._id
         });
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
+    }
+}
+
+exports.xoaKhachSan = async (req, res, next) => {
+    try {
+        const maKhachSan = req.params.id;
+        const deletedHotel = await mdKhachSan.khachSanModel.findByIdAndDelete(maKhachSan);
+        if (!deletedHotel) {
+            return res.status(404).json({ error: 'Không tìm thấy khách sạn với ID đã cho' });
+        }
+        res.status(200).json({ msg: 'Xóa khách sạn thành công', maKhachSan });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+exports.suaKhachSan = async (req, res, next) => {
+    try {
+        const maKhachSan = req.params.id;
+        const updatedData = req.body;
+
+        const updatedHotel = await mdKhachSan.khachSanModel.findByIdAndUpdate(maKhachSan, updatedData, { new: true });
+
+        if (!updatedHotel) {
+            return res.status(404).json({ error: 'Không tìm thấy khách sạn với ID đã cho' });
+        }
+
+        res.status(200).json({ msg: 'Cập nhật khách sạn thành công', updatedHotel });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 }

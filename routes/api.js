@@ -41,4 +41,8 @@ router.get('/hotel', apiCtrl.showKhachSan);
 router.get('/hotel/:id', apiCtrl.getKhachSanById);
 //Thêm khách sạn: http://localhost:3000/api/hotel
 router.post('/hotel', apiCtrl.themKhachSan);
+//Sửa khách sạn: http://localhost:3000/api/hotel
+router.put('/hotel/:id', apiCtrl.suaKhachSan);
+//Xóa khách sạn: http://localhost:3000/api/hotel
+router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
 module.exports = router;
