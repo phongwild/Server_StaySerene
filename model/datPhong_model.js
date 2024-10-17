@@ -5,7 +5,7 @@ const oderRoomSchema = new db.mongoose.Schema(
     {
         IdPhong: { type: mongoose.Schema.ObjectId, required: true, ref: 'Phong' },
         Uid: { type: mongoose.Schema.ObjectId, required: true, ref: 'Account' },
-        IdDichVu: { type: mongoose.Schema.ObjectId, required: false, default: '' },
+        IdDichVu: { type: mongoose.Schema.ObjectId, required: false, default: '66ed87d195b16c4ceaeee6d6', ref:'DichVu' },
         orderTime: { type: String, required: false, default: '21/9/2024' },
         timeGet: { type: String, required: false, default: '21/9/2024' },
         timeCheckout: { type: String, required: false, default: '21/9/2024' },
