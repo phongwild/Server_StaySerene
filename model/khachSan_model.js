@@ -5,7 +5,7 @@ const khachSanSchema = new db.mongoose.Schema(
     {
         tenKhachSan: {type: String, required: true},
         diaChi: {type: String, required: false, default: "Hà Nội"},
-        sdt: {type: Number, required: false, default: 987654321},
+        sdt: {type: String, required: false, default: "0123456789"},
         email: {type: String, required: false, default: "abc@gmail.com"},
         danhGia: {type: Number, required: false, default: 3.5},
         moTaKhachSan: { type: String, required: false, default: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
