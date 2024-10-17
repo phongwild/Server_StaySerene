@@ -2,7 +2,7 @@ const { default: mongoose } = require('mongoose');
 var db = require('./db');
 const chamSocSchema = new db.mongoose.Schema(
     {
-        IdNhanVien: { type: mongoose.Schema.ObjectId, required: true, ref:'NhanVien' },
+        IdKhachSan: { type: mongoose.Schema.ObjectId, required: true, ref:'KhachSan' },
         Uid: { type: mongoose.Schema.ObjectId, required: true, ref:'KhachHang' },
         thoiGianGui: { type: String, required: false },
         noiDungGui: { type: String, required: false },

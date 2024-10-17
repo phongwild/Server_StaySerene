@@ -4,6 +4,7 @@ var mdLoaiPhong = require('../model/loaiPhong_model');
 var mdAccount = require('../model/account_model');
 var mdOrderRoom = require('../model/datPhong_model');
 var mdKhachSan = require('../model/khachSan_model');
+var mdChamSoc = require('../model/chamSoc_model');
 const bcrypt = require("bcrypt");
 const { default: mongoose } = require('mongoose');
 
@@ -332,3 +333,77 @@ exports.suaKhachSan = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 }
+//Thêm Chăm Sóc
+exports.themChamSoc = async (req, res) => {
+    try {
+        const { IdKhachSan, Uid, thoiGianGui, noiDungGui, vaiTro, trangThaiKh, trangThaiNv } = req.body;
+        const newChamSoc = await mdChamSoc.ChamSocModel.create({
+            IdKhachSan,
+            Uid,
+            thoiGianGui,
+            noiDungGui,
+            vaiTro,
+            trangThaiKh,
+            trangThaiNv
+        });
+        return res.status(201).json({ message: 'Thêm thành công', newChamSoc });
+    } catch (error) {
+        return res.status(500).json({ error: 'Server error: ' + error.message });
+    }
+};
+//hien thi cham soc 
+exports.getChamSoc = async (req, res) => {
+    try {
+        const chamSocList = await mdChamSoc.ChamSocModel.find();
+        if (!chamSocList || chamSocList.length === 0) {
+            return res.status(404).json();
+        }
+        return res.status(200).json(chamSocList);
+    } catch (error) {
+        console.error("Error fetching chăm sóc records:", error);
+        return res.status(500).json({ error: 'Server error: ' + error.message });
+    }
+};
+
+//hien thi theo ID
+exports.getChamSocById = async (req, res) => {
+    try {
+        const chamSocId = req.params.id;
+        const chamSocRecord = await mdChamSoc.ChamSocModel.findById(chamSocId);
+        if (!chamSocRecord) {
+            return res.status(404).json();
+        }
+        return res.status(200).json(chamSocRecord);
+    } catch (error) {
+        return res.status(500).json({ error: 'Server error: ' + error.message });
+    }
+};
+//sua cham soc 
+exports.suaChamSoc = async (req, res) => {
+    try {
+        const chamSocId = req.params.id;
+        const updateData = req.body;
+        const updatedChamSoc = await mdChamSoc.ChamSocModel.findByIdAndUpdate(chamSocId, updateData, { new: true });
+        if (!updatedChamSoc) {
+            return res.status(404).json();
+        }
+        return res.status(200).json({ message: 'Sửa thành công', updatedChamSoc });
+    } catch (error) {
+        return res.status(500).json({ error: 'Server error: ' + error.message });
+    }
+};
+//xoa cham soc 
+exports.xoaChamSoc = async (req, res) => {
+    try {
+        const chamSocId = req.params.id;
+        const deletedChamSoc = await mdChamSoc.ChamSocModel.findByIdAndDelete(chamSocId);
+        if (!deletedChamSoc) {
+            return res.status(404).json();
+        }
+        return res.status(200).json({ message: 'Xóa thành công', deletedChamSoc });
+    } catch (error) {
+        return res.status(500).json({ error: 'Server error: ' + error.message });
+    }
+};
+
+

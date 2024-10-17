@@ -45,4 +45,15 @@ router.post('/hotel', apiCtrl.themKhachSan);
 router.put('/hotel/:id', apiCtrl.suaKhachSan);
 //Xóa khách sạn: http://localhost:3000/api/hotel
 router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
+//Xem chăm sóc :
+router.get('/messenger', apiCtrl.getChamSoc);
+//Xem chăm sóc theo id:
+router.get('/messenger/:id', apiCtrl.getChamSocById);
+//them chăm sóc :
+router.post('/messenger', apiCtrl.themChamSoc);
+//Sua chăm sóc :
+router.put('/messenger/:id', apiCtrl.suaChamSoc);
+//xoa chăm sóc :
+router.delete('/messenger/:id', apiCtrl.xoaChamSoc);
+
 module.exports = router;
