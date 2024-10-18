@@ -19,91 +19,25 @@
             </ul>
         </div>
         
-        <div class="main-content" id="main-content">
-            <div class="main-content">
-                <h1>Quản lý khách sạn</h1>
-                <div class="form-section">
-                    <form id="customer-form">
-                        <div class="form-group">
-                            <label for="makhachsan">Mã khách sạn :</label>
-                            <input type="text" id="makhachsan" name="makhachsan" disabled>
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="tenkhachsan">Tên khách sạn :</label>
-                            <input type="text" id="name" name="name">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="diachi">Địa chỉ :</label>
-                            <input type="text" id="diachi" name="diachi">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="sdt">SĐT :</label>
-                            <input type="text" id="sdt" name="sdt">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="email">Email :</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="danhgia">Đánh giá :</label>
-                            <input type="text" id="danhgia" name="danhgia">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="motakhachsan">Mô tả khách sạn :</label>
-                            <input type="text" id="motakhachsan" name="motakhachsan">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="anhkhachsan">Ảnh khách sạn :</label>
-                            <input type="url" id="anhkhachsan" name="anhkhachsan">
-                        </div>
-    
-                        <div class="button-group">
-                            <button type="button" onclick="addCustomer()">Thêm</button>
-                            <button type="button" onclick="editCustomer()">Cập nhật</button>
-                            <button type="button" onclick="deleteCustomer()">Xóa</button>
-                            <div class="form-search">
-                                <label for="search">Tìm kiếm:</label>
-                                <input type="text" id="search" name="search">
-                            </div>
-                        </div>
-                    </form>
+        <div class="chat-container">
+            <!-- Sidebar section -->
+            <div class="sidebar">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm theo username" />
                 </div>
-    
-                <div class="table-section">
-                    <h3>Danh sách khách sạn</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Mã khách sạn</th>
-                                <th>Tên khách sạn</th>
-                                <th>Địa chỉ</th>
-                                <th>SĐT</th>
-                                <th>Email</th>
-                                <th>Đánh giá</th>
-                                <th>Mô tả khách sạn</th>
-                                <th>Ảnh Khách sạn</th>
-                            </tr>
-                        </thead>
-                        <tbody id="customer-list">
-                            <tr data-id="6707ed79df6d7c9585d8baa" onclick="showHotelDetails(this)"> 
-                                <td>6707ed79df6d7c9585d8baa</td>
-                                <td>Muong Thanh</td>
-                                <td>Hà Nội</td>
-                                <td>987654321</td>
-                                <td>abc@gmail.com</td>
-                                <td>3.5</td>
-                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                                <td><img src="image-url.jpg" alt="Hotel Image" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <ul class="chat-list">
+                    <!-- Chat user list here -->
+                </ul>
+            </div>
+        
+            <!-- Chat area section -->
+            <div class="chat-area">
+                <div class="chat-messages">
+                    <!-- Chat messages will appear here -->
+                </div>
+                <div class="message-input">
+                    <input type="text" placeholder="Aa">
+                    <button id="gui-button">Gửi</button>
                 </div>
             </div>
         </div>

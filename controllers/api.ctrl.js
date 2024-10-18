@@ -56,6 +56,24 @@ exports.xemTk = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server' });
     }
 }
+// Hiển thị tài khoản theo ID
+exports.getAccountById = async (req, res) => {
+    try {
+        const accountId = req.params.id; // Lấy ID từ tham số URL
+        const account = await mdAccount.accountModel.findById(accountId); // Tìm tài khoản theo ID
+
+        if (!account) {
+            return res.status(404).json({ error: 'Không tìm thấy tài khoản với ID đã cho' });
+        }
+
+        // Trả về thông tin tài khoản
+        res.status(200).json(account);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
 //Phòng
 exports.xemPhong = async (req, res, next) => {
     try {
@@ -405,5 +423,7 @@ exports.xoaChamSoc = async (req, res) => {
         return res.status(500).json({ error: 'Server error: ' + error.message });
     }
 };
+
+
 
 

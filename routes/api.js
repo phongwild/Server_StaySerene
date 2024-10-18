@@ -15,6 +15,8 @@ router.post('/login', apiCtrl.doLogin);
 router.post('/register', apiCtrl.doRegister);
 //Xem tk:  http://localhost:3000/api/account
 router.get('/account', apiCtrl.xemTk);
+//lấy thông tin tài khoản theo ID
+router.get('/account/:id', apiCtrl.getAccountById);
 //Xem phòng: http://localhost:3000/api/rooms
 router.get('/rooms', apiCtrl.xemPhong);
 //Thêm phòng: http://localhost:3000/api/rooms

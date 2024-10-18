@@ -150,6 +150,9 @@ form {
     border-radius: 10px;
     padding: 20px;
 }
+.chat-list {
+    color: black; /* Thay đổi màu chữ thành đen */
+}
 
 .chat-area {
     flex: 1; 
@@ -167,6 +170,14 @@ form {
     padding: 10px;
     border: 1px solid #bdc3c7;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Để xếp chồng các thông điệp theo chiều dọc */
+    align-items: flex-start; /* Căn các thông điệp bên trái */
+
+}
+.chat-messages div {
+    word-wrap: break-word; /* Cho phép từ dài xuống dòng */
+    overflow-wrap: break-word; /* Hỗ trợ cho các trình duyệt hiện đại */
 }
 
 .message-input {
@@ -186,7 +197,7 @@ form {
     width: 80px;
     border: none;
     background-color: #3498db;
-    color: white;
+    color: rgb(255, 255, 255);
     border-radius: 10px;
     cursor: pointer;
 }
