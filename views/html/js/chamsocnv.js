@@ -4,6 +4,7 @@ let selectedIdKhachSan = null;
 let selectedUid = null; 
 let lastMessageTimestamp = null; 
 let previousChamSocList = []; 
+let previousChamSocForSelected = [];
 
 async function updateTrangThaiNv(uid) {
     try {
@@ -35,7 +36,7 @@ async function fetchAccountInfo(uid) {
         return await response.json();
     } catch (error) {
         console.error('Error fetching account info:', error);
-        return null; // Nếu có lỗi, trả về null
+        return null; 
     }
 }
 
@@ -47,9 +48,8 @@ async function fetchChamSoc() {
         }
         const chamSocList = await response.json();
 
-        // So sánh với dữ liệu trước đó
         if (JSON.stringify(previousChamSocList) !== JSON.stringify(chamSocList)) {
-            previousChamSocList = chamSocList; // Cập nhật dữ liệu trước đó
+            previousChamSocList = chamSocList; 
 
             const grouped = {};
 
@@ -63,9 +63,8 @@ async function fetchChamSoc() {
             });
 
             const chatList = document.querySelector('.chat-list');
-            chatList.innerHTML = ''; // Xóa nội dung hiện có
+            chatList.innerHTML = ''; 
 
-            // Chuyển đổi grouped thành một mảng và sắp xếp
             const sortedGroups = Object.values(grouped).map(records => {
                 const latestRecord = records.reduce((latest, current) => {
                     return new Date(current.thoiGianGui) > new Date(latest.thoiGianGui) ? current : latest;
@@ -73,43 +72,39 @@ async function fetchChamSoc() {
                 return latestRecord;
             });
 
-            // Sắp xếp các item theo thời gian gửi từ gần nhất
             sortedGroups.sort((a, b) => new Date(b.thoiGianGui) - new Date(a.thoiGianGui));
 
-            // Hiển thị danh sách đã sắp xếp
             for (const latestRecord of sortedGroups) {
                 const accountInfo = await fetchAccountInfo(latestRecord.Uid);
 
                 if (accountInfo) {
                     const listItem = document.createElement('li');
-                    listItem.style.border = 'none'; // Xóa viền trước
+                    listItem.style.border = 'none'; 
 
-                    // Đặt màu viền dựa trên trangThaiNv
                     if (latestRecord.trangThaiNv === 1) {
-                        listItem.style.border = '2px solid red'; // Viền đỏ
+                        listItem.style.border = '2px solid red'; 
                     } else if (latestRecord.trangThaiNv === 2) {
-                        listItem.style.border = '2px solid blue'; // Viền xanh
+                        listItem.style.border = '2px solid blue'; 
                     } else {
-                        listItem.style.border = '1px solid #ccc'; // Mặc định
+                        listItem.style.border = '1px solid #ccc';
                     }
 
-                    listItem.style.borderRadius = '5px'; // Bo góc
-                    listItem.style.padding = '10px'; // Padding cho item
-                    listItem.style.margin = '5px 0'; // Khoảng cách giữa các item
-                    listItem.style.display = 'flex'; // Sử dụng flex để căn chỉnh hình ảnh và tên
-                    listItem.style.alignItems = 'center'; // Căn giữa theo chiều dọc
+                    listItem.style.borderRadius = '5px'; 
+                    listItem.style.padding = '10px'; 
+                    listItem.style.margin = '5px 0'; 
+                    listItem.style.display = 'flex'; 
+                    listItem.style.alignItems = 'center'; 
 
-                    // Tạo hình ảnh và tên người dùng
                     const userImage = document.createElement('img');
-                    userImage.src = accountInfo.avt; // Đường dẫn đến hình ảnh của tài khoản
+                    userImage.src = accountInfo.avt; 
                     userImage.alt = 'User Image';
-                    userImage.style.width = '40px'; // Đặt kích thước hình ảnh nếu cần
+                    userImage.style.width = '40px'; 
                     userImage.style.height = '40px';
-                    userImage.style.borderRadius = '50%'; // Nếu bạn muốn hình ảnh tròn
-                    userImage.style.marginRight = '10px'; // Khoảng cách giữa hình ảnh và tên
+                    userImage.style.borderRadius = '50%'; 
+                    userImage.style.marginRight = '10px'; 
 
                     const usernameText = document.createElement('span');
-                    usernameText.textContent = accountInfo.username; // Tên người dùng
+                    usernameText.textContent = accountInfo.username; 
 
                     listItem.appendChild(userImage);
                     listItem.appendChild(usernameText);
@@ -129,68 +124,74 @@ async function fetchChamSoc() {
 setInterval(fetchChamSoc, 1000); 
 
 
-// Hàm hiển thị các chăm sóc tương ứng
 async function displayChamSoc(idKhachSan, uid) {
     selectedIdKhachSan = idKhachSan;
-    selectedUid = uid; 
-    const response = await fetch(apiUrl);
-    const chamSocList = await response.json();
-    const filteredChamSoc = chamSocList.filter(cs => cs.IdKhachSan === idKhachSan && cs.Uid === uid);
-
-    const chatMessages = document.querySelector('.chat-messages');
-    chatMessages.innerHTML = ''; 
-
-    for (const cs of filteredChamSoc) {
-        await updateTrangThaiNv(cs._id); 
-    }
-
-    // Hiển thị các chăm sóc đã lọc
-    filteredChamSoc.forEach(cs => {
-        const messageItem = document.createElement('div');
-        messageItem.style.padding = '10px';
-        messageItem.style.marginBottom = '5px'; // Khoảng cách giữa các thông điệp
-        messageItem.style.maxWidth = '70%'; // Giới hạn độ rộng tối đa
-        messageItem.style.display = 'flex'; // Sử dụng flex để căn chỉnh các phần tử bên trong
-        messageItem.style.flexDirection = 'column'; // Chia theo chiều dọc
-
-        // Tạo nội dung gửi
-        const contentText = document.createElement('div');
-        contentText.textContent = cs.noiDungGui; // Giữ nguyên nội dung gửi
-
-        // Tạo thời gian gửi
-        const timeText = document.createElement('div');
-        timeText.textContent = new Date(cs.thoiGianGui).toLocaleString(); // Chuyển đổi thời gian sang định dạng đọc được
-        timeText.style.fontSize = '0.8em'; // Kích thước chữ nhỏ hơn
-        timeText.style.color = '#bdc3c7'; // Màu sắc chữ cho thời gian gửi
-        timeText.style.marginTop = '10px'; // Cách nội dung gửi 10px
-
-        // Kiểm tra vai trò và thiết lập kiểu dáng phù hợp
-        if (cs.vaiTro === 'Khách hàng') {
-            // Thiết lập kiểu cho vai trò Khách hàng
-            messageItem.style.border = '2px solid #3498db'; // Viền xanh
-            messageItem.style.backgroundColor = 'white'; // Nền trắng
-            messageItem.style.color = '#3498db'; // Chữ màu xanh
-            messageItem.style.alignSelf = 'flex-start'; // Căn trái
-            messageItem.style.borderRadius = '20px'; 
-        } else if (cs.vaiTro === 'Khách sạn') {
-            messageItem.style.border = '2px solid #3498db'; 
-            messageItem.style.backgroundColor = '#3498db'; 
-            messageItem.style.color = 'white'; 
-            messageItem.style.alignSelf = 'flex-end'; 
-            messageItem.style.borderRadius = '20px'; 
-
-            // Căn thời gian gửi bên phải
-            timeText.style.alignSelf = 'flex-end'; // Căn phải cho thời gian gửi
+    selectedUid = uid;
+    
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
+        const chamSocList = await response.json();
+        const filteredChamSoc = chamSocList.filter(cs => cs.IdKhachSan === idKhachSan && cs.Uid === uid);
 
-        // Thêm nội dung gửi và thời gian vào messageItem
-        messageItem.appendChild(contentText);
-        messageItem.appendChild(timeText);
-        chatMessages.appendChild(messageItem);
-    });
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+        // So sánh dữ liệu mới với dữ liệu trước đó
+        if (JSON.stringify(filteredChamSoc) !== JSON.stringify(previousChamSocForSelected)) {
+            previousChamSocForSelected = filteredChamSoc;  // Cập nhật dữ liệu trước đó
 
+            const chatMessages = document.querySelector('.chat-messages');
+            chatMessages.innerHTML = '';  // Xóa các tin nhắn cũ trước khi thêm mới
+
+            for (const cs of filteredChamSoc) {
+                await updateTrangThaiNv(cs._id);  // Cập nhật trạng thái nếu cần
+
+                const messageItem = document.createElement('div');
+                messageItem.style.padding = '10px';
+                messageItem.style.marginBottom = '5px'; 
+                messageItem.style.maxWidth = '70%'; 
+                messageItem.style.display = 'flex'; 
+                messageItem.style.flexDirection = 'column'; 
+
+                const contentText = document.createElement('div');
+                contentText.textContent = cs.noiDungGui;  // Nội dung tin nhắn
+
+                const timeText = document.createElement('div');
+                timeText.textContent = new Date(cs.thoiGianGui).toLocaleString();  // Thời gian gửi
+                timeText.style.fontSize = '0.8em'; 
+                timeText.style.color = '#bdc3c7'; 
+                timeText.style.marginTop = '10px'; 
+
+                // Tạo style cho tin nhắn dựa trên vai trò
+                if (cs.vaiTro === 'Khách hàng') {
+                    messageItem.style.border = '2px solid #3498db'; 
+                    messageItem.style.backgroundColor = 'white'; 
+                    messageItem.style.color = '#3498db'; 
+                    messageItem.style.alignSelf = 'flex-start'; 
+                    messageItem.style.borderRadius = '20px'; 
+                } else if (cs.vaiTro === 'Khách sạn') {
+                    messageItem.style.border = '2px solid #3498db'; 
+                    messageItem.style.backgroundColor = '#3498db'; 
+                    messageItem.style.color = 'white'; 
+                    messageItem.style.alignSelf = 'flex-end'; 
+                    messageItem.style.borderRadius = '20px'; 
+                    timeText.style.alignSelf = 'flex-end'; 
+                }
+
+                // Thêm nội dung tin nhắn và thời gian gửi vào messageItem
+                messageItem.appendChild(contentText);
+                messageItem.appendChild(timeText);
+                chatMessages.appendChild(messageItem);
+            }
+
+            // Cuộn xuống dưới cùng sau khi thêm tin nhắn
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    } catch (error) {
+        console.error('Error displaying chăm sóc:', error);
+    }
 }
+setInterval(() => displayChamSoc(selectedIdKhachSan, selectedUid), 1000);
 
 
 function removeAccents(str) {
@@ -221,12 +222,12 @@ async function sendMessage() {
 
     if (!selectedIdKhachSan || !selectedUid) {
         alert('Vui lòng chọn khách hàng trước khi gửi tin nhắn!');
-        return; // Dừng thực hiện nếu chưa chọn khách hàng
+        return; 
     }
 
     if (!messageContent) {
         alert('Nội dung tin nhắn không thể trống!');
-        return; // Dừng thực hiện nếu không có nội dung
+        return; 
     }
 
     const newChamSoc = {
@@ -264,15 +265,13 @@ async function sendMessage() {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-
-// Thêm sự kiện click vào nút gửi
+document.querySelector('.message-input input').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') { 
+        sendMessage(); 
+    }
+});
 document.getElementById('gui-button').addEventListener('click', sendMessage);
-
-
-// Gọi hàm fetch khi trang được tải
 document.addEventListener('DOMContentLoaded', fetchChamSoc);
-
-// Thêm sự kiện cho ô tìm kiếm
 document.getElementById('searchInput').addEventListener('input', searchItems);
 
 
