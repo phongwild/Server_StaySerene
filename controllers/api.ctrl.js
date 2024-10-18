@@ -93,7 +93,8 @@ exports.xoaTk = async (req, res, next) => {
 exports.themtk = async(req, res, next) => {
     try {
         console.log(req.body);
-        const { username, diaChi, sdt, quocTich, ngaySinh, email, gioiTinh, cccd, avt_url } = req.body;
+        const { username, diaChi, sdt, quocTich, ngaySinh, email, gioiTinh, cccd, avt_url, password } = req.body;
+        const encryptPassword = await bcrypt.hash(password, 10);
         const newAcc = mdAccount.accountModel.create({
             username: username,
             diaChi: diaChi,
@@ -103,13 +104,28 @@ exports.themtk = async(req, res, next) => {
             email: email,
             gioiTinh: gioiTinh,
             cccd: cccd,
-            avt: avt_url
+            avt: avt_url,
+            password: encryptPassword
         });
         res.status(201).json({ msg: 'add acc succ' });
     } catch (error) {
         res.status(500).json({ error: 'Lỗi server' });
     }
 }
+exports.suaTk = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const updatedData = req.body;
+        const updatedUser = await mdAccount.accountModel.findByIdAndUpdate(id, updatedData, { new: true });
+        if(!updatedUser){
+            res.status(400).json({ error: 'Không tìm thấy người dùng với ID đã cho' });
+        }
+        res.status(200).json({ msg: 'Cập nhật người dùng thành công', updatedUser});
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi server' });
+    }
+}
+
 //Phòng
 exports.xemPhong = async (req, res, next) => {
     try {

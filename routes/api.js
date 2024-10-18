@@ -18,6 +18,7 @@ router.get('/account', apiCtrl.xemTk);
 //Xoa tk:
 router.delete('/account/:id', apiCtrl.xoaTk);
 router.post('/account', apiCtrl.themtk);
+router.put('/account/:id', apiCtrl.suaTk);
 //Xem phòng: http://localhost:3000/api/rooms
 router.get('/rooms', apiCtrl.xemPhong);
 //Thêm phòng: http://localhost:3000/api/rooms

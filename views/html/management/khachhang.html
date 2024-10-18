@@ -42,13 +42,34 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="diachi">Địa chỉ :</label>
-                            <input type="text" id="diachi" name="diachi">
+                            <div
+                                style="flex-direction: row;display: flex;justify-content: space-evenly;align-items: center;">
+                                <div style="
+                                                                flex-direction: column;
+                                                                display: flex;
+                                                                justify-content: space-evenly;
+                                                                align-items: start;
+                                                                width: 50%;
+                                                            ">
+                                    <label for="diachi">Địa chỉ :</label>
+                                    <input type="text" id="diachi" name="diachi">
+                                </div>
+                                <div style="
+                                                                flex-direction: column;
+                                                                display: flex;
+                                                                justify-content: space-evenly;
+                                                                align-items: start;
+                                                                width: 50%;
+                                                            ">
+                                    <label for="sdt">SĐT :</label>
+                                    <input type="number" id="sdt" name="sdt">
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="sdt">SĐT :</label>
-                            <input type="number" id="sdt" name="sdt">
+                            <label for="anhkhachhang">Password :</label>
+                            <input type="password" name="pass" id="pass">
                         </div>
                         <div class="form-group">
                             <label for="quoctich">Quốc tịch :</label>
@@ -59,7 +80,7 @@
                             <div style="display: flex; flex-direction: row; ">
                                 <input type="date" id="ngaysinh" name="ngaysinh">
                             </div>
-                            
+
                         </div>
                         <div class="form-group">
                             <label for="email">Email :</label>
@@ -78,22 +99,16 @@
 
                         <div class="form-group">
                             <label for="anhkhachhang">Ảnh khách hàng :</label>
-                            <div style="
-                                    flex-direction: row;
-                                    display: flex;
-                                    justify-content: start;
-                                    align-items: center;
-                                ">
+                            <div style="flex-direction: row;display: flex;justify-content: start;align-items: center;">
                                 <input type="url" id="avt-url" name="avt-url">
                                 <p style="margin: 0 10px 0 10px;">or</p>
-                                <input type="file" name="avt-file" id="avt-file">
+                                <input type="file" name="avt-file" id="avt-file" onchange="getFile(event)" accept="image/*">
                             </div>
-                            
                         </div>
 
                         <div class="button-group">
                             <button type="button" onclick="themKH()">Thêm</button>
-                            <button type="button" onclick="editCustomer()">Cập nhật</button>
+                            <button type="button" onclick="suaTK()">Cập nhật</button>
                             <button type="button" onclick="deleteCustomer()">Xóa</button>
                             <div class="form-search">
                                 <label for="search">Tìm kiếm:</label>
@@ -127,6 +142,7 @@
             </div>
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
     <script src="../js/khach_hang.js"></script>
 </body>
 

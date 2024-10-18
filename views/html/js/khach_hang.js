@@ -1,10 +1,24 @@
-var API = "http://192.168.10.103:3000/api/account";
+const firebaseConfig = {
+    apiKey: "AIzaSyA86vacmGFN8Fg1CaMqshjgL1krNFjeaKk",
+    authDomain: "stayserene-f36b5.firebaseapp.com",
+    databaseURL: "https://stayserene-f36b5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "stayserene-f36b5",
+    storageBucket: "stayserene-f36b5.appspot.com",
+    messagingSenderId: "1082178476167",
+    appId: "1:1082178476167:web:c6aee2f3162c2aa3f90022"
+};
+firebase.initializeApp(firebaseConfig);
 
+var API = "http://192.168.10.103:3000/api/account";
+const avt_file = document.getElementById('avt-file').value;
+var linkAvt;
+var percentVal;
+var fileItem;
+var fileName;
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
     return phoneRegex.test(phone);
 }
-
 // Kiểm tra email hợp lệ
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -60,18 +74,41 @@ function search_user() {
 function removeDiacritics(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
+function getFile(e) {
+    fileItem = e.target.files[0];
+    fileName = fileItem.name;
+    console.log(fileItem);
+}
+const uploadImg = () => {
+    let storageRef = FIREBASE_APP.storage().ref('images/'+fileName);
+    let task =  storageRef.put(fileItem);
+    task.on('state_changed', (snapshot) => {
+        console.log(snapshot);
+    },(error) => {
+        console.error(error);
+    },() => {
+        task.snapshot.getDownloadURL().then((url) => {
+            console.log(url);
+            linkAvt = url;
+        })
+    })
+}
 async function themKH() {
     const username = document.getElementById('tenkhachhang').value;
     const diaChi = document.getElementById('diachi').value;
     const sdt = document.getElementById('sdt').value;
     const quocTich = document.getElementById('quoctich').value;
+    //date
     const ngaySinh = document.getElementById('ngaysinh').value;
+    const date = new Date(ngaySinh);
+    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+    const dateFormat = date.toLocaleDateString('vi-VN', options);
     const email = document.getElementById('email').value;
     const gioiTinh = document.getElementById('gioitinh').value;
     const cccd = document.getElementById('cccd').value;
     const avt_url = document.getElementById('avt-url').value;
-    const avt_file = document.getElementById('avt-file').value;
-    if (!username || diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd) {
+    const password = document.getElementById('pass').value;
+    if (!username || !diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd || !password) {
         alert('Vui lòng điền đầy đủ thông tin.');
         return;
     }
@@ -83,6 +120,10 @@ async function themKH() {
         alert('Vui lòng nhập địa chỉ email hợp lệ.');
         return;
     }
+    if (pass.length < 6) {
+        alert('Mật khẩu phải có ít nhất 6 ký tự.');
+        return;
+    }
     const checkExits = currenUser.some(user => user.email === email);
     if (checkExits) {
         alert('Email đã tồn tại.');
@@ -90,18 +131,20 @@ async function themKH() {
         return;
     }
     const checkAvt = () => {
-        if (!avt_url) {
-            return avt_file;
-        } else {
+        if (!avt_file) {
             return avt_url;
+        } else {
+            return linkAvt;
         }
     }
+    //uploadImg();
     const newCustomer = {
         username,
+        password,
         diaChi,
         sdt,
         quocTich,
-        ngaySinh,
+        dateFormat,
         email,
         gioiTinh,
         cccd,
@@ -120,6 +163,7 @@ async function themKH() {
         }
         const result = await res.json();
         console.log(result);
+        alert(`Thêm tài khoản thành công, mã khách hàng: ${result._id}`);
         getAPI();
         document.getElementById('customer-form').reset();
     } catch (error) {
@@ -138,7 +182,9 @@ function showKH_detail(row) {
     document.getElementById('cccd').value = cells[5].innerText;
     document.getElementById('quoctich').value = cells[6].innerText;
     document.getElementById('gioitinh').value = cells[7].innerText;
-    document.getElementById('ngaysinh').value = cells[8].innerText;
+    let date = cells[8].innerText;
+    date = date.split('/').reverse().join('-');
+    document.getElementById('ngaysinh').value = date;
     document.getElementById('avt-url').value = cells[9].getElementsByTagName('img')[0].src;
 }
 async function deleteCustomer() {
@@ -163,38 +209,53 @@ async function deleteCustomer() {
         console.error(error);
     }
 }
-async function editCustomer() {
+
+const suaTK = async() => {
+    const id = document.getElementById('makhachhang').value;
     const username = document.getElementById('tenkhachhang').value;
     const diaChi = document.getElementById('diachi').value;
     const sdt = document.getElementById('sdt').value;
     const quocTich = document.getElementById('quoctich').value;
     const ngaySinh = document.getElementById('ngaysinh').value;
+    const date = new Date(ngaySinh);
+    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    const dateFormat = date.toLocaleDateString('vi-VN', options);
+    console.log(dateFormat);
     const email = document.getElementById('email').value;
     const gioiTinh = document.getElementById('gioitinh').value;
     const cccd = document.getElementById('cccd').value;
     const avt_url = document.getElementById('avt-url').value;
     const avt_file = document.getElementById('avt-file').value;
-    if (!username || !diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd || !avt_url) {
-        alert('Vui lòng điền đầy đủ thông tin.');
+    if(!id){
+        alert('Vui lòng chọn khách hàng để sửa.');
         return;
     }
-    if (!username || diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd) {
-        alert('Vui lòng điền đầy đủ thông tin.');
-        return;
-    }
-    if (!isValidPhoneNumber(sdt)) {
-        alert('Số điện thoại phải là 10 số và bắt đầu bằng 0.');
-        return;
-    }
-    if (!isValidEmail(email)) {
-        alert('Vui lòng nhập địa chỉ email hợp lệ.');
-        return;
-    }
-    const checkExits = currenUser.some(user => user.email === email);
-    if (checkExits) {
-        alert('Email đã tồn tại.');
+    try {
+        const res = await fetch(`${API}/${id}`,{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                diaChi,
+                sdt,
+                quocTich,
+                dateFormat,
+                email,
+                gioiTinh,
+                cccd,
+                avt_url
+            })
+        });
+        if(!res.ok){
+            throw new Error('Network response was not ok');
+        }
+        getAPI();
+        alert(`Sửa tài khoản thành công, mã khách hàng: ${id}`);
         document.getElementById('customer-form').reset();
-        return;
+    } catch (error) {
+        console.error('False', error);
     }
 }
 document.getElementById('search').addEventListener('input', search_user);
