@@ -1,0 +1,15 @@
+[{
+    "_id": {
+      "$oid": "3"
+    },
+    "IdLoaiPhong": {
+      "$oid": "3"
+    },
+    "tenPhong": "Phòng gia đình",
+    "maKhachHang": "KH001",
+    "tenKhachHang": "Trần Tuấn Anh",
+    "thoiGianDatPhong": "10-10-2024",
+    "tongTien": "100,000",
+    "__v": 0
+  }
+]

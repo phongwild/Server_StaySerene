@@ -5,6 +5,8 @@ var mdAccount = require('../model/account_model');
 var mdOrderRoom = require('../model/datPhong_model');
 var mdKhachSan = require('../model/khachSan_model');
 var mdAccount_admin = require('../model/acount_admin_model');
+var mdPhanHoi = require('../model/phanhoi_model');
+var mdLichSu = require('../model/lichSu_model');
 const bcrypt = require("bcrypt");
 const { default: mongoose } = require('mongoose');
 
@@ -372,5 +374,53 @@ exports.suaKhachSan = async (req, res, next) => {
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+
+
+//Lich Su
+exports.showLichSu = async (req, res, next) => {
+    try {
+        const lichSu = await mdLichSu.lichSuModel.find();
+        console.log(lichSu); 
+        if (!lichSu || lichSu.length === 0) {
+            return res.status(404).json({ error: 'Không tồn tại' });
+        }
+        
+        const result = lichSu.map(lichSu => ({
+            _id: lichSu._id,
+            IdLoaiPhong: lichSu.IdLoaiPhong,
+            tenPhong: lichSu.tenPhong,
+            maKhachHang: lichSu.maKhachHang,
+            tenKhachHang: lichSu.tenKhachHang,
+            thoiGianDatPhong: lichSu.thoiGianDatPhong,
+            tongTien: lichSu.tongTien
+        }));
+
+        res.status(200).json(result);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error });
+    }
+}
+//Phan Hoi
+exports.showPhanHoi = async (req, res, next) => {
+    try {
+        const phanHoi = await mdPhanHoi.phanHoiModel.find();
+        console.log(phanHoi); 
+        if (!phanHoi || phanHoi.length === 0) {
+            return res.status(404).json({ error: 'Không tồn tại' });
+        }
+        
+        const result = phanHoi.map(phanHoi => ({
+            _id: phanHoi._id,
+            IdLoaiPhong: phanHoi.IdLoaiPhong,
+            tenKhachHang: phanHoi.tenKhachHang,
+            noiDung: phanHoi.noiDung,
+            thoiGian: phanHoi.thoiGian
+        }));
+
+        res.status(200).json(result);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error });
     }
 }

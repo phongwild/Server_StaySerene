@@ -44,6 +44,13 @@ router.get('/hotel/:id', apiCtrl.getKhachSanById);
 router.post('/hotel', apiCtrl.themKhachSan);
 //Xoá khách sạn: http://localhost:3000/api/hotel/{id}
 router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
+
+
+//Xem phan hoi: http://localhost:3000/api/phanhoi
+router.get('/phanhoi', apiCtrl.showPhanHoi);
+//Xem lich su: http://localhost:3000/api/lichsu
+router.get('/lichsu', apiCtrl.showLichSu);
+
 //đăng kí admin:
 router.post('/register-admin', apiCtrl.registerAdmin);
 
@@ -67,3 +74,4 @@ router.post('/uploadimg', upload.single('img'), (req, res) => {
     }
 });
 module.exports = router;
+
