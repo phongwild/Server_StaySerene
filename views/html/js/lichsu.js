@@ -50,10 +50,15 @@ function displayLichSus(lichsus) {
         customerList.appendChild(row); // Thêm hàng mới vào bảng
     });
 }
+// Hàm loại bỏ dấu tiếng Việt
+function removeVietnameseTones(str) {
+    str = str.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Loại bỏ dấu
+    return str;
+}
 
 // Hàm tìm kiếm khi nhập liệu vào ô tìm kiếm
 function filterTable() {
-    const searchInput = document.getElementById('search').value.toLowerCase();
+    const searchInput = removeVietnameseTones(document.getElementById('search').value.toLowerCase());
     const rows = document.querySelectorAll("#customer-list tr");
 
     rows.forEach(row => {
@@ -62,7 +67,8 @@ function filterTable() {
 
         // Kiểm tra từng ô trong hàng
         for (let i = 0; i < cells.length; i++) {
-            if (cells[i].innerText.toLowerCase().includes(searchInput)) {
+            const cellText = removeVietnameseTones(cells[i].innerText.toLowerCase());
+            if (cellText.includes(searchInput)) {
                 match = true;
                 break;
             }
