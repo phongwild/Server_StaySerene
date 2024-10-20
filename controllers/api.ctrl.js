@@ -5,6 +5,7 @@ var mdAccount = require('../model/account_model');
 var mdOrderRoom = require('../model/datPhong_model');
 var mdKhachSan = require('../model/khachSan_model');
 var mdAccount_admin = require('../model/acount_admin_model');
+var mdNhanVien = require('../model/acconut_nhanvien_model');
 const bcrypt = require("bcrypt");
 const { default: mongoose } = require('mongoose');
 
@@ -368,6 +369,84 @@ exports.suaKhachSan = async (req, res, next) => {
             return res.status(404).json({ error: 'Không tìm thấy khách sạn với ID đã cho' });
         }
 
+        res.status(200).json({ msg: 'Cập nhật khách sạn thành công', updatedHotel });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+// nhân viên
+exports.showNhanVien = async (req, res, next) => {
+    try {
+        const NhanVien = await mdNhanVien.NhanVienModel.find();
+        if (!NhanVien) {
+            return res.status(404).json({ error: 'Không tồn tại' });
+        }
+        res.status(200).json(NhanVien)
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' });
+    }
+}
+//thêm nhân viên
+exports.themNhanVien = async (req, res, next) => {
+    try {
+        console.log(req.body);
+        const {
+            makhachsan,
+            username,
+            sdt,
+            anhNhanVien,
+            password,
+            email,
+            gioLam,
+            cccd
+            
+        } = req.body;
+        const newHotel = mdNhanVien.NhanVienModel.create({
+            makhachsan:makhachsan,
+            username: username,
+            sdt: sdt,
+            anhNhanVien: anhNhanVien,
+            password: password,
+            email: email,
+            gioLam: gioLam,
+            cccd:cccd
+           
+        });
+        res.status(201).json({
+            msg: 'Add hotel oke',
+            maKhachSan: newHotel._id 
+        });
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' + error });
+    }
+}
+// delelte nhân viên
+exports.xoaNhanVien = async (req, res, next) => {
+    try {
+        const id = req.params.id; 
+        const deletedHotel = await mdNhanVien.NhanVienModel.findByIdAndDelete(id);
+        if (!deletedHotel) {
+            return res.status(404).json({ error: 'Không tìm thấy khách sạn với ID đã cho' });
+        }
+        res.status(200).json({ msg: 'Xóa khách sạn thành công', id });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+// sửa nhân viên
+exports.suaNhanVien = async (req, res, next) => {
+    try {
+        const makhachsan = req.params.id; 
+        const updatedData = req.body;
+
+        const updatedHotel = await mdNhanVien.NhanVienModel.findByIdAndUpdate(makhachsan, updatedData, { new: true });
+        
+        if (!updatedHotel) {
+            return res.status(404).json({ error: 'Không tìm thấy khách sạn với ID đã cho' });
+        }
+        
         res.status(200).json({ msg: 'Cập nhật khách sạn thành công', updatedHotel });
     } catch (error) {
         console.error(error);

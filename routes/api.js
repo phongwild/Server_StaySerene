@@ -46,7 +46,14 @@ router.post('/hotel', apiCtrl.themKhachSan);
 router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
 //đăng kí admin:
 router.post('/register-admin', apiCtrl.registerAdmin);
-
+// nhân viên
+router.get('/nhanvien',apiCtrl.showNhanVien)
+// thêm nhân viên
+router.post('/nhanvien',apiCtrl.themNhanVien);
+// xóa nhân viên
+router.delete('/nhanvien/:id',apiCtrl.xoaNhanVien);
+//update nhân viên
+router.put('/nhanvien/:id',apiCtrl.suaNhanVien);
 router.post('/uploadimg', upload.single('img'), (req, res) => {
     try {
         const file = req.file;
@@ -66,4 +73,5 @@ router.post('/uploadimg', upload.single('img'), (req, res) => {
         
     }
 });
+
 module.exports = router;
