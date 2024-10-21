@@ -46,8 +46,8 @@ router.post('/hotel', apiCtrl.themKhachSan);
 router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
 
 
-//Xem phan hoi: http://localhost:3000/api/phanhoi
-router.get('/phanhoi', apiCtrl.showPhanHoi);
+// //Xem phan hoi: http://localhost:3000/api/phanhoi
+// router.get('/phanhoi', apiCtrl.showPhanHoi);
 //Xem lich su: http://localhost:3000/api/lichsu
 router.get('/lichsu', apiCtrl.showLichSu);
 

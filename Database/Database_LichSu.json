@@ -1,15 +1,50 @@
-[{
-    "_id": {
-      "$oid": "3"
-    },
-    "IdLoaiPhong": {
-      "$oid": "3"
-    },
-    "tenPhong": "Phòng gia đình",
-    "maKhachHang": "KH001",
-    "tenKhachHang": "Trần Tuấn Anh",
-    "thoiGianDatPhong": "10-10-2024",
-    "tongTien": "100,000",
-    "__v": 0
+[
+  {
+    "Uid":"2",
+    "dichVuID":"asada",
+    "phongID":"3",
+    "thoiGianDatPhong":"10-01-2024",
+    "thoiGianNhan":"10-20-2024",
+    "thoiGianTra":"10-25-2024",
+    "ghiChu":"jkgnhgfdd",
+    "tongTien":2345,
+    "trangThai":1,
+    "anhDatPhong":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+  },
+  {
+    "Uid":"2",
+    "dichVuID":"asada",
+    "phongID":"6",
+    "thoiGianDatPhong":"10-01-2024",
+    "thoiGianNhan":"10-20-2024",
+    "thoiGianTra":"10-25-2024",
+    "ghiChu":"jkgnhgfdd",
+    "tongTien":2345,
+    "trangThai":1,
+    "anhDatPhong":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+  },
+  {
+    "Uid":"2",
+    "dichVuID":"asada",
+    "phongID":"3",
+    "thoiGianDatPhong":"10-01-2024",
+    "thoiGianNhan":"10-20-2024",
+    "thoiGianTra":"10-25-2024",
+    "ghiChu":"jkgnhgfdd",
+    "tongTien":2345,
+    "trangThai":1,
+    "anhDatPhong":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
+  }, {
+    "Uid":"2",
+    "dichVuID":"asada",
+    "phongID":"3",
+    "thoiGianDatPhong":"10-01-2024",
+    "thoiGianNhan":"10-20-2024",
+    "thoiGianTra":"10-25-2024",
+    "ghiChu":"jkgnhgfdd",
+    "tongTien":2345,
+    "trangThai":1,
+    "anhDatPhong":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s"
   }
+
 ]

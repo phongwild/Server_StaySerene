@@ -28,36 +28,95 @@
 
         <div class="main-content" id="main-content">
             <div class="header">
-                <h2>Lịch Sử Đặt Phòng</h2>
+                <h1>Lịch Sử Đặt Phòng</h1>
+                <div class="form-section">
+                    <form id="customer-form">
+                        <div class="form-group">
+                            <label for="uid">Uid :</label>
+                            <input type="text" id="uid" name="uid">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dichVu">Dịch vụ :</label>
+                            <input type="text" id="dichVu" name="dichVu">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phong1">Phòng :</label>
+                            <input type="text" id="phong1" name="phong1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="thoiGianDat">Thời gian đặt phòng :</label>
+                            <input type="text" id="thoiGianDat" name="thoiGianDat">
+                        </div>
+                        <div class="form-group">
+                            <label for="thoiGianNhan">Thời gian nhận :</label>
+                            <input type="text" id="thoiGianNhan" name="thoiGianNhan">
+                        </div>
+                        <div class="form-group">
+                            <label for="thoiGianTra">Thời gian trả :</label>
+                            <input type="text" id="thoiGianTra" name="thoiGianTra">
+                        </div>
+                        <div class="form-group">
+                            <label for="ghiChu">Ghi chú :</label>
+                            <input type="text" id="ghiChu" name="ghiChu">
+                        </div>
+                        <div class="form-group">
+                            <label for="trangThai">Trạng thái :</label>
+                            <input type="text" id="trangThai" name="trangThai">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tongTien">Tổng tiền :</label>
+                            <input type="text" id="tongTien" name="tongTien">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="anhDatPhong">Ảnh đặt phòng :</label>
+                            <div style="
+                                    flex-direction: row;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                ">
+                                <!-- Thêm thẻ img để hiển thị ảnh -->
+                                <img id="hinhAnhDatPhong" src="" alt="Hình ảnh " style="width: 200px; height: auto; margin-left: 20px;">
+                            </div>
+                        </div>
+                        
+
+                        <div class="button-group">
+                            <!-- <button type="button" onclick="themKH()">Thêm</button>
+                            <button type="button" onclick="editCustomer()">Cập nhật</button>
+                            <button type="button" onclick="deleteCustomer()">Xóa</button> -->
+                            <div class="form-search">
+                                <label >Tìm kiếm:</label>
+                                <input type="text" id="search" name="search"  oninput="filterTable()">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
 
-            <div class="booking-form">
-                <input type="text" id="search" name="search" placeholder="Tìm kiếm" oninput="filterTable()">
-
-                <label for="room-type">Tên phòng:</label>
-                <input type="text" id="room-type" name="room-type" placeholder="Phòng gia đình">
-
-                <label for="customer-name">Tên khách hàng:</label>
-                <input type="text" id="customer-name" name="customer-name" placeholder="Trần Quang Khải">
-            </div>
-
-            <label for="booking-time">Thời gian đặt phòng:</label>
-            <input type="date" id="booking-time" name="booking-time">
-            <div class="total-section">
-                <h3>Tổng tiền: <span id="total-amount">0 đ</span></h3>
-            </div>
             <table class="table-section">
                 <thead>
                     <tr>
-                        <th>Mã phòng</th>
-                        <th>Tên phòng</th>
-                        <th>Mã KH</th>
-                        <th>Tên khách hàng</th>
+                        <th>Uid</th>
+                        <th>Dịch Vụ</th>
+                        <th>Phòng</th>
                         <th>Thời gian đặt phòng</th>
+                        <th>Thời gian nhận</th>
+                        <th>Thời gian trả</th>
+                        <th>Ghi chú</th>
                         <th>Tổng tiền</th>
+                        <th>Trạng thái</th>
+                        <th>Ảnh đặt phòng</th>
+
                     </tr>
                 </thead>
                 <tbody id="customer-list">
+                   
                     <!-- Hàng dữ liệu sẽ được thêm tự động từ JavaScript -->
                 </tbody>
             </table>

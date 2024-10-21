@@ -5,7 +5,6 @@ var mdAccount = require('../model/account_model');
 var mdOrderRoom = require('../model/datPhong_model');
 var mdKhachSan = require('../model/khachSan_model');
 var mdAccount_admin = require('../model/acount_admin_model');
-var mdPhanHoi = require('../model/phanhoi_model');
 var mdLichSu = require('../model/lichSu_model');
 const bcrypt = require("bcrypt");
 const { default: mongoose } = require('mongoose');
@@ -387,22 +386,15 @@ exports.showLichSu = async (req, res, next) => {
             return res.status(404).json({ error: 'Không tồn tại' });
         }
         
-        const result = lichSu.map(lichSu => ({
-            _id: lichSu._id,
-            IdLoaiPhong: lichSu.IdLoaiPhong,
-            tenPhong: lichSu.tenPhong,
-            maKhachHang: lichSu.maKhachHang,
-            tenKhachHang: lichSu.tenKhachHang,
-            thoiGianDatPhong: lichSu.thoiGianDatPhong,
-            tongTien: lichSu.tongTien
-        }));
+       
 
-        res.status(200).json(result);
+        res.status(200).json(lichSu);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error });
     }
 }
-//Phan Hoi
+
+// //Phan Hoi
 // exports.showPhanHoi = async (req, res, next) => {
 //     try {
 //         const phanHoi = await mdPhanHoi.phanHoiModel.find();

@@ -1,45 +1,47 @@
-[{
-  "_id": {
-    "$oid": "6707f2a4676a25b7900e503a"
+[
+  {
+    "_id": {
+      "$oid": "6707f2a4676a25b7900e503a"
+    },
+    "IdKhachSan": {
+      "$oid": "6707ed79df6d7c9585d8ebaa"
+    },
+    "tenLoaiPhong": "Phòng đơn",
+    "moTaLoaiPhong": "",
+    "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+    "soLuongPhong": 10,
+    "giaLoaiPhong": 10.5,
+    "tienNghi": "",
+    "__v": 0
   },
-  "IdKhachSan": {
-    "$oid": "6707ed79df6d7c9585d8ebaa"
+  {
+    "_id": {
+      "$oid": "6707f5f7cc798d4a3ca46da6"
+    },
+    "IdKhachSan": {
+      "$oid": "6707edc85b04485f284f5cdb"
+    },
+    "tenLoaiPhong": "Phòng đôi",
+    "moTaLoaiPhong": "",
+    "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+    "soLuongPhong": 10,
+    "giaLoaiPhong": 10.5,
+    "tienNghi": "",
+    "__v": 0
   },
-  "tenLoaiPhong": "Phòng đơn",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 10.5,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6707f5f7cc798d4a3ca46da6"
-  },
-  "IdKhachSan": {
-    "$oid": "6707edc85b04485f284f5cdb"
-  },
-  "tenLoaiPhong": "Phòng đôi",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 10.5,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6707f605cc798d4a3ca46da8"
-  },
-  "IdKhachSan": {
-    "$oid": "6707edf94f41774885ae7adc"
-  },
-  "tenLoaiPhong": "Phòng vip",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 10.5,
-  "tienNghi": "",
-  "__v": 0
-}]
+  {
+    "_id": {
+      "$oid": "6707f605cc798d4a3ca46da8"
+    },
+    "IdKhachSan": {
+      "$oid": "6707edf94f41774885ae7adc"
+    },
+    "tenLoaiPhong": "Phòng vip",
+    "moTaLoaiPhong": "",
+    "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
+    "soLuongPhong": 10,
+    "giaLoaiPhong": 10.5,
+    "tienNghi": "",
+    "__v": 0
+  }
+]
