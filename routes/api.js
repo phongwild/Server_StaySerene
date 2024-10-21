@@ -50,6 +50,20 @@ router.post('/register-admin', apiCtrl.registerAdmin);
 router.get('/phanhoi', apiCtrl.showPhanHoi);
 
 
+// Hiển thị tất cả dịch vụ
+router.get('/dichvu', apiCtrl.showDichVu);
+
+// Thêm dịch vụ
+router.post('/dichvu', apiCtrl.themDichVu);
+
+// Xóa dịch vụ
+router.delete('/dichvu/:id', apiCtrl.xoaDichVu);
+
+// Sửa dịch vụ
+router.put('/dichvu/:id', apiCtrl.suaDichVu);
+
+
+
 router.post('/uploadimg', upload.single('img'), (req, res) => {
     try {
         const file = req.file;
