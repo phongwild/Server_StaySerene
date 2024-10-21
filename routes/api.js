@@ -46,6 +46,9 @@ router.post('/hotel', apiCtrl.themKhachSan);
 router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
 //đăng kí admin:
 router.post('/register-admin', apiCtrl.registerAdmin);
+//Xem phan hoi: http://localhost:3000/api/phanhoi
+router.get('/phanhoi', apiCtrl.showPhanHoi);
+
 
 router.post('/uploadimg', upload.single('img'), (req, res) => {
     try {
@@ -53,7 +56,7 @@ router.post('/uploadimg', upload.single('img'), (req, res) => {
         if (!file) {
             return res.status(404).json('Please upload img');
         }
-        const BASE_URL = 'http://192.168.10.103:3000/api/';
+        const BASE_URL = 'http://192.168.0.105:3000/api/';
         const imgUrl = BASE_URL + 'uploads/' + file.filename;
         //const imgUrl = req.protocol + '://' + req.get('host') + '/api/uploads/' + file.filename;
         res.send({
