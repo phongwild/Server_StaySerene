@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý khách hàng</title>
     <link rel="stylesheet" href="../css/khachhang.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage.js"></script>
 </head>
 
 <body>
@@ -99,11 +101,7 @@
 
                         <div class="form-group">
                             <label for="anhkhachhang">Ảnh khách hàng :</label>
-                            <div style="flex-direction: row;display: flex;justify-content: start;align-items: center;">
-                                <input type="url" id="avt-url" name="avt-url">
-                                <p style="margin: 0 10px 0 10px;">or</p>
-                                <input type="file" name="avt-file" id="avt-file" onchange="getFile(event)" accept="image/*">
-                            </div>
+                            <input type="url" id="avt-url" name="avt-url">
                         </div>
 
                         <div class="button-group">
@@ -142,8 +140,8 @@
             </div>
         </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
     <script src="../js/khach_hang.js"></script>
+
 </body>
 
 </html>

@@ -93,7 +93,7 @@ exports.xoaTk = async (req, res, next) => {
 exports.themtk = async(req, res, next) => {
     try {
         console.log(req.body);
-        const { username, diaChi, sdt, quocTich, ngaySinh, email, gioiTinh, cccd, avt_url, password } = req.body;
+        const { username, diaChi, sdt, quocTich, ngaySinh, email, gioiTinh, cccd, avt, password } = req.body;
         const encryptPassword = await bcrypt.hash(password, 10);
         const newAcc = mdAccount.accountModel.create({
             username: username,
@@ -104,7 +104,7 @@ exports.themtk = async(req, res, next) => {
             email: email,
             gioiTinh: gioiTinh,
             cccd: cccd,
-            avt: avt_url,
+            avt: avt,
             password: encryptPassword
         });
         res.status(201).json({ msg: 'add acc succ' });

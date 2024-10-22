@@ -1,25 +1,8 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyA86vacmGFN8Fg1CaMqshjgL1krNFjeaKk",
-    authDomain: "stayserene-f36b5.firebaseapp.com",
-    databaseURL: "https://stayserene-f36b5-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "stayserene-f36b5",
-    storageBucket: "stayserene-f36b5.appspot.com",
-    messagingSenderId: "1082178476167",
-    appId: "1:1082178476167:web:c6aee2f3162c2aa3f90022"
-};
-firebase.initializeApp(firebaseConfig);
-
 var API = "http://192.168.10.103:3000/api/account";
-const avt_file = document.getElementById('avt-file').value;
-var linkAvt;
-var percentVal;
-var fileItem;
-var fileName;
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
     return phoneRegex.test(phone);
 }
-// Kiểm tra email hợp lệ
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -34,7 +17,6 @@ async function getAPI() {
         console.error('Error fetch account: ', error);
     }
 }
-
 const showKH = (account) => {
     const list = document.getElementById('list-tk');
     list.innerHTML = '';
@@ -74,39 +56,18 @@ function search_user() {
 function removeDiacritics(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
-function getFile(e) {
-    fileItem = e.target.files[0];
-    fileName = fileItem.name;
-    console.log(fileItem);
-}
-const uploadImg = () => {
-    let storageRef = FIREBASE_APP.storage().ref('images/'+fileName);
-    let task =  storageRef.put(fileItem);
-    task.on('state_changed', (snapshot) => {
-        console.log(snapshot);
-    },(error) => {
-        console.error(error);
-    },() => {
-        task.snapshot.getDownloadURL().then((url) => {
-            console.log(url);
-            linkAvt = url;
-        })
-    })
-}
 async function themKH() {
     const username = document.getElementById('tenkhachhang').value;
     const diaChi = document.getElementById('diachi').value;
     const sdt = document.getElementById('sdt').value;
     const quocTich = document.getElementById('quoctich').value;
     //date
-    const ngaySinh = document.getElementById('ngaysinh').value;
-    const date = new Date(ngaySinh);
-    const options = { day: '2-digit', month: 'short', year: 'numeric' };
-    const dateFormat = date.toLocaleDateString('vi-VN', options);
+    const date = document.getElementById('ngaysinh').value;
+    const ngaySinh = formatDate(date);
     const email = document.getElementById('email').value;
     const gioiTinh = document.getElementById('gioitinh').value;
     const cccd = document.getElementById('cccd').value;
-    const avt_url = document.getElementById('avt-url').value;
+    const avt = document.getElementById('avt-url').value;
     const password = document.getElementById('pass').value;
     if (!username || !diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd || !password) {
         alert('Vui lòng điền đầy đủ thông tin.');
@@ -127,29 +88,22 @@ async function themKH() {
     const checkExits = currenUser.some(user => user.email === email);
     if (checkExits) {
         alert('Email đã tồn tại.');
-        document.getElementById('customer-form').reset();
+        email.value = '';
         return;
     }
-    const checkAvt = () => {
-        if (!avt_file) {
-            return avt_url;
-        } else {
-            return linkAvt;
-        }
-    }
-    //uploadImg();
     const newCustomer = {
         username,
         password,
         diaChi,
         sdt,
         quocTich,
-        dateFormat,
+        ngaySinh,
         email,
         gioiTinh,
         cccd,
-        checkAvt
+        avt
     };
+    console.log(newCustomer);
     try {
         const res = await fetch(API, {
             method: 'POST',
@@ -163,17 +117,21 @@ async function themKH() {
         }
         const result = await res.json();
         console.log(result);
-        alert(`Thêm tài khoản thành công, mã khách hàng: ${result._id}`);
+        alert(`Thêm tài khoản thành công`);
         getAPI();
         document.getElementById('customer-form').reset();
     } catch (error) {
         console.error(error);
     }
 }
+function formatDate(dateString) {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('vi-VN', options); // Định dạng ngày theo kiểu Việt Nam
+}
 function showKH_detail(row) {
     const uid = row.getAttribute('data-id');
     const cells = [...row.getElementsByTagName('td')];
-    
     document.getElementById('makhachhang').value = uid;
     document.getElementById('tenkhachhang').value = cells[1].innerText;
     document.getElementById('diachi').value = cells[2].innerText;
@@ -199,9 +157,9 @@ async function deleteCustomer() {
         const res = await fetch(`${API}/${uid}`, {
             method: 'DELETE'
         });
-        if (res.ok) {
+        if (!res.ok) {
             throw new Error('Network response was not ok');
-        }   
+        }
         alert(`Xoá tài khoảnh thành công, mã khách hàng: ${uid}`);
         getAPI();
         document.getElementById('customer-form').reset();
@@ -210,45 +168,43 @@ async function deleteCustomer() {
     }
 }
 
-const suaTK = async() => {
+const suaTK = async () => {
     const id = document.getElementById('makhachhang').value;
     const username = document.getElementById('tenkhachhang').value;
     const diaChi = document.getElementById('diachi').value;
     const sdt = document.getElementById('sdt').value;
     const quocTich = document.getElementById('quoctich').value;
-    const ngaySinh = document.getElementById('ngaysinh').value;
-    const date = new Date(ngaySinh);
-    const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-    const dateFormat = date.toLocaleDateString('vi-VN', options);
-    console.log(dateFormat);
+    const date = document.getElementById('ngaysinh').value;
+    const ngaySinh = formatDate(date).toString();
     const email = document.getElementById('email').value;
     const gioiTinh = document.getElementById('gioitinh').value;
     const cccd = document.getElementById('cccd').value;
-    const avt_url = document.getElementById('avt-url').value;
-    const avt_file = document.getElementById('avt-file').value;
-    if(!id){
+    const avt = document.getElementById('avt-url').value;
+    if (!id) {
         alert('Vui lòng chọn khách hàng để sửa.');
         return;
     }
+    const edit = {
+        username,
+        diaChi,
+        sdt,
+        quocTich,
+        ngaySinh,
+        email,
+        gioiTinh,
+        cccd,
+        avt
+    }
+    console.log(edit);
     try {
-        const res = await fetch(`${API}/${id}`,{
+        const res = await fetch(`${API}/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                username,
-                diaChi,
-                sdt,
-                quocTich,
-                dateFormat,
-                email,
-                gioiTinh,
-                cccd,
-                avt_url
-            })
+            body: JSON.stringify(edit)
         });
-        if(!res.ok){
+        if (!res.ok) {
             throw new Error('Network response was not ok');
         }
         getAPI();
