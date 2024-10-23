@@ -6,6 +6,7 @@ var mdOrderRoom = require('../model/datPhong_model');
 var mdKhachSan = require('../model/khachSan_model');
 var mdAccount_admin = require('../model/acount_admin_model');
 var mdPhanHoi = require('../model/phanhoi_model');
+var mdDichVu = require('../model/dichvu_model');
 const bcrypt = require("bcrypt");
 const { default: mongoose } = require('mongoose');
 
@@ -396,3 +397,74 @@ exports.showPhanHoi = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error });
     }
 }
+
+
+// Hiển thị tất cả dịch vụ
+exports.showDichVu = async (req, res, next) => {
+    try {
+        const dichVu = await mdDichVu.DichVuModel.find();
+        if (!dichVu) {
+            return res.status(404).json({ error: 'Không tồn tại dịch vụ nào' });
+        }
+        res.status(200).json(dichVu);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error });
+    }
+};
+
+// Thêm dịch vụ
+exports.themDichVu = async (req, res, next) => {
+    try {
+        const { tenDichVu, giaDichVu, motaDichVu, anhDichVu } = req.body;
+
+        const newDichVu = await mdDichVu.DichVuModel.create({
+            tenDichVu: tenDichVu,
+            giaDichVu: giaDichVu,
+            motaDichVu: motaDichVu,
+            anhDichVu: anhDichVu
+        });
+
+        res.status(201).json({
+            msg: 'Thêm dịch vụ thành công',
+            maDichVu: newDichVu._id 
+        });
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error });
+    }
+};
+
+// Xóa dịch vụ
+exports.xoaDichVu = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const deletedDichVu = await mdDichVu.DichVuModel.findByIdAndDelete(id);
+
+        if (!deletedDichVu) {
+            return res.status(404).json({ error: 'Không tìm thấy dịch vụ với ID đã cho' });
+        }
+
+        res.status(200).json({ msg: 'Xóa dịch vụ thành công', id });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
+// Sửa dịch vụ
+exports.suaDichVu = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const updatedData = req.body;
+
+        const updatedDichVu = await mdDichVu.DichVuModel.findByIdAndUpdate(id, updatedData, { new: true });
+
+        if (!updatedDichVu) {
+            return res.status(404).json({ error: 'Không tìm thấy dịch vụ với ID đã cho' });
+        }
+
+        res.status(200).json({ msg: 'Cập nhật dịch vụ thành công', updatedDichVu });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};

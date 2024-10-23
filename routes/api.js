@@ -49,6 +49,19 @@ router.post('/register-admin', apiCtrl.registerAdmin);
 //Xem phan hoi: http://localhost:3000/api/phanhoi
 router.get('/phanhoi', apiCtrl.showPhanHoi);
 
+// Hiển thị tất cả dịch vụ
+router.get('/dichvu', apiCtrl.showDichVu);
+
+// Thêm dịch vụ
+router.post('/dichvu', apiCtrl.themDichVu);
+
+// Xóa dịch vụ
+router.delete('/dichvu/:id', apiCtrl.xoaDichVu);
+
+// Sửa dịch vụ
+router.put('/dichvu/:id', apiCtrl.suaDichVu);
+
+
 
 router.post('/uploadimg', upload.single('img'), (req, res) => {
     try {
@@ -56,7 +69,7 @@ router.post('/uploadimg', upload.single('img'), (req, res) => {
         if (!file) {
             return res.status(404).json('Please upload img');
         }
-        const BASE_URL = 'http://192.168.0.105:3000/api/';
+        const BASE_URL = 'http://192.168.0.6:3000/api/';
         const imgUrl = BASE_URL + 'uploads/' + file.filename;
         //const imgUrl = req.protocol + '://' + req.get('host') + '/api/uploads/' + file.filename;
         res.send({
