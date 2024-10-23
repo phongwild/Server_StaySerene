@@ -1,6 +1,6 @@
-const apiDichVuUrl = 'http://192.168.0.8:3000/api/dichvu';
+const apiDichVuUrl = 'http://192.168.0.6:3000/api/dichvu';
 
-// Lấy tất cả danh sách dịch vụ
+
 async function fetchAllDichVu() {
     try {
         const response = await fetch(apiDichVuUrl);
@@ -14,7 +14,7 @@ async function fetchAllDichVu() {
     }
 }
 
-// Hiển thị danh sách dịch vụ
+
 async function renderDichVu() {
     const dichVuList = await fetchAllDichVu();
     const dichVuTable = document.getElementById('dichvu-list');
@@ -36,7 +36,7 @@ async function renderDichVu() {
     });
 }
 
-// Hiển thị chi tiết dịch vụ để sửa
+
 async function showDichVuDetails(dv) {
     const { _id, tenDichVu, giaDichVu, motaDichVu, anhDichVu } = dv;
 
@@ -47,7 +47,7 @@ async function showDichVuDetails(dv) {
     document.getElementById('anhDichVu').value = anhDichVu || '';
 }
 
-// Thêm dịch vụ
+
 async function addDichVu() {
     const newDichVu = {
         tenDichVu: document.getElementById('tenDichVu').value.trim(),
@@ -75,7 +75,7 @@ async function addDichVu() {
     }
 }
 
-// Sửa dịch vụ
+
 async function editDichVu() {
     const maDichVu = document.getElementById('maDichVu').value.trim();
     if (!maDichVu) {
@@ -109,7 +109,7 @@ async function editDichVu() {
     }
 }
 
-// Xóa dịch vụ
+
 async function deleteDichVu() {
     const maDichVu = document.getElementById('maDichVu').value.trim();
     if (!maDichVu) {
@@ -137,11 +137,11 @@ async function deleteDichVu() {
     }
 }
 
-// Xóa form
+
 function clearForm() {
     document.getElementById('dichvu-form').reset();
-    document.getElementById('maDichVu').value = ''; // Đặt lại ID
+    document.getElementById('maDichVu').value = ''; 
 }
 
-// Khi DOM đã tải xong, hiển thị danh sách dịch vụ
+
 document.addEventListener('DOMContentLoaded', renderDichVu);
