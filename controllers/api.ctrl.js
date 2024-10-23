@@ -468,3 +468,22 @@ exports.suaDichVu = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+
+// Tìm kiếm dịch vụ theo tên
+exports.timKiemDichVu = async (req, res, next) => {
+    try {
+        const { tenDichVu } = req.query;
+
+        const dichVu = await mdDichVu.DichVuModel.find({
+            tenDichVu: { $regex: tenDichVu, $options: 'i' } // tìm kiếm không phân biệt chữ hoa/thường
+        });
+
+        if (!dichVu || dichVu.length === 0) {
+            return res.status(404).json({ error: 'Không tìm thấy dịch vụ nào' });
+        }
+
+        res.status(200).json(dichVu);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};

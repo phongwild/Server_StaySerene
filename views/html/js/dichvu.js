@@ -137,6 +137,42 @@ async function deleteDichVu() {
     }
 }
 
+async function searchDichVu() {
+    const searchTenDichVu = document.getElementById('search-tenDichVu').value.trim();
+    try {
+        const response = await fetch(`${apiDichVuUrl}/timkiem?tenDichVu=${encodeURIComponent(searchTenDichVu)}`);
+        if (!response.ok) {
+            throw new Error('Không tìm thấy dịch vụ');
+        }
+
+        const dichVuList = await response.json();
+        renderDichVuList(dichVuList);
+    } catch (error) {
+        console.error('Lỗi khi tìm kiếm dịch vụ:', error);
+    }
+}
+
+function renderDichVuList(dichVuList) {
+    const dichVuTable = document.getElementById('dichvu-list');
+    dichVuTable.innerHTML = ''; // Xóa danh sách cũ
+
+    dichVuList.forEach(dv => {
+        const row = document.createElement('tr');
+        row.setAttribute('data-id', dv._id);
+        row.onclick = () => showDichVuDetails(dv);
+
+        row.innerHTML = `
+            <td>${dv._id}</td>
+            <td>${dv.tenDichVu}</td>
+            <td>${dv.giaDichVu}</td>
+            <td>${dv.motaDichVu}</td>
+            <td><img src="${dv.anhDichVu}" alt="${dv.tenDichVu}" width="50"></td>
+        `;
+        dichVuTable.appendChild(row);
+    });
+}
+
+
 
 function clearForm() {
     document.getElementById('dichvu-form').reset();

@@ -61,6 +61,10 @@ router.delete('/dichvu/:id', apiCtrl.xoaDichVu);
 // Sửa dịch vụ
 router.put('/dichvu/:id', apiCtrl.suaDichVu);
 
+// Route tìm kiếm dịch vụ
+router.get('/dichvu/timkiem', apiCtrl.timKiemDichVu);
+
+
 
 
 router.post('/uploadimg', upload.single('img'), (req, res) => {
