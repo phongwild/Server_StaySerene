@@ -236,6 +236,7 @@ exports.OrderRoom = async (req, res, next) => {
             IdPhong,
             Uid,
             IdDichVu,
+            IdLoaiPhong,
             orderTime,
             timeGet,
             timeCheckout,
@@ -243,13 +244,14 @@ exports.OrderRoom = async (req, res, next) => {
             total,
             status
         } = req.body;
-        if (!IdPhong || !Uid || !total) {
+        if (!IdPhong || !Uid || !total || !IdLoaiPhong) {
             return res.status(404).json({ error: 'Không đủ thông tin' });
         }
         const newOrder = mdOrderRoom.orderRoomModel.create({
             IdPhong: IdPhong,
             Uid: Uid,
             IdDichVu: IdDichVu,
+            IdLoaiPhong: IdLoaiPhong,
             orderTime: orderTime,
             timeGet: timeGet,
             timeCheckout: timeCheckout,
@@ -485,5 +487,47 @@ exports.timKiemDichVu = async (req, res, next) => {
         res.status(200).json(dichVu);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
+//thống kê
+exports.getIncomeByDate = async (req, res) => {
+    try {
+        // const Roomstats = await mdOrderRoom.orderRoomModel.find({}, { IdPhong: 1, timeGet: 1 });
+        const orderStats = await mdOrderRoom.orderRoomModel.aggregate([
+            {
+                $lookup: {
+                    from: 'LoaiPhong',   // Tên collection loại phòng
+                    localField: 'IdLoaiPhong',  // Trường trong bảng DatPhong (hoặc bảng Phong) để kết nối
+                    foreignField: '_id',  // Trường trong bảng LoaiPhong
+                    as: 'roomDetails'     // Tên biến lưu trữ kết quả
+                }
+            },
+            { $unwind: { path: '$roomDetails', preserveNullAndEmptyArrays: true } }, 
+            {
+                $project: {
+                    IdPhong: 1,              // Lấy IdPhong
+                    orderTime: 1,            // Lấy orderTime từ DatPhong
+                    tenLoaiPhong: { $ifNull: ['$roomDetails.tenLoaiPhong', 'Không có loại phòng'] }, // Lấy tên loại phòng
+                    soLuongPhong: { $ifNull: ['$roomDetails.soLuongPhong', 0] }, // Số lượng phòng từ LoaiPhong
+                    giaLoaiPhong: { $ifNull: ['$roomDetails.giaLoaiPhong', 0] }, // Giá phòng từ LoaiPhong
+                    doanhThu: { 
+                        $multiply: [
+                            { $ifNull: ['$roomDetails.soLuongPhong', 0] },
+                            { $ifNull: ['$roomDetails.giaLoaiPhong', 0] }
+                        ]
+                    } // Doanh thu = số lượng * giá
+                }
+            }
+        ]);
+        res.status(200).json({
+            orderStats
+        });
+    } catch (error) {
+        console.error('Lỗi khi lấy thống kê thu nhập:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Có lỗi xảy ra khi lấy thống kê thu nhập'
+        });
     }
 };
