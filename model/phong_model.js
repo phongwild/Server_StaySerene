@@ -9,7 +9,8 @@ const roomSchema = new db.mongoose.Schema(
         soTang: { type: Number, required: false, default: 1 },
         moTaPhong: { type: String, required: false, default: "" },
         anhPhong: { type: String, required: false, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s" },
-        tinhTrangPhong: { type: Number, require: false, default: 0 }
+        tinhTrangPhong: { type: Number, required: false, default: 0 },
+        giaPhong: { type: Number, required: false, default: 500000}
     },
     {
         collection: 'Phong'

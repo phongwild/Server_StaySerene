@@ -8,6 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 var app = express();
+const cors = require('cors');
+app.use(cors()); 
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,5 +41,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+app.use(cors({
+  origin: 'http://192.168.0.6:3000' // Thay thế bằng nguồn của bạn
+}));
 
 module.exports = app;

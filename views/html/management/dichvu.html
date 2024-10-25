@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Dịch Vụ</title>
+    <link rel="stylesheet" href="../css/dichvu.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>StaySerene</h2>
+            <ul>
+                <li><a href="khachhang.html">Quản lý khách hàng</a></li>
+                <li><a href="nhanvien.html">Quản lý nhân viên</a></li>
+                <li><a href="khachsan.html" id="khachsan">Quản lý khách sạn</a></li>
+                <li><a href="loaiphong.html" id="loaiphong">Quản lý loại phòng</a></li>
+                <li><a href="phong.html" id="phong">Quản lý phòng</a></li>
+                <li><a href="dichvu.html" class="namepage">Quản lý dịch vụ</a></li>
+                <li><a href="lichsu.html" id="lichsu">Lịch sử đặt phòng</a></li>
+                <li><a href="phanhoi.html" id="phanhoi">Phản hồi của khách hàng</a></li>
+                <li><a href="chamsoc.html" id="chamsoc">Chăm sóc khách hàng</a></li>
+                <li><a href="thongke.html" id="thongke">Thống kê</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h1>Quản lý Dịch Vụ</h1>
+            <div class="form-section">
+                <form id="dichvu-form">
+                    <input type="hidden" id="maDichVu">
+
+                    <div class="form-group">
+                        <label for="tenDichVu">Tên Dịch Vụ:</label>
+                        <input type="text" id="tenDichVu" name="tenDichVu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="giaDichVu">Giá Dịch Vụ:</label>
+                        <input type="number" id="giaDichVu" name="giaDichVu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="motaDichVu">Mô tả Dịch Vụ:</label>
+                        <input type="text" id="motaDichVu" name="motaDichVu">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="anhDichVu">Ảnh Dịch Vụ:</label>
+                        <input type="url" id="anhDichVu" name="anhDichVu">
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" onclick="addDichVu()">Thêm</button>
+                        <button type="button" onclick="editDichVu()">Sửa</button>
+                        <button type="button" onclick="deleteDichVu()">Xóa</button>
+                        <button type="button" onclick="clearForm()">Làm mới</button>
+                    </div>
+                    
+                    <div class="search-section">
+                        <h3>Tìm kiếm Dịch Vụ</h3>
+                        <div class="search-bar">
+                            <input type="text" id="search-tenDichVu" placeholder="Nhập tên dịch vụ">
+                            <button type="button" onclick="searchDichVu()">Tìm kiếm</button>
+                        </div>
+                    </div>
+                    
+                    
+                </form>
+            </div>
+
+            <div class="table-section">
+                <h3>Danh sách Dịch Vụ</h3>
+                <table>
+                    <thead>
+<tr>
+                            <th>Mã Dịch Vụ</th>
+                            <th>Tên Dịch Vụ</th>
+                            <th>Giá Dịch Vụ</th>
+                            <th>Mô tả Dịch Vụ</th> 
+                            <th>Ảnh Dịch Vụ</th>
+                            
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="dichvu-list"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dichvu.js"></script>
+</body>
+</html>

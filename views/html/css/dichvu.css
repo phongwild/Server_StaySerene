@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex; 
+    height: 100vh; /* Make the container full height of the viewport */
+}
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    height: 100%; /* Ensure sidebar takes full height */
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background-color: #34495e;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #1abc9c;
+}
+
+.main-content {
+    flex: 1; 
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow-y: auto; 
+    background-color: #fff;
+}
+
+header {
+    display: flex;  
+    justify-content: flex-end;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+header .header-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-content h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+.form-search input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+.button-group {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+.button-group button:hover {
+    background-color: #2980b9;
+}
+
+.table-section {
+    width: 100%;
+}
+
+.table-section h3 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    pointer-events: auto; 
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #bdc3c7;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #3498db;
+    color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+.sidebar .namepage{
+    background-color: #1abc9c;
+}
+/* Thêm phong cách mới cho phần tìm kiếm */
+.search-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #45a049;
+}
+
+/* Căn chỉnh lại toàn bộ form */
+.form-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Các button trong form */
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+}

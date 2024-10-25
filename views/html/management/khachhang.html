@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý khách hàng</title>
+    <link rel="stylesheet" href="../css/khachhang.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>StaySerene</h2>
+            <ul>
+                <li><a href="khachhang.html" id="khachhang" class="namepage">Quản lý khách hàng</a></li>
+                <li><a href="nhanvien.html" id="nhanvien">Quản lý nhân viên</a></li>
+                <li><a href="khachsan.html" id="khachsan">Quản lý khách sạn</a></li>
+                <li><a href="loaiphong.html" id="loaiphong">Quản lý loại phòng</a></li>
+                <li><a href="phong.html" id="phong">Quản lý phòng</a></li>
+                <li><a href="dichvu.html" id="dichvu">Quản lý dịch vụ</a></li>
+                <li><a href="lichsu.html" id="lichsu">Lịch sử đặt phòng</a></li>
+                <li><a href="phanhoi.html" id="phanhoi">Phản hồi của khách hàng</a></li>
+                <li><a href="chamsoc.html" id="chamsoc">Chăm sóc khách hàng</a></li>
+                <li><a href="thongke.html" id="thongke">Thống kê</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content" id="main-content">
+            <div class="main-content">
+                <h1>Quản lý khách hàng</h1>
+                <div class="form-section">
+                    <form id="customer-form">
+                        <div class="form-group">
+                            <label for="makhachhang">Mã khách hàng :</label>
+                            <input type="text" id="makhachhang" name="makhachhang" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tenkhachhang">Tên khách hàng :</label>
+                            <input type="text" id="tenkhachhang" name="tenkhachhang">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="diachi">Địa chỉ :</label>
+                            <input type="text" id="diachi" name="diachi">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sdt">SĐT :</label>
+                            <input type="number" id="sdt" name="sdt">
+                        </div>
+                        <div class="form-group">
+                            <label for="quoctich">Quốc tịch :</label>
+                            <input type="text" id="quoctich" name="quoctich">
+                        </div>
+                        <div class="form-group">
+                            <label for="ngaysinh">Ngày sinh :</label>
+                            <div style="display: flex; flex-direction: row; ">
+                                <input type="date" id="ngaysinh" name="ngaysinh">
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gioitinh">Giới tính :</label>
+                            <input type="text" id="gioitinh" name="gioitinh">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cccd">CCCD :</label>
+                            <input type="number" id="cccd" name="cccd">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="anhkhachhang">Ảnh khách hàng :</label>
+                            <div style="
+                                    flex-direction: row;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                ">
+                                <input type="url" id="avt-url" name="avt-url">
+                                <p style="margin: 0 10px 0 10px;">or</p>
+                                <input type="file" name="avt-file" id="avt-file">
+                            </div>
+                            
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" onclick="themKH()">Thêm</button>
+                            <button type="button" onclick="editCustomer()">Cập nhật</button>
+                            <button type="button" onclick="deleteCustomer()">Xóa</button>
+                            <div class="form-search">
+                                <label for="search">Tìm kiếm:</label>
+                                <input type="text" id="search" name="search">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="table-section">
+                    <h3>Danh sách khách sạn</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã khách hàng</th>
+                                <th>Tên khách hàng</th>
+                                <th>Địa chỉ</th>
+                                <th>SĐT</th>
+                                <th>Email</th>
+                                <th>CCCD</th>
+                                <th>Quốc tịch</th>
+                                <th>Giới tính</th>
+                                <th>Ngày sinh</th>
+                                <th>Ảnh khách hàng</th>
+                            </tr>
+                        </thead>
+                        <tbody id="list-tk">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/khach_hang.js"></script>
+</body>
+
+</html>
