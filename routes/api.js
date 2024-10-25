@@ -64,7 +64,8 @@ router.put('/dichvu/:id', apiCtrl.suaDichVu);
 // Route tìm kiếm dịch vụ
 router.get('/dichvu/timkiem', apiCtrl.timKiemDichVu);
 
-
+//xem thống kê: http://localhost:3000/api/static
+router.get('/static', apiCtrl.getIncomeByDate);
 
 
 router.post('/uploadimg', upload.single('img'), (req, res) => {
