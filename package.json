@@ -4,7 +4,7 @@
   "private": true,
   "main": "/routes/api.js",
   "scripts": {
-    "start": "nodemon  ./bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "@vercel/node": "^3.2.22",
