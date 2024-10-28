@@ -54,6 +54,13 @@ router.post('/hotel', apiCtrl.themKhachSan);
 router.put('/hotel/:id', apiCtrl.suaKhachSan);
 //Xóa khách sạn: http://localhost:3000/api/hotel
 router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
+
+
+// //Xem phan hoi: http://localhost:3000/api/phanhoi
+// router.get('/phanhoi', apiCtrl.showPhanHoi);
+//Xem lich su: http://localhost:3000/api/lichsu
+router.get('/lichsu', apiCtrl.showLichSu);
+
 //đăng kí admin:
 router.post('/register-admin', apiCtrl.registerAdmin);
 //Xem phan hoi: http://localhost:3000/api/phanhoi
@@ -108,3 +115,4 @@ router.put('/messenger/:id', apiCtrl.suaChamSoc);
 router.delete('/messenger/:id', apiCtrl.xoaChamSoc);
 
 module.exports = router;
+
