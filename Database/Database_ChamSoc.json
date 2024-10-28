@@ -1,0 +1,112 @@
+[
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebaa" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebaa",
+        "Uid": "6707ed79df6d7c9585d8ebaa",
+        "thoiGianGui": "2024-10-01T10:00:00Z",
+        "noiDungGui": "Tôi muốn đặt một phòng cho 2 người vào ngày 10 tháng 10.",
+        "vaiTro": "Khách hàng",
+        "trangThaiKh": 1,
+        "trangThaiNv": 2
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebab" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebaa",
+        "Uid": "6707ed79df6d7c9585d8ebaa",
+        "thoiGianGui": "2024-10-01T10:05:00Z",
+        "noiDungGui": "Phòng còn trống không?",
+        "vaiTro": "Khách hàng",
+        "trangThaiKh": 1,
+        "trangThaiNv": 2
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebac" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebaa",
+        "Uid": "6707ed79df6d7c9585d8ebac",
+        "thoiGianGui": "2024-10-01T10:10:00Z",
+        "noiDungGui": "Chúng tôi có phòng trống cho ngày đó.",
+        "vaiTro": "Khách sạn",
+        "trangThaiKh": 2,
+        "trangThaiNv": 1
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebad" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebabab",
+        "Uid": "6707ed79df6d7c9585d8ebb0",
+        "thoiGianGui": "2024-10-02T11:00:00Z",
+        "noiDungGui": "Có phòng trống nào cho ngày 15 tháng 10 không?",
+        "vaiTro": "Khách hàng",
+        "trangThaiKh": 1,
+        "trangThaiNv": 2
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebae" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebabab",
+        "Uid": "6707ed79df6d7c9585d8ebb0",
+        "thoiGianGui": "2024-10-02T11:05:00Z",
+        "noiDungGui": "Chúng tôi không có phòng trống cho ngày đó.",
+        "vaiTro": "Khách sạn",
+        "trangThaiKh": 2,
+        "trangThaiNv": 1
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebaf" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebae",
+        "Uid": "6707ed79df6d7c9585d8ebac",
+        "thoiGianGui": "2024-10-03T12:00:00Z",
+        "noiDungGui": "Xin chào, tôi cần một phòng cho 3 người vào cuối tuần này.",
+        "vaiTro": "Khách hàng",
+        "trangThaiKh": 1,
+        "trangThaiNv": 2
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb0" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebae",
+        "Uid": "6707ed79df6d7c9585d8ebac",
+        "thoiGianGui": "2024-10-03T12:05:00Z",
+        "noiDungGui": "Chúng tôi có phòng cho 3 người, vào cuối tuần.",
+        "vaiTro": "Khách sạn",
+        "trangThaiKh": 2,
+        "trangThaiNv": 1
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb2" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebaf",
+        "Uid": "6707ed79df6d7c9585d8ebb0",
+        "thoiGianGui": "2024-10-04T13:00:00Z",
+        "noiDungGui": "Tôi cần một phòng cho 4 người.",
+        "vaiTro": "Khách hàng",
+        "trangThaiKh": 1,
+        "trangThaiNv": 2
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb4" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebaf",
+        "Uid": "6707ed79df6d7c9585d8ebb0",
+        "thoiGianGui": "2024-10-04T13:10:00Z",
+        "noiDungGui": "Có một phòng cho 4 người vào cuối tuần.",
+        "vaiTro": "Khách sạn",
+        "trangThaiKh": 2,
+        "trangThaiNv": 1
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb6" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebae",
+        "Uid": "6707ed79df6d7c9585d8ebac",
+        "thoiGianGui": "2024-10-05T14:00:00Z",
+        "noiDungGui": "Xin chào, tôi cần thông tin về phòng.",
+        "vaiTro": "Khách hàng",
+        "trangThaiKh": 1,
+        "trangThaiNv": 2
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb8" },
+        "IdKhachSan": "6707ed79df6d7c9585d8ebae",
+        "Uid": "6707ed79df6d7c9585d8ebac",
+        "thoiGianGui": "2024-10-05T14:05:00Z",
+        "noiDungGui": "Xin chào! Bạn cần thông tin gì về phòng?",
+        "vaiTro": "Khách sạn",
+        "trangThaiKh": 2,
+        "trangThaiNv": 1
+    }
+]
