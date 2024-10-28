@@ -63,7 +63,14 @@ router.get('/lichsu', apiCtrl.showLichSu);
 
 //đăng kí admin:
 router.post('/register-admin', apiCtrl.registerAdmin);
-//Xem phan hoi: http://localhost:3000/api/phanhoi
+// nhân viên
+router.get('/nhanvien',apiCtrl.showNhanVien)
+// thêm nhân viên
+router.post('/nhanvien',apiCtrl.themNhanVien);
+// xóa nhân viên
+router.delete('/nhanvien/:id',apiCtrl.xoaNhanVien);
+//update nhân viên
+router.put('/nhanvien/:id',apiCtrl.suaNhanVien);//Xem phan hoi: http://localhost:3000/api/phanhoi
 router.get('/phanhoi', apiCtrl.showPhanHoi);
 
 // Hiển thị tất cả dịch vụ
@@ -113,6 +120,7 @@ router.post('/messenger', apiCtrl.themChamSoc);
 router.put('/messenger/:id', apiCtrl.suaChamSoc);
 //xoa chăm sóc :
 router.delete('/messenger/:id', apiCtrl.xoaChamSoc);
+
 
 module.exports = router;
 
