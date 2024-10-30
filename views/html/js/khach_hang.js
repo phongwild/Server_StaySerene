@@ -1,4 +1,4 @@
-var API = "http://192.168.10.103:3000/api/account";
+var API = "http://192.168.1.4:3000/api/account";
 
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
@@ -71,10 +71,10 @@ async function themKH() {
     const cccd = document.getElementById('cccd').value;
     const avt_url = document.getElementById('avt-url').value;
     const avt_file = document.getElementById('avt-file').value;
-    if (!username || diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd) {
-        alert('Vui lòng điền đầy đủ thông tin.');
-        return;
-    }
+    // if (!username || diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd) {
+    //     alert('Vui lòng điền đầy đủ thông tin.');
+    //     return;
+    // }
     if (!isValidPhoneNumber(sdt)) {
         alert('Số điện thoại phải là 10 số và bắt đầu bằng 0.');
         return;
@@ -105,6 +105,9 @@ async function themKH() {
         email,
         gioiTinh,
         cccd,
+        token,
+        role,
+        password,
         checkAvt
     };
     try {
@@ -172,16 +175,11 @@ async function editCustomer() {
     const email = document.getElementById('email').value;
     const gioiTinh = document.getElementById('gioitinh').value;
     const cccd = document.getElementById('cccd').value;
-    const avt_url = document.getElementById('avt-url').value;
-    const avt_file = document.getElementById('avt-file').value;
-    if (!username || !diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd || !avt_url) {
-        alert('Vui lòng điền đầy đủ thông tin.');
-        return;
-    }
-    if (!username || diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd) {
-        alert('Vui lòng điền đầy đủ thông tin.');
-        return;
-    }
+    
+    // if (!username || diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd) {
+    //     alert('Vui lòng điền đầy đủ thông tin.');
+    //     return;
+    // }
     if (!isValidPhoneNumber(sdt)) {
         alert('Số điện thoại phải là 10 số và bắt đầu bằng 0.');
         return;
