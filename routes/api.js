@@ -30,6 +30,8 @@ router.delete('/rooms/:id', apiCtrl.xoaPhong);
 router.post('/typeroom', apiCtrl.themLoaiPhong);
 //Xem loại phòng: http://localhost:3000/api/typeroom
 router.get('/typeroom', apiCtrl.showLoaiPhong);
+//Xem loại phòng theo id khách sạn: http://localhost:3000/api/typeroom/:id
+router.get('/typeroom/:id', apiCtrl.showLoaiPhongByIdHotel);
 // Xóa loại phòng: http://localhost:3000/api/typeroom/:id
 router.delete('/typeroom/:id', apiCtrl.xoaLoaiPhong);
 // Sửa loại phòng: http://localhost:3000/api/typeroom/:id

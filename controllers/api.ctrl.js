@@ -232,6 +232,19 @@ exports.showLoaiPhong = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server' });
     }
 }
+//show loại phòng theo id khách sạn
+exports.showLoaiPhongByIdHotel = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const loaiPhong = await mdLoaiPhong.loaiPhongModel.find({ IdKhachSan: id });
+        if (!id) {
+            return res.status(404).json({ error: 'Không tồn tại' });
+        }
+        res.status(200).json(loaiPhong);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' });
+    }
+}
 // Xóa loại phòng
 exports.xoaLoaiPhong = async (req, res, next) => {
     try {
