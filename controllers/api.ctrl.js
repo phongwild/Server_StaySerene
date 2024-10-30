@@ -25,10 +25,7 @@ exports.doLogin = async (req, res, next) => {
             return res.status(401).json({ error: 'Sai thông tin đăng nhập' });
         } else {
             const token = await user.generateAuthToken();
-            return res.status(200).send({
-                msg: "Login succ",
-                user, token
-            });
+            return res.status(200).send([user]);
         }
     } catch (error) {
         console.log(error)
