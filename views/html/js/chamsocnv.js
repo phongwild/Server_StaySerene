@@ -1,5 +1,5 @@
-const apiUrlMess = 'http://192.168.10.103:3000/api/messenger';
-const apiUrlAccount = 'http://192.168.10.103:3000/api/account';
+const apiUrl = 'http://192.168.1.4:3000/api/messenger';
+const apiUrlAccount = 'http://192.168.1.4:3000/api/account';
 let selectedIdKhachSan = null;
 let selectedUid = null; 
 let lastMessageTimestamp = null; 
@@ -8,7 +8,7 @@ let previousChamSocForSelected = [];
 
 async function updateTrangThaiNv(uid) {
     try {
-        const response = await fetch(`${apiUrlMess}/${uid}`, {
+        const response = await fetch(`${apiUrl}/${uid}`, {
             method: 'PUT', 
             headers: {
                 'Content-Type': 'application/json'
@@ -273,8 +273,3 @@ document.querySelector('.message-input input').addEventListener('keydown', funct
 document.getElementById('gui-button').addEventListener('click', sendMessage);
 document.addEventListener('DOMContentLoaded', fetchChamSoc);
 document.getElementById('searchInput').addEventListener('input', searchItems);
-
-
-
-
-

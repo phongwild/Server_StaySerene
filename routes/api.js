@@ -18,6 +18,7 @@ router.get('/account', apiCtrl.xemTk);
 //Xoa tk:
 router.delete('/account/:id', apiCtrl.xoaTk);
 router.post('/account', apiCtrl.themtk);
+router.put('/account/:id', apiCtrl.suaTk);
 //lấy thông tin tài khoản theo ID
 router.get('/account/:id', apiCtrl.getAccountById);
 //Xem phòng: http://localhost:3000/api/rooms
@@ -40,10 +41,10 @@ router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
 router.delete('/typeroom/:id', apiCtrl.xoaLoaiPhong);
 // Sửa loại phòng: http://localhost:3000/api/typeroom/:id
 router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
-//Đặt phòng: http://localhost:3000/api/orderroom
-router.post('/orderroom', apiCtrl.OrderRoom);
-//Xem phòng đặt theo Uid: http://localhost:3000/api/orderroom/{Uid}
-router.get('/orderroom/:Uid', apiCtrl.showOrderRoom);
+// //Đặt phòng: http://localhost:3000/api/orderroom
+// router.post('/orderroom', apiCtrl.OrderRoom);
+// //Xem phòng đặt theo Uid: http://localhost:3000/api/orderroom/{Uid}
+// router.get('/orderroom/:Uid', apiCtrl.showOrderRoom);
 //Xem khách sạn: http://localhost:3000/api/hotel
 router.get('/hotel', apiCtrl.showKhachSan);
 //Xem khách sạn theo id: http://localhost:3000/api/hotel/:id
@@ -56,13 +57,6 @@ router.post('/hotel', apiCtrl.themKhachSan);
 router.put('/hotel/:id', apiCtrl.suaKhachSan);
 //Xóa khách sạn: http://localhost:3000/api/hotel
 router.delete('/hotel/:id', apiCtrl.xoaKhachSan);
-
-
-// //Xem phan hoi: http://localhost:3000/api/phanhoi
-// router.get('/phanhoi', apiCtrl.showPhanHoi);
-//Xem lich su: http://localhost:3000/api/lichsu
-router.get('/lichsu', apiCtrl.showLichSu);
-
 //đăng kí admin:
 router.post('/register-admin', apiCtrl.registerAdmin);
 // nhân viên
@@ -99,7 +93,7 @@ router.post('/uploadimg', upload.single('img'), (req, res) => {
         if (!file) {
             return res.status(404).json('Please upload img');
         }
-        const BASE_URL = 'http://192.168.0.6:3000/api/';
+        const BASE_URL = 'http://192.168.1.4:3000/api/';
         const imgUrl = BASE_URL + 'uploads/' + file.filename;
         //const imgUrl = req.protocol + '://' + req.get('host') + '/api/uploads/' + file.filename;
         res.send({

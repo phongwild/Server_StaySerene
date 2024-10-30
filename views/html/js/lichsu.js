@@ -1,4 +1,4 @@
-const apiUrl = "http://192.168.10.103:3000/api/lichsu";
+const apiUrl = "http://192.168.1.4:3000/api/lichsu";
 
 // Lấy danh sách lịch sử đặt phòng từ API
 async function fetchLichSus() {

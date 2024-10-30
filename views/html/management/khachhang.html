@@ -96,8 +96,11 @@
                             <button type="button" onclick="editCustomer()">Cập nhật</button>
                             <button type="button" onclick="deleteCustomer()">Xóa</button>
                             <div class="form-search">
-                                <label for="search">Tìm kiếm:</label>
-                                <input type="text" id="search" name="search">
+                                <input type="text" id="search-mkh" placeholder="Tìm kiếm Mã Khách Hàng">
+                                <input type="text" id="search-tkh" placeholder="Tìm kiếm Tên Khách Hàng">
+                                <input type="text" id="search-diachi" placeholder="Tìm kiếm Theo Địa Chỉ">
+                                <button id="search-button">Tìm Kiếm</button>
+
                             </div>
                         </div>
                     </form>
@@ -112,15 +115,21 @@
                                 <th>Tên khách hàng</th>
                                 <th>Địa chỉ</th>
                                 <th>SĐT</th>
-                                <th>Email</th>
-                                <th>CCCD</th>
-                                <th>Quốc tịch</th>
                                 <th>Giới tính</th>
                                 <th>Ngày sinh</th>
                                 <th>Ảnh khách hàng</th>
                             </tr>
                         </thead>
                         <tbody id="list-tk">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
