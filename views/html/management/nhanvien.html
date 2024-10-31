@@ -21,30 +21,30 @@
                 <li><a href="dichvu.html" id="dichvu">Quản lý dịch vụ</a></li>
                 <li><a href="lichsu.html" id="lichsu">Lịch sử đặt phòng</a></li>
                 <li><a href="phanhoi.html" id="phanhoi">Phản hồi của khách hàng</a></li>
-                <li><a href="chamsoc.html" id="chamsoc">Chăm sóc khách hàng</a></li>
                 <li><a href="thongke.html" id="thongke">Thống kê</a></li>
             </ul>
         </div>
 
         <div class="main-content" id="main-content">
             <div class="main-content">
-                <h1>Quản lý khách sạn</h1>
+                <h1>Quản lý Nhân Viên</h1>
                 <div class="form-section">
                     <form id="customer-form">
                         <div class="form-group">
-                            <div style="display: flex; flex-direction: row; ">
-                                <div class="form-group">
-                                    <label for="ID-nv">Mã Nhân Viên :</label>
-                                    <input type="text" id="ID-nv" name="ID-nv" disabled>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ID-hotel">Mã khách sạn :</label>
-                                    <input type="text" id="ID-ks" name="ID-ks">
-                                </div>
+                            <label for="ID-nv">Mã Nhân Viên :</label>
+                            <input type="text" id="manhanvien" name="ID-nv" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="makhachsan">Thông tin khách sạn :</label>
+                            <div class="form-maks">
+                                <input type="text" id="makhachsan" name="ID-ks">
+                                <select type="text" id="tenkhachsan" class="tenkhachsan" placeholder="Tên khách sạn"
+                                    autocomplete="off">
+                                    <option value="">Chọn khách sạn</option>
+                                </select>
                             </div>
 
                         </div>
-
 
                         <div class="form-group">
                             <label for="tenkhachsan">Tên Nhân Viên :</label>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <label for="motakhachsan">Pass Word :</label>
-                            <input type="text" id="password" name="password">
+                            <input type="password" id="password" name="password">
                         </div>
                         <div class="form-group">
                             <label for="email">Email :</label>
@@ -82,9 +82,10 @@
                             <button id="updateButton" type="button" onclick="editCustomernhanvien()">Cập nhật</button>
                             <button type="button" onclick="deleteNhanVien()">Xóa</button>
                             <div class="form-search">
+                                <input type="text" id="search-manhanvien" placeholder="Tìm kiếm Mã Nhân viên">
+                                <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Mã Khách Sạn">
+                                <input type="text" id="search-tennhanvien" placeholder="Tìm kiếm Tên nhân viên">
                                 <button id="search-button">Tìm Kiếm</button>
-
-                                <input type="text" id="searchnhanvien" name="search">
                             </div>
                         </div>
                     </form>
@@ -98,16 +99,13 @@
                                 <th>Mã Nhân Viên</th>
                                 <th>Mã Khách Sạn</th>
                                 <th>Tên Nhân Viên</th>
-                                <th>SĐT</th>
-                                <th>CCCD</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Giờ làm </th>
                                 <th>Ảnh nhân viên </th>
                             </tr>
                         </thead>
                         <tbody id="customer-list">
-                        
+                            <tr>
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

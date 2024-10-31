@@ -1,0 +1,152 @@
+[
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec01"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebab"
+        },
+        "username": "nv_sofitel_01",
+        "cccd": "123456789012",
+        "sdt": "0987123456",
+        "anhNhanVien": "https://randomuser.me/api/portraits/men/1.jpg",
+        "password": "password123",
+        "email": "nv_sofitel_01@example.com",
+        "gioLam": "6h-18h"
+    },
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec02"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebab"
+        },
+        "username": "nv_sofitel_02",
+        "cccd": "123456789013",
+        "sdt": "0987123457",
+        "anhNhanVien": "https://randomuser.me/api/portraits/women/2.jpg",
+        "password": "password123",
+        "email": "nv_sofitel_02@example.com",
+        "gioLam": "18h-6h"
+    },
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec03"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebac"
+        },
+        "username": "nv_vinpearl_01",
+        "cccd": "123456789014",
+        "sdt": "0987123458",
+        "anhNhanVien": "https://randomuser.me/api/portraits/men/3.jpg",
+        "password": "password123",
+        "email": "nv_vinpearl_01@example.com",
+        "gioLam": "6h-18h"
+    },
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec04"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebac"
+        },
+        "username": "nv_vinpearl_02",
+        "cccd": "123456789015",
+        "sdt": "0987123459",
+        "anhNhanVien": "https://randomuser.me/api/portraits/women/4.jpg",
+        "password": "password123",
+        "email": "nv_vinpearl_02@example.com",
+        "gioLam": "18h-6h"
+    },
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec05"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebad"
+        },
+        "username": "nv_intercontinental_01",
+        "cccd": "123456789016",
+        "sdt": "0987123460",
+        "anhNhanVien": "https://randomuser.me/api/portraits/men/5.jpg",
+        "password": "password123",
+        "email": "nv_intercontinental_01@example.com",
+        "gioLam": "6h-18h"
+    },
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec06"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebad"
+        },
+        "username": "nv_intercontinental_02",
+        "cccd": "123456789017",
+        "sdt": "0987123461",
+        "anhNhanVien": "https://randomuser.me/api/portraits/women/6.jpg",
+        "password": "password123",
+        "email": "nv_intercontinental_02@example.com",
+        "gioLam": "18h-6h"
+    },
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec07"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebae"
+        },
+        "username": "nv_jwmarriott_01",
+        "cccd": "123456789018",
+        "sdt": "0987123462",
+        "anhNhanVien": "https://randomuser.me/api/portraits/men/7.jpg",
+        "password": "password123",
+        "email": "nv_jwmarriott_01@example.com",
+        "gioLam": "6h-18h"
+    },
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec08"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebae"
+        },
+        "username": "nv_jwmarriott_02",
+        "cccd": "123456789019",
+        "sdt": "0987123463",
+        "anhNhanVien": "https://randomuser.me/api/portraits/women/8.jpg",
+        "password": "password123",
+        "email": "nv_jwmarriott_02@example.com",
+        "gioLam": "18h-6h"
+    },
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec09"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebaf"
+        },
+        "username": "nv_flamingo_01",
+        "cccd": "123456789020",
+        "sdt": "0987123464",
+        "anhNhanVien": "https://randomuser.me/api/portraits/men/9.jpg",
+        "password": "password123",
+        "email": "nv_flamingo_01@example.com",
+        "gioLam": "6h-18h"
+    },
+    {
+        "_id": {
+            "$oid": "6707f9b1df6d7c9585d8ec10"
+        },
+        "makhachsan": {
+            "$oid": "6707ed79df6d7c9585d8ebaf"
+        },
+        "username": "nv_flamingo_02",
+        "cccd": "123456789021",
+        "sdt": "0987123465",
+        "anhNhanVien": "https://randomuser.me/api/portraits/women/10.jpg",
+        "password": "password123",
+        "email": "nv_flamingo_02@example.com",
+        "gioLam": "18h-6h"
+    }
+]
