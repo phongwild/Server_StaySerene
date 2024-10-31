@@ -1,180 +1,502 @@
-[{
-  "_id": {
-    "$oid": "6707f2a4676a25b7900e503a"
+[
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6001" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
+    "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+    "anhLoaiPhong": "https://example.com/room1.jpg",
+    "soLuongPhong": 10,
+    "giaLoaiPhong": 15.0,
+    "tienNghi": "Wi-Fi, TV, Minibar"
   },
-  "IdKhachSan": {
-    "$oid": "6707ed79df6d7c9585d8ebaa"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6002" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Đôi",
+    "moTaLoaiPhong": "Phòng đôi thoải mái cho hai khách.",
+    "anhLoaiPhong": "https://example.com/room2.jpg",
+    "soLuongPhong": 8,
+    "giaLoaiPhong": 20.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Bồn tắm"
   },
-  "tenLoaiPhong": "Phòng đơn",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "dienTich": 10.5,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6707f5f7cc798d4a3ca46da6"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6003" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Gia Đình",
+    "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+    "anhLoaiPhong": "https://example.com/room3.jpg",
+    "soLuongPhong": 5,
+    "giaLoaiPhong": 30.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
   },
-  "IdKhachSan": {
-    "$oid": "6707edc85b04485f284f5cdb"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6004" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Suite Hướng Phố",
+    "moTaLoaiPhong": "Phòng suite với tầm nhìn ra thành phố.",
+    "anhLoaiPhong": "https://example.com/room4.jpg",
+    "soLuongPhong": 3,
+    "giaLoaiPhong": 45.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
   },
-  "tenLoaiPhong": "Phòng đôi",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "dienTich": 10.5,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6707f605cc798d4a3ca46da8"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6005" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Cao Cấp",
+    "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+    "anhLoaiPhong": "https://example.com/room5.jpg",
+    "soLuongPhong": 7,
+    "giaLoaiPhong": 40.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
   },
-  "IdKhachSan": {
-    "$oid": "6707edf94f41774885ae7adc"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6006" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Premier",
+    "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+    "anhLoaiPhong": "https://example.com/room6.jpg",
+    "soLuongPhong": 6,
+    "giaLoaiPhong": 55.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Máy pha cà phê"
   },
-  "tenLoaiPhong": "Phòng vip",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "dienTich": 10.5,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6720f77978a8768aa56010d3"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6007" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Đôi Hạng Sang",
+    "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+    "anhLoaiPhong": "https://example.com/room7.jpg",
+    "soLuongPhong": 5,
+    "giaLoaiPhong": 65.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
   },
-  "IdKhachSan": {
-    "$oid": "6707ed79df6d7c9585d8ebaa"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6008" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Suite",
+    "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+    "anhLoaiPhong": "https://example.com/room8.jpg",
+    "soLuongPhong": 4,
+    "giaLoaiPhong": 75.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, View thành phố"
   },
-  "tenLoaiPhong": "Phòng đôi",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 1000,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6720f79478a8768aa56010d9"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6009" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Suite Tổng Thống",
+    "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+    "anhLoaiPhong": "https://example.com/room9.jpg",
+    "soLuongPhong": 2,
+    "giaLoaiPhong": 100.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
   },
-  "IdKhachSan": {
-    "$oid": "6707ed79df6d7c9585d8ebaa"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6010" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebab" },
+    "tenLoaiPhong": "Phòng Hạng V.I.P",
+    "moTaLoaiPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+    "anhLoaiPhong": "https://example.com/room10.jpg",
+    "soLuongPhong": 1,
+    "giaLoaiPhong": 120.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, Ban công"
   },
-  "tenLoaiPhong": "Phòng vip",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 1000,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6720f7cb78a8768aa56010e0"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5001" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
+    "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+    "anhLoaiPhong": "https://example.com/room11.jpg",
+    "soLuongPhong": 12,
+    "giaLoaiPhong": 20.0,
+    "tienNghi": "Wi-Fi, TV, Minibar"
   },
-  "IdKhachSan": {
-    "$oid": "6707edc85b04485f284f5cdb"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5002" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Đôi Hướng Biển",
+    "moTaLoaiPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+    "anhLoaiPhong": "https://example.com/room12.jpg",
+    "soLuongPhong": 8,
+    "giaLoaiPhong": 30.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
   },
-  "tenLoaiPhong": "Phòng đơn",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 1000,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6720f82c78a8768aa56010e7"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5003" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Gia Đình",
+    "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+    "anhLoaiPhong": "https://example.com/room13.jpg",
+    "soLuongPhong": 6,
+    "giaLoaiPhong": 35.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
   },
-  "IdKhachSan": {
-    "$oid": "6707edc85b04485f284f5cdb"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5004" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Suite Hướng Vườn",
+    "moTaLoaiPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+    "anhLoaiPhong": "https://example.com/room14.jpg",
+    "soLuongPhong": 4,
+    "giaLoaiPhong": 45.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
   },
-  "tenLoaiPhong": "Phòng vip",
-  "moTaLoaiPhong": "",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 1000,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6720f86878a8768aa56010ed"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5005" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Cao Cấp",
+    "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+    "anhLoaiPhong": "https://example.com/room15.jpg",
+    "soLuongPhong": 7,
+    "giaLoaiPhong": 40.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
   },
-  "IdKhachSan": {
-    "$oid": "6707edf94f41774885ae7adc"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5006" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Premier",
+    "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+    "anhLoaiPhong": "https://example.com/room16.jpg",
+    "soLuongPhong": 6,
+    "giaLoaiPhong": 55.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Máy pha cà phê"
   },
-  "tenLoaiPhong": "Phòng đơn",
-  "moTaLoaiPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dignissim nunc, vitae blandit dolor. Phasellus a purus eu est lacinia condimentum at rutrum orci. ",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 1000,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6720f87978a8768aa56010f3"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5007" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Đôi Hạng Sang",
+    "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+    "anhLoaiPhong": "https://example.com/room17.jpg",
+    "soLuongPhong": 5,
+    "giaLoaiPhong": 65.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
   },
-  "IdKhachSan": {
-    "$oid": "6707edf94f41774885ae7adc"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5008" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Suite",
+    "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+    "anhLoaiPhong": "https://example.com/room18.jpg",
+    "soLuongPhong": 4,
+    "giaLoaiPhong": 75.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, View thành phố"
   },
-  "tenLoaiPhong": "Phòng đôi",
-  "moTaLoaiPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dignissim nunc, vitae blandit dolor. Phasellus a purus eu est lacinia condimentum at rutrum orci. ",
-  "anhLoaiPhong": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgxyZ1g-rXhddsw7Bpp7AKObz7qs7-o2uOg&s",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 1000,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6720f99a78a8768aa5601108"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5009" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Suite Tổng Thống",
+    "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+    "anhLoaiPhong": "https://example.com/room19.jpg",
+    "soLuongPhong": 2,
+    "giaLoaiPhong": 100.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
   },
-  "IdKhachSan": {
-    "$oid": "6720f95678a8768aa5601101"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e5010" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Penthouse",
+    "moTaLoaiPhong": "Phòng Penthouse đẳng cấp với tầm nhìn đẹp.",
+    "anhLoaiPhong": "https://example.com/room20.jpg",
+    "soLuongPhong": 1,
+    "giaLoaiPhong": 120.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, View toàn cảnh"
   },
-  "tenLoaiPhong": "Phòng đơn",
-  "moTaLoaiPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dignissim nunc, vitae blandit dolor. Phasellus a purus eu est lacinia condimentum at rutrum orci. ",
-  "anhLoaiPhong": "data:image/jpeg;base64,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",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 1000,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6720f9a878a8768aa560110e"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6011" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
+    "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+    "anhLoaiPhong": "https://example.com/room11.jpg",
+    "soLuongPhong": 12,
+    "giaLoaiPhong": 18.0,
+    "tienNghi": "Wi-Fi, TV, Minibar"
   },
-  "IdKhachSan": {
-    "$oid": "6720f95678a8768aa5601101"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6012" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Đôi",
+    "moTaLoaiPhong": "Phòng đôi thoải mái cho hai khách.",
+    "anhLoaiPhong": "https://example.com/room12.jpg",
+    "soLuongPhong": 9,
+    "giaLoaiPhong": 22.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Bồn tắm"
   },
-  "tenLoaiPhong": "Phòng đôi",
-  "moTaLoaiPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dignissim nunc, vitae blandit dolor. Phasellus a purus eu est lacinia condimentum at rutrum orci. ",
-  "anhLoaiPhong": "data:image/jpeg;base64,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",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 1000,
-  "tienNghi": "",
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6720f9b178a8768aa5601114"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6013" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Gia Đình",
+    "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+    "anhLoaiPhong": "https://example.com/room13.jpg",
+    "soLuongPhong": 6,
+    "giaLoaiPhong": 35.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
   },
-  "IdKhachSan": {
-    "$oid": "6720f95678a8768aa5601101"
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6014" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Suite Hướng Phố",
+    "moTaLoaiPhong": "Phòng suite với tầm nhìn ra thành phố.",
+    "anhLoaiPhong": "https://example.com/room14.jpg",
+    "soLuongPhong": 4,
+    "giaLoaiPhong": 48.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
   },
-  "tenLoaiPhong": "Phòng vip",
-  "moTaLoaiPhong": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in dignissim nunc, vitae blandit dolor. Phasellus a purus eu est lacinia condimentum at rutrum orci. ",
-  "anhLoaiPhong": "data:image/jpeg;base64,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",
-  "soLuongPhong": 10,
-  "giaLoaiPhong": 1000,
-  "tienNghi": "",
-  "__v": 0
-}]
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6015" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Cao Cấp",
+    "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+    "anhLoaiPhong": "https://example.com/room15.jpg",
+    "soLuongPhong": 8,
+    "giaLoaiPhong": 42.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6016" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Premier",
+    "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+    "anhLoaiPhong": "https://example.com/room16.jpg",
+    "soLuongPhong": 5,
+    "giaLoaiPhong": 58.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Máy pha cà phê"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6017" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Đôi Hạng Sang",
+    "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+    "anhLoaiPhong": "https://example.com/room17.jpg",
+    "soLuongPhong": 4,
+    "giaLoaiPhong": 70.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6018" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Suite",
+    "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+    "anhLoaiPhong": "https://example.com/room18.jpg",
+    "soLuongPhong": 3,
+    "giaLoaiPhong": 80.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, View thành phố"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6019" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Suite Tổng Thống",
+    "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+    "anhLoaiPhong": "https://example.com/room19.jpg",
+    "soLuongPhong": 2,
+    "giaLoaiPhong": 110.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6020" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebac" },
+    "tenLoaiPhong": "Phòng Hạng V.I.P",
+    "moTaLoaiPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+    "anhLoaiPhong": "https://example.com/room20.jpg",
+    "soLuongPhong": 1,
+    "giaLoaiPhong": 130.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, Ban công"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6021" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
+    "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+    "anhLoaiPhong": "https://example.com/room21.jpg",
+    "soLuongPhong": 10,
+    "giaLoaiPhong": 25.0,
+    "tienNghi": "Wi-Fi, TV, Minibar"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6022" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Đôi",
+    "moTaLoaiPhong": "Phòng đôi thoải mái cho hai khách.",
+    "anhLoaiPhong": "https://example.com/room22.jpg",
+    "soLuongPhong": 8,
+    "giaLoaiPhong": 30.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Bồn tắm"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6023" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Gia Đình",
+    "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+    "anhLoaiPhong": "https://example.com/room23.jpg",
+    "soLuongPhong": 5,
+    "giaLoaiPhong": 40.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6024" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Suite Hướng Biển",
+    "moTaLoaiPhong": "Phòng suite với tầm nhìn ra biển.",
+    "anhLoaiPhong": "https://example.com/room24.jpg",
+    "soLuongPhong": 4,
+    "giaLoaiPhong": 55.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6025" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Cao Cấp",
+    "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+    "anhLoaiPhong": "https://example.com/room25.jpg",
+    "soLuongPhong": 7,
+    "giaLoaiPhong": 50.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6026" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Premier",
+    "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+    "anhLoaiPhong": "https://example.com/room26.jpg",
+    "soLuongPhong": 6,
+    "giaLoaiPhong": 65.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Máy pha cà phê"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6027" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Đôi Hạng Sang",
+    "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+    "anhLoaiPhong": "https://example.com/room27.jpg",
+    "soLuongPhong": 5,
+    "giaLoaiPhong": 75.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6028" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Suite",
+    "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+    "anhLoaiPhong": "https://example.com/room28.jpg",
+    "soLuongPhong": 3,
+    "giaLoaiPhong": 90.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, View biển"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6029" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Suite Tổng Thống",
+    "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+    "anhLoaiPhong": "https://example.com/room29.jpg",
+    "soLuongPhong": 2,
+    "giaLoaiPhong": 130.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6030" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebad" },
+    "tenLoaiPhong": "Phòng Hạng V.I.P",
+    "moTaLoaiPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+    "anhLoaiPhong": "https://example.com/room30.jpg",
+    "soLuongPhong": 1,
+    "giaLoaiPhong": 150.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, Ban công"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6031" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
+    "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+    "anhLoaiPhong": "https://example.com/room31.jpg",
+    "soLuongPhong": 12,
+    "giaLoaiPhong": 20.0,
+    "tienNghi": "Wi-Fi, TV, Minibar"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6032" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Đôi",
+    "moTaLoaiPhong": "Phòng đôi thoải mái cho hai khách.",
+    "anhLoaiPhong": "https://example.com/room32.jpg",
+    "soLuongPhong": 10,
+    "giaLoaiPhong": 25.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Bồn tắm"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6033" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Gia Đình",
+    "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+    "anhLoaiPhong": "https://example.com/room33.jpg",
+    "soLuongPhong": 8,
+    "giaLoaiPhong": 35.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6034" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Suite Hướng Thành Phố",
+    "moTaLoaiPhong": "Phòng suite với tầm nhìn ra thành phố.",
+    "anhLoaiPhong": "https://example.com/room34.jpg",
+    "soLuongPhong": 5,
+    "giaLoaiPhong": 60.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6035" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Cao Cấp",
+    "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+    "anhLoaiPhong": "https://example.com/room35.jpg",
+    "soLuongPhong": 7,
+    "giaLoaiPhong": 50.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6036" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Premier",
+    "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+    "anhLoaiPhong": "https://example.com/room36.jpg",
+    "soLuongPhong": 6,
+    "giaLoaiPhong": 70.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Máy pha cà phê"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6037" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Đôi Hạng Sang",
+    "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+    "anhLoaiPhong": "https://example.com/room37.jpg",
+    "soLuongPhong": 5,
+    "giaLoaiPhong": 85.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6038" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Suite",
+    "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+    "anhLoaiPhong": "https://example.com/room38.jpg",
+    "soLuongPhong": 3,
+    "giaLoaiPhong": 100.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, View thành phố"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6039" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Suite Tổng Thống",
+    "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+    "anhLoaiPhong": "https://example.com/room39.jpg",
+    "soLuongPhong": 2,
+    "giaLoaiPhong": 120.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
+  },
+  {
+    "_id": { "$oid": "6707f2b1676a25b7900e6040" },
+    "IdKhachSan": { "$oid": "6707ed79df6d7c9585d8ebae" },
+    "tenLoaiPhong": "Phòng Hạng V.I.P",
+    "moTaLoaiPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+    "anhLoaiPhong": "https://example.com/room40.jpg",
+    "soLuongPhong": 1,
+    "giaLoaiPhong": 150.0,
+    "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, Ban công"
+  }
+]

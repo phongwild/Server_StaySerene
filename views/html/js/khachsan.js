@@ -148,7 +148,7 @@ async function addCustomer() {
 
         const result = await response.json();
         console.log(result); 
-
+        alert(`Thêm khách sạn : ${tenKhachSan} Thành công .`)
         fetchHotels(); 
         document.getElementById('customer-form').reset();
 
@@ -206,7 +206,7 @@ async function deleteCustomer() {
             throw new Error('Network response was not ok');
         }
 
-        console.log('Khách sạn đã được xóa.');
+        alert('Khách sạn đã được xóa.');
         fetchHotels();
         document.getElementById('customer-form').reset();
 
@@ -276,7 +276,7 @@ async function editCustomer() {
 
         const result = await response.json();
         console.log(result); 
-
+        alert(`Cập nhật thông tin khách sạn : ${tenKhachSan} Thành công .`)
         fetchHotels(); 
         document.getElementById('customer-form').reset();
 
