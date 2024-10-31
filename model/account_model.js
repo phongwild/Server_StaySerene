@@ -7,7 +7,11 @@ const bcrypt = require("bcrypt");
 const userSchema = new db.mongoose.Schema(
     {
         username: { type: String, required: true },
+<<<<<<< HEAD
         sdt: { type: String, required: false, default: "0987654321" },
+=======
+        sdt: { type: String, required: false, default: "0123456789" },
+>>>>>>> main
         diaChi: { type: String, required: false, default: "" },
         email: { type: String, required: true },
         password: { type: String, required: true},
@@ -17,7 +21,7 @@ const userSchema = new db.mongoose.Schema(
         avt: { type: String, required: false, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s" },
         role: { type: Number, required: false, default:1 },
         token: { type: String, required: false },
-        cccd: {type: Number, required: false, default: 987654321}
+        cccd: {type: String, required: false, default: "0123456789"}
     },
     {
         collection: 'Account'

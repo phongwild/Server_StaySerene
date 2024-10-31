@@ -89,7 +89,7 @@ form {
     margin-right: 10px;
     margin-bottom: 20px;
 }
-
+/*  */
 .form-group label {
     margin-bottom: 5px;
 }
@@ -160,4 +160,7 @@ table tbody tr:nth-child(even) {
 }
 .sidebar .namepage{
     background-color: #1abc9c;
+}
+.feedback-list{
+    margin-top: 20px;
 }

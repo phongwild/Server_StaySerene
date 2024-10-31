@@ -1,5 +1,5 @@
-const apiUrl = 'http://192.168.10.103:3000/api/typeroom';
-const apiKhachSanUrl = 'http://192.168.10.103:3000/api/hotel';
+const apiUrl = 'http://192.168.1.4:3000/api/typeroom';
+const apiKhachSanUrl = 'http://192.168.1.4:3000/api/hotel';
 
 async function fetchKhachSan(IdKhachSan) {
     try {
@@ -125,7 +125,7 @@ function renderTypeRooms(typeRooms) {
             <td>${room.IdKhachSan}</td>
             <td>${room.tenLoaiPhong}</td>
             <td>${room.soLuongPhong}</td>
-            <td><img src="${room.anhLoaiPhong}" alt="${room.tenLoaiPhong}" style="width: 50px; height: auto;" /></td>
+            <td><img src="${room.anhLoaiPhong}" alt="${room.tenLoaiPhong}" style="width: 100px; height: auto;" /></td>
         `;
         typeRoomList.appendChild(row);
     });

@@ -1,0 +1,172 @@
+[
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebaa"
+        },
+        "username": "user1",
+        "sdt": "0123456789",
+        "diaChi": "Hà Nội",
+        "email": "user1@gmail.com",
+        "password": "$2b$10$ZQKSOwQ6OS0Oe9nBnPrN3uJfD/i4c7IrFEF4j5YyZwKxUeU1Rh8w2",
+        "ngaySinh": "1990-01-01",
+        "gioiTinh": "Nam",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/men/1.jpg",
+        "role": 1,
+        "token": "token_example_1",
+        "cccd": "123456789012"
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebac"
+        },
+        "username": "user2",
+        "sdt": "0987654321",
+        "diaChi": "Đà Nẵng",
+        "email": "user2@gmail.com",
+        "password": "$2b$10$h1jE8gSH5H5K2JRuLPH9TuCOtKxECq04/EX8cAfAEklw2WmseDGOO",
+        "ngaySinh": "1992-02-02",
+        "gioiTinh": "Nữ",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/women/2.jpg",
+        "role": 2,
+        "token": "token_example_2",
+        "cccd": "234567890123"
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebae"
+        },
+        "username": "user3",
+        "sdt": "0912345678",
+        "diaChi": "TP.HCM",
+        "email": "user3@gmail.com",
+        "password": "$2b$10$ZbH2Sw9p5tGpR8qJD3HQOuONF0q.bRBz6AZpODcbU5jH0G9wEp0yO",
+        "ngaySinh": "1995-03-03",
+        "gioiTinh": "Nam",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/men/3.jpg",
+        "role": 1,
+        "token": "token_example_3",
+        "cccd": "345678901234"
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebb0"
+        },
+        "username": "user4",
+        "sdt": "0978563412",
+        "diaChi": "Nha Trang",
+        "email": "user4@gmail.com",
+        "password": "$2b$10$AqZa5t5.0zZGGd6.R6ZnK.MqN1bka9gH5Rz0JW.B1w5J1zj8gMHmG",
+        "ngaySinh": "1994-04-04",
+        "gioiTinh": "Nữ",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/women/4.jpg",
+        "role": 2,
+        "token": "token_example_4",
+        "cccd": "456789012345"
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebb2"
+        },
+        "username": "user5",
+        "sdt": "0123456780",
+        "diaChi": "Cần Thơ",
+        "email": "user5@gmail.com",
+        "password": "$2b$10$AsU.gxg5H6f3exjClQ2M4O2rH/ytW0S7Fojmnv33H/UspGfPaW5FG",
+        "ngaySinh": "1993-05-05",
+        "gioiTinh": "Nam",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/men/5.jpg",
+        "role": 1,
+        "token": "token_example_5",
+        "cccd": "567890123456"
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebb4"
+        },
+        "username": "user6",
+        "sdt": "0987654312",
+        "diaChi": "Hải Phòng",
+        "email": "user6@gmail.com",
+        "password": "$2b$10$H4ejY3XQWq1IQJHzkaXGdeNstcGfPhHkBGp/rq8KqexLyP7IVuBbi",
+        "ngaySinh": "1991-06-06",
+        "gioiTinh": "Nữ",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/women/6.jpg",
+        "role": 2,
+        "token": "token_example_6",
+        "cccd": "678901234567"
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebb6"
+        },
+        "username": "user7",
+        "sdt": "0919876543",
+        "diaChi": "Hưng Yên",
+        "email": "user7@gmail.com",
+        "password": "$2b$10$S89JCr8kZMkNf6EqOePWhuLQkL.4x7kl5MyeSBUMtVx/3bGQ8S4M.",
+        "ngaySinh": "1989-07-07",
+        "gioiTinh": "Nam",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/men/7.jpg",
+        "role": 1,
+        "token": "token_example_7",
+        "cccd": "789012345678"
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebb8"
+        },
+        "username": "user8",
+        "sdt": "0987654320",
+        "diaChi": "Nam Định",
+        "email": "user8@gmail.com",
+        "password": "$2b$10$Y3P6hkuNLPrCZy1bXb6sM.9Fxkv8mE30S6Z2WSnTkVRpe6GhtwD1y",
+        "ngaySinh": "1990-08-08",
+        "gioiTinh": "Nữ",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/women/8.jpg",
+        "role": 2,
+        "token": "token_example_8",
+        "cccd": "890123456789"
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebba"
+        },
+        "username": "user9",
+        "sdt": "0912345679",
+        "diaChi": "Quảng Ninh",
+        "email": "user9@gmail.com",
+        "password": "$2b$10$AqZa5t5.0zZGGd6.R6ZnK.MqN1bka9gH5Rz0JW.B1w5J1zj8gMHmG",
+        "ngaySinh": "1988-09-09",
+        "gioiTinh": "Nam",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/men/9.jpg",
+        "role": 1,
+        "token": "token_example_9",
+        "cccd": "901234567890"
+    },
+    {
+        "_id": {
+            "$oid": "6707ed79df6d7c9585d8ebad"
+        },
+        "username": "user10",
+        "sdt": "0987654310",
+        "diaChi": "Thái Bình",
+        "email": "user10@gmail.com",
+        "password": "$2b$10$H4ejY3XQWq1IQJHzkaXGdeNstcGfPhHkBGp/rq8KqexLyP7IVuBbi",
+        "ngaySinh": "1992-10-10",
+        "gioiTinh": "Nữ",
+        "quocTich": "Việt Nam",
+        "avt": "https://randomuser.me/api/portraits/women/10.jpg",
+        "role": 2,
+        "token": "token_example_10",
+        "cccd": "012345678901"
+    }
+]
