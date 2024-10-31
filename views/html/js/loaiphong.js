@@ -125,7 +125,7 @@ function renderTypeRooms(typeRooms) {
             <td>${room.IdKhachSan}</td>
             <td>${room.tenLoaiPhong}</td>
             <td>${room.soLuongPhong}</td>
-            <td><img src="${room.anhLoaiPhong}" alt="${room.tenLoaiPhong}" style="width: 50px; height: auto;" /></td>
+            <td><img src="${room.anhLoaiPhong}" alt="${room.tenLoaiPhong}" style="width: 100px; height: auto;" /></td>
         `;
         typeRoomList.appendChild(row);
     });
