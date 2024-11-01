@@ -42,7 +42,9 @@ function fetchRevenueByYear() {
             const revenueByYear = {};
 
             filteredOrders.forEach(order => {
-                const year = new Date(order.orderTime).getFullYear(); 
+                // Assuming order.orderTime is in 'hh:mm:ss dd/MM/yyyy' format
+                const formattedTime = formatOrderTime(order.orderTime);
+                const year = new Date(formattedTime).getFullYear(); 
                 const totalRevenue = order.total || 0; 
 
                 if (!revenueByYear[year]) {
@@ -58,6 +60,15 @@ function fetchRevenueByYear() {
             renderRevenueChartbdt(years, revenues);
         })
         .catch(error => console.error('There was a problem with the fetch operation:', error));
+}
+
+function formatOrderTime(orderTime) {
+    const [time, date] = orderTime.split(' '); // Split into time and date
+    const [hh, mm, ss] = time.split(':'); // Extract hours, minutes, seconds
+    const [dd, MM, yyyy] = date.split('/'); // Extract day, month, year
+
+    // Format to 'YYYY-MM-DDTHH:mm:ssZ'
+    return `${yyyy}-${MM}-${dd}T${hh}:${mm}:${ss}Z`;
 }
 
 function renderRevenueChart(years, revenues) {
@@ -100,6 +111,7 @@ function renderRevenueChart(years, revenues) {
 }
 
 
+
 function fetchRevenueByQuarter() {
     const selectedHotelId = document.getElementById('tenKhachsan').value;
 
@@ -118,15 +130,16 @@ function fetchRevenueByQuarter() {
             const revenueByQuarter = {};
 
             filteredOrders.forEach(order => {
-                const date = new Date(order.orderTime);
+                // Format the order time before creating a date object
+                const formattedTime = formatOrderTime(order.orderTime);
+                const date = new Date(formattedTime);
                 const month = date.getMonth(); 
                 const year = date.getFullYear();
 
                 const quarter = Math.floor(month / 3) + 1; 
-
                 const quarterKey = `Q${quarter} ${year}`;
 
-                const totalRevenue = order.total; 
+                const totalRevenue = order.total || 0; 
 
                 if (!revenueByQuarter[quarterKey]) {
                     revenueByQuarter[quarterKey] = 0;
@@ -141,7 +154,8 @@ function fetchRevenueByQuarter() {
         })
         .catch(error => console.error('There was a problem with the fetch operation:', error));
 }
-function renderRevenueChartq(years, revenues) {
+
+function renderRevenueChartq(quarters, revenues) {
     const ctx = document.getElementById('bieudoCot').getContext('2d');
     if (window.revenueChart) {
         window.revenueChart.destroy();
@@ -150,7 +164,7 @@ function renderRevenueChartq(years, revenues) {
     window.revenueChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: years,
+            labels: quarters,
             datasets: [{
                 label: 'Doanh thu theo quý',
                 data: revenues,
@@ -179,6 +193,7 @@ function renderRevenueChartq(years, revenues) {
         }
     });
 }
+
 function fetchRevenueByMonth() {
     const selectedHotelId = document.getElementById('tenKhachsan').value;
 
@@ -197,13 +212,15 @@ function fetchRevenueByMonth() {
             const revenueByMonth = {};
 
             filteredOrders.forEach(order => {
-                const date = new Date(order.orderTime);
+                // Format the order time before creating a date object
+                const formattedTime = formatOrderTime(order.orderTime);
+                const date = new Date(formattedTime);
                 const month = date.getMonth(); 
                 const year = date.getFullYear();
                 
                 const monthKey = `${month + 1}/${year}`;
 
-                const totalRevenue = order.total; 
+                const totalRevenue = order.total || 0; 
 
                 if (!revenueByMonth[monthKey]) {
                     revenueByMonth[monthKey] = 0;
@@ -218,7 +235,9 @@ function fetchRevenueByMonth() {
         })
         .catch(error => console.error('There was a problem with the fetch operation:', error));
 }
-function renderRevenueChartt(years, revenues) {
+
+
+function renderRevenueChartt(months, revenues) {
     const ctx = document.getElementById('bieudoCot').getContext('2d');
     if (window.revenueChart) {
         window.revenueChart.destroy();
@@ -227,7 +246,7 @@ function renderRevenueChartt(years, revenues) {
     window.revenueChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: years,
+            labels: months,
             datasets: [{
                 label: 'Doanh thu theo Tháng',
                 data: revenues,
@@ -256,6 +275,7 @@ function renderRevenueChartt(years, revenues) {
         }
     });
 }
+
 function fetchRevenueBySeason() {
     const selectedHotelId = document.getElementById('tenKhachsan').value;
 
@@ -279,17 +299,19 @@ function fetchRevenueBySeason() {
             };
 
             filteredOrders.forEach(order => {
-                const date = new Date(order.orderTime);
+                // Format the order time before creating a date object
+                const formattedTime = formatOrderTime(order.orderTime);
+                const date = new Date(formattedTime);
                 const month = date.getMonth(); 
 
                 if (month === 2 || month === 3 || month === 4) { 
-                    revenueBySeason.Spring += order.total;
+                    revenueBySeason.Spring += order.total || 0;
                 } else if (month === 5 || month === 6 || month === 7) { 
-                    revenueBySeason.Summer += order.total;
+                    revenueBySeason.Summer += order.total || 0;
                 } else if (month === 8 || month === 9 || month === 10) { 
-                    revenueBySeason.Autumn += order.total;
+                    revenueBySeason.Autumn += order.total || 0;
                 } else { 
-                    revenueBySeason.Winter += order.total;
+                    revenueBySeason.Winter += order.total || 0;
                 }
             });
 
@@ -300,7 +322,9 @@ function fetchRevenueBySeason() {
         })
         .catch(error => console.error('There was a problem with the fetch operation:', error));
 }
-function renderRevenueChartm(years, revenues) {
+
+
+function renderRevenueChartm(seasons, revenues) {
     const ctx = document.getElementById('bieudoCot').getContext('2d');
     if (window.revenueChart) {
         window.revenueChart.destroy();
@@ -309,7 +333,7 @@ function renderRevenueChartm(years, revenues) {
     window.revenueChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: years,
+            labels: seasons,
             datasets: [{
                 label: 'Doanh thu theo Mùa',
                 data: revenues,
@@ -338,6 +362,7 @@ function renderRevenueChartm(years, revenues) {
         }
     });
 }
+
 function fetchRevenueByRoomType() {
     const selectedHotelId = document.getElementById('tenKhachsan').value;
 
