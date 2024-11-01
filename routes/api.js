@@ -87,6 +87,5 @@ router.put('/messenger/:id', apiCtrl.suaChamSoc);
 router.delete('/messenger/:id', apiCtrl.xoaChamSoc);
 
 
-// Revenue route for calculating revenue by hotel
-router.get('/revenue/:hotelId', apiCtrl.getRevenueByHotel);
+
 module.exports = router;

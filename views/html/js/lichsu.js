@@ -122,24 +122,24 @@ function displayLichSus(lichsus) {
       document.getElementById("ghiChu").value = ghiChu;
       document.getElementById("trangThai").value = trangThaiValue;
       document.getElementById("tongTien").value = tongTien;
+      document.getElementById("dichVu").value = dichVuID;
 
       if (dichVuID) {
         // Find the service by ID
         const service = services.find(s => s._id === dichVuID);
         if (service) {
-          document.getElementById("tenDichVu").value = service.tenDichVu;
-          document.getElementById("dichVu").value = dichVuID;
 
+          document.getElementById("tenDichVu").value = service.tenDichVu;
           // Update the dropdown selection to match the service ID
           const select = document.getElementById('tenDichVu');
           select.value = service._id; // Set the select element to the correct service ID
         } else {
           document.getElementById("tenDichVu").value = "Dịch vụ không tồn tại";
-          document.getElementById("dichVu").value = "";
+          document.getElementById("dichVu").value = "qqqqqqqqqqqqq";
         }
       } else {
         document.getElementById("tenDichVu").value = "Dịch vụ không tồn tại";
-        document.getElementById("dichVu").value = "";
+        document.getElementById("dichVu").value = "qưewqewqe";
       }
     };
 
@@ -161,8 +161,9 @@ async function addOrderroom() {
   }
 
   const uid = document.getElementById("uid").value;
-  const phong = document.getElementById("phong1").value;
+  const phong = document.getElementById("phong1").value; // This should reference the _id from phong.json
   const dichVu = document.getElementById("dichVu").value;
+  const thoiGianDat = document.getElementById("thoiGianDat").value; // Added this variable
   const thoiGianNhan = document.getElementById("thoiGianNhan").value;
   const thoiGianTra = document.getElementById("thoiGianTra").value;
   const trangThai = document.getElementById("trangThai").value;
@@ -171,6 +172,7 @@ async function addOrderroom() {
   // Check for empty fields
   if (
     !isNotEmpty(uid, "mã khách hàng ") ||
+    !isNotEmpty(thoiGianDat, "Thời gian đặt") ||
     !isNotEmpty(thoiGianNhan, "Thời gian nhận") ||
     !isNotEmpty(thoiGianTra, "Thời gian trả") ||
     !isNotEmpty(trangThai, "Trạng thái")
@@ -187,17 +189,16 @@ async function addOrderroom() {
     return;
   }
 
-
   const newOrder = {
-    Uid: document.getElementById("uid").value,
-    IdPhong: document.getElementById("phong1").value,
-    IdDichVu: document.getElementById("dichVu").value || null,
-    orderTime: formatToISO(document.getElementById("thoiGianDat").value),
-    timeGet: formatToISO(document.getElementById("thoiGianNhan").value),
-    timeCheckout: formatToISO(document.getElementById("thoiGianTra").value),
+    Uid: uid,
+    IdPhong: phong, // Ensure this is set to the room's _id
+    IdDichVu: dichVu || null,
+    orderTime: formatToISO(thoiGianDat),
+    timeGet: formatToISO(thoiGianNhan),
+    timeCheckout: formatToISO(thoiGianTra),
     note: document.getElementById("ghiChu").value,
-    status: document.getElementById("trangThai").value || 0,
-    total: document.getElementById("tongTien").value,
+    status: trangThai || 0,
+    total: tongTien,
   };
 
   try {
@@ -215,15 +216,12 @@ async function addOrderroom() {
 
     const result = await response.json();
     console.log("Order added successfully:", result);
-
     fetchLichSus();
-
     document.getElementById("customer-form").reset();
   } catch (error) {
     console.error("Error adding order:", error);
   }
 }
-
 
 async function editderroom() {
   const mdpValue = document.getElementById("mdp").value;
@@ -234,8 +232,9 @@ async function editderroom() {
   }
 
   const uid = document.getElementById("uid").value;
-  const phong = document.getElementById("phong1").value;
+  const phong = document.getElementById("phong1").value; // Ensure this is set to the room's _id
   const dichVu = document.getElementById("dichVu").value;
+  const thoiGianDat = document.getElementById("thoiGianDat").value; // Added this variable
   const thoiGianNhan = document.getElementById("thoiGianNhan").value;
   const thoiGianTra = document.getElementById("thoiGianTra").value;
   const trangThai = document.getElementById("trangThai").value;
@@ -244,6 +243,7 @@ async function editderroom() {
   // Check for empty fields
   if (
     !isNotEmpty(uid, "mã khách hàng ") ||
+    !isNotEmpty(thoiGianDat, "Thời gian đặt") ||
     !isNotEmpty(thoiGianNhan, "Thời gian nhận") ||
     !isNotEmpty(thoiGianTra, "Thời gian trả") ||
     !isNotEmpty(trangThai, "Trạng thái")
@@ -260,17 +260,16 @@ async function editderroom() {
     return;
   }
 
-
   const updatedOrder = {
-    Uid: document.getElementById("uid").value,
-    IdPhong: document.getElementById("phong1").value,
-    IdDichVu: document.getElementById("dichVu").value || null,
-    orderTime: formatToISO(document.getElementById("thoiGianDat").value),
-    timeGet: formatToISO(document.getElementById("thoiGianNhan").value),
-    timeCheckout: formatToISO(document.getElementById("thoiGianTra").value),
+    Uid: uid,
+    IdPhong: phong, // Ensure this is set to the room's _id
+    IdDichVu: dichVu || null,
+    orderTime: formatToISO(thoiGianDat),
+    timeGet: formatToISO(thoiGianNhan),
+    timeCheckout: formatToISO(thoiGianTra),
     note: document.getElementById("ghiChu").value,
-    status: document.getElementById("trangThai").value || 0,
-    total: document.getElementById("tongTien").value,
+    status: trangThai || 0,
+    total: tongTien,
   };
 
   try {
@@ -289,10 +288,7 @@ async function editderroom() {
     const result = await response.json();
     console.log("Order updated successfully:", result);
     alert("Cập nhật thông tin thành công");
-
     fetchLichSus();
-
-    // Reset the form after updating
     document.getElementById("customer-form").reset();
   } catch (error) {
     console.error("Error updating order:", error);

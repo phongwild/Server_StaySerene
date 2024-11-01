@@ -8,13 +8,11 @@ var mdChamSoc = require('../model/chamSoc_model');
 var mdDichVu = require('../model/dichvu_model');
 var mdPhanHoi = require('../model/phanhoi_model');
 const { accountModel } = require('../model/account_model'); 
-
-
-
 var mdAccount_admin = require('../model/acount_admin_model');
 var mdNhanVien = require('../model/acconut_nhanvien_model');
 const bcrypt = require("bcrypt");
 const { default: mongoose } = require('mongoose');
+
 
 //Account
 exports.doLogin = async (req, res, next) => {
