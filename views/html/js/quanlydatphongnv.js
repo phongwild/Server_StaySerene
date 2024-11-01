@@ -107,14 +107,15 @@ function displayLichSus(lichsus) {
     const mdp = lichsu._id;
     const Uid = lichsu.Uid;
     const phongID = lichsu.IdPhong;
-    const thoiGianDatPhong = formatDateTime(lichsu.orderTime);
-    const thoiGianNhan = formatDateTime(lichsu.timeGet);
-    const thoiGianTra = formatDateTime(lichsu.timeCheckout);
+    const thoiGianDatPhong = lichsu.orderTime;
+    const thoiGianNhan = lichsu.timeGet;
+    const thoiGianTra = lichsu.timeCheckout;
     const ghiChu = lichsu.note;
     const trangThaiValue = lichsu.status;
     const dichVuID = lichsu.IdDichVu || "N/A";
     const tongTien = lichsu.total;
 
+    
     row.innerHTML = `
       <td>${mdp}</td>
       <td>${Uid}</td>
@@ -206,9 +207,9 @@ async function addOrderroom() {
     Uid: uid,
     IdPhong: phong, // Ensure this is set to the room's _id
     IdDichVu: dichVu || null,
-    orderTime: formatToISO(thoiGianDat),
-    timeGet: formatToISO(thoiGianNhan),
-    timeCheckout: formatToISO(thoiGianTra),
+    orderTime: thoiGianDat,
+    timeGet: thoiGianNhan,
+    timeCheckout: thoiGianTra,
     note: document.getElementById("ghiChu").value,
     status: trangThai || 0,
     total: tongTien,
@@ -277,9 +278,9 @@ async function editderroom() {
     Uid: uid,
     IdPhong: phong, // Ensure this is set to the room's _id
     IdDichVu: dichVu || null,
-    orderTime: formatToISO(thoiGianDat),
-    timeGet: formatToISO(thoiGianNhan),
-    timeCheckout: formatToISO(thoiGianTra),
+    orderTime: thoiGianDat,
+    timeGet: thoiGianNhan,
+    timeCheckout: thoiGianTra,
     note: document.getElementById("ghiChu").value,
     status: trangThai || 0,
     total: tongTien,
@@ -452,9 +453,9 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
     // Display filtered results
     filteredLichsus.forEach((lichsu) => {
       const row = document.createElement("tr");
-      const thoiGianDatPhong = formatDateTime(lichsu.orderTime);
-      const thoiGianNhan = formatDateTime(lichsu.timeGet);
-      const thoiGianTra = formatDateTime(lichsu.timeCheckout);
+      const thoiGianDatPhong = lichsu.orderTime;
+      const thoiGianNhan = lichsu.timeGet;
+      const thoiGianTra = lichsu.timeCheckout;
       const trangThaiValue = lichsu.status;
 
       row.innerHTML = `
@@ -491,9 +492,9 @@ function populateFormWithOrderData(lichsu) {
   document.getElementById("mdp").value = lichsu._id;
   document.getElementById("uid").value = lichsu.Uid;
   document.getElementById("phong1").value = lichsu.IdPhong;
-  document.getElementById("thoiGianDat").value = formatDateTime(lichsu.orderTime);
-  document.getElementById("thoiGianNhan").value = formatDateTime(lichsu.timeGet);
-  document.getElementById("thoiGianTra").value = formatDateTime(lichsu.timeCheckout);
+  document.getElementById("thoiGianDat").value = lichsu.orderTime;
+  document.getElementById("thoiGianNhan").value = lichsu.timeGet;
+  document.getElementById("thoiGianTra").value = lichsu.timeCheckout;
   document.getElementById("ghiChu").value = lichsu.note;
   document.getElementById("trangThai").value = lichsu.status;
   document.getElementById("tongTien").value = lichsu.total;

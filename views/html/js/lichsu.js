@@ -92,9 +92,9 @@ function displayLichSus(lichsus) {
     const mdp = lichsu._id;
     const Uid = lichsu.Uid;
     const phongID = lichsu.IdPhong;
-    const thoiGianDatPhong = formatDateTime(lichsu.orderTime);
-    const thoiGianNhan = formatDateTime(lichsu.timeGet);
-    const thoiGianTra = formatDateTime(lichsu.timeCheckout);
+    const thoiGianDatPhong = lichsu.orderTime;
+    const thoiGianNhan = lichsu.timeGet;
+    const thoiGianTra = lichsu.timeCheckout;
     const ghiChu = lichsu.note;
     const trangThaiValue = lichsu.status;
     const dichVuID = lichsu.IdDichVu || "N/A";
@@ -135,11 +135,11 @@ function displayLichSus(lichsus) {
           select.value = service._id; // Set the select element to the correct service ID
         } else {
           document.getElementById("tenDichVu").value = "Dịch vụ không tồn tại";
-          document.getElementById("dichVu").value = "qqqqqqqqqqqqq";
+          document.getElementById("dichVu").value = dichVuID;
         }
       } else {
         document.getElementById("tenDichVu").value = "Dịch vụ không tồn tại";
-        document.getElementById("dichVu").value = "qưewqewqe";
+        document.getElementById("dichVu").value = dichVuID;
       }
     };
 
@@ -193,9 +193,9 @@ async function addOrderroom() {
     Uid: uid,
     IdPhong: phong, // Ensure this is set to the room's _id
     IdDichVu: dichVu || null,
-    orderTime: formatToISO(thoiGianDat),
-    timeGet: formatToISO(thoiGianNhan),
-    timeCheckout: formatToISO(thoiGianTra),
+    orderTime: thoiGianDat,
+    timeGet: thoiGianNhan,
+    timeCheckout: thoiGianTra,
     note: document.getElementById("ghiChu").value,
     status: trangThai || 0,
     total: tongTien,
@@ -264,9 +264,9 @@ async function editderroom() {
     Uid: uid,
     IdPhong: phong, // Ensure this is set to the room's _id
     IdDichVu: dichVu || null,
-    orderTime: formatToISO(thoiGianDat),
-    timeGet: formatToISO(thoiGianNhan),
-    timeCheckout: formatToISO(thoiGianTra),
+    orderTime: thoiGianDat,
+    timeGet: thoiGianNhan,
+    timeCheckout: thoiGianTra,
     note: document.getElementById("ghiChu").value,
     status: trangThai || 0,
     total: tongTien,
@@ -407,11 +407,11 @@ document.addEventListener('DOMContentLoaded', () => {
   populateServices(); // Đảm bảo hàm này được gọi
 });
 
-document.getElementById('searchBtn').addEventListener('click', async function() {
+document.getElementById('searchBtn').addEventListener('click', async function () {
   const searchMadatphong = document.getElementById('search-madatphong').value.toLowerCase();
   const searchMakhachhang = document.getElementById('search-makhachhang').value.toLowerCase();
   const searchMaphong = document.getElementById('search-maphong').value.toLowerCase();
-  
+
   // Fetch all lichsus (orders) data to search through
   try {
     const response = await fetch(apiUrl);
@@ -438,25 +438,57 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
     // Display filtered results
     filteredLichsus.forEach((lichsu) => {
       const row = document.createElement("tr");
-      const thoiGianDatPhong = formatDateTime(lichsu.orderTime);
-      const thoiGianNhan = formatDateTime(lichsu.timeGet);
-      const thoiGianTra = formatDateTime(lichsu.timeCheckout);
-      const trangThaiValue = lichsu.status;
+      const mdp = lichsu._id;
+    const Uid = lichsu.Uid;
+    const phongID = lichsu.IdPhong;
+    const thoiGianDatPhong = lichsu.orderTime;
+    const thoiGianNhan = lichsu.timeGet;
+    const thoiGianTra = lichsu.timeCheckout;
+    const ghiChu = lichsu.note;
+    const trangThaiValue = lichsu.status;
+    const dichVuID = lichsu.IdDichVu || "N/A";
+    const tongTien = lichsu.total;
 
-      row.innerHTML = `
-        <td>${lichsu._id}</td>
-        <td>${lichsu.Uid}</td>
-        <td>${lichsu.IdPhong}</td>
-        <td>${thoiGianDatPhong}</td>
-        <td>${thoiGianNhan}</td>
-        <td>${thoiGianTra}</td>
-        <td>${statusMapping[trangThaiValue]}</td>
-      `;
+    row.innerHTML = `
+      <td>${mdp}</td>
+      <td>${Uid}</td>
+      <td>${phongID}</td>
+      <td>${thoiGianDatPhong}</td>
+      <td>${thoiGianNhan}</td>
+      <td>${thoiGianTra}</td>
+      <td>${statusMapping[trangThaiValue]}</td>
+    `;
 
-      // Add onclick event to populate the form
-      row.onclick = function () {
-        populateFormWithOrderData(lichsu); // Call a separate function to handle populating form
-      };
+    // Event listener for row click
+    row.onclick = async function () {
+      console.log("Row clicked:", mdp);
+      document.getElementById("mdp").value = mdp;
+      document.getElementById("uid").value = Uid;
+      document.getElementById("phong1").value = phongID;
+      document.getElementById("thoiGianDat").value = thoiGianDatPhong;
+      document.getElementById("thoiGianNhan").value = thoiGianNhan;
+      document.getElementById("thoiGianTra").value = thoiGianTra;
+      document.getElementById("ghiChu").value = ghiChu;
+      document.getElementById("trangThai").value = trangThaiValue;
+      document.getElementById("tongTien").value = tongTien;
+      document.getElementById("dichVu").value = dichVuID;
+
+      // Fetch room details and populate soPhong
+      const room = await fetchRoomById(phongID);
+      if (room) {
+        document.getElementById("soPhong").value = room.soPhong; // Assuming room object contains soPhong
+      } else {
+        document.getElementById("soPhong").value = "Phòng không tồn tại";
+      }
+      const service = await fetchServiceById(dichVuID);
+      if (service) {
+        document.getElementById("tenDichVu").value = service.tenDichVu;
+      } else {
+        document.getElementById("tenDichVu").value = "Dịch vụ không tồn tại";
+      }
+
+
+    };
 
       customerList.appendChild(row);
     });
@@ -466,31 +498,8 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
       noResultsRow.innerHTML = "<td colspan='7'>Không tìm thấy kết quả.</td>";
       customerList.appendChild(noResultsRow);
     }
-    
+
   } catch (error) {
     console.error("Error fetching orders for search:", error);
   }
 });
-
-// Function to populate the form with order data
-function populateFormWithOrderData(lichsu) {
-  document.getElementById("mdp").value = lichsu._id;
-  document.getElementById("uid").value = lichsu.Uid;
-  document.getElementById("phong1").value = lichsu.IdPhong;
-  document.getElementById("thoiGianDat").value = formatDateTime(lichsu.orderTime);
-  document.getElementById("thoiGianNhan").value = formatDateTime(lichsu.timeGet);
-  document.getElementById("thoiGianTra").value = formatDateTime(lichsu.timeCheckout);
-  document.getElementById("ghiChu").value = lichsu.note;
-  document.getElementById("trangThai").value = lichsu.status;
-  document.getElementById("tongTien").value = lichsu.total;
-
-  // Populate service dropdown if applicable
-  const service = services.find(s => s._id === lichsu.IdDichVu);
-  if (service) {
-    document.getElementById("tenDichVu").value = service.tenDichVu;
-    document.getElementById("dichVu").value = service._id;
-  } else {
-    document.getElementById("tenDichVu").value = "Dịch vụ không tồn tại";
-    document.getElementById("dichVu").value = "";
-  }
-}
