@@ -177,6 +177,24 @@ exports.xemPhong = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server' });
     }
 }
+// Hiển thị phòng theo ID
+exports.getRoomById = async (req, res) => {
+    try {
+        const roomId = req.params.id; // Lấy ID từ tham số URL
+        const room = await mdPhong.phongModel.findById(roomId); // Tìm phòng theo ID
+
+        if (!room) {
+            return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
+        }
+
+        // Trả về thông tin phòng
+        res.status(200).json(room);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
 exports.themPhong = async (req, res, next) => {
     try {
         console.log(req.body);
