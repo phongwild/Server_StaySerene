@@ -186,3 +186,29 @@ table tbody tr:nth-child(even) {
 .sidebar .namepage {
     background-color: #1abc9c;
 }
+.form-maks {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: row;
+}
+.form-maks .dichVu{
+    margin-right: 10px;
+    flex: 1 1 45%;
+
+}
+.tendichvu{
+    flex: 1 1 45%;
+
+}
+.form-maks {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Optional: adds space between the elements */
+}
+
+.form-maks input[type="text"],
+.form-maks select {
+    flex: 1; /* This makes both elements take equal space */
+    min-width: 0; /* Prevents overflow */
+}
+

@@ -73,6 +73,7 @@ router.get('/phanhoi', apiCtrl.showPhanHoi);
 
 // Hiển thị tất cả dịch vụ
 router.get('/dichvu', apiCtrl.showDichVu);
+router.get('/dichvu/:id', apiCtrl.showDichVuById);
 
 // Thêm dịch vụ
 router.post('/dichvu', apiCtrl.themDichVu);

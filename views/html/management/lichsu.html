@@ -20,7 +20,6 @@
                 <li><a href="phong.html" id="phong">Quản lý phòng</a></li>
                 <li><a href="dichvu.html" id="dichvu">Quản lý dịch vụ</a></li>
                 <li><a href="lichsu.html" id="lichsu" class="namepage">Lịch sử đặt phòng</a></li>
-                <li><a href="phanhoi.html" id="phanhoi">Phản hồi của khách hàng</a></li>
                 <li><a href="thongke.html" id="thongke">Thống kê</a></li>
             </ul>
         </div>
@@ -41,7 +40,13 @@
 
                         <div class="form-group">
                             <label for="dichVu">Mã dịch vụ :</label>
-                            <input type="text" id="dichVu" name="dichVu" disabled>
+                            <div class="form-maks">
+                                <input type="text" id="dichVu" name="dichVu" disabled>
+                                <select type="text" id="tenDichVu" class="tenDichVu" placeholder="Tên dịch vụ"
+                                    autocomplete="off" disabled>
+                                    <option value="">Chọn dịch vụ</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -73,27 +78,24 @@
                                 <option value="1">Đã trả phòng</option>
                                 <option value="2">Đã hủy</option>
                             </select>
-                            
+
                         </div>
 
                         <div class="form-group">
                             <label for="tongTien">Tổng tiền :</label>
-                            <input type="text" id="tongTien" name="tongTien">
+                            <input type="text" id="tongTien" name="tongTien" disabled>
                         </div>
 
                         <div class="button-group">
                             <button type="button" onclick="editderroom()">Cập nhật</button>
+                            <button type="button" onclick="addOrderroom()">Thêm mới</button>
                             <div class="form-search">
-                                <div>
-                                    <input type="text" id="search-madatphong" placeholder="Tìm kiếm Mã Đặt Phòng">
-                                    <input type="text" id="search-makhachhang" placeholder="Tìm kiếm Mã Khách Hàng">
-                                    <input type="text" id="search-maphong" placeholder="Tìm kiếm Mã Phòng">
-                                </div>
 
-                                <input type="date" id="search-tgd" placeholder="Tìm kiếm Thời Gian Đặt">
-                                <input type="date" id="search-tgn" placeholder="Tìm kiếm Thời Gian Nhận">
-                                <input type="date" id="search-tgt" placeholder="Tìm kiếm Thời Gian Trả">
-                                <button id="search-button">Tìm Kiếm</button>
+                                <input type="text" id="search-madatphong" placeholder="Tìm kiếm Mã Đặt Phòng">
+                                <input type="text" id="search-makhachhang" placeholder="Tìm kiếm Mã Khách Hàng">
+                                <input type="text" id="search-maphong" placeholder="Tìm kiếm Mã Phòng">
+
+                                <button id="searchBtn" type="button">Tìm kiếm</button>
 
                             </div>
                         </div>

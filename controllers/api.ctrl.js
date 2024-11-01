@@ -781,3 +781,20 @@ exports.timKiemDichVu = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+
+// Hiển thị dịch vụ theo ID
+exports.showDichVuById = async (req, res, next) => {
+    try {
+        const id = req.params.id; // Lấy ID từ params
+        const dichVu = await mdDichVu.DichVuModel.findById(id); // Tìm dịch vụ theo ID
+
+        if (!dichVu) {
+            return res.status(404).json({ error: 'Không tìm thấy dịch vụ với ID đã cho' });
+        }
+
+        res.status(200).json(dichVu); // Trả về dịch vụ nếu tìm thấy
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
