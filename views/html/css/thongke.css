@@ -170,3 +170,8 @@ table tbody tr:nth-child(even) {
 .tenKhachsan {
     visibility: hidden; /* Keeps the select dropdown invisible but preserves its space in the layout */
 }
+canvas {
+    display: block; /* Ensures canvas elements are displayed as block elements */
+    margin: 20px auto;
+
+}

@@ -1,10 +1,10 @@
-const apiUrl = "http://192.168.1.4:3000/api/orderroom";
-const serviceApiUrl = "http://192.168.1.4:3000/api/dichvu";
+const apiUrl = "http://192.168.1.2:3000/api/orderroom";
+const serviceApiUrl = "http://192.168.1.2:3000/api/dichvu";
 let services = {};
 
 async function fetchRoomById(roomId) {
   try {
-    const response = await fetch(`http://192.168.1.4:3000/api/rooms/${roomId}`); // Adjust URL according to your API
+    const response = await fetch(`http://192.168.1.2:3000/api/rooms/${roomId}`); // Adjust URL according to your API
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

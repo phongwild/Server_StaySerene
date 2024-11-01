@@ -55,6 +55,7 @@ function fetchRevenueByYear() {
             const revenues = Object.values(revenueByYear);
 
             renderRevenueChart(years, revenues);
+            renderRevenueChartbdt(years, revenues);
         })
         .catch(error => console.error('There was a problem with the fetch operation:', error));
 }
@@ -97,6 +98,8 @@ function renderRevenueChart(years, revenues) {
         }
     });
 }
+
+
 function fetchRevenueByQuarter() {
     const selectedHotelId = document.getElementById('tenKhachsan').value;
 
@@ -401,7 +404,7 @@ function fetchRevenueByRoomType() {
                                             const totalRevenue = order.total; 
                                             const hotelId = roomTypeInfo.hotelId; 
                                             const hotelName = hotelNames[hotelId]; 
-                                            const label = `${hotelName} - ${roomTypeInfo.name}`;
+                                            const label = `${roomTypeInfo.name} - ${hotelName} `;
 
                                             if (!revenueByRoomType[label]) {
                                                 revenueByRoomType[label] = 0;
@@ -411,14 +414,51 @@ function fetchRevenueByRoomType() {
                                     });
                                     const labels = Object.keys(revenueByRoomType);
                                     const revenues = Object.values(revenueByRoomType);
-                                    renderRevenueChart(labels, revenues);
+                                    renderRevenueChartlp(labels, revenues);
                                 });
                         });
                 });
         })
         .catch(error => console.error('There was a problem with the fetch operation:', error));
 }
+function renderRevenueChartlp(years, revenues) {
+    const ctx = document.getElementById('bieudoCot').getContext('2d');
+    if (window.revenueChart) {
+        window.revenueChart.destroy();
+    }
 
+    window.revenueChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: years,
+            datasets: [{
+                label: 'Doanh thu theo Loại phòng',
+                data: revenues,
+                backgroundColor: 'rgba(76, 77, 220, 0.5)',
+                borderColor: 'rgba(76, 77, 220, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Doanh thu (VND)'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Loại Phòng'
+                    }
+                }
+            }
+        }
+    });
+}
 
 function fetchRevenueByHotel() {
     fetch(apiOrderRoomUrl)

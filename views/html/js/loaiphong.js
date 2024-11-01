@@ -1,5 +1,5 @@
-const apiUrl = 'http://192.168.1.4:3000/api/typeroom';
-const apiKhachSanUrl = 'http://192.168.1.4:3000/api/hotel';
+const apiUrl = 'http://192.168.1.2:3000/api/typeroom';
+const apiKhachSanUrl = 'http://192.168.1.2:3000/api/hotel';
 
 async function fetchKhachSan(IdKhachSan) {
     try {
@@ -275,6 +275,7 @@ async function deleteTyperoom(id) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
+        alert(`Bạn đã xóa loại phòng thành công `);
 
         fetchTypeRooms();
     } catch (error) {

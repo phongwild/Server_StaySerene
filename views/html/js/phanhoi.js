@@ -1,4 +1,4 @@
-const apiUrl = "http://192.168.1.4:3000/api/phanhoi";
+const apiUrl = "http://192.168.1.2:3000/api/phanhoi";
 
 // Lấy danh sách phản hồi từ API
 async function fetchPhanHois() {

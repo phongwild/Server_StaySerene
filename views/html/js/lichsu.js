@@ -1,5 +1,5 @@
-const apiUrl = "http://192.168.1.4:3000/api/orderroom";
-const serviceApiUrl = "http://192.168.1.4:3000/api/dichvu";
+const apiUrl = "http://192.168.1.2:3000/api/orderroom";
+const serviceApiUrl = "http://192.168.1.2:3000/api/dichvu";
 let services = {};
 async function fetchAllServices() {
   try {
