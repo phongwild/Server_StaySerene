@@ -31,39 +31,49 @@
                 <div class="form-section">
                     <form id="customer-form">
                         <div class="form-group">
-                            <label for="uid">Uid :</label>
-                            <input type="text" id="uid" name="uid">
+                            <label for="uid">Mã đặt phòng :</label>
+                            <input type="text" id="mdp" name="mdp" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="uid">Mã khách hàng :</label>
+                            <input type="text" id="uid" name="uid" disabled>
                         </div>
 
                         <div class="form-group">
-                            <label for="dichVu">Dịch vụ :</label>
-                            <input type="text" id="dichVu" name="dichVu">
+                            <label for="dichVu">Mã dịch vụ :</label>
+                            <input type="text" id="dichVu" name="dichVu" disabled>
                         </div>
 
                         <div class="form-group">
-                            <label for="phong1">Phòng :</label>
-                            <input type="text" id="phong1" name="phong1">
+                            <label for="phong1">Mã phòng :</label>
+                            <input type="text" id="phong1" name="phong1" disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="thoiGianDat">Thời gian đặt phòng :</label>
-                            <input type="text" id="thoiGianDat" name="thoiGianDat">
+                            <input type="text" id="thoiGianDat" name="thoiGianDat" disabled>
                         </div>
                         <div class="form-group">
                             <label for="thoiGianNhan">Thời gian nhận :</label>
-                            <input type="text" id="thoiGianNhan" name="thoiGianNhan">
+                            <input type="text" id="thoiGianNhan" name="thoiGianNhan" disabled>
                         </div>
                         <div class="form-group">
                             <label for="thoiGianTra">Thời gian trả :</label>
-                            <input type="text" id="thoiGianTra" name="thoiGianTra">
+                            <input type="text" id="thoiGianTra" name="thoiGianTra" disabled>
                         </div>
                         <div class="form-group">
                             <label for="ghiChu">Ghi chú :</label>
-                            <input type="text" id="ghiChu" name="ghiChu">
+                            <input type="text" id="ghiChu" name="ghiChu" disabled>
                         </div>
                         <div class="form-group">
                             <label for="trangThai">Trạng thái :</label>
-                            <input type="text" id="trangThai" name="trangThai">
+                            <select id="trangThai" name="trangThai" placeholder="Trạng thái" autocomplete="off">
+                                <option value="">Trạng thái đặt phòng</option>
+                                <option value="0">Đã đặt cọc</option>
+                                <option value="1">Đã trả phòng</option>
+                                <option value="2">Đã hủy</option>
+                            </select>
+                            
                         </div>
 
                         <div class="form-group">
@@ -71,24 +81,20 @@
                             <input type="text" id="tongTien" name="tongTien">
                         </div>
 
-                        <div class="form-group">
-                            <label for="anhDatPhong">Ảnh đặt phòng :</label>
-                            <div style="
-                                    flex-direction: row;
-                                    display: flex;
-                                    justify-content: start;
-                                    align-items: center;
-                                ">
-                                <!-- Thêm thẻ img để hiển thị ảnh -->
-                                <img id="hinhAnhDatPhong" src="" alt="Hình ảnh " style="width: 200px; height: auto; margin-left: 20px;">
-                            </div>
-                        </div>
-                        
-
                         <div class="button-group">
+                            <button type="button" onclick="editderroom()">Cập nhật</button>
                             <div class="form-search">
-                                <label >Tìm kiếm:</label>
-                                <input type="text" id="search" name="search"  oninput="filterTable()">
+                                <div>
+                                    <input type="text" id="search-madatphong" placeholder="Tìm kiếm Mã Đặt Phòng">
+                                    <input type="text" id="search-makhachhang" placeholder="Tìm kiếm Mã Khách Hàng">
+                                    <input type="text" id="search-maphong" placeholder="Tìm kiếm Mã Phòng">
+                                </div>
+
+                                <input type="date" id="search-tgd" placeholder="Tìm kiếm Thời Gian Đặt">
+                                <input type="date" id="search-tgn" placeholder="Tìm kiếm Thời Gian Nhận">
+                                <input type="date" id="search-tgt" placeholder="Tìm kiếm Thời Gian Trả">
+                                <button id="search-button">Tìm Kiếm</button>
+
                             </div>
                         </div>
                     </form>
@@ -98,28 +104,22 @@
             <table class="table-section">
                 <thead>
                     <tr>
-                        <th>Uid</th>
-                        <th>Dịch Vụ</th>
+                        <th>Mã đặt phòng</th>
+                        <th>Mã khách hàng</th>
                         <th>Phòng</th>
                         <th>Thời gian đặt phòng</th>
                         <th>Thời gian nhận</th>
                         <th>Thời gian trả</th>
-                        <th>Ghi chú</th>
-                        <th>Tổng tiền</th>
                         <th>Trạng thái</th>
-                        <th>Ảnh đặt phòng</th>
-
                     </tr>
                 </thead>
                 <tbody id="customer-list">
-                   
-                    <!-- Hàng dữ liệu sẽ được thêm tự động từ JavaScript -->
+
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- JavaScript -->
     <script src="../js/lichsu.js"></script>
 </body>
 

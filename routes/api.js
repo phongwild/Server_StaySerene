@@ -41,11 +41,13 @@ router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
 router.delete('/typeroom/:id', apiCtrl.xoaLoaiPhong);
 // Sửa loại phòng: http://localhost:3000/api/typeroom/:id
 router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
-// //Đặt phòng: http://localhost:3000/api/orderroom
-// router.post('/orderroom', apiCtrl.OrderRoom);
-// //Xem phòng đặt theo Uid: http://localhost:3000/api/orderroom/{Uid}
-// router.get('/orderroom/:Uid', apiCtrl.showOrderRoom);
-//Xem khách sạn: http://localhost:3000/api/hotel
+//Đặt phòng: http://localhost:3000/api/orderroom
+router.post('/orderroom', apiCtrl.OrderRoom);
+router.get('/orderroom', apiCtrl.getAllOrders);
+//Xem phòng đặt theo Uid: http://localhost:3000/api/orderroom/{Uid}
+router.get('/orderroom/:Uid', apiCtrl.showOrderRoom);
+router.put('/orderroom/:id', apiCtrl.editOrderRoom);
+// Xem khách sạn: http://localhost:3000/api/hotel
 router.get('/hotel', apiCtrl.showKhachSan);
 //Xem khách sạn theo id: http://localhost:3000/api/hotel/:id
 router.get('/hotel/:id', apiCtrl.getKhachSanById);

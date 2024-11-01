@@ -1,0 +1,72 @@
+[
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebaa" },
+        "tenDichVu": "Dịch vụ dọn phòng",
+        "giaDichVu": 100000,
+        "motaDichVu": "Dịch vụ dọn dẹp và thay đổi ga trải giường.",
+        "anhDichVu": "https://example.com/images/donphong.jpg"
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebab" },
+        "tenDichVu": "Dịch vụ ăn tối tại phòng",
+        "giaDichVu": 200000,
+        "motaDichVu": "Giao đồ ăn tận phòng cho khách hàng.",
+        "anhDichVu": "https://example.com/images/antoin.jpg"
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebac" },
+        "tenDichVu": "Dịch vụ lễ tân 24/7",
+        "giaDichVu": 0,
+        "motaDichVu": "Hỗ trợ khách hàng mọi lúc với đội ngũ lễ tân chuyên nghiệp.",
+        "anhDichVu": "https://example.com/images/letan.jpg"
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebad" },
+        "tenDichVu": "Dịch vụ giữ hành lý",
+        "giaDichVu": 50000,
+        "motaDichVu": "Giữ hành lý an toàn cho khách khi làm thủ tục nhận phòng.",
+        "anhDichVu": "https://example.com/images/giu_hanh_ly.jpg"
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebae" },
+        "tenDichVu": "Dịch vụ gym và spa",
+        "giaDichVu": 300000,
+        "motaDichVu": "Truy cập vào phòng gym và spa thư giãn.",
+        "anhDichVu": "https://example.com/images/gym_spa.jpg"
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebaf" },
+        "tenDichVu": "Dịch vụ tour du lịch",
+        "giaDichVu": 250000,
+        "motaDichVu": "Tổ chức các tour tham quan địa phương cho khách.",
+        "anhDichVu": "https://example.com/images/tour.jpg"
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb0" },
+        "tenDichVu": "Dịch vụ internet miễn phí",
+        "giaDichVu": 0,
+        "motaDichVu": "Cung cấp internet không dây miễn phí trong khuôn viên khách sạn.",
+        "anhDichVu": "https://example.com/images/internet.jpg"
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb1" },
+        "tenDichVu": "Dịch vụ đặt vé máy bay",
+        "giaDichVu": 75000,
+        "motaDichVu": "Hỗ trợ khách đặt vé máy bay đi và về.",
+        "anhDichVu": "https://example.com/images/datve.jpg"
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb2" },
+        "tenDichVu": "Dịch vụ cho thuê xe",
+        "giaDichVu": 300000,
+        "motaDichVu": "Cho thuê xe ô tô hoặc xe máy cho khách.",
+        "anhDichVu": "https://example.com/images/thuexe.jpg"
+    },
+    {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb3" },
+        "tenDichVu": "Dịch vụ phục vụ cà phê",
+        "giaDichVu": 60000,
+        "motaDichVu": "Phục vụ cà phê và đồ uống tại quầy bar hoặc trong phòng.",
+        "anhDichVu": "https://example.com/images/cafe.jpg"
+    }
+]

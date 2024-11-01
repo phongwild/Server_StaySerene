@@ -308,56 +308,95 @@ exports.xoaLoaiPhong = async (req, res, next) => {
 };
 
 
-// //Đặt phòng
-// exports.OrderRoom = async (req, res, next) => {
-//     try {
-//         console.log(req.body);
-//         const {
-//             IdPhong,
-//             Uid,
-//             IdDichVu,
-//             orderTime,
-//             timeGet,
-//             timeCheckout,
-//             note,
-//             total,
-//             status
-//         } = req.body;
-//         if (!IdPhong || !Uid || !total) {
-//             return res.status(404).json({ error: 'Không đủ thông tin' });
-//         }
-//         const newOrder = mdOrderRoom.orderRoomModel.create({
-//             IdPhong: IdPhong,
-//             Uid: Uid,
-//             IdDichVu: IdDichVu,
-//             orderTime: orderTime,
-//             timeGet: timeGet,
-//             timeCheckout: timeCheckout,
-//             note: note,
-//             total: total,
-//             status: status
-//         });
-//         return res.status(201).json({
-//             msg: 'Room booked succ',
-//             newOrder: newOrder
-//         })
-//     } catch (error) {
-//         return res.status(500).json({ error: 'Lỗi server' + error });
-//     }
-// }
-// //Xem phòng đã đặt
-// exports.showOrderRoom = async (req, res, next) => {
-//     try {
-//         const Uid = req.params.Uid;
-//         const orderroom = await mdOrderRoom.orderRoomModel.find({ Uid });
-//         if (!orderroom) {
-//             return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
-//         }
-//         res.status(200).json({ orderroom });
-//     } catch (error) {
-//         return res.status(500).json({ error: 'Lỗi server' + error });
-//     }
-// }
+//Đặt phòng
+exports.OrderRoom = async (req, res, next) => {
+    try {
+        console.log(req.body);
+        const {
+            IdPhong,
+            Uid,
+            IdDichVu,
+            orderTime,
+            timeGet,
+            timeCheckout,
+            note,
+            total,
+            status
+        } = req.body;
+        if (!IdPhong || !Uid || !total) {
+            return res.status(404).json({ error: 'Không đủ thông tin' });
+        }
+        const newOrder = mdOrderRoom.orderRoomModel.create({
+            IdPhong: IdPhong,
+            Uid: Uid,
+            IdDichVu: IdDichVu,
+            orderTime: orderTime,
+            timeGet: timeGet,
+            timeCheckout: timeCheckout,
+            note: note,
+            total: total,
+            status: status
+        });
+        return res.status(201).json({
+            msg: 'Room booked succ',
+            newOrder: newOrder
+        })
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' + error });
+    }
+}
+
+exports.getAllOrders = async (req, res, next) => {
+    try {
+        const orders = await mdOrderRoom.orderRoomModel.find();
+
+        if (!orders || orders.length === 0) {
+            return res.status(404).json({ msg: 'Không có đơn đặt phòng nào' });
+        }
+
+        res.status(200).json(orders);
+    } catch (error) {
+        console.error('Error fetching orders:', error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
+//Xem phòng đã đặt
+exports.showOrderRoom = async (req, res, next) => {
+    try {
+        const Uid = req.params.Uid;
+        const orderroom = await mdOrderRoom.orderRoomModel.find({ Uid });
+        if (!orderroom) {
+            return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
+        }
+        res.status(200).json({ orderroom });
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' + error });
+    }
+}
+
+exports.editOrderRoom = async (req, res) => {
+    try {
+        const orderId = req.params.id; 
+        const updatedData = req.body;
+
+        console.log('Updating order with ID:', orderId);
+        console.log('Data to update:', updatedData);
+        const updatedOrder = await mdOrderRoom.orderRoomModel.findByIdAndUpdate(orderId, updatedData, { new: true });
+
+        if (!updatedOrder) {
+            console.error('Order not found for ID:', orderId);
+            return res.status(404).json({ error: 'Không tìm thấy đơn đặt phòng với ID đã cho' });
+        }
+
+        console.log('Updated order:', updatedOrder);
+        res.status(200).json({ msg: 'Cập nhật đơn đặt phòng thành công', updatedOrder });
+    } catch (error) {
+        console.error('Error updating order:', error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
 //Khách sạn
 exports.showKhachSan = async (req, res, next) => {
     try {

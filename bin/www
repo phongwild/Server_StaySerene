@@ -88,4 +88,4 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-console.log('server đang chạy ở địa chỉ: http://192.168.10.103:' + port + '/api/');
+console.log('server đang chạy ở địa chỉ: http://192.168.1.4:' + port + '/api/');
