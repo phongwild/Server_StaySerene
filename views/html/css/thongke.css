@@ -162,3 +162,11 @@ table tbody tr:nth-child(even) {
 .sidebar .namepage{
     background-color: #1abc9c;
 }
+#customer-form {
+    width: 0px;
+    overflow: hidden; /* Ensure no contents spill over */
+}
+
+.tenKhachsan {
+    visibility: hidden; /* Keeps the select dropdown invisible but preserves its space in the layout */
+}
