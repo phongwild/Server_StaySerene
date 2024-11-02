@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://propertyx.com.vn/files_upload_editor/Suc-song-moi-cua-thanh-pho-quy-nhon-03-1656906005.webp') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.role-selection {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.role-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+
+}
+
+.role-button:hover {
+    background-color: #0056b3;
+}

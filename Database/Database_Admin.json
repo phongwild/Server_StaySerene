@@ -1,0 +1,30 @@
+[
+    {
+        "username": "admin1",
+        "sdt": "123456789",
+        "diaChi": "Hà Nội, Việt Nam",
+        "email": "admin1@example.com",
+        "password": "123456", 
+        "ngaySinh": "1990-01-01",
+        "gioiTinh": "Nam",
+        "quocTich": "Việt Nam",
+        "avt": "https://example.com/path/to/avatar1.jpg",
+        "role": 1,
+        "token": null,
+        "cccd": "987654321"
+    },
+    {
+        "username": "admin2",
+        "sdt": "987654321",
+        "diaChi": "Hồ Chí Minh, Việt Nam",
+        "email": "admin2@example.com",
+        "password": "123456",
+        "ngaySinh": "1985-05-05",
+        "gioiTinh": "Nữ",
+        "quocTich": "Việt Nam",
+        "avt": "https://example.com/path/to/avatar2.jpg",
+        "role": 1,
+        "token": null,
+        "cccd": "123456789"
+    }
+]

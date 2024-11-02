@@ -1,7 +1,7 @@
 const apiHotelUrl = 'http://192.168.1.2:3000/api/hotel';
 const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typeroom';
 const apiRoomUrl = 'http://192.168.1.2:3000/api/rooms';
-const apiTyperoomByHotelUrl = 'http://192.168.1.2:3000/api/typeroombyidhotel'; // New endpoint
+const apiTyperoomByHotelUrl = 'http://192.168.1.2:3000/api/typeroombyidhotel';
 
 // Fetch and display room data
 async function fetchRoomData() {
@@ -402,3 +402,11 @@ function removeDiacritics(str) {
 
 // Call the function to fetch room data when the page loads
 window.onload = fetchRoomData;
+function confirmLogout(event) {
+    event.preventDefault(); // Prevent the default link action
+    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); // Show confirmation dialog
+
+    if (userConfirmed) {
+        window.location.href = "../../welcome.html"; // Redirect to the logout page if confirmed
+    }
+}

@@ -273,3 +273,11 @@ document.querySelector('.message-input input').addEventListener('keydown', funct
 document.getElementById('gui-button').addEventListener('click', sendMessage);
 document.addEventListener('DOMContentLoaded', fetchChamSoc);
 document.getElementById('searchInput').addEventListener('input', searchItems);
+function confirmLogout(event) {
+    event.preventDefault(); // Prevent the default link action
+    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); // Show confirmation dialog
+
+    if (userConfirmed) {
+        window.location.href = "../../welcome.html"; // Redirect to the logout page if confirmed
+    }
+}
