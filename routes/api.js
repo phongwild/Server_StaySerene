@@ -11,6 +11,9 @@ router.get('/', (req, res) => {
 // Authentication routes
 router.post('/login', apiCtrl.doLogin);
 router.post('/register', apiCtrl.doRegister);
+router.post('/admin/login', apiCtrl.doLoginAdmin);
+router.get('/admin', apiCtrl.getAdminAccounts);
+
 
 // Account management routes
 router.get('/account', apiCtrl.xemTk);

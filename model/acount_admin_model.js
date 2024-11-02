@@ -4,7 +4,7 @@ require('dotenv').config();
 const hiden_text = process.env.TOKEN_SEC_KEY;
 const bcrypt = require("bcrypt");
 
-const userSchema = new db.mongoose.Schema(
+const account_adminSchema = new db.mongoose.Schema(
     {
         username: { type: String, required: true },
         sdt: { type: Number, required: false, default: 123456789 },
@@ -20,44 +20,35 @@ const userSchema = new db.mongoose.Schema(
         cccd: { type: Number, required: false, default: 987654321 }
     },
     {
-        collection: 'Account'
+        collection: 'Admin'
     }
 );
 
-
 /**
-* Hàm tạo token để đăng nhập với API
-* @returns {Promise<*>}
-*/
-userSchema.methods.generateAuthToken = async function () {
+ * Hàm tạo token để đăng nhập với API
+ * @returns {Promise<*>}
+ */
+account_adminSchema.methods.generateAuthToken = async function () {
     const user = this;
-    console.log(user);
-    const token = jwt.sign({ _id: user._id, username: user.username }, hiden_text)
-    // user.tokens = user.tokens.concat({token}) // code này dành cho nhiều token
+    const token = jwt.sign({ _id: user._id, username: user.username }, hiden_text);
     user.token = token;
     await user.save();
     return token;
 }
 
-
-/**
-* Hàm tìm kiếm user theo tài khoản
-* @param email
-* @param password
-* @returns {Promise<*>}
-*/
-userSchema.statics.findByCredentials = async (email, password) => {
-    const user = await accountModel.findOne({ email });
-    if (!user) {
-        throw new Error({ error: 'Không tồn tại user' });
+// Corrected to use a regular function
+account_adminSchema.statics.findByCredentials = async function (email, password) {
+    const admin = await this.findOne({ email }); // 'this' correctly refers to the model
+    if (!admin) {
+        throw new Error('Không tồn tại user'); // "User does not exist"
     }
-    const isPasswordMatch = await bcrypt.compare(password, user.password)
-    if (!isPasswordMatch) {
-        throw new Error({ error: 'Sai password' });
+    const isMatch = await bcrypt.compare(password, admin.password);
+    if (!isMatch) {
+        throw new Error('Sai password'); // "Incorrect password"
     }
-    return user;
-}
+    return admin;
+};
 
-// tao model
-let account_admin = db.mongoose.model('account_admin', userSchema);
-module.exports = { account_admin }
+// Create model
+let account_admin = db.mongoose.model('account_admin', account_adminSchema);
+module.exports = { account_admin };

@@ -1,32 +1,32 @@
-// API URL cho đăng nhập
-const apiLoginUrl = 'http://192.168.1.2:3000/api/login';
+async function login() {
+    // Ngăn chặn hành vi gửi biểu mẫu mặc định
+    event.preventDefault();
 
-document.getElementById('loginForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Ngăn chặn form submit theo cách thông thường
-
-    // Lấy dữ liệu từ các trường email và password
-    const email = document.getElementById('email').value;
+    // Lấy thông tin đăng nhập từ biểu mẫu
+    const email = document.getElementById('Email').value;
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch(apiLoginUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        });
+        // Gửi yêu cầu GET đến API để lấy danh sách nhân viên
+        const response = await fetch('http://192.168.1.2:3000/api/nhanvien');
+        const employees = await response.json();
 
-        if (response.ok) {
-            const result = await response.json();
-            alert('Đăng nhập thành công!');
-            // Chuyển hướng người dùng sau khi đăng nhập thành công
-            window.location.href = '../htmlnhanvien/chamsocnv.html'; // Chuyển đến trang khách hàng hoặc trang chính
+        // Tìm kiếm nhân viên với email và password tương ứng
+        const employee = employees.find(emp => emp.email === email && emp.password === password);
+
+        if (employee) {
+            // Nếu tìm thấy, lưu mã khách sạn vào localStorage
+            localStorage.setItem('makhachsan', employee.makhachsan);
+
+            // Chuyển hướng đến trang home.html
+            window.location.href = '../htmlnhanvien/DatPhong.html';
         } else {
-            alert('Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.');
+            alert('Email hoặc mật khẩu không đúng.');
         }
     } catch (error) {
-        console.error('Lỗi trong quá trình đăng nhập:', error);
-        alert('Đã xảy ra lỗi. Vui lòng thử lại.');
+        console.error('Lỗi:', error);
+        alert('Đã có lỗi xảy ra. Vui lòng thử lại sau.');
     }
-});
+
+    return false; // Ngăn chặn gửi biểu mẫu
+}

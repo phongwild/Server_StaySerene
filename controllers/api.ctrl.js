@@ -73,6 +73,44 @@ exports.registerAdmin = async (req, res, next) => {
         return res.status(201).send(error);
     }
 }
+// Admin Login
+exports.doLoginAdmin = async (req, res, next) => {
+    try {
+        console.log("Login attempt with:", req.body);
+        const admin = await mdAccount_admin.account_admin.findByCredentials(req.body.email, req.body.password);
+        console.log("Admin found:", admin); // Log found admin
+        if (!admin) {
+            return res.status(401).json({ error: 'Sai thông tin đăng nhập' });
+        }
+        const token = await admin.generateAuthToken();
+        return res.status(200).send({ admin, token });
+    } catch (error) {
+        console.log("Login error:", error.message); // Log the error message
+        if (error.message === 'Không tồn tại user') {
+            return res.status(401).json({ error: 'Sai thông tin đăng nhập' });
+        } else if (error.message === 'Sai password') {
+            return res.status(401).json({ error: 'Mật khẩu admin sai' });
+        } else {
+            return res.status(500).json({ error: error.message });
+        }
+    }
+};
+
+// Get all admin accounts
+exports.getAdminAccounts = async (req, res, next) => {
+    try {
+        const admins = await mdAccount_admin.account_admin.find(); // Retrieve all admin accounts
+        if (!admins || admins.length === 0) {
+            return res.status(404).json({ error: 'No admin accounts found' });
+        }
+        return res.status(200).json(admins); // Send the list of admins
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Server error while fetching admin accounts' });
+    }
+}
+
+
 exports.xemTk = async (req, res) => {
     try {
         console.log('Request received at /api/account');
