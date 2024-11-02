@@ -1,5 +1,5 @@
-const apiUrl = 'http://192.168.1.4:3000/api/messenger';
-const apiUrlAccount = 'http://192.168.1.4:3000/api/account';
+const apiUrl = 'http://192.168.1.2:3000/api/messenger';
+const apiUrlAccount = 'http://192.168.1.2:3000/api/account';
 let selectedIdKhachSan = null;
 let selectedUid = null; 
 let lastMessageTimestamp = null; 

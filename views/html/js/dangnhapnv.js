@@ -1,5 +1,5 @@
 // API URL cho đăng nhập
-const apiLoginUrl = 'http://192.168.1.4:3000/api/login';
+const apiLoginUrl = 'http://192.168.1.2:3000/api/login';
 
 document.getElementById('loginForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Ngăn chặn form submit theo cách thông thường

@@ -1,4 +1,4 @@
-var API = "http://192.168.1.4:3000/api/account";
+var API = "http://192.168.1.2:3000/api/account";
 var currenUser = []; // To store current user data
 
 function isValidPhoneNumber(phone) {

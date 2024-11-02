@@ -1,5 +1,5 @@
-const apiUrl = 'http://192.168.1.4:3000/api/typeroom';
-const apiKhachSanUrl = 'http://192.168.1.4:3000/api/hotel';
+const apiUrl = 'http://192.168.1.2:3000/api/typeroom';
+const apiKhachSanUrl = 'http://192.168.1.2:3000/api/hotel';
 
 async function fetchKhachSan(IdKhachSan) {
     try {
@@ -125,7 +125,7 @@ function renderTypeRooms(typeRooms) {
             <td>${room.IdKhachSan}</td>
             <td>${room.tenLoaiPhong}</td>
             <td>${room.soLuongPhong}</td>
-            <td><img src="${room.anhLoaiPhong}" alt="${room.tenLoaiPhong}" style="width: 50px; height: auto;" /></td>
+            <td><img src="${room.anhLoaiPhong}" alt="${room.tenLoaiPhong}" style="width: 100px; height: auto;" /></td>
         `;
         typeRoomList.appendChild(row);
     });
@@ -152,27 +152,6 @@ async function showTypeRoomDetails(room) {
         }
     }
 }
-async function populateHotels() {
-    try {
-        const response = await fetch(apiKhachSanUrl);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const hotels = await response.json();
-
-        const select = document.getElementById('tenkhachsan');
-        select.innerHTML = '<option value="">Chọn khách sạn</option>'; 
-        hotels.forEach(hotel => {
-            const option = document.createElement('option');
-            option.value = hotel._id; 
-            option.textContent = hotel.tenKhachSan; 
-            select.appendChild(option);
-        });
-    } catch (error) {
-        console.error('Error fetching hotels:', error);
-    }
-}
-
 
 
 async function checkTypeRoomExists(idKhachSan, tenLoaiPhong) {
@@ -296,6 +275,7 @@ async function deleteTyperoom(id) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
+        alert(`Bạn đã xóa loại phòng thành công `);
 
         fetchTypeRooms();
     } catch (error) {
