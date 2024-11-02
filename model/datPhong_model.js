@@ -12,6 +12,7 @@ const oderRoomSchema = new db.mongoose.Schema(
         note: { type: String, required: false, default: '' },
         total: { type: Number, required: true },
         status: { type: Number, required: false, default: 0 },
+        img: { type: String, required: false, default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNX_2UyhbK1q73782q4xvOVrJV6J757cQhBw&s' }
     },
     {
         collection: 'DatPhong'

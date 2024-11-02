@@ -1,288 +1,388 @@
-[
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6051" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 101,
-    "soTang": 1,
-    "moTaPhong": "Phòng Đơn Tiêu Chuẩn",
-    "anhPhong": "https://example.com/room101.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 2000000
+[{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6051"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6052" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 102,
-    "soTang": 1,
-    "moTaPhong": "Phòng Đôi",
-    "anhPhong": "https://example.com/room102.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 2500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6053" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 201,
-    "soTang": 2,
-    "moTaPhong": "Phòng Gia Đình",
-    "anhPhong": "https://example.com/room201.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 3000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 101,
+  "soTang": 1,
+  "moTaPhong": "Phòng Đơn Tiêu Chuẩn",
+  "anhPhong": "https://example.com/room101.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6052"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6054" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 202,
-    "soTang": 2,
-    "moTaPhong": "Phòng Suite Hướng Thành Phố",
-    "anhPhong": "https://example.com/room202.jpg",
-    "tinhTrangPhong": 1,
-    "giaPhong": 4000000
+  "IdLoaiPhong": {
+    "$oid": "67248bc23969b28a9a8156c4"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6055" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 301,
-    "soTang": 3,
-    "moTaPhong": "Phòng Cao Cấp",
-    "anhPhong": "https://example.com/room301.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 5000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 102,
+  "soTang": 1,
+  "moTaPhong": "Phòng Đôi",
+  "anhPhong": "https://example.com/room102.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6053"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6056" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 302,
-    "soTang": 3,
-    "moTaPhong": "Phòng Premier",
-    "anhPhong": "https://example.com/room302.jpg",
-    "tinhTrangPhong": 1,
-    "giaPhong": 5500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6057" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 401,
-    "soTang": 4,
-    "moTaPhong": "Phòng Đôi Hạng Sang",
-    "anhPhong": "https://example.com/room401.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 6500000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 201,
+  "soTang": 2,
+  "moTaPhong": "Phòng Gia Đình",
+  "anhPhong": "https://example.com/room201.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6054"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6058" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 402,
-    "soTang": 4,
-    "moTaPhong": "Phòng Suite",
-    "anhPhong": "https://example.com/room402.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 7000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6059" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 501,
-    "soTang": 5,
-    "moTaPhong": "Phòng Suite Tổng Thống",
-    "anhPhong": "https://example.com/room501.jpg",
-    "tinhTrangPhong": 1,
-    "giaPhong": 10000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 202,
+  "soTang": 2,
+  "moTaPhong": "Phòng Suite Hướng Thành Phố",
+  "anhPhong": "https://example.com/room202.jpg",
+  "tinhTrangPhong": 1,
+  "giaPhong": 4000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6055"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6060" },
-    "IdLoaiPhong": { "$oid": "6707f2b1676a25b7900e6001" },
-    "IdKhuyenMai": { "$oid": "6707fq2a4676a25b7900e503a" },
-    "soPhong": 502,
-    "soTang": 5,
-    "moTaPhong": "Phòng Hạng V.I.P",
-    "anhPhong": "https://example.com/room502.jpg",
-    "tinhTrangPhong": 1,
-    "giaPhong": 12000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6061" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6002",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 601,
-    "soTang": 6,
-    "moTaPhong": "Phòng Đơn Hạng Sang",
-    "anhPhong": "https://example.com/room601.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 7000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 301,
+  "soTang": 3,
+  "moTaPhong": "Phòng Cao Cấp",
+  "anhPhong": "https://example.com/room301.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 5000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6056"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6062" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6002",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 602,
-    "soTang": 6,
-    "moTaPhong": "Phòng Đôi Hạng Sang",
-    "anhPhong": "https://example.com/room602.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 7500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6063" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6002",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 701,
-    "soTang": 7,
-    "moTaPhong": "Phòng Gia Đình Hạng Sang",
-    "anhPhong": "https://example.com/room701.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 8000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 302,
+  "soTang": 3,
+  "moTaPhong": "Phòng Premier",
+  "anhPhong": "https://example.com/room302.jpg",
+  "tinhTrangPhong": 1,
+  "giaPhong": 5500000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6057"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6064" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6002",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 702,
-    "soTang": 7,
-    "moTaPhong": "Phòng Suite Hạng Sang",
-    "anhPhong": "https://example.com/room702.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6065" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6002",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 801,
-    "soTang": 8,
-    "moTaPhong": "Phòng Cao Cấp Hạng Sang",
-    "anhPhong": "https://example.com/room801.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9500000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 401,
+  "soTang": 4,
+  "moTaPhong": "Phòng Đôi Hạng Sang",
+  "anhPhong": "https://example.com/room401.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 6500000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6058"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6066" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6002",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 802,
-    "soTang": 8,
-    "moTaPhong": "Phòng Premier Hạng Sang",
-    "anhPhong": "https://example.com/room802.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 10000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6067" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6002",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 901,
-    "soTang": 9,
-    "moTaPhong": "Phòng Đôi Cao Cấp Hạng Sang",
-    "anhPhong": "https://example.com/room901.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 11000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 402,
+  "soTang": 4,
+  "moTaPhong": "Phòng Suite",
+  "anhPhong": "https://example.com/room402.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 7000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6059"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6068" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6002",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 902,
-    "soTang": 9,
-    "moTaPhong": "Phòng Suite Tổng Thống Hạng Sang",
-    "anhPhong": "https://example.com/room902.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 12000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6069" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6003",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1001,
-    "soTang": 10,
-    "moTaPhong": "Phòng Đơn Cao Cấp",
-    "anhPhong": "https://example.com/room1001.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 8000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 501,
+  "soTang": 5,
+  "moTaPhong": "Phòng Suite Tổng Thống",
+  "anhPhong": "https://example.com/room501.jpg",
+  "tinhTrangPhong": 1,
+  "giaPhong": 10000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6060"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6070" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6003",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1002,
-    "soTang": 10,
-    "moTaPhong": "Phòng Đôi Cao Cấp",
-    "anhPhong": "https://example.com/room1002.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 8500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6071" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6003",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1003,
-    "soTang": 11,
-    "moTaPhong": "Phòng Gia Đình Cao Cấp",
-    "anhPhong": "https://example.com/room1003.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 502,
+  "soTang": 5,
+  "moTaPhong": "Phòng Hạng V.I.P",
+  "anhPhong": "https://example.com/room502.jpg",
+  "tinhTrangPhong": 1,
+  "giaPhong": 12000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6061"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6072" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6003",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1004,
-    "soTang": 11,
-    "moTaPhong": "Phòng Suite Cao Cấp",
-    "anhPhong": "https://example.com/room1004.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6073" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6003",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1005,
-    "soTang": 12,
-    "moTaPhong": "Phòng Cao Cấp Hạng Sang",
-    "anhPhong": "https://example.com/room1005.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 10000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 601,
+  "soTang": 6,
+  "moTaPhong": "Phòng Đơn Hạng Sang",
+  "anhPhong": "https://example.com/room601.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 7000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6062"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6074" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6004",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1101,
-    "soTang": 11,
-    "moTaPhong": "Phòng Đơn Sang Trọng",
-    "anhPhong": "https://example.com/room1101.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 7500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6075" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6004",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1102,
-    "soTang": 11,
-    "moTaPhong": "Phòng Đôi Sang Trọng",
-    "anhPhong": "https://example.com/room1102.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 8000000
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 602,
+  "soTang": 6,
+  "moTaPhong": "Phòng Đôi Hạng Sang",
+  "anhPhong": "https://example.com/room602.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 7500000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6063"
   },
-  {
-    "_id": { "$oid": "6707f2b1676a25b7900e6076" },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6004",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1103,
-    "soTang": 12,
-    "moTaPhong": "Phòng Suite Sang Trọng",
-    "anhPhong": "https://example.com/room1103.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9000000
-  }
-]
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 701,
+  "soTang": 7,
+  "moTaPhong": "Phòng Gia Đình Hạng Sang",
+  "anhPhong": "https://example.com/room701.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6064"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 702,
+  "soTang": 7,
+  "moTaPhong": "Phòng Suite Hạng Sang",
+  "anhPhong": "https://example.com/room702.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 9000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6065"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 801,
+  "soTang": 8,
+  "moTaPhong": "Phòng Cao Cấp Hạng Sang",
+  "anhPhong": "https://example.com/room801.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 9500000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6066"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 802,
+  "soTang": 8,
+  "moTaPhong": "Phòng Premier Hạng Sang",
+  "anhPhong": "https://example.com/room802.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6067"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 901,
+  "soTang": 9,
+  "moTaPhong": "Phòng Đôi Cao Cấp Hạng Sang",
+  "anhPhong": "https://example.com/room901.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 11000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6068"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 902,
+  "soTang": 9,
+  "moTaPhong": "Phòng Suite Tổng Thống Hạng Sang",
+  "anhPhong": "https://example.com/room902.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 12000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6069"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 1001,
+  "soTang": 10,
+  "moTaPhong": "Phòng Đơn Cao Cấp",
+  "anhPhong": "https://example.com/room1001.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6070"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 1002,
+  "soTang": 10,
+  "moTaPhong": "Phòng Đôi Cao Cấp",
+  "anhPhong": "https://example.com/room1002.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8500000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6071"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 1003,
+  "soTang": 11,
+  "moTaPhong": "Phòng Gia Đình Cao Cấp",
+  "anhPhong": "https://example.com/room1003.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 9000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6072"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 1004,
+  "soTang": 11,
+  "moTaPhong": "Phòng Suite Cao Cấp",
+  "anhPhong": "https://example.com/room1004.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 9500000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6073"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 1005,
+  "soTang": 12,
+  "moTaPhong": "Phòng Cao Cấp Hạng Sang",
+  "anhPhong": "https://example.com/room1005.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6074"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 1101,
+  "soTang": 11,
+  "moTaPhong": "Phòng Đơn Sang Trọng",
+  "anhPhong": "https://example.com/room1101.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 7500000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6075"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 1102,
+  "soTang": 11,
+  "moTaPhong": "Phòng Đôi Sang Trọng",
+  "anhPhong": "https://example.com/room1102.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8000000
+},
+{
+  "_id": {
+    "$oid": "6707f2b1676a25b7900e6076"
+  },
+  "IdLoaiPhong": "6707f2b1676a25b7900e6004",
+  "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
+  "soPhong": 1103,
+  "soTang": 12,
+  "moTaPhong": "Phòng Suite Sang Trọng",
+  "anhPhong": "https://example.com/room1103.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 9000000
+}]
