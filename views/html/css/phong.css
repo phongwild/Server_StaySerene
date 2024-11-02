@@ -81,7 +81,20 @@ form {
     display: flex;
     flex-wrap: wrap;
 }
+.form-maks {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: row;
+}
+.form-maks input{
+    margin-right: 10px;
+    flex: 1 1 45%;
 
+}
+.form-maks select {
+    flex: 1 1 45%;
+
+}
 .form-group {
     flex: 1 1 45%;
     display: flex;

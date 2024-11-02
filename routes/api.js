@@ -23,12 +23,14 @@ router.get('/account/:id', apiCtrl.getAccountById);
 router.get('/rooms', apiCtrl.xemPhong);
 router.post('/rooms', apiCtrl.themPhong);
 router.delete('/rooms/:id', apiCtrl.xoaPhong);
+router.put('/rooms/:id', apiCtrl.suaPhong);
 router.get('/rooms/:id', apiCtrl.getRoomById);
 
 // Room type management routes
 router.post('/typeroom', apiCtrl.themLoaiPhong);
 router.get('/typeroom', apiCtrl.showLoaiPhong);
-router.get('/typeroom/:id', apiCtrl.showLoaiPhongByIdHotel);
+router.get('/typeroom/:id', apiCtrl.showLoaiPhongById);
+router.get('/typeroombyidhotel/:id', apiCtrl.showLoaiPhongByIdHotel);
 router.delete('/typeroom/:id', apiCtrl.xoaLoaiPhong);
 router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
 
