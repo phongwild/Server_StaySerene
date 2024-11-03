@@ -197,7 +197,7 @@ exports.getAccountById = async (req, res) => {
         }
 
         // Trả về thông tin tài khoản
-        res.status(200).json(account);
+        res.status(200).json([account]);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -240,7 +240,7 @@ exports.suaPhong = async (req, res, next) => {
         if (!updatedRoom) {
             return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
         }
-        res.status(200).json({ msg: 'Cập nhật thông tin phòng thành công', updatedRoom });
+        res.status(200).json([updatedRoom]);
     } catch (error) {
         console.error('Lỗi khi cập nhật thông tin phòng:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -258,7 +258,7 @@ exports.getRoomById = async (req, res) => {
         }
 
         // Trả về thông tin phòng
-        res.status(200).json(room);
+        res.status(200).json([room]);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -391,7 +391,7 @@ exports.showLoaiPhongById = async (req, res, next) => {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
         }
 
-        res.status(200).json(loaiPhong); // Trả về dữ liệu loại phòng
+        res.status(200).json([loaiPhong]); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server' });
@@ -442,10 +442,7 @@ exports.OrderRoom = async (req, res, next) => {
             total: total,
             status: status
         });
-        return res.status(201).json({
-            msg: 'Room booked succ',
-            newOrder: newOrder
-        })
+        return res.status(201).json([newOrder])
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
     }
@@ -470,7 +467,7 @@ exports.getAllOrders = async (req, res, next) => {
 exports.showOrderRoom = async (req, res, next) => {
     try {
         const Uid = req.params.Uid;
-        const orderroom = await mdOrderRoom.orderRoomModel.find({ Uid });
+        const orderroom = await mdOrderRoom.orderRoomModel.find({ Uid: Uid });
         if (!orderroom) {
             return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
         }
@@ -535,7 +532,7 @@ exports.getKhachSanById = async (req, res) => {
         if (!hotel) {
             return res.status(404).json({ error: 'Không tìm thấy khách sạn' });
         }
-        res.status(200).json(hotel);
+        res.status(200).json([hotel]);
     } catch (error) {
         res.status(500).json({ error: 'Lỗi server: ' + error });
     }
