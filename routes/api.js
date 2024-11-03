@@ -26,6 +26,7 @@ router.get('/account/:id', apiCtrl.getAccountById);
 router.get('/rooms', apiCtrl.xemPhong);
 router.get('/roombytyperoom/:id', apiCtrl.showRoomByTypeRoomId);
 router.post('/rooms', apiCtrl.themPhong);
+router.get('/roombytyperoom/:id', apiCtrl.showRoomByTypeRoomId);
 router.delete('/rooms/:id', apiCtrl.xoaPhong);
 router.put('/rooms/:id', apiCtrl.suaPhong);
 router.get('/rooms/:id', apiCtrl.getRoomById);

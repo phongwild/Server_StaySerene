@@ -264,6 +264,18 @@ exports.getRoomById = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+exports.showRoomByTypeRoomId = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const roomsById = await mdPhong.phongModel.find({ IdLoaiPhong: id });
+        if (!roomsById) {
+            return res.status(404).json({ error: 'Không tìm thấy phòng' });
+        }
+        res.status(200).json(roomsById);
+    } catch (error) {
+        return res.status(500).json({ error: `Lỗi server ` + error });
+    }
+}
 
 exports.themPhong = async (req, res, next) => {
     try {
