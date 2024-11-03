@@ -10,7 +10,7 @@
   "soTang": 1,
   "moTaPhong": "Phòng Đơn Tiêu Chuẩn",
   "anhPhong": "https://example.com/room101.jpg",
-  "tinhTrangPhong": 0,
+  "tinhTrangPhong": 1,
   "giaPhong": 2000000
 },
 {
@@ -40,7 +40,7 @@
   "soTang": 2,
   "moTaPhong": "Phòng Gia Đình",
   "anhPhong": "https://example.com/room201.jpg",
-  "tinhTrangPhong": 0,
+  "tinhTrangPhong": 1,
   "giaPhong": 3000000
 },
 {
@@ -70,7 +70,7 @@
   "soTang": 3,
   "moTaPhong": "Phòng Cao Cấp",
   "anhPhong": "https://example.com/room301.jpg",
-  "tinhTrangPhong": 0,
+  "tinhTrangPhong": 1,
   "giaPhong": 5000000
 },
 {
@@ -100,7 +100,7 @@
   "soTang": 4,
   "moTaPhong": "Phòng Đôi Hạng Sang",
   "anhPhong": "https://example.com/room401.jpg",
-  "tinhTrangPhong": 0,
+  "tinhTrangPhong": 1,
   "giaPhong": 6500000
 },
 {
@@ -115,7 +115,7 @@
   "soTang": 4,
   "moTaPhong": "Phòng Suite",
   "anhPhong": "https://example.com/room402.jpg",
-  "tinhTrangPhong": 0,
+  "tinhTrangPhong": 1,
   "giaPhong": 7000000
 },
 {
