@@ -42,7 +42,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 app.use(cors({
-  origin: 'http://192.168.1.2:3000' // Thay thế bằng nguồn của bạn
+  origin: 'http://192.168.10.103:3000' // Thay thế bằng nguồn của bạn
 }));
 
 

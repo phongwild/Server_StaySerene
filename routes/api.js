@@ -24,6 +24,7 @@ router.get('/account/:id', apiCtrl.getAccountById);
 
 // Room management routes
 router.get('/rooms', apiCtrl.xemPhong);
+router.get('/roombytyperoom/:id', apiCtrl.showRoomByTypeRoomId);
 router.post('/rooms', apiCtrl.themPhong);
 router.get('/roombytyperoom/:id', apiCtrl.showRoomByTypeRoomId);
 router.delete('/rooms/:id', apiCtrl.xoaPhong);
@@ -70,24 +71,6 @@ router.delete('/dichvu/:id', apiCtrl.xoaDichVu);
 router.put('/dichvu/:id', apiCtrl.suaDichVu);
 router.get('/dichvu/timkiem', apiCtrl.timKiemDichVu);
 
-// File upload route
-router.post('/uploadimg', upload.single('img'), (req, res) => {
-  try {
-    const file = req.file;
-    if (!file) {
-      return res.status(404).json('Please upload img');
-    }
-    const BASE_URL = 'http://192.168.1.4:3000/api/';
-    const imgUrl = BASE_URL + 'uploads/' + file.filename;
-    res.send({
-      msg: 'Upload succ',
-      url: imgUrl,
-    });
-  } catch (error) {
-    console.error(error);
-  }
-});
-
 // Customer care routes
 router.get('/messenger', apiCtrl.getChamSoc);
 router.get('/messenger/:id', apiCtrl.getChamSocById);
@@ -95,7 +78,6 @@ router.get('/messengerbyidhotel/:id', apiCtrl.getChamSocByIdHotel);
 router.post('/messenger', apiCtrl.themChamSoc);
 router.put('/messenger/:id', apiCtrl.suaChamSoc);
 router.delete('/messenger/:id', apiCtrl.xoaChamSoc);
-
 
 
 module.exports = router;

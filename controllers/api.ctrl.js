@@ -8,6 +8,9 @@ var mdChamSoc = require('../model/chamSoc_model');
 var mdDichVu = require('../model/dichvu_model');
 var mdPhanHoi = require('../model/phanhoi_model');
 const { accountModel } = require('../model/account_model'); 
+
+
+
 var mdAccount_admin = require('../model/acount_admin_model');
 var mdNhanVien = require('../model/acconut_nhanvien_model');
 const bcrypt = require("bcrypt");
@@ -39,10 +42,10 @@ exports.doLogin = async (req, res, next) => {
 exports.doRegister = async (req, res, next) => {
     try {
         console.log(req.body.email);
-        const existUser = mdAccount.accountModel.findOne({ email: req.body.email});
+        const existUser = mdAccount.accountModel.findOne({ email: req.body.email });
         if (!existUser) {
             return res.status(400).json({ error: 'Email đã tồn tại' });
-        } 
+        }
         const salt = await bcrypt.genSalt(10);
         const user = new mdAccount.accountModel(req.body);
         user.password = await bcrypt.hash(req.body.password, salt);
@@ -111,7 +114,7 @@ exports.xemTk = async (req, res) => {
     try {
         console.log('Request received at /api/account');
         const accounts = await mdAccount.accountModel.find();
-        
+
         if (!accounts || accounts.length === 0) {
             return res.status(404).json({ error: 'Không tồn tại tài khoản' });
         }
@@ -139,19 +142,19 @@ exports.xoaTk = async (req, res, next) => {
 exports.themtk = async (req, res, next) => {
     try {
         console.log(req.body);
-        const { username, diaChi,role,token, sdt,password, quocTich, ngaySinh, email, gioiTinh, cccd, avt_url } = req.body;
+        const { username, diaChi, role, token, sdt, password, quocTich, ngaySinh, email, gioiTinh, cccd, avt_url } = req.body;
         const newAcc = mdAccount.accountModel.create({
             username: username,
             sdt: sdt,
             diaChi: diaChi,
             email: email,
-            password:password,
+            password: password,
             ngaySinh: ngaySinh,
             gioiTinh: gioiTinh,
             quocTich: quocTich,
             cccd: cccd,
-            role:role,
-            token:token,
+            role: role,
+            token: token,
             avt: avt_url
         });
         res.status(201).json({ msg: 'add acc succ' });
@@ -161,7 +164,7 @@ exports.themtk = async (req, res, next) => {
 }
 exports.suaTk = async (req, res) => {
     try {
-        const accountId = req.params.id; 
+        const accountId = req.params.id;
         const updatedData = req.body;
 
         console.log('Updating account with ID:', accountId);
@@ -192,6 +195,7 @@ exports.getAccountById = async (req, res) => {
             return res.status(404).json({ error: 'Không tìm thấy tài khoản với ID đã cho' });
         }
 
+        // Trả về thông tin tài khoản
         res.status(200).json(account);
     } catch (error) {
         console.error(error);
@@ -211,6 +215,18 @@ exports.xemPhong = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server' });
     }
 }
+exports.showRoomByTypeRoomId = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const roomsById = await mdPhong.phongModel.find({ IdLoaiPhong: id });
+        if (!roomsById) {
+            return res.status(404).json({ error: 'Không tìm thấy phòng' });
+        }
+        res.status(200).json(roomsById);
+    } catch (error) {
+        return res.status(500).json({ error: `Lỗi server ` + error });
+    }
+}
 // Hàm cập nhật thông tin phòng
 exports.suaPhong = async (req, res, next) => {
     try {
@@ -223,7 +239,7 @@ exports.suaPhong = async (req, res, next) => {
         if (!updatedRoom) {
             return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
         }
-        res.status(200).json({ msg: 'Cập nhật thông tin phòng thành công', updatedRoom });
+        res.status(200).json([updatedRoom]);
     } catch (error) {
         console.error('Lỗi khi cập nhật thông tin phòng:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -239,6 +255,8 @@ exports.getRoomById = async (req, res) => {
         if (!room) {
             return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
         }
+
+        // Trả về thông tin phòng
         res.status(200).json(room);
     } catch (error) {
         console.error(error);
@@ -299,8 +317,20 @@ exports.xoaPhong = async (req, res, next) => {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
-};
-
+}
+exports.updatePhong = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const updatedData = req.body;
+        const update = await mdPhong.phongModel.findByIdAndUpdate(id, updatedData, {new: true});
+        if (!update) {
+            return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
+        }
+        res.status(200).json([update]);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server  ' + error });
+    }
+}
 //Thêm loại phòng
 exports.themLoaiPhong = async (req, res, next) => {
     try {
@@ -365,14 +395,14 @@ exports.showLoaiPhongByIdHotel = async (req, res, next) => {
 }
 exports.showLoaiPhongById = async (req, res, next) => {
     try {
-        const id = req.params.id; 
-        const loaiPhong = await mdLoaiPhong.loaiPhongModel.findById(id);
+        const id = req.params.id; // Lấy ID từ URL
+        const loaiPhong = await mdLoaiPhong.loaiPhongModel.findById(id); // Tìm loại phòng theo ID
         
         if (!loaiPhong) {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
         }
         
-        res.status(200).json(loaiPhong); 
+        res.status(200).json(loaiPhong); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server' });
@@ -423,10 +453,7 @@ exports.OrderRoom = async (req, res, next) => {
             total: total,
             status: status
         });
-        return res.status(201).json({
-            msg: 'Room booked succ',
-            newOrder: newOrder
-        })
+        return res.status(201).json([newOrder])
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
     }
@@ -466,7 +493,7 @@ exports.getOrderById = async (req, res, next) => {
 exports.showOrderRoom = async (req, res, next) => {
     try {
         const Uid = req.params.Uid;
-        const orderroom = await mdOrderRoom.orderRoomModel.find({ Uid });
+        const orderroom = await mdOrderRoom.orderRoomModel.find({ Uid: Uid });
         if (!orderroom) {
             return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
         }
@@ -560,7 +587,7 @@ exports.getKhachSanById = async (req, res) => {
         if (!hotel) {
             return res.status(404).json({ error: 'Không tìm thấy khách sạn' });
         }
-        res.status(200).json(hotel);
+        res.status(200).json([hotel]);
     } catch (error) {
         res.status(500).json({ error: 'Lỗi server: ' + error });
     }
@@ -648,22 +675,22 @@ exports.themNhanVien = async (req, res, next) => {
             email,
             gioLam,
             cccd
-            
+
         } = req.body;
         const newHotel = mdNhanVien.NhanVienModel.create({
-            IdKhachSan:IdKhachSan,
+            makhachsan:makhachsan,
             username: username,
             sdt: sdt,
             anhNhanVien: anhNhanVien,
             password: password,
             email: email,
             gioLam: gioLam,
-            cccd:cccd
-           
+            cccd: cccd
+
         });
         res.status(201).json({
             msg: 'Add hotel oke',
-            maKhachSan: newHotel._id 
+            maKhachSan: newHotel._id
         });
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
@@ -672,7 +699,7 @@ exports.themNhanVien = async (req, res, next) => {
 // delelte nhân viên
 exports.xoaNhanVien = async (req, res, next) => {
     try {
-        const id = req.params.id; 
+        const id = req.params.id;
         const deletedHotel = await mdNhanVien.NhanVienModel.findByIdAndDelete(id);
         if (!deletedHotel) {
             return res.status(404).json({ error: 'Không tìm thấy khách sạn với ID đã cho' });
@@ -686,15 +713,15 @@ exports.xoaNhanVien = async (req, res, next) => {
 // sửa nhân viên
 exports.suaNhanVien = async (req, res, next) => {
     try {
-        const makhachsan = req.params.id; 
+        const makhachsan = req.params.id;
         const updatedData = req.body;
 
         const updatedHotel = await mdNhanVien.NhanVienModel.findByIdAndUpdate(makhachsan, updatedData, { new: true });
-        
+
         if (!updatedHotel) {
             return res.status(404).json({ error: 'Không tìm thấy khách sạn với ID đã cho' });
         }
-        
+
         res.status(200).json({ msg: 'Cập nhật khách sạn thành công', updatedHotel });
     } catch (error) {
         console.error(error);
@@ -704,6 +731,28 @@ exports.suaNhanVien = async (req, res, next) => {
 
 
 
+// //Phan Hoi
+// exports.showPhanHoi = async (req, res, next) => {
+//     try {
+//         const phanHoi = await mdPhanHoi.phanHoiModel.find();
+//         console.log(phanHoi); 
+//         if (!phanHoi || phanHoi.length === 0) {
+//             return res.status(404).json({ error: 'Không tồn tại' });
+//         }
+        
+//         const result = phanHoi.map(phanHoi => ({
+//             _id: phanHoi._id,
+//             IdLoaiPhong: phanHoi.IdLoaiPhong,
+//             tenKhachHang: phanHoi.tenKhachHang,
+//             noiDung: phanHoi.noiDung,
+//             thoiGian: phanHoi.thoiGian
+//         }));
+
+//         res.status(200).json(result);
+//     } catch (error) {
+//         return res.status(500).json({ error: 'Lỗi server: ' + error });
+//     }
+// }
 //Thêm Chăm Sóc
 exports.themChamSoc = async (req, res) => {
     try {
