@@ -3,7 +3,7 @@ var db = require('./db');
 
 // Định nghĩa schema cho NhanVien
 const NhanVienSchema = new db.mongoose.Schema({
-    makhachsan: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'KhachSan' },
+    IdKhachSan: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'KhachSan' },
     username: { type: String, required: true },
     cccd:{type: String, required: false},
     sdt: { type: String, required: false, default: "123456" },

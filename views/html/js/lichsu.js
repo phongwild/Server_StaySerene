@@ -32,8 +32,8 @@ async function fetchServiceById(serviceId) {
 
 async function populateServices() {
   try {
-    services = await fetchAllServices();  // Update to set the global services variable
-    console.log("Available services:", services); // Kiểm tra dịch vụ có sẵn
+    services = await fetchAllServices();  
+    console.log("Available services:", services); 
 
     const select = document.getElementById('tenDichVu');
     select.innerHTML = '<option value="">Chọn dịch vụ</option>';
@@ -44,8 +44,8 @@ async function populateServices() {
 
     services.forEach(service => {
       const option = document.createElement('option');
-      option.value = service._id; // Assuming each service has an _id field
-      option.textContent = service.tenDichVu; // Assuming the service has a name field like tenDichVu
+      option.value = service._id; 
+      option.textContent = service.tenDichVu; 
       select.appendChild(option);
     });
   } catch (error) {

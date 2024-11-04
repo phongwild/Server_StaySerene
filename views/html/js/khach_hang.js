@@ -1,12 +1,10 @@
 var API = "http://192.168.1.2:3000/api/account";
-var currenUser = []; // To store current user data
-
+var currenUser = []; 
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
     return phoneRegex.test(phone);
 }
 
-// Kiểm tra email hợp lệ
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -143,15 +141,15 @@ function showKH_detail(row) {
     const cells = [...row.getElementsByTagName('td')];
 
     document.getElementById('makhachhang').value = uid;
-    document.getElementById('tenkhachhang').value = cells[1].innerText; // username
-    document.getElementById('diachi').value = cells[2].innerText; // diaChi
-    document.getElementById('sdt').value = cells[3].innerText; // sdt
-    document.getElementById('email').value = row.dataset.email; // email từ data-* attribute
-    document.getElementById('cccd').value = row.dataset.cccd; // cccd từ data-* attribute
-    document.getElementById('quoctich').value = row.dataset.quocTich; // quocTich từ data-* attribute
-    document.getElementById('gioitinh').value = cells[4].innerText; // gioiTinh
-    document.getElementById('ngaysinh').value = cells[5].innerText; // ngaySinh
-    document.getElementById('avt-url').value = cells[6].getElementsByTagName('img')[0].src; // avt
+    document.getElementById('tenkhachhang').value = cells[1].innerText; 
+    document.getElementById('diachi').value = cells[2].innerText; 
+    document.getElementById('sdt').value = cells[3].innerText; 
+    document.getElementById('email').value = row.dataset.email; 
+    document.getElementById('cccd').value = row.dataset.cccd; 
+    document.getElementById('quoctich').value = row.dataset.quocTich; 
+    document.getElementById('gioitinh').value = cells[4].innerText; 
+    document.getElementById('ngaysinh').value = cells[5].innerText; 
+    document.getElementById('avt-url').value = cells[6].getElementsByTagName('img')[0].src;
 }
 
 async function deleteCustomer() {
@@ -241,10 +239,10 @@ async function editCustomer() {
         }
 
         const result = await res.json();
-        console.log(result); // Log the response for debugging
-        getAPI(); // Refresh the user list
+        console.log(result); 
+        getAPI(); 
         alert('Cập nhật thông tin khách hàng thành công ');
-        document.getElementById('customer-form').reset(); // Reset the form
+        document.getElementById('customer-form').reset(); 
     } catch (error) {
         console.error('Error updating customer: ', error);
         alert('Có lỗi xảy ra khi cập nhật thông tin khách hàng.');
@@ -264,9 +262,9 @@ function searchTypeRooms() {
     rows.forEach(row => {
         const cells = row.getElementsByTagName('td');
         
-        const makhachhang = cells[0].textContent.toLowerCase(); // Adjusted index for Mã Khách Hàng
-        const tenkhachhang = cells[1].textContent.toLowerCase(); // Adjusted index for Tên Khách Hàng
-        const diachi = cells[2].textContent.toLowerCase(); // Adjusted index for Địa chỉ
+        const makhachhang = cells[0].textContent.toLowerCase(); 
+        const tenkhachhang = cells[1].textContent.toLowerCase(); 
+        const diachi = cells[2].textContent.toLowerCase(); 
 
         const matchesMakhachhang = searchMakhachhang === '' || makhachhang.includes(searchMakhachhang);
         const matchesTenkhachhang = searchTenkhachhang === '' || tenkhachhang.includes(searchTenkhachhang);
@@ -277,22 +275,20 @@ function searchTypeRooms() {
 }
 
 
-// Xóa dấu tiếng Việt
 function removeDiacritics(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D');
 }
 
-// Kết nối sự kiện tìm kiếm
 document.getElementById('search-button').addEventListener('click', function (event) {
     event.preventDefault();
     searchTypeRooms();
 });
 function confirmLogout(event) {
-    event.preventDefault(); // Prevent the default link action
-    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); // Show confirmation dialog
+    event.preventDefault(); 
+    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); 
 
     if (userConfirmed) {
-        window.location.href = "../../welcome.html"; // Redirect to the logout page if confirmed
+        window.location.href = "../../welcome.html"; 
     }
 }
 

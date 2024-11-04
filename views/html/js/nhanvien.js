@@ -49,7 +49,7 @@ async function fetchNhanVien() {
     try {
         const response = await fetch(apiNhanVienUrl);
         const nhanVienList = await response.json();
-        console.log(nhanVienList); // Kiểm tra dữ liệu nhận được
+        console.log(nhanVienList); 
         currentNhanVien = nhanVienList;
         displayNhanVien(nhanVienList);
     } catch (error) {
@@ -112,7 +112,7 @@ function displayNhanVien(nhanVienList) {
 
         row.innerHTML = `
             <td>${nhanVien._id}</td>
-            <td>${nhanVien.makhachsan }</td>
+            <td>${nhanVien.IdKhachSan }</td>
             <td>${nhanVien.username}</td>
             <td><img src="${nhanVien.anhNhanVien}" alt="${nhanVien.anhNhanVien}" style="width:100px;height:auto;"></td>
         `;
@@ -149,7 +149,7 @@ async function populateHotels() {
 // Thêm nhân viên
 async function addCustomernhanvien() {
     const manhanvien = document.getElementById('manhanvien').value; 
-    const makhachsan = document.getElementById('makhachsan').value;
+    const IdKhachSan = document.getElementById('makhachsan').value;
     const tennhanvien = document.getElementById('username').value;
     const sdt = document.getElementById('sdt').value;
     const anhNhanVien = document.getElementById('anhNhanVien').value;
@@ -167,7 +167,7 @@ async function addCustomernhanvien() {
         return;
     }
     // Kiểm tra nhập liệu
-    if (!tennhanvien || !sdt || !anhNhanVien || !password || !gioLam || !email || !cccd || !makhachsan) {
+    if (!tennhanvien || !sdt || !anhNhanVien || !password || !gioLam || !email || !cccd || !IdKhachSan) {
         alert('Vui lòng điền đầy đủ thông tin.');
         return;
     }
@@ -183,7 +183,7 @@ async function addCustomernhanvien() {
     }
 
     const newNhanVien = {
-        makhachsan,
+        IdKhachSan,
         username: tennhanvien,
         sdt,
         anhNhanVien,
@@ -218,21 +218,21 @@ updateButton.onclick = editCustomernhanvien;
 
 // Kiểm tra định dạng số điện thoại
 function isValidPhoneNumber(sdt) {
-    const phoneRegex = /^0\d{9}$/; // Số điện thoại phải bắt đầu bằng 0 và có đúng 10 chữ số
+    const phoneRegex = /^0\d{9}$/; 
     return phoneRegex.test(sdt);
 }
 
 // Kiểm tra định dạng email
 function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Định dạng email cơ bản
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
     return emailRegex.test(email);
 }
 
 //hiển thị ds khi bấm vào hàng
 async function showHotelDetailsnhanvien(nhanVien) {
-    const { _id, makhachsan, username, sdt, cccd, email, password, gioLam, anhNhanVien } = nhanVien;
+    const { _id, IdKhachSan, username, sdt, cccd, email, password, gioLam, anhNhanVien } = nhanVien;
     document.getElementById('manhanvien').value = _id;
-    document.getElementById('makhachsan').value = makhachsan;
+    document.getElementById('makhachsan').value = IdKhachSan;
     document.getElementById('username').value = username;
     document.getElementById('sdt').value = sdt;
     document.getElementById('cccd').value = cccd;
@@ -241,8 +241,7 @@ async function showHotelDetailsnhanvien(nhanVien) {
     document.getElementById('gioLam').value = gioLam;
     document.getElementById('anhNhanVien').value = anhNhanVien;
 
-    await populateHotels(); // Gọi hàm để đổ danh sách khách sạn vào ô chọn
-
+    await populateHotels(); 
     const selectElement = document.getElementById('tenkhachsan');
     const options = selectElement.options;
     for (let option of options) {
@@ -289,7 +288,7 @@ async function deleteNhanVien() {
 // Sửa thông tin nhân viên
 async function editCustomernhanvien() {
     const NhanVienId = document.getElementById('manhanvien').value;
-    const makhachsan = document.getElementById('makhachsan').value;
+    const IdKhachSan = document.getElementById('makhachsan').value;
     const username = document.getElementById('username').value;
     const cccd = document.getElementById('cccd').value;
     const anhNhanVien = document.getElementById('anhNhanVien').value;
@@ -311,9 +310,8 @@ async function editCustomernhanvien() {
         return;
     }
 
-    // Only include fields that should be updated
     const updatedNhanVien = {
-        makhachsan,
+        IdKhachSan,
         username,
         cccd,
         anhNhanVien,
@@ -389,11 +387,11 @@ document.addEventListener('DOMContentLoaded', () => {
     populateHotels();
 });
 function confirmLogout(event) {
-    event.preventDefault(); // Prevent the default link action
-    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); // Show confirmation dialog
+    event.preventDefault(); 
+    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); 
 
     if (userConfirmed) {
-        window.location.href = "../../welcome.html"; // Redirect to the logout page if confirmed
+        window.location.href = "../../welcome.html"; 
     }
 }
 

@@ -1,5 +1,8 @@
 const apiUrl = 'http://192.168.1.2:3000/api/messenger';
+const apichamsocUrl = 'http://192.168.1.2:3000/api/messengerbyidhotel';
 const apiUrlAccount = 'http://192.168.1.2:3000/api/account';
+const hotelId = localStorage.getItem('IdKhachSan');
+
 let selectedIdKhachSan = null;
 let selectedUid = null; 
 let lastMessageTimestamp = null; 
@@ -17,13 +20,13 @@ async function updateTrangThaiNv(uid) {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Mạng không phản hồi đúng');
         }
 
         const result = await response.json();
-        console.log('Updated trangThaiNv:', result);
+        console.log('Đã cập nhật trangThaiNv:', result);
     } catch (error) {
-        console.error('Error updating trangThaiNv:', error);
+        console.error('Lỗi khi cập nhật trangThaiNv:', error);
     }
 }
 
@@ -31,20 +34,20 @@ async function fetchAccountInfo(uid) {
     try {
         const response = await fetch(`${apiUrlAccount}/${uid}`);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Mạng không phản hồi đúng');
         }
         return await response.json();
     } catch (error) {
-        console.error('Error fetching account info:', error);
+        console.error('Lỗi khi lấy thông tin tài khoản:', error);
         return null; 
     }
 }
 
 async function fetchChamSoc() {
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(`${apichamsocUrl}/${hotelId}`);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Mạng không phản hồi đúng');
         }
         const chamSocList = await response.json();
 
@@ -97,7 +100,7 @@ async function fetchChamSoc() {
 
                     const userImage = document.createElement('img');
                     userImage.src = accountInfo.avt; 
-                    userImage.alt = 'User Image';
+                    userImage.alt = 'Hình ảnh người dùng';
                     userImage.style.width = '40px'; 
                     userImage.style.height = '40px';
                     userImage.style.borderRadius = '50%'; 
@@ -118,11 +121,10 @@ async function fetchChamSoc() {
             }
         }
     } catch (error) {
-        console.error('Error fetching chăm sóc records:', error);
+        console.error('Lỗi khi lấy bản ghi chăm sóc:', error);
     }
 }
 setInterval(fetchChamSoc, 1000); 
-
 
 async function displayChamSoc(idKhachSan, uid) {
     selectedIdKhachSan = idKhachSan;
@@ -131,20 +133,19 @@ async function displayChamSoc(idKhachSan, uid) {
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Mạng không phản hồi đúng');
         }
         const chamSocList = await response.json();
         const filteredChamSoc = chamSocList.filter(cs => cs.IdKhachSan === idKhachSan && cs.Uid === uid);
 
-        // So sánh dữ liệu mới với dữ liệu trước đó
         if (JSON.stringify(filteredChamSoc) !== JSON.stringify(previousChamSocForSelected)) {
-            previousChamSocForSelected = filteredChamSoc;  // Cập nhật dữ liệu trước đó
+            previousChamSocForSelected = filteredChamSoc;
 
             const chatMessages = document.querySelector('.chat-messages');
-            chatMessages.innerHTML = '';  // Xóa các tin nhắn cũ trước khi thêm mới
+            chatMessages.innerHTML = ''; 
 
             for (const cs of filteredChamSoc) {
-                await updateTrangThaiNv(cs._id);  // Cập nhật trạng thái nếu cần
+                await updateTrangThaiNv(cs._id);  
 
                 const messageItem = document.createElement('div');
                 messageItem.style.padding = '10px';
@@ -154,15 +155,14 @@ async function displayChamSoc(idKhachSan, uid) {
                 messageItem.style.flexDirection = 'column'; 
 
                 const contentText = document.createElement('div');
-                contentText.textContent = cs.noiDungGui;  // Nội dung tin nhắn
+                contentText.textContent = cs.noiDungGui; 
 
                 const timeText = document.createElement('div');
-                timeText.textContent = new Date(cs.thoiGianGui).toLocaleString();  // Thời gian gửi
+                timeText.textContent = new Date(cs.thoiGianGui).toLocaleString(); 
                 timeText.style.fontSize = '0.8em'; 
                 timeText.style.color = '#bdc3c7'; 
                 timeText.style.marginTop = '10px'; 
 
-                // Tạo style cho tin nhắn dựa trên vai trò
                 if (cs.vaiTro === 'Khách hàng') {
                     messageItem.style.border = '2px solid #3498db'; 
                     messageItem.style.backgroundColor = 'white'; 
@@ -178,28 +178,23 @@ async function displayChamSoc(idKhachSan, uid) {
                     timeText.style.alignSelf = 'flex-end'; 
                 }
 
-                // Thêm nội dung tin nhắn và thời gian gửi vào messageItem
                 messageItem.appendChild(contentText);
                 messageItem.appendChild(timeText);
                 chatMessages.appendChild(messageItem);
             }
 
-            // Cuộn xuống dưới cùng sau khi thêm tin nhắn
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
     } catch (error) {
-        console.error('Error displaying chăm sóc:', error);
+        console.error('Lỗi khi hiển thị chăm sóc:', error);
     }
 }
 setInterval(() => displayChamSoc(selectedIdKhachSan, selectedUid), 1000);
-
 
 function removeAccents(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D');
 }
 
-
-// Hàm tìm kiếm
 function searchItems() {
     const searchInput = removeAccents(document.getElementById('searchInput').value.toLowerCase());
     const chatList = document.querySelector('.chat-list');
@@ -214,7 +209,6 @@ function searchItems() {
         }
     });
 }
-
 
 async function sendMessage() {
     const messageInput = document.querySelector('.message-input input');
@@ -250,34 +244,17 @@ async function sendMessage() {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('Mạng không phản hồi đúng');
         }
 
         const result = await response.json();
         console.log('Tin nhắn đã được gửi:', result);
         messageInput.value = '';
-        await fetchChamSoc(); 
-        await displayChamSoc(selectedIdKhachSan, selectedUid); 
+        await fetchChamSoc();
     } catch (error) {
         console.error('Lỗi khi gửi tin nhắn:', error);
     }
-    const chatMessages = document.querySelector('.chat-messages');
-    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-document.querySelector('.message-input input').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') { 
-        sendMessage(); 
-    }
-});
-document.getElementById('gui-button').addEventListener('click', sendMessage);
-document.addEventListener('DOMContentLoaded', fetchChamSoc);
+document.querySelector('.message-input button').addEventListener('click', sendMessage);
 document.getElementById('searchInput').addEventListener('input', searchItems);
-function confirmLogout(event) {
-    event.preventDefault(); // Prevent the default link action
-    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); // Show confirmation dialog
-
-    if (userConfirmed) {
-        window.location.href = "../../welcome.html"; // Redirect to the logout page if confirmed
-    }
-}

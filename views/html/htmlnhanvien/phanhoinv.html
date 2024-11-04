@@ -24,6 +24,16 @@
         <div class="main-content" id="main-content">
             <div class="header">
                 <h1>Phản hồi khách hàng</h1>
+                <div class="button-group">
+                    <div class="form-search">
+                        <input type="text" id="search-maphanhoi" placeholder="Tìm kiếm Mã Phản Hồi">
+                        <input type="text" id="search-maphong" placeholder="Tìm kiếm Mã Phòng ">
+                        <input type="text" id="search-makhachhang" placeholder="Tìm kiếm Mã Khách Hàng">
+                        <input type="text" id="search-tenkhachhang" placeholder="Tìm kiếm Tên Khách hàng">
+                        <button id="search-button">Tìm Kiếm</button>
+
+                    </div>
+                </div>
             </div>
 
             <!-- Danh sách phản hồi -->
@@ -32,7 +42,9 @@
                 <table> 
                     <thead>
                         <tr>
+                            <th>Mã phản hồi</th>
                             <th>Mã Phòng</th>
+                            <th>Mã khách hàng</th>
                             <th>Tên khách hàng</th>
                             <th>Nội dung phản hồi</th>
                             <th>Ngày phản hồi</th>

@@ -1,15 +1,17 @@
 const apiUrl = "http://192.168.1.2:3000/api/orderroom";
+const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
 const serviceApiUrl = "http://192.168.1.2:3000/api/dichvu";
+const hotelId = localStorage.getItem('IdKhachSan');
 let services = {};
 
 async function fetchRoomById(roomId) {
   try {
-    const response = await fetch(`http://192.168.1.2:3000/api/rooms/${roomId}`); // Adjust URL according to your API
+    const response = await fetch(`http://192.168.1.2:3000/api/rooms/${roomId}`); 
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
     const room = await response.json();
-    return room; // Assuming the room object contains soPhong
+    return room; 
   } catch (error) {
     console.error('Error fetching room by ID:', error);
     return null;
@@ -47,8 +49,8 @@ async function fetchServiceById(serviceId) {
 
 async function populateServices() {
   try {
-    services = await fetchAllServices();  // Update to set the global services variable
-    console.log("Available services:", services); // Kiểm tra dịch vụ có sẵn
+    services = await fetchAllServices();  
+    console.log("Available services:", services); 
 
     const select = document.getElementById('tenDichVu');
     select.innerHTML = '<option value="">Chọn dịch vụ</option>';
@@ -59,8 +61,8 @@ async function populateServices() {
 
     services.forEach(service => {
       const option = document.createElement('option');
-      option.value = service._id; // Assuming each service has an _id field
-      option.textContent = service.tenDichVu; // Assuming the service has a name field like tenDichVu
+      option.value = service._id; 
+      option.textContent = service.tenDichVu; 
       select.appendChild(option);
     });
   } catch (error) {
@@ -89,7 +91,7 @@ function isNotEmpty(value, fieldName) {
 }
 async function fetchLichSus() {
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(`${apidatphongUrl}/${hotelId}`);
     const lichsus = await response.json();
     displayLichSus(lichsus);
   } catch (error) {
@@ -126,7 +128,6 @@ function displayLichSus(lichsus) {
       <td>${statusMapping[trangThaiValue]}</td>
     `;
 
-    // Event listener for row click
     row.onclick = async function () {
       console.log("Row clicked:", mdp);
       document.getElementById("mdp").value = mdp;
@@ -140,10 +141,9 @@ function displayLichSus(lichsus) {
       document.getElementById("tongTien").value = tongTien;
       document.getElementById("dichVu").value = dichVuID;
 
-      // Fetch room details and populate soPhong
       const room = await fetchRoomById(phongID);
       if (room) {
-        document.getElementById("soPhong").value = room.soPhong; // Assuming room object contains soPhong
+        document.getElementById("soPhong").value = room.soPhong; 
       } else {
         document.getElementById("soPhong").value = "Phòng không tồn tại";
       }
@@ -175,15 +175,14 @@ async function addOrderroom() {
   }
 
   const uid = document.getElementById("uid").value;
-  const phong = document.getElementById("phong1").value; // This should reference the _id from phong.json
+  const phong = document.getElementById("phong1").value; 
   const dichVu = document.getElementById("dichVu").value;
-  const thoiGianDat = document.getElementById("thoiGianDat").value; // Added this variable
+  const thoiGianDat = document.getElementById("thoiGianDat").value; 
   const thoiGianNhan = document.getElementById("thoiGianNhan").value;
   const thoiGianTra = document.getElementById("thoiGianTra").value;
   const trangThai = document.getElementById("trangThai").value;
   const tongTien = document.getElementById("tongTien").value;
 
-  // Check for empty fields
   if (
     !isNotEmpty(uid, "mã khách hàng ") ||
     !isNotEmpty(thoiGianDat, "Thời gian đặt") ||
@@ -191,7 +190,7 @@ async function addOrderroom() {
     !isNotEmpty(thoiGianTra, "Thời gian trả") ||
     !isNotEmpty(trangThai, "Trạng thái")
   ) {
-    return; // Stop if any field is empty
+    return; 
   }
 
   if (
@@ -205,7 +204,7 @@ async function addOrderroom() {
 
   const newOrder = {
     Uid: uid,
-    IdPhong: phong, // Ensure this is set to the room's _id
+    IdPhong: phong, 
     IdDichVu: dichVu || null,
     orderTime: thoiGianDat,
     timeGet: thoiGianNhan,
@@ -246,15 +245,14 @@ async function editderroom() {
   }
 
   const uid = document.getElementById("uid").value;
-  const phong = document.getElementById("phong1").value; // Ensure this is set to the room's _id
+  const phong = document.getElementById("phong1").value; 
   const dichVu = document.getElementById("dichVu").value;
-  const thoiGianDat = document.getElementById("thoiGianDat").value; // Added this variable
+  const thoiGianDat = document.getElementById("thoiGianDat").value; 
   const thoiGianNhan = document.getElementById("thoiGianNhan").value;
   const thoiGianTra = document.getElementById("thoiGianTra").value;
   const trangThai = document.getElementById("trangThai").value;
   const tongTien = document.getElementById("tongTien").value;
 
-  // Check for empty fields
   if (
     !isNotEmpty(uid, "mã khách hàng ") ||
     !isNotEmpty(thoiGianDat, "Thời gian đặt") ||
@@ -262,7 +260,7 @@ async function editderroom() {
     !isNotEmpty(thoiGianTra, "Thời gian trả") ||
     !isNotEmpty(trangThai, "Trạng thái")
   ) {
-    return; // Stop if any field is empty
+    return; 
   }
 
   if (
@@ -276,7 +274,7 @@ async function editderroom() {
 
   const updatedOrder = {
     Uid: uid,
-    IdPhong: phong, // Ensure this is set to the room's _id
+    IdPhong: phong, 
     IdDichVu: dichVu || null,
     orderTime: thoiGianDat,
     timeGet: thoiGianNhan,
@@ -323,7 +321,6 @@ function formatToISO(dateString) {
 }
 
 
-// Hàm loại bỏ dấu tiếng Việt
 function removeVietnameseTones(str) {
   return str
     .normalize('NFD')
@@ -332,7 +329,6 @@ function removeVietnameseTones(str) {
     .replace(/Đ/g, 'D');
 }
 
-// Hàm tìm kiếm theo dịch vụ
 function filterTable() {
   const searchInput = removeVietnameseTones(
     document.getElementById("search").value.toLowerCase()
@@ -356,7 +352,7 @@ function formatDateTime(dateTime) {
   const seconds = String(date.getSeconds()).padStart(2, '0');
 
   const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0'); // Tháng bắt đầu từ 0
+  const month = String(date.getMonth() + 1).padStart(2, '0'); 
   const year = date.getFullYear();
 
   return `${hours}:${minutes}:${seconds} ${day}/${month}/${year}`;
@@ -365,7 +361,6 @@ function formatDateTime(dateTime) {
 
 
 
-// Hàm định dạng tiền tệ
 function formatCurrency(amount) {
   return new Intl.NumberFormat("vi-VN", {
     style: "currency",
@@ -373,7 +368,6 @@ function formatCurrency(amount) {
   }).format(amount);
 }
 
-// Gọi hàm lấy dữ liệu khi trang được tải
 window.onload = function () {
   fetchLichSus();
 };
@@ -385,41 +379,35 @@ document.getElementById('tenDichVu').addEventListener('change', function () {
   const selectedOption = this.options[this.selectedIndex];
   const selectedServiceId = selectedOption.value;
 
-  // Update your input or perform other actions based on the selected service
   console.log('Selected Service ID:', selectedServiceId);
 });
-// Add this event listener to synchronize tenDichVu with dichVu input
 document.getElementById('tenDichVu').addEventListener('change', async function () {
   const selectedOption = this.options[this.selectedIndex];
   const selectedServiceId = selectedOption.value;
 
-  // Fetch the service details using the selected ID
   const service = await fetchServiceById(selectedServiceId);
   if (service) {
-    document.getElementById('dichVu').value = service._id; // Update the ID input
-    console.log('Selected Service:', service.tenDichVu); // Log the service name
-  } else {
-    document.getElementById('dichVu').value = ""; // Clear the ID input if service not found
+    document.getElementById('dichVu').value = service._id; 
+    console.log('Selected Service:', service.tenDichVu); 
+    document.getElementById('dichVu').value = ""; 
     console.log('Service not found');
   }
 });
 
-// Add this event listener to synchronize dichVu input with tenDichVu dropdown
 document.getElementById('dichVu').addEventListener('input', function () {
   const inputServiceId = this.value;
 
-  // Find the corresponding option in the tenDichVu dropdown
   const select = document.getElementById('tenDichVu');
   for (let i = 0; i < select.options.length; i++) {
     if (select.options[i].value === inputServiceId) {
-      select.selectedIndex = i; // Set the selected index to match
+      select.selectedIndex = i; 
       console.log('Selected Service ID:', inputServiceId);
       break;
     }
   }
 });
 document.addEventListener('DOMContentLoaded', () => {
-  populateServices(); // Đảm bảo hàm này được gọi
+  populateServices(); 
 });
 
 document.getElementById('searchBtn').addEventListener('click', async function() {
@@ -427,22 +415,18 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
   const searchMakhachhang = document.getElementById('search-makhachhang').value.toLowerCase();
   const searchMaphong = document.getElementById('search-maphong').value.toLowerCase();
   
-  // Fetch all lichsus (orders) data to search through
   try {
     const response = await fetch(apiUrl);
     const lichsus = await response.json();
 
-    // Clear previous results
     const customerList = document.getElementById("customer-list");
     customerList.innerHTML = "";
 
-    // Filter results based on search criteria
     const filteredLichsus = lichsus.filter(lichsu => {
-      const madatphong = lichsu._id.toLowerCase(); // Mã Đặt Phòng
-      const makhachhang = lichsu.Uid.toLowerCase(); // Mã Khách Hàng
-      const maphong = lichsu.IdPhong.toLowerCase(); // Mã Phòng
+      const madatphong = lichsu._id.toLowerCase(); 
+      const makhachhang = lichsu.Uid.toLowerCase(); 
+      const maphong = lichsu.IdPhong.toLowerCase(); 
 
-      // Check if each search condition is met
       const matchesMadatphong = searchMadatphong === '' || madatphong.includes(searchMadatphong);
       const matchesMakhachhang = searchMakhachhang === '' || makhachhang.includes(searchMakhachhang);
       const matchesMaphong = searchMaphong === '' || maphong.includes(searchMaphong);
@@ -450,7 +434,6 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
       return matchesMadatphong && matchesMakhachhang && matchesMaphong;
     });
 
-    // Display filtered results
     filteredLichsus.forEach((lichsu) => {
       const row = document.createElement("tr");
       const thoiGianDatPhong = lichsu.orderTime;
@@ -468,9 +451,8 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
         <td>${statusMapping[trangThaiValue]}</td>
       `;
 
-      // Add onclick event to populate the form
       row.onclick = function () {
-        populateFormWithOrderData(lichsu); // Call a separate function to handle populating form
+        populateFormWithOrderData(lichsu); 
       };
 
       customerList.appendChild(row);
@@ -487,7 +469,6 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
   }
 });
 
-// Function to populate the form with order data
 function populateFormWithOrderData(lichsu) {
   document.getElementById("mdp").value = lichsu._id;
   document.getElementById("uid").value = lichsu.Uid;
@@ -499,7 +480,6 @@ function populateFormWithOrderData(lichsu) {
   document.getElementById("trangThai").value = lichsu.status;
   document.getElementById("tongTien").value = lichsu.total;
 
-  // Populate service dropdown if applicable
   const service = services.find(s => s._id === lichsu.IdDichVu);
   if (service) {
     document.getElementById("tenDichVu").value = service.tenDichVu;
@@ -510,10 +490,10 @@ function populateFormWithOrderData(lichsu) {
   }
 }
 function confirmLogout(event) {
-  event.preventDefault(); // Prevent the default link action
-  const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); // Show confirmation dialog
+  event.preventDefault();
+  const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); 
 
   if (userConfirmed) {
-      window.location.href = "../../welcome.html"; // Redirect to the logout page if confirmed
+      window.location.href = "../../welcome.html"; 
   }
 }

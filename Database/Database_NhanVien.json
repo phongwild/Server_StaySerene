@@ -3,7 +3,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec01"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebab"
         },
         "username": "nv_sofitel_01",
@@ -18,7 +18,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec02"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebab"
         },
         "username": "nv_sofitel_02",
@@ -33,7 +33,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec03"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebac"
         },
         "username": "nv_vinpearl_01",
@@ -48,7 +48,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec04"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebac"
         },
         "username": "nv_vinpearl_02",
@@ -63,7 +63,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec05"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebad"
         },
         "username": "nv_intercontinental_01",
@@ -78,7 +78,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec06"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebad"
         },
         "username": "nv_intercontinental_02",
@@ -93,7 +93,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec07"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebae"
         },
         "username": "nv_jwmarriott_01",
@@ -108,7 +108,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec08"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebae"
         },
         "username": "nv_jwmarriott_02",
@@ -123,7 +123,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec09"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebaf"
         },
         "username": "nv_flamingo_01",
@@ -138,7 +138,7 @@
         "_id": {
             "$oid": "6707f9b1df6d7c9585d8ec10"
         },
-        "makhachsan": {
+        "IdKhachSan": {
             "$oid": "6707ed79df6d7c9585d8ebaf"
         },
         "username": "nv_flamingo_02",

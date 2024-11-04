@@ -1,56 +1,98 @@
-const apiUrl = "http://192.168.1.2:3000/api/phanhoi";
+const apiphanhoiUrl = "http://192.168.1.2:3000/api/phanhoibyidhotel";
+const apikhachhang = "http://192.168.1.2:3000/api/account";
+const hotelId = localStorage.getItem('IdKhachSan');
 
-// Lấy danh sách phản hồi từ API
+let customers = {};
+let phanhois = [];
+
+async function fetchCustomers() {
+    try {
+        const response = await fetch(apikhachhang);
+        const customerData = await response.json();
+        customers = customerData.reduce((acc, customer) => {
+            acc[customer._id] = customer.username;
+            return acc;
+        }, {});
+    } catch (error) {
+        console.error('Lỗi khi fetch khách hàng:', error);
+    }
+}
+
 async function fetchPhanHois() {
     try {
-        const response = await fetch(apiUrl);
-        const phanhois = await response.json();
-        console.log(phanhois); // Kiểm tra dữ liệu trả về từ API
-        displayPhanHois(phanhois); // Hiển thị phản hồi lên bảng
+        const response = await fetch(`${apiphanhoiUrl}/${hotelId}`);
+        phanhois = await response.json();
+        console.log(phanhois);
+        displayPhanHois(phanhois);
     } catch (error) {
         console.error('Lỗi khi fetch phanhois:', error);
     }
 }
 
-// Hiển thị danh sách phản hồi lên bảng
-function displayPhanHois(phanhois) {
+function displayPhanHois(feedbackList) {
     const customerList = document.getElementById("customer-list");
-    customerList.innerHTML = ""; // Xóa nội dung cũ (nếu có)
+    customerList.innerHTML = "";
 
-    phanhois.forEach((phanhoi) => {
+    feedbackList.forEach((phanhoi) => {
         const row = document.createElement("tr");
-        const maPhong = phanhoi.IdLoaiPhong || "N/A"; // Lấy mã phòng, kiểm tra nếu null
-        const tenKhachHang = phanhoi.tenKhachHang || "N/A"; // Tên khách hàng
-        const noiDung = phanhoi.noiDung || "N/A"; // Nội dung phản hồi
-        const thoiGian = formatDate(phanhoi.thoiGian) || "N/A"; // Thời gian phản hồi
+        const maPhanHoi = phanhoi._id || "N/A";
+        const IdDatPhong = phanhoi.IdDatPhong || "N/A";
+        const Uid = phanhoi.Uid || "N/A";
+        const noiDung = phanhoi.noiDung || "N/A";
+        const thoiGian = formatDate(phanhoi.thoiGian) || "N/A";
+        const tenKhachHang = customers[Uid] || "N/A";
 
         row.innerHTML = `
-            <td>${maPhong}</td>
+            <td>${maPhanHoi}</td>
+            <td>${IdDatPhong}</td>
+            <td>${Uid}</td>
             <td>${tenKhachHang}</td>
             <td>${noiDung}</td>
             <td>${thoiGian}</td>
         `;
 
-        customerList.appendChild(row); // Thêm hàng mới vào bảng
+        customerList.appendChild(row);
     });
 }
 
-// Hàm định dạng ngày
+function searchPhanHois() {
+    const searchMaPhanHoi = normalizeString(document.getElementById("search-maphanhoi").value);
+    const searchMaPhong = normalizeString(document.getElementById("search-maphong").value);
+    const searchMaKhachHang = normalizeString(document.getElementById("search-makhachhang").value);
+    const searchTenKhachHang = normalizeString(document.getElementById("search-tenkhachhang").value);
+
+    const filteredPhanHois = phanhois.filter(phanhoi => {
+        return (normalizeString(phanhoi._id).includes(searchMaPhanHoi) || searchMaPhanHoi === "") &&
+               (normalizeString(phanhoi.IdDatPhong).includes(searchMaPhong) || searchMaPhong === "") &&
+               (normalizeString(phanhoi.Uid).includes(searchMaKhachHang) || searchMaKhachHang === "") &&
+               (normalizeString(customers[phanhoi.Uid] || "").includes(searchTenKhachHang) || searchTenKhachHang === "");
+    });
+
+    displayPhanHois(filteredPhanHois); 
+}
+
+function normalizeString(str) {
+    if (!str) return "";
+    const unaccentedStr = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    return unaccentedStr.replace(/\s+/g, '').toLowerCase();
+}
+
 function formatDate(dateString) {
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     const date = new Date(dateString);
-    return date.toLocaleDateString('vi-VN', options); // Định dạng ngày theo kiểu Việt Nam
+    return date.toLocaleDateString('vi-VN', options);
 }
 
-// Gọi hàm lấy dữ liệu khi trang được tải
-window.onload = function() {
-    fetchPhanHois();
+window.onload = async function() {
+    await fetchCustomers();
+    await fetchPhanHois();
+    document.getElementById("search-button").addEventListener("click", searchPhanHois);
 };
-function confirmLogout(event) {
-    event.preventDefault(); // Prevent the default link action
-    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); // Show confirmation dialog
 
+function confirmLogout(event) {
+    event.preventDefault();
+    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?");
     if (userConfirmed) {
-        window.location.href = "../../welcome.html"; // Redirect to the logout page if confirmed
+        window.location.href = "../../welcome.html";
     }
 }

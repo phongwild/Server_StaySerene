@@ -42,7 +42,6 @@ function fetchRevenueByYear() {
             const revenueByYear = {};
 
             filteredOrders.forEach(order => {
-                // Assuming order.orderTime is in 'hh:mm:ss dd/MM/yyyy' format
                 const formattedTime = formatOrderTime(order.orderTime);
                 const year = new Date(formattedTime).getFullYear(); 
                 const totalRevenue = order.total || 0; 
@@ -63,11 +62,10 @@ function fetchRevenueByYear() {
 }
 
 function formatOrderTime(orderTime) {
-    const [time, date] = orderTime.split(' '); // Split into time and date
-    const [hh, mm, ss] = time.split(':'); // Extract hours, minutes, seconds
-    const [dd, MM, yyyy] = date.split('/'); // Extract day, month, year
+    const [time, date] = orderTime.split(' '); 
+    const [hh, mm, ss] = time.split(':'); 
+    const [dd, MM, yyyy] = date.split('/');
 
-    // Format to 'YYYY-MM-DDTHH:mm:ssZ'
     return `${yyyy}-${MM}-${dd}T${hh}:${mm}:${ss}Z`;
 }
 
@@ -130,7 +128,6 @@ function fetchRevenueByQuarter() {
             const revenueByQuarter = {};
 
             filteredOrders.forEach(order => {
-                // Format the order time before creating a date object
                 const formattedTime = formatOrderTime(order.orderTime);
                 const date = new Date(formattedTime);
                 const month = date.getMonth(); 
@@ -299,7 +296,6 @@ function fetchRevenueBySeason() {
             };
 
             filteredOrders.forEach(order => {
-                // Format the order time before creating a date object
                 const formattedTime = formatOrderTime(order.orderTime);
                 const date = new Date(formattedTime);
                 const month = date.getMonth(); 
@@ -670,11 +666,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 function confirmLogout(event) {
-    event.preventDefault(); // Prevent the default link action
-    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); // Show confirmation dialog
+    event.preventDefault();
+    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?");
 
     if (userConfirmed) {
-        window.location.href = "../../welcome.html"; // Redirect to the logout page if confirmed
+        window.location.href = "../../welcome.html"; 
     }
 }
 

@@ -41,7 +41,9 @@ router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
 // Booking management routes
 router.post('/orderroom', apiCtrl.OrderRoom);
 router.get('/orderroom', apiCtrl.getAllOrders);
-router.get('/orderroom/:Uid', apiCtrl.showOrderRoom);
+router.get('/orderroombyUid/:Uid', apiCtrl.showOrderRoom);
+router.get('/orderroom/:id', apiCtrl.getOrderById);
+router.get('/orderroombyidhotel/:id', apiCtrl.showOrderRoomByIdHotel);
 router.put('/orderroom/:id', apiCtrl.editOrderRoom);
 
 // Hotel management routes
@@ -60,6 +62,7 @@ router.put('/nhanvien/:id', apiCtrl.suaNhanVien);
 
 // Feedback and services routes
 router.get('/phanhoi', apiCtrl.showPhanHoi);
+router.get('/phanhoibyidhotel/:id', apiCtrl.showPhanHoiByHotelId);
 router.get('/dichvu', apiCtrl.showDichVu);
 router.get('/dichvu/:id', apiCtrl.showDichVuById);
 router.post('/dichvu', apiCtrl.themDichVu);
@@ -88,6 +91,7 @@ router.post('/uploadimg', upload.single('img'), (req, res) => {
 // Customer care routes
 router.get('/messenger', apiCtrl.getChamSoc);
 router.get('/messenger/:id', apiCtrl.getChamSocById);
+router.get('/messengerbyidhotel/:id', apiCtrl.getChamSocByIdHotel);
 router.post('/messenger', apiCtrl.themChamSoc);
 router.put('/messenger/:id', apiCtrl.suaChamSoc);
 router.delete('/messenger/:id', apiCtrl.xoaChamSoc);

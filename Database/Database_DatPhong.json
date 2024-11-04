@@ -1,7 +1,7 @@
 [
     {
         "_id": { "$oid": "6707ed79df6d7c9585d8ebc1" },
-        "IdPhong": { "$oid": "6707ed79df6d7c9585d8ebaa" },
+        "IdPhong": { "$oid": "6707f2b1676a25b7900e6061" },
         "Uid": { "$oid": "6707ed79df6d7c9585d8ebac" },
         "IdDichVu": { "$oid": "66ed87d195b16c4ceaeee6d6" },
         "orderTime": "10:00:00 21/09/2024",
