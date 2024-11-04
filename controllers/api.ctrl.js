@@ -7,6 +7,7 @@ var mdKhachSan = require('../model/khachSan_model');
 var mdChamSoc = require('../model/chamSoc_model');
 var mdDichVu = require('../model/dichvu_model');
 var mdPhanHoi = require('../model/phanhoi_model');
+var mdYeuThich = require('../model/yeuthich_model');
 const { accountModel } = require('../model/account_model'); 
 
 
@@ -990,5 +991,63 @@ exports.showDichVuById = async (req, res, next) => {
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+exports.addFavorite = async (req, res) => {
+    try {
+        const { IdLoaiPhong, Uid } = req.body;
+        const newFavorite = new mdYeuThich.yeuThichModel({ IdLoaiPhong, Uid });
+        await newFavorite.save();
+        return res.status(201).json({ msg: 'Yêu thích đã được thêm thành công', favorite: newFavorite });
+    } catch (error) {
+        console.error('Error adding favorite:', error);
+        return res.status(500).json({ error: 'Lỗi server khi thêm yêu thích' });
+    }
+};
+// Get all favorites for a specific user
+exports.getFavoritesByUser = async (req, res) => {
+    try {
+        const { userId } = req.params;
+        const favorites = await mdYeuThich.yeuThichModel.find({ Uid: userId });
+        if (!favorites || favorites.length === 0) {
+            return res.status(404).json({ error: 'Không có yêu thích nào' });
+        }
+        return res.status(200).json(favorites);
+    } catch (error) {
+        console.error('Error fetching favorites:', error);
+        return res.status(500).json({ error: 'Lỗi server khi lấy danh sách yêu thích' });
+    }
+};
+
+// Remove a favorite
+exports.removeFavorite = async (req, res) => {
+    try {
+        const { favoriteId } = req.params;
+        const deletedFavorite = await mdYeuThich.yeuThichModel.findByIdAndDelete(favoriteId);
+        if (!deletedFavorite) {
+            return res.status(404).json({ error: 'Không tìm thấy yêu thích với ID đã cho' });
+        }
+        return res.status(200).json({ msg: 'Yêu thích đã được xóa thành công', id: favoriteId });
+    } catch (error) {
+        console.error('Error deleting favorite:', error);
+        return res.status(500).json({ error: 'Lỗi server khi xóa yêu thích' });
+    }
+};
+
+// Update a favorite (if needed)
+exports.updateFavorite = async (req, res) => {
+    try {
+        const { favoriteId } = req.params;
+        const updatedData = req.body;
+        const updatedFavorite = await mdYeuThich.yeuThichModel.findByIdAndUpdate(favoriteId, updatedData, { new: true });
+        
+        if (!updatedFavorite) {
+            return res.status(404).json({ error: 'Không tìm thấy yêu thích với ID đã cho' });
+        }
+        
+        return res.status(200).json({ msg: 'Yêu thích đã được cập nhật thành công', favorite: updatedFavorite });
+    } catch (error) {
+        console.error('Error updating favorite:', error);
+        return res.status(500).json({ error: 'Lỗi server khi cập nhật yêu thích' });
     }
 };
