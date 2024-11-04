@@ -196,7 +196,7 @@ exports.getAccountById = async (req, res) => {
         }
 
         // Trả về thông tin tài khoản
-        res.status(200).json(account);
+        res.status(200).json([account]);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -222,7 +222,7 @@ exports.showRoomByTypeRoomId = async (req, res, next) => {
         if (!roomsById) {
             return res.status(404).json({ error: 'Không tìm thấy phòng' });
         }
-        res.status(200).json(roomsById);
+        res.status(200).json([roomsById]);
     } catch (error) {
         return res.status(500).json({ error: `Lỗi server ` + error });
     }
@@ -257,7 +257,7 @@ exports.getRoomById = async (req, res) => {
         }
 
         // Trả về thông tin phòng
-        res.status(200).json(room);
+        res.status(200).json([room]);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -270,7 +270,7 @@ exports.showRoomByTypeRoomId = async (req, res, next) => {
         if (!roomsById) {
             return res.status(404).json({ error: 'Không tìm thấy phòng' });
         }
-        res.status(200).json(roomsById);
+        res.status(200).json([roomsById]);
     } catch (error) {
         return res.status(500).json({ error: `Lỗi server ` + error });
     }
@@ -402,7 +402,7 @@ exports.showLoaiPhongById = async (req, res, next) => {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
         }
         
-        res.status(200).json(loaiPhong); // Trả về dữ liệu loại phòng
+        res.status(200).json([loaiPhong]); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server' });
@@ -497,7 +497,7 @@ exports.showOrderRoom = async (req, res, next) => {
         if (!orderroom) {
             return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
         }
-        res.status(200).json({ orderroom });
+        res.status(200).json(orderroom);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
     }
