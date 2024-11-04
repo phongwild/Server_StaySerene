@@ -729,30 +729,6 @@ exports.suaNhanVien = async (req, res, next) => {
     }
 }
 
-
-
-// //Phan Hoi
-// exports.showPhanHoi = async (req, res, next) => {
-//     try {
-//         const phanHoi = await mdPhanHoi.phanHoiModel.find();
-//         console.log(phanHoi); 
-//         if (!phanHoi || phanHoi.length === 0) {
-//             return res.status(404).json({ error: 'Không tồn tại' });
-//         }
-        
-//         const result = phanHoi.map(phanHoi => ({
-//             _id: phanHoi._id,
-//             IdLoaiPhong: phanHoi.IdLoaiPhong,
-//             tenKhachHang: phanHoi.tenKhachHang,
-//             noiDung: phanHoi.noiDung,
-//             thoiGian: phanHoi.thoiGian
-//         }));
-
-//         res.status(200).json(result);
-//     } catch (error) {
-//         return res.status(500).json({ error: 'Lỗi server: ' + error });
-//     }
-// }
 //Thêm Chăm Sóc
 exports.themChamSoc = async (req, res) => {
     try {
