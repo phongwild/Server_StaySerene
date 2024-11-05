@@ -7,7 +7,6 @@ var mdKhachSan = require('../model/khachSan_model');
 var mdChamSoc = require('../model/chamSoc_model');
 var mdDichVu = require('../model/dichvu_model');
 var mdPhanHoi = require('../model/phanhoi_model');
-var mdYeuThich = require('../model/yeuthich_model');
 const { accountModel } = require('../model/account_model'); 
 
 
@@ -197,7 +196,7 @@ exports.getAccountById = async (req, res) => {
         }
 
         // Trả về thông tin tài khoản
-        res.status(200).json(account);
+        res.status(200).json([account]);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -258,24 +257,12 @@ exports.getRoomById = async (req, res) => {
         }
 
         // Trả về thông tin phòng
-        res.status(200).json(room);
+        res.status(200).json([room]);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
-exports.showRoomByTypeRoomId = async (req, res, next) => {
-    try {
-        const id = req.params.id;
-        const roomsById = await mdPhong.phongModel.find({ IdLoaiPhong: id });
-        if (!roomsById) {
-            return res.status(404).json({ error: 'Không tìm thấy phòng' });
-        }
-        res.status(200).json(roomsById);
-    } catch (error) {
-        return res.status(500).json({ error: `Lỗi server ` + error });
-    }
-}
 
 exports.themPhong = async (req, res, next) => {
     try {
@@ -403,7 +390,7 @@ exports.showLoaiPhongById = async (req, res, next) => {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
         }
         
-        res.status(200).json(loaiPhong); // Trả về dữ liệu loại phòng
+        res.status(200).json([loaiPhong]); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server' });
@@ -483,7 +470,7 @@ exports.getOrderById = async (req, res, next) => {
             return res.status(404).json({ msg: 'Không tìm thấy đơn đặt phòng với ID đã cho' });
         }
 
-        res.status(200).json(order);
+        res.status(200).json([order]);
     } catch (error) {
         console.error('Error fetching order by ID:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -498,7 +485,7 @@ exports.showOrderRoom = async (req, res, next) => {
         if (!orderroom) {
             return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
         }
-        res.status(200).json({ orderroom });
+        res.status(200).json(orderroom);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
     }
@@ -991,63 +978,5 @@ exports.showDichVuById = async (req, res, next) => {
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
-    }
-};
-exports.addFavorite = async (req, res) => {
-    try {
-        const { IdLoaiPhong, Uid } = req.body;
-        const newFavorite = new mdYeuThich.yeuThichModel({ IdLoaiPhong, Uid });
-        await newFavorite.save();
-        return res.status(201).json({ msg: 'Yêu thích đã được thêm thành công', favorite: newFavorite });
-    } catch (error) {
-        console.error('Error adding favorite:', error);
-        return res.status(500).json({ error: 'Lỗi server khi thêm yêu thích' });
-    }
-};
-// Get all favorites for a specific user
-exports.getFavoritesByUser = async (req, res) => {
-    try {
-        const { userId } = req.params;
-        const favorites = await mdYeuThich.yeuThichModel.find({ Uid: userId });
-        if (!favorites || favorites.length === 0) {
-            return res.status(404).json({ error: 'Không có yêu thích nào' });
-        }
-        return res.status(200).json(favorites);
-    } catch (error) {
-        console.error('Error fetching favorites:', error);
-        return res.status(500).json({ error: 'Lỗi server khi lấy danh sách yêu thích' });
-    }
-};
-
-// Remove a favorite
-exports.removeFavorite = async (req, res) => {
-    try {
-        const { favoriteId } = req.params;
-        const deletedFavorite = await mdYeuThich.yeuThichModel.findByIdAndDelete(favoriteId);
-        if (!deletedFavorite) {
-            return res.status(404).json({ error: 'Không tìm thấy yêu thích với ID đã cho' });
-        }
-        return res.status(200).json({ msg: 'Yêu thích đã được xóa thành công', id: favoriteId });
-    } catch (error) {
-        console.error('Error deleting favorite:', error);
-        return res.status(500).json({ error: 'Lỗi server khi xóa yêu thích' });
-    }
-};
-
-// Update a favorite (if needed)
-exports.updateFavorite = async (req, res) => {
-    try {
-        const { favoriteId } = req.params;
-        const updatedData = req.body;
-        const updatedFavorite = await mdYeuThich.yeuThichModel.findByIdAndUpdate(favoriteId, updatedData, { new: true });
-        
-        if (!updatedFavorite) {
-            return res.status(404).json({ error: 'Không tìm thấy yêu thích với ID đã cho' });
-        }
-        
-        return res.status(200).json({ msg: 'Yêu thích đã được cập nhật thành công', favorite: updatedFavorite });
-    } catch (error) {
-        console.error('Error updating favorite:', error);
-        return res.status(500).json({ error: 'Lỗi server khi cập nhật yêu thích' });
     }
 };
