@@ -25,11 +25,10 @@ router.get('/account/:id', apiCtrl.getAccountById);
 // Room management routes
 router.get('/rooms', apiCtrl.xemPhong);
 router.get('/roombytyperoom/:id', apiCtrl.showRoomByTypeRoomId);
+router.get('/rooms/:id', apiCtrl.getRoomById);
 router.post('/rooms', apiCtrl.themPhong);
-router.get('/roombytyperoom/:id', apiCtrl.showRoomByTypeRoomId);
 router.delete('/rooms/:id', apiCtrl.xoaPhong);
 router.put('/rooms/:id', apiCtrl.suaPhong);
-router.get('/rooms/:id', apiCtrl.getRoomById);
 
 // Room type management routes
 router.post('/typeroom', apiCtrl.themLoaiPhong);
@@ -61,11 +60,9 @@ router.post('/nhanvien', apiCtrl.themNhanVien);
 router.delete('/nhanvien/:id', apiCtrl.xoaNhanVien);
 router.put('/nhanvien/:id', apiCtrl.suaNhanVien);
 
-// Feedback routes
+// Feedback and services routes
 router.get('/phanhoi', apiCtrl.showPhanHoi);
 router.get('/phanhoibyidhotel/:id', apiCtrl.showPhanHoiByHotelId);
-
-//services management routes
 router.get('/dichvu', apiCtrl.showDichVu);
 router.get('/dichvu/:id', apiCtrl.showDichVuById);
 router.post('/dichvu', apiCtrl.themDichVu);
@@ -81,10 +78,5 @@ router.post('/messenger', apiCtrl.themChamSoc);
 router.put('/messenger/:id', apiCtrl.suaChamSoc);
 router.delete('/messenger/:id', apiCtrl.xoaChamSoc);
 
-//Favorite management routes
-router.post('/favorite', apiCtrl.addFavorite);           
-router.get('/favorite/:userId', apiCtrl.getFavoritesByUser); 
-router.delete('/favorite/:favoriteId', apiCtrl.removeFavorite);
-router.put('/favorite/:favoriteId', apiCtrl.updateFavorite);   
 
 module.exports = router;
