@@ -8,7 +8,7 @@ var mdChamSoc = require('../model/chamSoc_model');
 var mdDichVu = require('../model/dichvu_model');
 var mdPhanHoi = require('../model/phanhoi_model');
 var mdYeuThich = require('../model/yeuthich_model');
-const { accountModel } = require('../model/account_model'); 
+const { accountModel } = require('../model/account_model');
 
 
 
@@ -197,7 +197,7 @@ exports.getAccountById = async (req, res) => {
         }
 
         // Trả về thông tin tài khoản
-        res.status(200).json([account]);
+        res.status(200).json(account);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -258,7 +258,7 @@ exports.getRoomById = async (req, res) => {
         }
 
         // Trả về thông tin phòng
-        res.status(200).json([room]);
+        res.status(200).json(room);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -278,11 +278,10 @@ exports.showRoomByTypeRoomId = async (req, res, next) => {
 }
 exports.getRoomByIdHotel = async (req, res) => {
     try {
-        const hotelId = req.params.id; 
+        const hotelId = req.params.id;
+        const rooms = await mdPhong.phongModel.find();
 
-        const rooms = await mdPhong.phongModel.find(); 
-
-        const validRooms = []; 
+        const validRooms = [];
 
         for (const room of rooms) {
             const roomType = await mdLoaiPhong.loaiPhongModel.findById(room.IdLoaiPhong);
@@ -291,18 +290,15 @@ exports.getRoomByIdHotel = async (req, res) => {
                 validRooms.push(room);
             }
         }
-
         if (validRooms.length === 0) {
             return res.status(404).json({ error: 'Không tìm thấy phòng cho khách sạn này.' });
         }
-
         return res.status(200).json(validRooms);
     } catch (error) {
         console.error('Lỗi khi lấy danh sách phòng theo ID khách sạn:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
-
 
 exports.themPhong = async (req, res, next) => {
     try {
@@ -429,7 +425,7 @@ exports.showLoaiPhongById = async (req, res, next) => {
         if (!loaiPhong) {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
         }
-        
+
         res.status(200).json(loaiPhong); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
@@ -510,7 +506,7 @@ exports.getOrderById = async (req, res, next) => {
             return res.status(404).json({ msg: 'Không tìm thấy đơn đặt phòng với ID đã cho' });
         }
 
-        res.status(200).json([order]);
+        res.status(200).json(order);
     } catch (error) {
         console.error('Error fetching order by ID:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -525,7 +521,7 @@ exports.showOrderRoom = async (req, res, next) => {
         if (!orderroom) {
             return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
         }
-        res.status(200).json(orderroom);
+        res.status(200).json({ orderroom });
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
     }
@@ -1067,11 +1063,11 @@ exports.updateFavorite = async (req, res) => {
         const { favoriteId } = req.params;
         const updatedData = req.body;
         const updatedFavorite = await mdYeuThich.yeuThichModel.findByIdAndUpdate(favoriteId, updatedData, { new: true });
-        
+
         if (!updatedFavorite) {
             return res.status(404).json({ error: 'Không tìm thấy yêu thích với ID đã cho' });
         }
-        
+
         return res.status(200).json({ msg: 'Yêu thích đã được cập nhật thành công', favorite: updatedFavorite });
     } catch (error) {
         console.error('Error updating favorite:', error);
