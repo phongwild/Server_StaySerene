@@ -6,7 +6,7 @@ let services = {};
 
 async function fetchRoomById(roomId) {
   try {
-    const response = await fetch(`http://192.168.1.2:3000/api/rooms/${roomId}`); 
+    const response = await fetch(`http://192.168.1.2:3000/api/roomsa/${roomId}`); 
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

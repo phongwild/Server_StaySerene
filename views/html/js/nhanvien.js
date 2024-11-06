@@ -1,5 +1,5 @@
 const apiNhanVienUrl = 'http://192.168.1.2:3000/api/nhanvien';
-const apiKhachSanUrl = 'http://192.168.1.2:3000/api/hotel';
+const apiKhachSanUrl = 'http://192.168.1.2:3000/api/hotela';
 
 async function fetchKhachSan(IdKhachSan) {
     try {
@@ -228,7 +228,6 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-//hiển thị ds khi bấm vào hàng
 async function showHotelDetailsnhanvien(nhanVien) {
     const { _id, IdKhachSan, username, sdt, cccd, email, password, gioLam, anhNhanVien } = nhanVien;
     document.getElementById('manhanvien').value = _id;
@@ -241,11 +240,11 @@ async function showHotelDetailsnhanvien(nhanVien) {
     document.getElementById('gioLam').value = gioLam;
     document.getElementById('anhNhanVien').value = anhNhanVien;
 
-    await populateHotels(); 
+    // No need to call populateHotels here again
     const selectElement = document.getElementById('tenkhachsan');
     const options = selectElement.options;
     for (let option of options) {
-        if (option.value === makhachsan) {
+        if (option.value === IdKhachSan) {
             option.selected = true; 
             break;
         }

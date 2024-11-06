@@ -290,6 +290,22 @@ exports.getRoomById = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+exports.getRoomByIda = async (req, res) => {
+    try {
+        const roomId = req.params.id;
+        const room = await mdPhong.phongModel.findById(roomId);
+
+        if (!room) {
+            return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
+        }
+
+        // Trả về thông tin phòng
+        res.status(200).json(room);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
 exports.showRoomByTypeRoomId = async (req, res, next) => {
     try {
         const id = req.params.id;
@@ -453,6 +469,21 @@ exports.showLoaiPhongById = async (req, res, next) => {
         }
         
         res.status(200).json([loaiPhong]); // Trả về dữ liệu loại phòng
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server' });
+    }
+};
+exports.showLoaiPhongByIda = async (req, res, next) => {
+    try {
+        const id = req.params.id; // Lấy ID từ URL
+        const loaiPhong = await mdLoaiPhong.loaiPhongModel.findById(id); // Tìm loại phòng theo ID
+
+        if (!loaiPhong) {
+            return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
+        }
+        
+        res.status(200).json(loaiPhong); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server' });
@@ -685,6 +716,19 @@ exports.getKhachSanById = async (req, res) => {
         res.status(500).json({ error: 'Lỗi server: ' + error });
     }
 };
+exports.getKhachSanByIda = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const hotel = await mdKhachSan.khachSanModel.findById(id);
+        if (!hotel) {
+            return res.status(404).json({ error: 'Không tìm thấy khách sạn' });
+        }
+        res.status(200).json(hotel);
+    } catch (error) {
+        res.status(500).json({ error: 'Lỗi server: ' + error });
+    }
+};
+
 
 
 exports.themKhachSan = async (req, res, next) => {

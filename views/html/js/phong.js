@@ -1,5 +1,5 @@
 const apiHotelUrl = 'http://192.168.1.2:3000/api/hotel';
-const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typeroom';
+const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typerooma';
 const apiRoomUrl = 'http://192.168.1.2:3000/api/rooms';
 const apiTyperoomByHotelUrl = 'http://192.168.1.2:3000/api/typeroombyidhotel';
 
