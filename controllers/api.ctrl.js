@@ -74,6 +74,16 @@ exports.registerAdmin = async (req, res, next) => {
         return res.status(201).send(error);
     }
 }
+exports.checkExistUserGoogle = async(req, res, next) => {
+    try {
+        const Id_google = req.query.id;
+        const user = await mdAccount.accountModel.findOne({Uid: Id_google});
+        res.json(user !== null);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+        throw error;
+    }
+}
 // Admin Login
 exports.doLoginAdmin = async (req, res, next) => {
     try {
@@ -197,7 +207,7 @@ exports.getAccountById = async (req, res) => {
         }
 
         // Trả về thông tin tài khoản
-        res.status(200).json(account);
+        res.status(200).json([account]);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -258,7 +268,7 @@ exports.getRoomById = async (req, res) => {
         }
 
         // Trả về thông tin phòng
-        res.status(200).json(room);
+        res.status(200).json([room]);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -425,8 +435,8 @@ exports.showLoaiPhongById = async (req, res, next) => {
         if (!loaiPhong) {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
         }
-
-        res.status(200).json(loaiPhong); // Trả về dữ liệu loại phòng
+        
+        res.status(200).json([loaiPhong]); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server' });
@@ -506,7 +516,7 @@ exports.getOrderById = async (req, res, next) => {
             return res.status(404).json({ msg: 'Không tìm thấy đơn đặt phòng với ID đã cho' });
         }
 
-        res.status(200).json(order);
+        res.status(200).json([order]);
     } catch (error) {
         console.error('Error fetching order by ID:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -521,7 +531,7 @@ exports.showOrderRoom = async (req, res, next) => {
         if (!orderroom) {
             return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
         }
-        res.status(200).json({ orderroom });
+        res.status(200).json(orderroom);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
     }

@@ -21,16 +21,16 @@ router.delete('/account/:id', apiCtrl.xoaTk);
 router.post('/account', apiCtrl.themtk);
 router.put('/account/:id', apiCtrl.suaTk);
 router.get('/account/:id', apiCtrl.getAccountById);
+router.get('/checkusergoogle',apiCtrl.checkExistUserGoogle);
 
 // Room management routes
 router.get('/rooms', apiCtrl.xemPhong);
 router.get('/roombytyperoom/:id', apiCtrl.showRoomByTypeRoomId);
+router.get('/rooms/:id', apiCtrl.getRoomById);
 router.post('/rooms', apiCtrl.themPhong);
-router.get('/roombytyperoom/:id', apiCtrl.showRoomByTypeRoomId);
 router.get('/roombyidhotel/:id', apiCtrl.getRoomByIdHotel);
 router.delete('/rooms/:id', apiCtrl.xoaPhong);
 router.put('/rooms/:id', apiCtrl.suaPhong);
-router.get('/rooms/:id', apiCtrl.getRoomById);
 
 // Room type management routes
 router.post('/typeroom', apiCtrl.themLoaiPhong);
