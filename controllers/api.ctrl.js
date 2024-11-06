@@ -73,6 +73,16 @@ exports.registerAdmin = async (req, res, next) => {
         return res.status(201).send(error);
     }
 }
+exports.checkExistUserGoogle = async(req, res, next) => {
+    try {
+        const Id_google = req.query.id;
+        const user = await mdAccount.accountModel.findOne({Uid: Id_google});
+        res.json({ exist: user !== null});
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+        throw error;
+    }
+}
 // Admin Login
 exports.doLoginAdmin = async (req, res, next) => {
     try {
@@ -222,7 +232,7 @@ exports.showRoomByTypeRoomId = async (req, res, next) => {
         if (!roomsById) {
             return res.status(404).json({ error: 'Không tìm thấy phòng' });
         }
-        res.status(200).json([roomsById]);
+        res.status(200).json(roomsById);
     } catch (error) {
         return res.status(500).json({ error: `Lỗi server ` + error });
     }
@@ -263,18 +273,6 @@ exports.getRoomById = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
-exports.showRoomByTypeRoomId = async (req, res, next) => {
-    try {
-        const id = req.params.id;
-        const roomsById = await mdPhong.phongModel.find({ IdLoaiPhong: id });
-        if (!roomsById) {
-            return res.status(404).json({ error: 'Không tìm thấy phòng' });
-        }
-        res.status(200).json([roomsById]);
-    } catch (error) {
-        return res.status(500).json({ error: `Lỗi server ` + error });
-    }
-}
 
 exports.themPhong = async (req, res, next) => {
     try {
@@ -482,7 +480,7 @@ exports.getOrderById = async (req, res, next) => {
             return res.status(404).json({ msg: 'Không tìm thấy đơn đặt phòng với ID đã cho' });
         }
 
-        res.status(200).json(order);
+        res.status(200).json([order]);
     } catch (error) {
         console.error('Error fetching order by ID:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
