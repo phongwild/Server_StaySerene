@@ -36,7 +36,7 @@ router.put('/rooms/:id', apiCtrl.suaPhong);
 router.post('/typeroom', apiCtrl.themLoaiPhong);
 router.get('/typeroom', apiCtrl.showLoaiPhong);
 router.get('/typeroom/:id', apiCtrl.showLoaiPhongById);
-router.get('/ /:id', apiCtrl.showLoaiPhongByIdHotel);
+router.get('/typeroombyidhotel/:id', apiCtrl.showLoaiPhongByIdHotel);
 router.delete('/typeroom/:id', apiCtrl.xoaLoaiPhong);
 router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
 
