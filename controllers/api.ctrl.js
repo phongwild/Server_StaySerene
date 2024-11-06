@@ -78,7 +78,7 @@ exports.checkExistUserGoogle = async(req, res, next) => {
     try {
         const Id_google = req.query.id;
         const user = await mdAccount.accountModel.findOne({Uid: Id_google});
-        res.json({ exist: user !== null});
+        res.json(user !== null);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
         throw error;
