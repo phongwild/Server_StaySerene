@@ -213,6 +213,22 @@ exports.getAccountById = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+exports.getAccountByIda = async (req, res) => {
+    try {
+        const accountId = req.params.id;
+        const account = await mdAccount.accountModel.findById(accountId);
+
+        if (!account) {
+            return res.status(404).json({ error: 'Không tìm thấy tài khoản với ID đã cho' });
+        }
+
+        // Trả về thông tin tài khoản
+        res.status(200).json(account);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
 exports.getAccountByIdac = async (req, res) => {
     try {
         const accountId = req.params.id;

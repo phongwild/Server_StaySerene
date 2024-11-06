@@ -1,6 +1,8 @@
 const apiUrl = "http://192.168.1.2:3000/api/orderroom";
 const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
 const serviceApiUrl = "http://192.168.1.2:3000/api/dichvu";
+const apiKhachHang = "http://192.168.1.2:3000/api/accounta";
+
 const hotelId = localStorage.getItem('IdKhachSan');
 let services = {};
 
@@ -14,6 +16,19 @@ async function fetchRoomById(roomId) {
     return room; 
   } catch (error) {
     console.error('Error fetching room by ID:', error);
+    return null;
+  }
+}
+async function fetchCustomerById(customerId) {
+  try {
+    const response = await fetch(`${apiKhachHang}/${customerId}`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const customer = await response.json();
+    return customer;
+  } catch (error) {
+    console.error('Error fetching customer by ID:', error);
     return null;
   }
 }
@@ -100,11 +115,11 @@ async function fetchLichSus() {
 }
 
 
-function displayLichSus(lichsus) {
+async function displayLichSus(lichsus) {
   const customerList = document.getElementById("customer-list");
   customerList.innerHTML = "";
 
-  lichsus.forEach((lichsu) => {
+  for (const lichsu of lichsus) {
     const row = document.createElement("tr");
     const mdp = lichsu._id;
     const Uid = lichsu.Uid;
@@ -117,11 +132,18 @@ function displayLichSus(lichsus) {
     const dichVuID = lichsu.IdDichVu || "N/A";
     const tongTien = lichsu.total;
 
-    
+    // Lấy thông tin số phòng từ API
+    const room = await fetchRoomById(phongID);
+    const soPhong = room ? room.soPhong : "Không có số phòng"; // Kiểm tra xem có phòng không
+
+    // Fetch tên khách hàng
+    const customer = await fetchCustomerById(Uid);
+    const customerName = customer ? customer.username : "Không tìm thấy tên khách hàng";
+
     row.innerHTML = `
       <td>${mdp}</td>
-      <td>${Uid}</td>
-      <td>${phongID}</td>
+      <td>${customerName}</td> <!-- Thay thế mã khách hàng bằng tên khách hàng -->
+      <td>${soPhong}</td>
       <td>${thoiGianDatPhong}</td>
       <td>${thoiGianNhan}</td>
       <td>${thoiGianTra}</td>
@@ -132,6 +154,7 @@ function displayLichSus(lichsus) {
       console.log("Row clicked:", mdp);
       document.getElementById("mdp").value = mdp;
       document.getElementById("uid").value = Uid;
+      document.getElementById("TenKhachHang").value = customerName;
       document.getElementById("phong1").value = phongID;
       document.getElementById("thoiGianDat").value = thoiGianDatPhong;
       document.getElementById("thoiGianNhan").value = thoiGianNhan;
@@ -143,23 +166,23 @@ function displayLichSus(lichsus) {
 
       const room = await fetchRoomById(phongID);
       if (room) {
-        document.getElementById("soPhong").value = room.soPhong; 
+        document.getElementById("soPhong").value = room.soPhong;
       } else {
         document.getElementById("soPhong").value = "Phòng không tồn tại";
       }
+
       const service = await fetchServiceById(dichVuID);
       if (service) {
         document.getElementById("tenDichVu").value = service.tenDichVu;
       } else {
         document.getElementById("tenDichVu").value = "Dịch vụ không tồn tại";
       }
-
-
     };
 
     customerList.appendChild(row);
-  });
+  }
 }
+
 
 
 
@@ -412,62 +435,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('searchBtn').addEventListener('click', async function() {
   const searchMadatphong = document.getElementById('search-madatphong').value.toLowerCase();
-  const searchMakhachhang = document.getElementById('search-makhachhang').value.toLowerCase();
-  const searchMaphong = document.getElementById('search-maphong').value.toLowerCase();
-  
+  const searchTenKhachHang = document.getElementById('search-tenkhachhang').value.toLowerCase();
+  const searchSoPhong = document.getElementById('search-sophong').value.toLowerCase();
+
   try {
-    const response = await fetch(apiUrl);
-    const lichsus = await response.json();
+    // Fetch all booking records
+    const response = await fetch(`${apidatphongUrl}/${hotelId}`);
+    const bookings = await response.json();
 
     const customerList = document.getElementById("customer-list");
     customerList.innerHTML = "";
 
-    const filteredLichsus = lichsus.filter(lichsu => {
-      const madatphong = lichsu._id.toLowerCase(); 
-      const makhachhang = lichsu.Uid.toLowerCase(); 
-      const maphong = lichsu.IdPhong.toLowerCase(); 
+    // Filter bookings based on search input
+    for (const booking of bookings) {
+      // Fetch customer details by Uid and room details by IdPhong for each booking
+      const customer = await fetchCustomerById(booking.Uid);
+      const room = await fetchRoomById(booking.IdPhong);
 
-      const matchesMadatphong = searchMadatphong === '' || madatphong.includes(searchMadatphong);
-      const matchesMakhachhang = searchMakhachhang === '' || makhachhang.includes(searchMakhachhang);
-      const matchesMaphong = searchMaphong === '' || maphong.includes(searchMaphong);
+      // Define search parameters
+      const matchesMadatphong = searchMadatphong ? booking._id.toLowerCase().includes(searchMadatphong) : true;
+      const matchesTenKhachHang = searchTenKhachHang ? (customer && customer.username.toLowerCase().includes(searchTenKhachHang)) : true;
+      const matchesSoPhong = searchSoPhong ? (room && room.soPhong.toString().toLowerCase().includes(searchSoPhong)) : true;
 
-      return matchesMadatphong && matchesMakhachhang && matchesMaphong;
-    });
+      // Check if booking matches search criteria
+      if (matchesMadatphong && matchesTenKhachHang && matchesSoPhong) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${booking._id}</td>
+          <td>${customer ? customer.username : "Không tìm thấy tên khách hàng"}</td>
+          <td>${room ? room.soPhong : "Không có số phòng"}</td>
+          <td>${booking.orderTime}</td>
+          <td>${booking.timeGet}</td>
+          <td>${booking.timeCheckout}</td>
+          <td>${statusMapping[booking.status]}</td>
+        `;
 
-    filteredLichsus.forEach((lichsu) => {
-      const row = document.createElement("tr");
-      const thoiGianDatPhong = lichsu.orderTime;
-      const thoiGianNhan = lichsu.timeGet;
-      const thoiGianTra = lichsu.timeCheckout;
-      const trangThaiValue = lichsu.status;
+        // Add click event to populate fields with booking details
+        row.onclick = async function () {
+          document.getElementById("mdp").value = booking._id;
+          document.getElementById("uid").value = booking.Uid;
+          document.getElementById("phong1").value = booking.IdPhong;
+          document.getElementById("thoiGianDat").value = booking.orderTime;
+          document.getElementById("thoiGianNhan").value = booking.timeGet;
+          document.getElementById("thoiGianTra").value = booking.timeCheckout;
+          document.getElementById("ghiChu").value = booking.note;
+          document.getElementById("trangThai").value = booking.status;
+          document.getElementById("tongTien").value = booking.total;
+          document.getElementById("dichVu").value = booking.IdDichVu || "N/A";
 
-      row.innerHTML = `
-        <td>${lichsu._id}</td>
-        <td>${lichsu.Uid}</td>
-        <td>${lichsu.IdPhong}</td>
-        <td>${thoiGianDatPhong}</td>
-        <td>${thoiGianNhan}</td>
-        <td>${thoiGianTra}</td>
-        <td>${statusMapping[trangThaiValue]}</td>
-      `;
+          // Populate room and service fields if available
+          const roomDetails = await fetchRoomById(booking.IdPhong);
+          document.getElementById("soPhong").value = roomDetails ? roomDetails.soPhong : "Phòng không tồn tại";
 
-      row.onclick = function () {
-        populateFormWithOrderData(lichsu); 
-      };
+          const serviceDetails = await fetchServiceById(booking.IdDichVu);
+          document.getElementById("tenDichVu").value = serviceDetails ? serviceDetails.tenDichVu : "Dịch vụ không tồn tại";
+        };
 
-      customerList.appendChild(row);
-    });
-
-    if (filteredLichsus.length === 0) {
-      const noResultsRow = document.createElement("tr");
-      noResultsRow.innerHTML = "<td colspan='7'>Không tìm thấy kết quả.</td>";
-      customerList.appendChild(noResultsRow);
+        customerList.appendChild(row);
+      }
     }
-    
   } catch (error) {
-    console.error("Error fetching orders for search:", error);
+    console.error("Error during search:", error);
   }
 });
+
+
+
 
 function populateFormWithOrderData(lichsu) {
   document.getElementById("mdp").value = lichsu._id;

@@ -17,10 +17,12 @@ router.get('/admin', apiCtrl.getAdminAccounts);
 
 // Account management routes
 router.get('/account', apiCtrl.xemTk);
+router.get('/accounta', apiCtrl.xemTk);
 router.delete('/account/:id', apiCtrl.xoaTk);
 router.post('/account', apiCtrl.themtk);
 router.put('/account/:id', apiCtrl.suaTk);
 router.get('/account/:id', apiCtrl.getAccountById);
+router.get('/accounta/:id', apiCtrl.getAccountByIda);
 router.get('/accountac/:id', apiCtrl.getAccountByIdac);
 router.get('/checkusergoogle',apiCtrl.checkExistUserGoogle);
 
