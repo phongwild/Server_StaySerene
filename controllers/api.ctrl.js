@@ -276,6 +276,33 @@ exports.showRoomByTypeRoomId = async (req, res, next) => {
         return res.status(500).json({ error: `Lỗi server ` + error });
     }
 }
+exports.getRoomByIdHotel = async (req, res) => {
+    try {
+        const hotelId = req.params.id; 
+
+        const rooms = await mdPhong.phongModel.find(); 
+
+        const validRooms = []; 
+
+        for (const room of rooms) {
+            const roomType = await mdLoaiPhong.loaiPhongModel.findById(room.IdLoaiPhong);
+
+            if (roomType && roomType.IdKhachSan.toString() === hotelId) {
+                validRooms.push(room);
+            }
+        }
+
+        if (validRooms.length === 0) {
+            return res.status(404).json({ error: 'Không tìm thấy phòng cho khách sạn này.' });
+        }
+
+        return res.status(200).json(validRooms);
+    } catch (error) {
+        console.error('Lỗi khi lấy danh sách phòng theo ID khách sạn:', error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
 
 exports.themPhong = async (req, res, next) => {
     try {

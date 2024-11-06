@@ -80,5 +80,11 @@ router.post('/messenger', apiCtrl.themChamSoc);
 router.put('/messenger/:id', apiCtrl.suaChamSoc);
 router.delete('/messenger/:id', apiCtrl.xoaChamSoc);
 
+//Favorite management routes
+router.post('/favorite', apiCtrl.addFavorite);           
+router.get('/favorite/:userId', apiCtrl.getFavoritesByUser); 
+router.delete('/favorite/:favoriteId', apiCtrl.removeFavorite);
+router.put('/favorite/:favoriteId', apiCtrl.updateFavorite);   
+
 
 module.exports = router;
