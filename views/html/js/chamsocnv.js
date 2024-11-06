@@ -258,3 +258,12 @@ async function sendMessage() {
 
 document.querySelector('.message-input button').addEventListener('click', sendMessage);
 document.getElementById('searchInput').addEventListener('input', searchItems);
+
+function confirmLogout(event) {
+    event.preventDefault();
+    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); 
+  
+    if (userConfirmed) {
+        window.location.href = "../../welcome.html"; 
+    }
+  }

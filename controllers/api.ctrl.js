@@ -8,7 +8,7 @@ var mdChamSoc = require('../model/chamSoc_model');
 var mdDichVu = require('../model/dichvu_model');
 var mdPhanHoi = require('../model/phanhoi_model');
 var mdYeuThich = require('../model/yeuthich_model');
-const { accountModel } = require('../model/account_model'); 
+const { accountModel } = require('../model/account_model');
 
 
 
@@ -79,14 +79,14 @@ exports.doLoginAdmin = async (req, res, next) => {
     try {
         console.log("Login attempt with:", req.body);
         const admin = await mdAccount_admin.account_admin.findByCredentials(req.body.email, req.body.password);
-        console.log("Admin found:", admin); 
+        console.log("Admin found:", admin);
         if (!admin) {
             return res.status(401).json({ error: 'Sai thông tin đăng nhập' });
         }
         const token = await admin.generateAuthToken();
         return res.status(200).send({ admin, token });
     } catch (error) {
-        console.log("Login error:", error.message); 
+        console.log("Login error:", error.message);
         if (error.message === 'Không tồn tại user') {
             return res.status(401).json({ error: 'Sai thông tin đăng nhập' });
         } else if (error.message === 'Sai password') {
@@ -99,11 +99,11 @@ exports.doLoginAdmin = async (req, res, next) => {
 
 exports.getAdminAccounts = async (req, res, next) => {
     try {
-        const admins = await mdAccount_admin.account_admin.find(); 
+        const admins = await mdAccount_admin.account_admin.find();
         if (!admins || admins.length === 0) {
             return res.status(404).json({ error: 'No admin accounts found' });
         }
-        return res.status(200).json(admins); 
+        return res.status(200).json(admins);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Server error while fetching admin accounts' });
@@ -122,7 +122,7 @@ exports.xemTk = async (req, res) => {
 
         res.status(200).json(accounts);
     } catch (error) {
-        console.error('Error retrieving accounts:', error); 
+        console.error('Error retrieving accounts:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
@@ -189,7 +189,7 @@ exports.suaTk = async (req, res) => {
 // Hiển thị tài khoản theo ID
 exports.getAccountById = async (req, res) => {
     try {
-        const accountId = req.params.id; 
+        const accountId = req.params.id;
         const account = await mdAccount.accountModel.findById(accountId);
 
         if (!account) {
@@ -231,8 +231,8 @@ exports.showRoomByTypeRoomId = async (req, res, next) => {
 // Hàm cập nhật thông tin phòng
 exports.suaPhong = async (req, res, next) => {
     try {
-        const id = req.params.id; 
-        const updatedData = req.body; 
+        const id = req.params.id;
+        const updatedData = req.body;
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({ error: 'ID phòng không đúng định dạng' });
         }
@@ -250,8 +250,8 @@ exports.suaPhong = async (req, res, next) => {
 // Hiển thị phòng theo ID
 exports.getRoomById = async (req, res) => {
     try {
-        const roomId = req.params.id; 
-        const room = await mdPhong.phongModel.findById(roomId); 
+        const roomId = req.params.id;
+        const room = await mdPhong.phongModel.findById(roomId);
 
         if (!room) {
             return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
@@ -276,6 +276,29 @@ exports.showRoomByTypeRoomId = async (req, res, next) => {
         return res.status(500).json({ error: `Lỗi server ` + error });
     }
 }
+exports.getRoomByIdHotel = async (req, res) => {
+    try {
+        const hotelId = req.params.id;
+        const rooms = await mdPhong.phongModel.find();
+
+        const validRooms = [];
+
+        for (const room of rooms) {
+            const roomType = await mdLoaiPhong.loaiPhongModel.findById(room.IdLoaiPhong);
+
+            if (roomType && roomType.IdKhachSan.toString() === hotelId) {
+                validRooms.push(room);
+            }
+        }
+        if (validRooms.length === 0) {
+            return res.status(404).json({ error: 'Không tìm thấy phòng cho khách sạn này.' });
+        }
+        return res.status(200).json(validRooms);
+    } catch (error) {
+        console.error('Lỗi khi lấy danh sách phòng theo ID khách sạn:', error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
 
 exports.themPhong = async (req, res, next) => {
     try {
@@ -323,7 +346,7 @@ exports.updatePhong = async (req, res, next) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
-        const update = await mdPhong.phongModel.findByIdAndUpdate(id, updatedData, {new: true});
+        const update = await mdPhong.phongModel.findByIdAndUpdate(id, updatedData, { new: true });
         if (!update) {
             return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
         }
@@ -398,11 +421,11 @@ exports.showLoaiPhongById = async (req, res, next) => {
     try {
         const id = req.params.id; // Lấy ID từ URL
         const loaiPhong = await mdLoaiPhong.loaiPhongModel.findById(id); // Tìm loại phòng theo ID
-        
+
         if (!loaiPhong) {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
         }
-        
+
         res.status(200).json(loaiPhong); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
@@ -505,18 +528,18 @@ exports.showOrderRoom = async (req, res, next) => {
 }
 exports.showOrderRoomByIdHotel = async (req, res) => {
     try {
-        const hotelId = req.params.id; 
+        const hotelId = req.params.id;
 
-        const orders = await mdOrderRoom.orderRoomModel.find(); 
+        const orders = await mdOrderRoom.orderRoomModel.find();
 
-        const validOrders = []; 
+        const validOrders = [];
 
         for (const order of orders) {
-            const room = await mdPhong.phongModel.findById(order.IdPhong); 
+            const room = await mdPhong.phongModel.findById(order.IdPhong);
             if (room) {
-                const roomType = await mdLoaiPhong.loaiPhongModel.findById(room.IdLoaiPhong); 
+                const roomType = await mdLoaiPhong.loaiPhongModel.findById(room.IdLoaiPhong);
                 if (roomType && roomType.IdKhachSan.toString() === hotelId) {
-                    validOrders.push(order); 
+                    validOrders.push(order);
                 }
             }
         }
@@ -535,7 +558,7 @@ exports.showOrderRoomByIdHotel = async (req, res) => {
 
 exports.editOrderRoom = async (req, res) => {
     try {
-        const orderId = req.params.id; 
+        const orderId = req.params.id;
         const updatedData = req.body;
 
         console.log('Updating order with ID:', orderId);
@@ -679,7 +702,7 @@ exports.themNhanVien = async (req, res, next) => {
 
         } = req.body;
         const newHotel = mdNhanVien.NhanVienModel.create({
-            makhachsan:makhachsan,
+            makhachsan: makhachsan,
             username: username,
             sdt: sdt,
             anhNhanVien: anhNhanVien,
@@ -777,7 +800,7 @@ exports.getChamSocById = async (req, res) => {
 };
 exports.getChamSocByIdHotel = async (req, res) => {
     try {
-        const hotelId = req.params.id; 
+        const hotelId = req.params.id;
         const chamSocList = await mdChamSoc.ChamSocModel.find({ IdKhachSan: hotelId });
         if (!chamSocList || chamSocList.length === 0) {
             return res.status(404).json({ error: 'Không tìm thấy chăm sóc cho khách sạn này.' });
@@ -842,14 +865,14 @@ exports.showPhanHoi = async (req, res, next) => {
 exports.themPhanHoi = async (req, res, next) => {
     try {
         const { IdDatPhong, Uid, noiDung, thoiGian } = req.body;
-        
+
         const newPhanHoi = await mdPhanHoi.phanHoiModel.create({
             IdDatPhong: IdDatPhong,
             Uid: Uid,
-            noiDung: noiDung || "Dịch vụ rất tốt, nhân viên thân thiện!", 
-            thoiGian: thoiGian || new Date().toISOString().split('T')[0] 
+            noiDung: noiDung || "Dịch vụ rất tốt, nhân viên thân thiện!",
+            thoiGian: thoiGian || new Date().toISOString().split('T')[0]
         });
-        
+
         res.status(201).json({ message: 'Phản hồi đã được thêm thành công', newPhanHoi });
     } catch (error) {
         console.error(error);
@@ -964,7 +987,7 @@ exports.timKiemDichVu = async (req, res, next) => {
         const { tenDichVu } = req.query;
 
         const dichVu = await mdDichVu.DichVuModel.find({
-            tenDichVu: { $regex: tenDichVu, $options: 'i' } 
+            tenDichVu: { $regex: tenDichVu, $options: 'i' }
         });
 
         if (!dichVu || dichVu.length === 0) {
@@ -980,14 +1003,14 @@ exports.timKiemDichVu = async (req, res, next) => {
 // Hiển thị dịch vụ theo ID
 exports.showDichVuById = async (req, res, next) => {
     try {
-        const id = req.params.id; 
-        const dichVu = await mdDichVu.DichVuModel.findById(id); 
+        const id = req.params.id;
+        const dichVu = await mdDichVu.DichVuModel.findById(id);
 
         if (!dichVu) {
             return res.status(404).json({ error: 'Không tìm thấy dịch vụ với ID đã cho' });
         }
 
-        res.status(200).json(dichVu); 
+        res.status(200).json(dichVu);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -1040,11 +1063,11 @@ exports.updateFavorite = async (req, res) => {
         const { favoriteId } = req.params;
         const updatedData = req.body;
         const updatedFavorite = await mdYeuThich.yeuThichModel.findByIdAndUpdate(favoriteId, updatedData, { new: true });
-        
+
         if (!updatedFavorite) {
             return res.status(404).json({ error: 'Không tìm thấy yêu thích với ID đã cho' });
         }
-        
+
         return res.status(200).json({ msg: 'Yêu thích đã được cập nhật thành công', favorite: updatedFavorite });
     } catch (error) {
         console.error('Error updating favorite:', error);
