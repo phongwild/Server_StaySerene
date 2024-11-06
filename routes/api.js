@@ -36,7 +36,7 @@ router.get('/rooms/:id', apiCtrl.getRoomById);
 router.post('/typeroom', apiCtrl.themLoaiPhong);
 router.get('/typeroom', apiCtrl.showLoaiPhong);
 router.get('/typeroom/:id', apiCtrl.showLoaiPhongById);
-router.get('/ /:id', apiCtrl.showLoaiPhongByIdHotel);
+router.get('/typeroombyidhotel/:id', apiCtrl.showLoaiPhongByIdHotel);
 router.delete('/typeroom/:id', apiCtrl.xoaLoaiPhong);
 router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
 
@@ -47,6 +47,8 @@ router.get('/orderroombyUid/:Uid', apiCtrl.showOrderRoom);
 router.get('/orderroom/:id', apiCtrl.getOrderById);
 router.get('/orderroombyidhotel/:id', apiCtrl.showOrderRoomByIdHotel);
 router.put('/orderroom/:id', apiCtrl.editOrderRoom);
+router.get('/available-rooms', apiCtrl.getAvailableRooms);
+
 
 // Hotel management routes
 router.get('/hotel', apiCtrl.showKhachSan);

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Đặt Phòng</title>
+    <link rel="stylesheet" href="../css/lichsu.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>StaySerene</h2>
+            <ul>
+                <li><a href="phanhoinv.html"id="phanhoi">Phản hồi của khách hàng</a></li>
+                <li><a href="chamsocnv.html" id="chamsoc" >Chăm sóc khách hàng</a></li>
+                <li><a href="quanlydatphongnv.html" id="lichsu">Lịch sử đặt phòng</a></li>
+                <li><a href="datphong.html" id="datphong" class="namepage">Đặt Phòng</a></li>
+                <li><a href="#" id="đăng xuất" onclick="confirmLogout(event)">Đăng xuất</a></li>
+
+            </ul>
+        </div>
+        <div class="main-content" id="main-content">
+            <div class="header">
+                <h1>Đặt Phòng</h1>
+                <div class="form-section">
+                    <form id="customer-form">
+                        <div class="form-group">
+                            <label for="uid">Mã khách hàng :</label>
+                            <div class="form-maks">
+                                <input type="text" id="uid" name="uid">
+                                <input type="text" id="TenKhachHang" name="TenKhachHang" disabled>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ghiChu">Ghi chú :</label>
+                            <input type="text" id="ghiChu" name="ghiChu" >
+                        </div>
+                        <div class="form-group">
+                            <label for="thoiGianNhan">Thời gian nhận :</label>
+                            <input type="text" id="thoiGianNhan" name="thoiGianNhan" >
+                        </div>
+                        <div class="form-group">
+                            <label for="thoiGianTra">Thời gian trả :</label>
+                            <input type="text" id="thoiGianTra" name="thoiGianTra" >
+                        </div>
+                        <div class="button-group">
+                            <div class="form-search">
+
+
+                                <button id="searchBtn" type="button">Tìm kiếm</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <table class="table-section">
+                <thead>
+                    <tr>
+                        <th>Mã Phòng</th>
+                        <th>Số Phòng</th>
+                        <th>Tên loại Phòng</th>
+                        <th>Giá Phòng</th>
+                        <th>Đặt Phòng</th>
+                    </tr>
+                </thead>
+                <tbody id="customer-list">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/datphongnv.js"></script>
+</body>
+
+</html>

@@ -578,6 +578,49 @@ exports.editOrderRoom = async (req, res) => {
     }
 };
 
+
+
+exports.getAvailableRooms = async (req, res) => {
+    try {
+        const { hotelId, checkInTime, checkOutTime } = req.body;
+
+        const checkIn = new Date(checkInTime);
+        const checkOut = new Date(checkOutTime);
+
+        // Kiểm tra tính hợp lệ của thời gian
+        if (isNaN(checkIn) || isNaN(checkOut)) {
+            return res.status(400).json({ error: 'Thời gian nhận hoặc trả không hợp lệ' });
+        }
+
+        // Lấy tất cả phòng trong khách sạn
+        const allRooms = await mdPhong.phongModel.find({ IdKhachSan: hotelId });
+
+        // Lấy danh sách các phòng đã được đặt trong khoảng thời gian checkInTime - checkOutTime
+        const bookedRooms = await mdOrderRoom.orderRoomModel.find({
+            $or: [
+                { timeGet: { $lt: checkOut, $gte: checkIn } },  // Phòng đã được đặt trong khoảng thời gian check-in và check-out
+                { timeCheckout: { $lt: checkOut, $gte: checkIn } }
+            ]
+        });
+
+        // Lọc ra các phòng chưa được đặt
+        const bookedRoomIds = bookedRooms.map(order => order.IdPhong.toString());
+        const availableRooms = allRooms.filter(room => !bookedRoomIds.includes(room._id.toString()));
+
+        if (availableRooms.length === 0) {
+            return res.status(404).json({ msg: 'Không có phòng trống trong khoảng thời gian này' });
+        }
+
+        res.status(200).json(availableRooms);  // Trả về phòng chưa được đặt
+    } catch (error) {
+        console.error('Error fetching available rooms:', error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
+
+
+
 //Khách sạn
 exports.showKhachSan = async (req, res, next) => {
     try {
