@@ -378,6 +378,7 @@ exports.themPhong = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server' });
     }
 }
+
 // Xóa phòng
 exports.xoaPhong = async (req, res, next) => {
     try {
@@ -548,6 +549,41 @@ exports.OrderRoom = async (req, res, next) => {
             timeCheckout: timeCheckout,
             note: note,
             total: total,
+            status: status
+        });
+        return res.status(201).json([newOrder])
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server' + error });
+    }
+}
+exports.OrderRooma = async (req, res, next) => {
+    try {
+        console.log(req.body);
+        const {
+            IdPhong,
+            Uid,
+            IdDichVu,
+            orderTime,
+            timeGet,
+            timeCheckout,
+            note,
+            total,
+            img,
+            status
+        } = req.body;
+        if (!IdPhong || !Uid || !total) {
+            return res.status(404).json({ error: 'Không đủ thông tin' });
+        }
+        const newOrder = mdOrderRoom.orderRoomModel.create({
+            IdPhong: IdPhong,
+            Uid: Uid,
+            IdDichVu: IdDichVu,
+            orderTime: orderTime,
+            timeGet: timeGet,
+            timeCheckout: timeCheckout,
+            note: note,
+            total: total,
+            img:img,
             status: status
         });
         return res.status(201).json([newOrder])

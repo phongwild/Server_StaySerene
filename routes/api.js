@@ -49,6 +49,7 @@ router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
 
 // Booking management routes
 router.post('/orderroom', apiCtrl.OrderRoom);
+router.post('/orderrooma', apiCtrl.OrderRooma);
 router.get('/orderroom', apiCtrl.getAllOrders);
 router.get('/orderroombyUid/:Uid', apiCtrl.showOrderRoom);
 router.get('/orderroom/:id', apiCtrl.getOrderById);

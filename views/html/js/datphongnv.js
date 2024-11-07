@@ -95,8 +95,9 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
         })
         .map(booking => booking.IdPhong);
 
-    const availableRooms = rooms.filter(room => !bookedRoomIds.includes(room._id));
-
+    const availableRooms = rooms.filter(room => 
+        !bookedRoomIds.includes(room._id) && room.tinhTrangPhong === 0
+    );
     const customerList = document.getElementById("customer-list");
     customerList.innerHTML = ""; 
     availableRooms.forEach(room => {
@@ -106,13 +107,13 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
             <td>${room.soPhong}</td>
             <td>${room.moTaPhong}</td>
             <td>${room.giaPhong}</td>
-            <td><button type="button" onclick="bookRoom('${room._id}', '${uidInput}', '${noteInput}', ${room.giaPhong})">Đặt Phòng</button></td>
+            <td><button type="button" onclick="bookRoom('${room._id}', '${uidInput}', '${noteInput}', '${room.giaPhong}', '${room.anhPhong}')">Đặt Phòng</button></td>
         `;
         customerList.appendChild(row);
     });
 });
 
-async function bookRoom(roomId, uid, note, total) {
+async function bookRoom(roomId, uid, note, total,img) {
     const timeGetInput = document.getElementById("thoiGianNhan").value;
     const timeCheckoutInput = document.getElementById("thoiGianTra").value;
 
@@ -137,10 +138,11 @@ async function bookRoom(roomId, uid, note, total) {
         timeCheckout: formattedTimeCheckout, 
         note: note,
         total: total,
+        img:img,
         status: 0
     };
 
-    const response = await fetch("http://192.168.1.2:3000/api/orderroom", {
+    const response = await fetch("http://192.168.1.2:3000/api/orderrooma", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

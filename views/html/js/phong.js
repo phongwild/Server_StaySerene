@@ -158,7 +158,6 @@ async function addRoom() {
     if (maPhong) {
         alert('Mã phòng phải trống để thêm phòng mới.');
         document.getElementById('customer-form').reset();
-
         return;
     }
     if (!maKhachSan) {
@@ -188,6 +187,10 @@ async function addRoom() {
             return;
         }
 
+        const roomType = await fetchRoomTypeById(maLoaiPhong);
+        const giaPhong = roomType ? roomType.giaLoaiPhong : 0;  
+        const anhPhong = roomType ? roomType.anhLoaiPhong : "";
+
         // Chuẩn bị dữ liệu để gửi lên API
         const roomData = {
             IdLoaiPhong: maLoaiPhong,
@@ -197,7 +200,8 @@ async function addRoom() {
             soTang: soTang,
             moTaPhong: document.getElementById('moTaPhong').value,
             tinhTrangPhong: document.getElementById('tinhTrangPhong').value,
-            anhPhong: document.getElementById('anhkhachsan').value
+            anhPhong: anhPhong,
+            giaPhong: giaPhong  
         };
 
         // Gọi API để thêm phòng
@@ -215,10 +219,8 @@ async function addRoom() {
 
         alert('Phòng mới đã được thêm thành công!');
 
-        // Reset form sau khi thêm thành công
         document.getElementById('customer-form').reset();
 
-        // Tải lại danh sách phòng sau khi thêm
         fetchRoomData();
 
     } catch (error) {
@@ -226,6 +228,7 @@ async function addRoom() {
         alert('Không thể thêm phòng. Vui lòng kiểm tra dữ liệu và thử lại.');
     }
 }
+
 
 async function updateRoom() {
     // Lấy giá trị từ các trường input
