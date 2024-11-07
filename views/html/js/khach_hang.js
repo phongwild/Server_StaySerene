@@ -9,6 +9,18 @@ function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+function isValidDateFormat(date) {
+    const dateRegex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+    if (!dateRegex.test(date)) return false;
+    
+    const [day, month, year] = date.split('/').map(Number);
+    const isValidDay = day > 0 && day <= 31;
+    const isValidMonth = month > 0 && month <= 12;
+    const isValidYear = year > 1900 && year <= new Date().getFullYear();
+    
+    return isValidDay && isValidMonth && isValidYear;
+}
+
 async function getAPI() {
     try {
         const res = await fetch(API);
@@ -77,7 +89,10 @@ async function themKH() {
         alert('Vui lòng điền đầy đủ thông tin.');
         return;
     }
-    
+    if (!isValidDateFormat(ngaySinh)) {
+        alert('Ngày sinh phải có định dạng dd/MM/yyyy.');
+        return;
+    }
     if (!isValidPhoneNumber(sdt)) {
         alert('Số điện thoại phải là 10 số và bắt đầu bằng 0.');
         return;
@@ -195,7 +210,10 @@ async function editCustomer() {
         alert('Vui lòng điền đầy đủ thông tin.');
         return;
     }
-
+    if (!isValidDateFormat(ngaySinh)) {
+        alert('Ngày sinh phải có định dạng dd/MM/yyyy.');
+        return;
+    }
     if (!isValidPhoneNumber(sdt)) {
         alert('Số điện thoại phải là 10 số và bắt đầu bằng 0.');
         return;
