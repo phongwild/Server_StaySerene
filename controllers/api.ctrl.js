@@ -940,6 +940,20 @@ exports.getChamSocByIdHotel = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+exports.getChamSocByIdHotelAndUid = async (req, res) => {
+    try {
+        const { hotelId, Uid } = req.params;
+        const chamSocList = await mdChamSoc.ChamSocModel.find({ IdKhachSan: hotelId, Uid: Uid });
+        if (!chamSocList || chamSocList.length === 0) {
+            return res.status(404).json({ error: 'Không tìm thấy chăm sóc cho khách sạn và Uid này.' });
+        }
+        return res.status(200).json(chamSocList);
+    } catch (error) {
+        console.error("Error fetching chăm sóc records:", error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
 
 //sua cham soc 
 exports.suaChamSoc = async (req, res) => {

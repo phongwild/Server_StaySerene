@@ -1,6 +1,6 @@
 const apiUrl = 'http://192.168.1.2:3000/api/messenger';
 const apichamsocUrl = 'http://192.168.1.2:3000/api/messengerbyidhotel';
-const apiUrlAccount = 'http://192.168.1.2:3000/api/account';
+const apiUrlAccount = 'http://192.168.1.2:3000/api/accounta';
 const hotelId = localStorage.getItem('IdKhachSan');
 
 let selectedIdKhachSan = null;
@@ -36,12 +36,13 @@ async function fetchAccountInfo(uid) {
         if (!response.ok) {
             throw new Error('Mạng không phản hồi đúng');
         }
-        return await response.json();
+        const accountData = await response.json();
+        return accountData;
     } catch (error) {
-        console.error('Lỗi khi lấy thông tin tài khoản:', error);
         return null; 
     }
 }
+
 
 async function fetchChamSoc() {
     try {
@@ -226,7 +227,7 @@ async function sendMessage() {
 
     const newChamSoc = {
         noiDungGui: messageContent,
-        thoiGianGui: new Date().toISOString(), 
+        thoiGianGui: new Date().toISOString(), // Định dạng yyyy-MM-dd'T'HH:mm:ss'Z'
         vaiTro: 'Khách sạn',
         trangThaiKh: 1,
         trangThaiNv: 2,
@@ -255,6 +256,7 @@ async function sendMessage() {
         console.error('Lỗi khi gửi tin nhắn:', error);
     }
 }
+
 
 document.querySelector('.message-input button').addEventListener('click', sendMessage);
 document.getElementById('searchInput').addEventListener('input', searchItems);

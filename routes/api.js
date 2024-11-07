@@ -92,6 +92,7 @@ router.get('/messengerbyidhotel/:id', apiCtrl.getChamSocByIdHotel);
 router.post('/messenger', apiCtrl.themChamSoc);
 router.put('/messenger/:id', apiCtrl.suaChamSoc);
 router.delete('/messenger/:id', apiCtrl.xoaChamSoc);
+router.get('/messenger/:hotelId/:Uid', apiCtrl.getChamSocByIdHotelAndUid);
 
 //Favorite management routes
 router.post('/favorite', apiCtrl.addFavorite);           
