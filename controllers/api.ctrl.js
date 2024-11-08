@@ -60,15 +60,15 @@ exports.doRegister = async (req, res, next) => {
 exports.changePass = async (req, res, next) => {
     try {
         const { email, oldPassword, newPassword } = req.body;
-        const user = await accountModel.findOne({email});
-        if(!user){
-            return res.status(404).send({error: 'Không tìm thấy user này'});
+        const user = await accountModel.findOne({ email });
+        if (!user) {
+            return res.status(404).send({ error: 'Không tìm thấy user này' });
         }
         const isPassMatch = await bcrypt.compare(oldPassword, user.password);
-        if(!isPassMatch){
+        if (!isPassMatch) {
             return res.status(400).send({ error: 'Mật khẩu cũ không trùng khớp' });
         }
-        if(oldPassword == newPassword){
+        if (oldPassword == newPassword) {
             return res.status(400).send({ error: 'Mật khẩu mới không được trùng với mật khẩu cũ' });
         }
         user.password = await bcrypt.hash(newPassword, 8);
@@ -747,38 +747,29 @@ exports.getAvailableRooms = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 }
-exports.getOrderRoomByStatus0 = async(req, res, next) => {
+exports.getOrderRoomByStatus0 = async (req, res, next) => {
     try {
-        try {
-            const orders = await mdOrderRoom.orderRoomModel.find({ status: 0 });
-            res.status(200).json(orders);
-        } catch (error) {
-            res.status(500).json({ message: 'Lỗi server', error });
-        }
+        const id = req.params.id;
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: 0, Uid: id });
+        res.status(200).json(orders);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 }
-exports.getOrderRoomByStatus1 = async(req, res, next) => {
+exports.getOrderRoomByStatus1 = async (req, res, next) => {
     try {
-        try {
-            const orders = await mdOrderRoom.orderRoomModel.find({ status: 1 });
-            res.status(200).json(orders);
-        } catch (error) {
-            res.status(500).json({ message: 'Lỗi server', error });
-        }
+        const id = req.params.id;
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: 1, Uid: id });
+        res.status(200).json(orders);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 }
-exports.getOrderRoomByStatus2 = async(req, res, next) => {
+exports.getOrderRoomByStatus2 = async (req, res, next) => {
     try {
-        try {
-            const orders = await mdOrderRoom.orderRoomModel.find({ status: 2 });
-            res.status(200).json(orders);
-        } catch (error) {
-            res.status(500).json({ message: 'Lỗi server', error });
-        }
+        const id = req.params.id;
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: 2, Uid: id });
+        res.status(200).json(orders);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
