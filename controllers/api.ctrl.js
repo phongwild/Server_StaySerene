@@ -73,7 +73,7 @@ exports.changePass = async (req, res, next) => {
         }
         user.password = await bcrypt.hash(newPassword, 8);
         await user.save();
-        res.status(200).send('Update success')
+        res.status(200).send(user);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
