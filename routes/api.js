@@ -25,7 +25,7 @@ router.get('/account/:id', apiCtrl.getAccountById);
 router.get('/accounta/:id', apiCtrl.getAccountByIda);
 router.get('/accountac/:id', apiCtrl.getAccountByIdac);
 router.get('/checkusergoogle',apiCtrl.checkExistUserGoogle);
-router.post('/change-pass', apiCtrl.changePass);
+router.post('/change-pass', apiCtrl.changePass)
 
 // Room management routes
 router.get('/rooms', apiCtrl.xemPhong);
