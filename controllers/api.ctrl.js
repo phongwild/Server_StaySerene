@@ -361,11 +361,9 @@ exports.getRoomByIdHotel = async (req, res) => {
 exports.themPhong = async (req, res, next) => {
     try {
         console.log(req.body);
-        const { IdPhong, IdLoaiPhong, IdKhuyenMai, soPhong, soTang, moTaPhong, anhPhong, tinhTrangPhong, giaPhong } = req.body;
+        const { IdLoaiPhong, soPhong, soTang, moTaPhong, anhPhong, tinhTrangPhong, giaPhong } = req.body;
         const newRoom = mdPhong.phongModel.create({
-            IdPhong: IdPhong,
             IdLoaiPhong: IdLoaiPhong,
-            IdKhuyenMai: IdKhuyenMai,
             soPhong: soPhong,
             soTang: soTang,
             moTaPhong: moTaPhong,

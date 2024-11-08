@@ -49,9 +49,20 @@ async function showDichVuDetails(dv) {
 
 
 async function addDichVu() {
+    const giaDichVuValue = parseFloat(document.getElementById('giaDichVu').value.trim());
+    if (isNaN(giaDichVuValue) || giaDichVuValue <= 0 ) {
+        alert('Giá dịch vụ sai định dạng');
+        return;
+    }
+    if (isNaN(giaDichVuValue) || giaDichVuValue >= 1000000000) {
+        alert('Giá dịch vụ quá lớn');
+        return;
+    }
+
+
     const newDichVu = {
         tenDichVu: document.getElementById('tenDichVu').value.trim(),
-        giaDichVu: parseFloat(document.getElementById('giaDichVu').value.trim()),
+        giaDichVu: giaDichVuValue,
         motaDichVu: document.getElementById('motaDichVu').value.trim(),
         anhDichVu: document.getElementById('anhDichVu').value.trim(),
     };
@@ -83,15 +94,25 @@ async function editDichVu() {
         return;
     }
 
+    const giaDichVuValue = parseFloat(document.getElementById('giaDichVu').value.trim());
+    if (isNaN(giaDichVuValue) || giaDichVuValue <= 0 ) {
+        alert('Giá dịch vụ sai định dạng');
+        return;
+    }
+    if (isNaN(giaDichVuValue) || giaDichVuValue >= 1000000000) {
+        alert('Giá dịch vụ quá lớn');
+        return;
+    }
+
     const updatedDichVu = {
         tenDichVu: document.getElementById('tenDichVu').value.trim(),
-        giaDichVu: parseFloat(document.getElementById('giaDichVu').value.trim()),
+        giaDichVu: giaDichVuValue,
         motaDichVu: document.getElementById('motaDichVu').value.trim(),
         anhDichVu: document.getElementById('anhDichVu').value.trim(),
     };
 
     try {
-const response = await fetch(`${apiDichVuUrl}/${maDichVu}`, {
+        const response = await fetch(`${apiDichVuUrl}/${maDichVu}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedDichVu)
@@ -108,6 +129,7 @@ const response = await fetch(`${apiDichVuUrl}/${maDichVu}`, {
         console.error('Error updating dich vu:', error);
     }
 }
+
 
 
 async function deleteDichVu() {

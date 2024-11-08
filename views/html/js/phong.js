@@ -125,7 +125,6 @@ async function showRoomDetails(room, roomTypes, hotels) {
         }
     }
 
-    document.getElementById('makhuyenmai').value = room.IdKhuyenMai || '';
     document.getElementById('sophong').value = room.soPhong || '';
     document.getElementById('sotang').value = room.soTang || '';
     document.getElementById('moTaPhong').value = room.moTaPhong || '';
@@ -169,12 +168,12 @@ async function addRoom() {
         alert('Vui lòng chọn loại phòng.');
         return;
     }
-    if (soPhong <= 100) {
-        alert('Số phòng phải lớn hơn 100.');
+    if (soPhong < 100||soPhong > 10000) {
+        alert('Số phòng phải trong khoảng 100 đến 10000.');
         return;
     }
-    if (soTang <= 0) {
-        alert('Số tầng phải lớn hơn 0.');
+    if (soTang < 1||soTang > 100) {
+        alert('Số tầng phải trong khoảng từ 1 đến 100.');
         return;
     }
 
@@ -191,16 +190,15 @@ async function addRoom() {
         const roomType = await fetchRoomTypeById(maLoaiPhong);
         const giaPhong = roomType ? roomType.giaLoaiPhong : 0;  
         const anhPhong = roomType ? roomType.anhLoaiPhong : "";
+        const moTaPhong = roomType ? roomType.moTaLoaiPhong : "";
         const soLuongPhong = roomType ? roomType.soLuongPhong : 0;
 
         // Chuẩn bị dữ liệu để gửi lên API
         const roomData = {
             IdLoaiPhong: maLoaiPhong,
-            IdKhachSan: maKhachSan,
-            IdKhuyenMai: document.getElementById('makhuyenmai').value,
             soPhong: soPhong,
             soTang: soTang,
-            moTaPhong: document.getElementById('moTaPhong').value,
+            moTaPhong: moTaPhong,
             tinhTrangPhong: document.getElementById('tinhTrangPhong').value,
             anhPhong: anhPhong,
             giaPhong: giaPhong  
@@ -268,12 +266,12 @@ async function updateRoom() {
         alert('Vui lòng chọn loại phòng.');
         return;
     }
-    if (soPhong <= 100) {
-        alert('Số phòng phải lớn hơn 100.');
+    if (soPhong < 100||soPhong > 10000) {
+        alert('Số phòng phải trong khoảng 100 đến 10000.');
         return;
     }
-    if (soTang <= 0) {
-        alert('Số tầng phải lớn hơn 0.');
+    if (soTang < 1||soTang > 100) {
+        alert('Số tầng phải trong khoảng từ 1 đến 100.');
         return;
     }
     try {
@@ -289,7 +287,6 @@ async function updateRoom() {
         const roomData = {
             IdLoaiPhong: maLoaiPhong,
             IdKhachSan: maKhachSan,
-            IdKhuyenMai: document.getElementById('makhuyenmai').value,
             soPhong: soPhong,
             soTang: soTang,
             moTaPhong: document.getElementById('moTaPhong').value,

@@ -105,6 +105,10 @@ function validateForm() {
         return false;
     }
 
+    if (isNaN(giaLoaiPhong) || giaLoaiPhong > 1000000000) {
+        alert('Giá loại phòng quá lớn');
+        return false;
+    }
     return true;
 }
 function renderTypeRooms(typeRooms) {
