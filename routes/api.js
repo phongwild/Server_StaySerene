@@ -58,7 +58,9 @@ router.get('/orderroom/:id', apiCtrl.getOrderById);
 router.get('/orderroombyidhotel/:id', apiCtrl.showOrderRoomByIdHotel);
 router.put('/orderroom/:id', apiCtrl.editOrderRoom);
 router.get('/available-rooms', apiCtrl.getAvailableRooms);
-
+router.get('/orderroom/status/0', apiCtrl.getOrderRoomByStatus0);
+router.get('/orderroom/status/1', apiCtrl.getOrderRoomByStatus1);
+router.get('/orderroom/status/2', apiCtrl.getOrderRoomByStatus2);
 
 // Hotel management routes
 router.get('/hotel', apiCtrl.showKhachSan);

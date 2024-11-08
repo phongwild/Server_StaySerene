@@ -746,9 +746,43 @@ exports.getAvailableRooms = async (req, res) => {
         console.error('Error fetching available rooms:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
-};
-
-
+}
+exports.getOrderRoomByStatus0 = async(req, res, next) => {
+    try {
+        try {
+            const orders = await mdOrderRoom.orderRoomModel.find({ status: 0 });
+            res.status(200).json(orders);
+        } catch (error) {
+            res.status(500).json({ message: 'Lỗi server', error });
+        }
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+exports.getOrderRoomByStatus1 = async(req, res, next) => {
+    try {
+        try {
+            const orders = await mdOrderRoom.orderRoomModel.find({ status: 1 });
+            res.status(200).json(orders);
+        } catch (error) {
+            res.status(500).json({ message: 'Lỗi server', error });
+        }
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+exports.getOrderRoomByStatus2 = async(req, res, next) => {
+    try {
+        try {
+            const orders = await mdOrderRoom.orderRoomModel.find({ status: 2 });
+            res.status(200).json(orders);
+        } catch (error) {
+            res.status(500).json({ message: 'Lỗi server', error });
+        }
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
 
 
 //Khách sạn
