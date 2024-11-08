@@ -57,6 +57,27 @@ exports.doRegister = async (req, res, next) => {
         return res.status(400).send(error)
     }
 }
+exports.changePass = async (req, res, next) => {
+    try {
+        const { email, oldPassword, newPassword } = req.body;
+        const user = await accountModel.findOne({ email });
+        if (!user) {
+            return res.status(404).send({ error: 'Không tìm thấy user này' });
+        }
+        const isPassMatch = await bcrypt.compare(oldPassword, user.password);
+        if (!isPassMatch) {
+            return res.status(400).send({ error: 'Mật khẩu cũ không trùng khớp' });
+        }
+        if (oldPassword == newPassword) {
+            return res.status(400).send({ error: 'Mật khẩu mới không được trùng với mật khẩu cũ' });
+        }
+        user.password = await bcrypt.hash(newPassword, 8);
+        await user.save();
+        res.status(200).send(user);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
 exports.registerAdmin = async (req, res, next) => {
     try {
         console.log(req.body.email);
@@ -74,10 +95,10 @@ exports.registerAdmin = async (req, res, next) => {
         return res.status(201).send(error);
     }
 }
-exports.checkExistUserGoogle = async(req, res, next) => {
+exports.checkExistUserGoogle = async (req, res, next) => {
     try {
         const Id_google = req.query.id;
-        const user = await mdAccount.accountModel.findOne({Uid: Id_google});
+        const user = await mdAccount.accountModel.findOne({ Uid: Id_google });
         res.json(user !== null);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -189,7 +210,7 @@ exports.suaTk = async (req, res) => {
         }
 
         console.log('Updated account:', updatedAccount);
-        res.status(200).json(updatedAccount);
+        res.status(200).json([updatedAccount]);
     } catch (error) {
         console.error('Error updating account:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -482,7 +503,7 @@ exports.showLoaiPhongById = async (req, res, next) => {
         if (!loaiPhong) {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
         }
-        
+
         res.status(200).json([loaiPhong]); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
@@ -497,7 +518,7 @@ exports.showLoaiPhongByIda = async (req, res, next) => {
         if (!loaiPhong) {
             return res.status(404).json({ error: 'Không tìm thấy loại phòng' });
         }
-        
+
         res.status(200).json(loaiPhong); // Trả về dữ liệu loại phòng
     } catch (error) {
         console.error(error);
@@ -581,7 +602,7 @@ exports.OrderRooma = async (req, res, next) => {
             timeCheckout: timeCheckout,
             note: note,
             total: total,
-            img:img,
+            img: img,
             status: status
         });
         return res.status(201).json([newOrder])
@@ -723,9 +744,34 @@ exports.getAvailableRooms = async (req, res) => {
         console.error('Error fetching available rooms:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
-};
-
-
+}
+exports.getOrderRoomByStatus0 = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: 0, Uid: id });
+        res.status(200).json(orders);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+exports.getOrderRoomByStatus1 = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: 1, Uid: id });
+        res.status(200).json(orders);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+exports.getOrderRoomByStatus2 = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: 2, Uid: id });
+        res.status(200).json(orders);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
 
 
 //Khách sạn

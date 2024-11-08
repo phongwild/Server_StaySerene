@@ -25,6 +25,7 @@ router.get('/account/:id', apiCtrl.getAccountById);
 router.get('/accounta/:id', apiCtrl.getAccountByIda);
 router.get('/accountac/:id', apiCtrl.getAccountByIdac);
 router.get('/checkusergoogle',apiCtrl.checkExistUserGoogle);
+router.post('/change-pass', apiCtrl.changePass)
 
 // Room management routes
 router.get('/rooms', apiCtrl.xemPhong);
@@ -57,7 +58,9 @@ router.get('/orderroom/:id', apiCtrl.getOrderById);
 router.get('/orderroombyidhotel/:id', apiCtrl.showOrderRoomByIdHotel);
 router.put('/orderroom/:id', apiCtrl.editOrderRoom);
 router.get('/available-rooms', apiCtrl.getAvailableRooms);
-
+router.get('/orderroom/status/0/:id', apiCtrl.getOrderRoomByStatus0);
+router.get('/orderroom/status/1/:id', apiCtrl.getOrderRoomByStatus1);
+router.get('/orderroom/status/2/:id', apiCtrl.getOrderRoomByStatus2);
 
 // Hotel management routes
 router.get('/hotel', apiCtrl.showKhachSan);
