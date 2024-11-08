@@ -99,10 +99,6 @@ function validateForm() {
         return false;
     }
 
-    if (isNaN(soluongphong) || soluongphong < 0) {
-        alert('Số lượng phòng phải lớn hơn hoặc bằng 0!');
-        return false;
-    }
 
     if (isNaN(giaLoaiPhong) || giaLoaiPhong < 0) {
         alert('Giá loại phòng phải lớn hơn hoặc bằng 0!');
@@ -182,7 +178,7 @@ async function addTyperoom() {
         tenLoaiPhong: document.getElementById('tenloaiphong').value,
         moTaLoaiPhong: document.getElementById('motaloaiphong').value,
         anhLoaiPhong: document.getElementById('anhloaiphong').value,
-        soLuongPhong: parseInt(document.getElementById('soluongphong').value, 10),
+        soLuongPhong: 0,
         giaLoaiPhong: parseFloat(document.getElementById('giaLoaiPhong').value),  
         tienNghi: document.getElementById('tiennghi').value
     };

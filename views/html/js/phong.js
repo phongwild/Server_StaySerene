@@ -1,6 +1,7 @@
 const apiHotelUrl = 'http://192.168.1.2:3000/api/hotel';
 const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typerooma';
 const apiRoomUrl = 'http://192.168.1.2:3000/api/rooms';
+const apiRoomUrla = 'http://192.168.1.2:3000/api/roomsa';
 const apiTyperoomByHotelUrl = 'http://192.168.1.2:3000/api/typeroombyidhotel';
 
 async function fetchRoomData() {
@@ -190,6 +191,7 @@ async function addRoom() {
         const roomType = await fetchRoomTypeById(maLoaiPhong);
         const giaPhong = roomType ? roomType.giaLoaiPhong : 0;  
         const anhPhong = roomType ? roomType.anhLoaiPhong : "";
+        const soLuongPhong = roomType ? roomType.soLuongPhong : 0;
 
         // Chuẩn bị dữ liệu để gửi lên API
         const roomData = {
@@ -215,6 +217,20 @@ async function addRoom() {
 
         if (!addResponse.ok) {
             throw new Error('Thêm phòng thất bại');
+        }
+
+        const responselp = await fetch(`${apiTyperoomUrl}/${maLoaiPhong}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                soLuongPhong:soLuongPhong+1
+            })
+        });
+
+        if (!responselp.ok) {
+            throw new Error('Network response was not ok');
         }
 
         alert('Phòng mới đã được thêm thành công!');
@@ -314,7 +330,7 @@ async function updateRoom() {
 }
 
 async function deleteRoom() {
-    const maPhong = document.getElementById('maphong').value; 
+    const maPhong = document.getElementById('maphong').value;
 
     if (!maPhong) {
         alert('Vui lòng chọn phòng để xóa.');
@@ -323,26 +339,45 @@ async function deleteRoom() {
 
     if (confirm('Bạn có chắc chắn muốn xóa phòng này?')) {
         try {
-            const response = await fetch(`${apiRoomUrl}/${maPhong}`, {
+            // Fetch the room to get its `IdLoaiPhong`
+            const roomResponse = await fetch(`${apiRoomUrla}/${maPhong}`);
+            const room = await roomResponse.json();
+            const roomTypeId = room.IdLoaiPhong;
+
+            // Delete the room
+            const deleteResponse = await fetch(`${apiRoomUrl}/${maPhong}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
 
-            if (!response.ok) {
+            if (!deleteResponse.ok) {
                 throw new Error('Xóa phòng thất bại');
             }
 
-            const result = await response.json();
-            alert(result.msg || 'Xóa phòng thành công'); 
-            fetchRoomData(); 
+            // Fetch the current `soLuongPhong` for the typeroom and decrease it by 1
+            const typeroomResponse = await fetch(`${apiTyperoomUrl}/${roomTypeId}`);
+            const typeroom = await typeroomResponse.json();
+
+            const updatedRoomCount = typeroom.soLuongPhong-1;
+            await fetch(`${apiTyperoomUrl}/${roomTypeId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ soLuongPhong: updatedRoomCount })
+            });
+
+            alert('Xóa phòng thành công');
+            fetchRoomData();
         } catch (error) {
             console.error('Lỗi khi xóa phòng:', error);
             alert('Không thể xóa phòng. Vui lòng thử lại.');
         }
     }
 }
+
 function searchRooms() {
     const maphongSearch = removeDiacritics(document.getElementById('search-maphong').value.toLowerCase());
     const loaiphongSearch = removeDiacritics(document.getElementById('search-tenloaiphong').value.toLowerCase());

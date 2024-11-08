@@ -46,6 +46,7 @@ router.get('/typerooma/:id', apiCtrl.showLoaiPhongByIda);
 router.get('/typeroombyidhotel/:id', apiCtrl.showLoaiPhongByIdHotel);
 router.delete('/typeroom/:id', apiCtrl.xoaLoaiPhong);
 router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
+router.put('/typerooma/:id', apiCtrl.suaLoaiPhong);
 
 // Booking management routes
 router.post('/orderroom', apiCtrl.OrderRoom);
