@@ -113,7 +113,7 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
     });
 });
 
-async function bookRoom(roomId, uid, note, total,img) {
+async function bookRoom(roomId, uid, note, giaPhong,img) {
     const timeGetInput = document.getElementById("thoiGianNhan").value;
     const timeCheckoutInput = document.getElementById("thoiGianTra").value;
 
@@ -124,9 +124,18 @@ async function bookRoom(roomId, uid, note, total,img) {
         alert("Thời gian không hợp lệ. Vui lòng kiểm tra lại!");
         return;
     }
+    const startDate = new Date(parseDateISO(timeGetInput));
+    const endDate = new Date(parseDateISO(timeCheckoutInput));
 
+    const timeDiff = endDate - startDate;  
+    const numberOfDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    if (numberOfDays <= 0) {
+        alert("Ngày trả phải sau ngày nhận.");
+        return;
+    }
+    const total = numberOfDays * giaPhong;
     const orderTime = new Date(); 
-
     const formattedOrderTime = formatDateForBookingod(orderTime);
 
     const orderData = {
