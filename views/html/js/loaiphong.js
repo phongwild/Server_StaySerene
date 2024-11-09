@@ -111,18 +111,23 @@ function validateForm() {
     }
     return true;
 }
-function renderTypeRooms(typeRooms) {
+async function renderTypeRooms(typeRooms) {
     const typeRoomList = document.getElementById('typeroom-list');
     typeRoomList.innerHTML = '';
 
+    const allHotels = await fetchAllKhachSan();  
+
     typeRooms.forEach(room => {
+        const hotel = allHotels.find(hotel => hotel._id === room.IdKhachSan);
+        const hotelName = hotel ? hotel.tenKhachSan : 'Khách sạn không tồn tại';
+
         const row = document.createElement('tr');
         row.setAttribute('data-id', room._id);
         row.onclick = () => showTypeRoomDetails(room);
 
         row.innerHTML = `
-            <td>${room._id}</td>
-            <td>${room.IdKhachSan}</td>
+            <td class="hidden">${room._id}</td>
+            <td>${hotelName}</td> <!-- Hiển thị tên khách sạn -->
             <td>${room.tenLoaiPhong}</td>
             <td>${room.soLuongPhong}</td>
             <td><img src="${room.anhLoaiPhong}" alt="${room.tenLoaiPhong}" style="width: 100px; height: auto;" /></td>
@@ -130,6 +135,7 @@ function renderTypeRooms(typeRooms) {
         typeRoomList.appendChild(row);
     });
 }
+
 
 async function showTypeRoomDetails(room) {
     const { _id, IdKhachSan, tenLoaiPhong, moTaLoaiPhong, anhLoaiPhong, soLuongPhong, giaLoaiPhong, tienNghi } = room;
@@ -287,7 +293,6 @@ async function deleteTyperoom(id) {
 // Hàm tìm kiếm loại phòng
 function searchTypeRooms() {
     const searchMakhachsan = removeDiacritics(document.getElementById('search-makhachsan').value.toLowerCase().trim());
-    const searchMaloaiphong = removeDiacritics(document.getElementById('search-maloaiphong').value.toLowerCase().trim());
     const searchTenloaiphong = removeDiacritics(document.getElementById('search-tenloaiphong').value.toLowerCase().trim());
 
     const rows = document.querySelectorAll('#typeroom-list tr');
@@ -295,14 +300,12 @@ function searchTypeRooms() {
     rows.forEach(row => {
         const cells = row.getElementsByTagName('td');
         const makhachsan = removeDiacritics(cells[1].textContent.toLowerCase());
-        const maloai = removeDiacritics(cells[0].textContent.toLowerCase());
         const tenloai = removeDiacritics(cells[2].textContent.toLowerCase());
 
         const matchesMakhachsan = searchMakhachsan === '' || makhachsan.includes(searchMakhachsan);
-        const matchesMaloaiphong = searchMaloaiphong === '' || maloai.includes(searchMaloaiphong);
         const matchesTenloaiphong = searchTenloaiphong === '' || tenloai.includes(searchTenloaiphong);
 
-        row.style.display = (matchesMakhachsan && matchesMaloaiphong && matchesTenloaiphong) ? '' : 'none';
+        row.style.display = (matchesMakhachsan && matchesTenloaiphong) ? '' : 'none';
     });
 }
 

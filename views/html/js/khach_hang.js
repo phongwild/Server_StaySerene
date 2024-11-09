@@ -1,5 +1,5 @@
 var API = "http://192.168.1.2:3000/api/account";
-var currenUser = []; 
+var currenUser = [];
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
     return phoneRegex.test(phone);
@@ -12,12 +12,12 @@ function isValidEmail(email) {
 function isValidDateFormat(date) {
     const dateRegex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
     if (!dateRegex.test(date)) return false;
-    
+
     const [day, month, year] = date.split('/').map(Number);
     const isValidDay = day > 0 && day <= 31;
     const isValidMonth = month > 0 && month <= 12;
     const isValidYear = year > 1900 && year <= new Date().getFullYear();
-    
+
     return isValidDay && isValidMonth && isValidYear;
 }
 
@@ -39,19 +39,22 @@ const showKH = (account) => {
         const row = document.createElement('tr');
         row.setAttribute('data-id', account._id || 'N/A');
         row.setAttribute('onclick', 'showKH_detail(this)');
-        
+
         row.innerHTML = `
-            <td>${account._id}</td>
+            <td class="hidden">${account._id}</td>
             <td>${account.username}</td>
+            <td>${account.cccd}</td>
             <td>${account.diaChi}</td>
             <td>${account.sdt}</td>
             <td>${account.gioiTinh}</td>
             <td>${account.ngaySinh}</td>
-            <td><img src="${account.avt}" alt="${account.avt}" style="width:100px;height:auto; border-radius:10px;"></td>
         `;
         row.dataset.email = account.email;
         row.dataset.cccd = account.cccd;
         row.dataset.quocTich = account.quocTich;
+        row.dataset.avt = account.avt;
+        row.dataset.imgcccdtruoc = account.imgcccdtruoc || '';  
+        row.dataset.imgcccdsau = account.imgcccdsau || '';  
         list.appendChild(row);
     });
 }
@@ -67,99 +70,32 @@ function generateRandomString(length) {
     return randomString;
 }
 
-async function themKH() {
-    const username = document.getElementById('tenkhachhang').value.trim();
-    const diaChi = document.getElementById('diachi').value.trim();
-    const sdt = document.getElementById('sdt').value.trim();
-    const quocTich = document.getElementById('quoctich').value.trim();
-    const ngaySinh = document.getElementById('ngaysinh').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const gioiTinh = document.getElementById('gioitinh').value.trim();
-    const cccd = document.getElementById('cccd').value.trim();
-    const avt_url = document.getElementById('avt-url').value.trim(); 
-    const imgcccdtruoc = document.getElementById('imgcccdtruoc').value.trim(); // URL của ảnh CCCD mặt trước
-    const imgcccdsau = document.getElementById('imgcccdsau').value.trim(); // URL của ảnh CCCD mặt sau
-
-    if (!username || !diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd) {
-        alert('Vui lòng điền đầy đủ thông tin.');
-        return;
-    }
-    if (!isValidDateFormat(ngaySinh)) {
-        alert('Ngày sinh phải có định dạng dd/MM/yyyy.');
-        return;
-    }
-    if (!isValidPhoneNumber(sdt)) {
-        alert('Số điện thoại phải là 10 số và bắt đầu bằng 0.');
-        return;
-    }
-    if (!isValidEmail(email)) {
-        alert('Vui lòng nhập địa chỉ email hợp lệ.');
-        return;
-    }
-
-    const emailExists = currenUser.some(user => user.email === email);
-    if (emailExists) {
-        alert('Email đã tồn tại.');
-        return;
-    }
-
-    const newCustomer = {
-        username,
-        diaChi,
-        sdt,
-        quocTich,
-        ngaySinh,
-        email,
-        gioiTinh,
-        cccd,
-        avt: avt_url || '', // Sử dụng URL avatar nếu có, nếu không để trống
-        token: generateRandomString(20), // Token ngẫu nhiên
-        password: generateRandomString(20), // Mật khẩu ngẫu nhiên
-        role: '', // Đặt role là chuỗi trống nếu chưa xác định
-        imgcccdtruoc, // Ảnh CCCD mặt trước
-        imgcccdsau // Ảnh CCCD mặt sau
-    };
-
-    try {
-        const res = await fetch(API, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newCustomer)
-        });
-
-        if (!res.ok) {
-            throw new Error(`Network response was not ok: ${res.statusText}`);
-        }
-
-        const result = await res.json();
-        console.log('Thêm khách hàng thành công:', result);
-        
-        await getAPI(); 
-        alert('Tạo tài khoản khách hàng thành công!');
-        document.getElementById('customer-form').reset();
-    } catch (error) {
-        console.error('Lỗi khi thêm khách hàng:', error);
-        alert('Có lỗi xảy ra khi thêm khách hàng. Vui lòng thử lại.');
-    }
-}
 
 function showKH_detail(row) {
     const uid = row.getAttribute('data-id');
     const cells = [...row.getElementsByTagName('td')];
 
     document.getElementById('makhachhang').value = uid;
-    document.getElementById('tenkhachhang').value = cells[1].innerText; 
-    document.getElementById('diachi').value = cells[2].innerText; 
-    document.getElementById('sdt').value = cells[3].innerText; 
-    document.getElementById('email').value = row.dataset.email; 
-    document.getElementById('cccd').value = row.dataset.cccd; 
-    document.getElementById('quoctich').value = row.dataset.quocTich; 
-    document.getElementById('gioitinh').value = cells[4].innerText; 
-    document.getElementById('ngaysinh').value = cells[5].innerText; 
-    document.getElementById('avt-url').value = cells[6].getElementsByTagName('img')[0].src;
+    document.getElementById('tenkhachhang').value = cells[1].innerText;
+    document.getElementById('diachi').value = cells[2].innerText;
+    document.getElementById('sdt').value = cells[4].innerText;
+    document.getElementById('email').value = row.dataset.email;
+    document.getElementById('cccd').value = row.dataset.cccd;
+    document.getElementById('quoctich').value = row.dataset.quocTich;
+    document.getElementById('gioitinh').value = cells[5].innerText;
+    document.getElementById('ngaysinh').value = cells[6].innerText;
+
+    const imgAvt = document.getElementById('avt-url');
+    imgAvt.src = row.dataset.avt || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s';
+
+    const imgCCCDTruoc = document.getElementById('imgcccdtruoc');
+    imgCCCDTruoc.src = row.dataset.imgcccdtruoc || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg/800px-C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg'; 
+
+    const imgCCCDSau = document.getElementById('imgcccdsau');
+    imgCCCDSau.src = row.dataset.imgcccdsau || 'https://image.plo.vn/w1000/Uploaded/2024/xqeioxdrky/2024_02_11/mau-can-cuoc-tre-tu-6-tuoi-mat-sau-9238.jpg.webp'; 
+
 }
+
 
 async function deleteCustomer() {
     const uid = document.getElementById('makhachhang').value;
@@ -175,89 +111,12 @@ async function deleteCustomer() {
         });
         if (res.ok) {
             throw new Error('Network response was not ok');
-        }   
+        }
         alert(`Xoá tài khoảnh thành công, mã khách hàng: ${uid}`);
         getAPI();
         document.getElementById('customer-form').reset();
     } catch (error) {
         console.error(error);
-    }
-}
-async function editCustomer() {
-    const uid = document.getElementById('makhachhang').value; // Get the customer ID
-    if (!uid) {
-        alert('Vui lòng chọn khách hàng để sửa.');
-        return;
-    }
-    const username = document.getElementById('tenkhachhang').value.trim();
-    const diaChi = document.getElementById('diachi').value.trim();
-    const sdt = document.getElementById('sdt').value.trim();
-    const quocTich = document.getElementById('quoctich').value.trim();
-    const ngaySinh = document.getElementById('ngaysinh').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const gioiTinh = document.getElementById('gioitinh').value.trim();
-    const cccd = document.getElementById('cccd').value.trim();
-    const avatarUrl = document.getElementById('avt-url').value.trim();
-
-    // Input validation
-    if (!username || !diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd) {
-        alert('Vui lòng điền đầy đủ thông tin.');
-        return;
-    }
-    if (!isValidDateFormat(ngaySinh)) {
-        alert('Ngày sinh phải có định dạng dd/MM/yyyy.');
-        return;
-    }
-    if (!isValidPhoneNumber(sdt)) {
-        alert('Số điện thoại phải là 10 số và bắt đầu bằng 0.');
-        return;
-    }
-
-    if (!isValidEmail(email)) {
-        alert('Vui lòng nhập địa chỉ email hợp lệ.');
-        return;
-    }
-
-    // Check if the email is already in use by another user
-    const checkExits = currenUser.some(user => user.email === email && user._id !== uid);
-    if (checkExits) {
-        alert('Email đã tồn tại.');
-        return;
-    }
-
-    const updatedCustomer = {
-        username,
-        diaChi,
-        sdt,
-        quocTich,
-        ngaySinh,
-        email,
-        gioiTinh,
-        cccd,
-        avt: avatarUrl, // Assuming the avatar URL is updated
-    };
-
-    try {
-        const res = await fetch(`${API}/${uid}`, {
-            method: 'PUT', // Use PUT for updates
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedCustomer)
-        });
-
-        if (!res.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        const result = await res.json();
-        console.log(result); 
-        getAPI(); 
-        alert('Cập nhật thông tin khách hàng thành công ');
-        document.getElementById('customer-form').reset(); 
-    } catch (error) {
-        console.error('Error updating customer: ', error);
-        alert('Có lỗi xảy ra khi cập nhật thông tin khách hàng.');
     }
 }
 
@@ -273,10 +132,10 @@ function searchTypeRooms() {
 
     rows.forEach(row => {
         const cells = row.getElementsByTagName('td');
-        
-        const makhachhang = cells[0].textContent.toLowerCase(); 
-        const tenkhachhang = cells[1].textContent.toLowerCase(); 
-        const diachi = cells[2].textContent.toLowerCase(); 
+
+        const makhachhang = cells[2].textContent.toLowerCase();
+        const tenkhachhang = cells[1].textContent.toLowerCase();
+        const diachi = cells[4].textContent.toLowerCase();
 
         const matchesMakhachhang = searchMakhachhang === '' || makhachhang.includes(searchMakhachhang);
         const matchesTenkhachhang = searchTenkhachhang === '' || tenkhachhang.includes(searchTenkhachhang);
@@ -296,11 +155,11 @@ document.getElementById('search-button').addEventListener('click', function (eve
     searchTypeRooms();
 });
 function confirmLogout(event) {
-    event.preventDefault(); 
-    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); 
+    event.preventDefault();
+    const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?");
 
     if (userConfirmed) {
-        window.location.href = "../../welcome.html"; 
+        window.location.href = "../../welcome.html";
     }
 }
 

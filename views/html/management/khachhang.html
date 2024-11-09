@@ -30,68 +30,56 @@
                 <h1>Quản lý khách hàng</h1>
                 <div class="form-section">
                     <form id="customer-form">
-                        <div class="form-group">
-                            <label for="makhachhang">Mã khách hàng :</label>
-                            <input type="text" id="makhachhang" name="makhachhang" disabled>
-                        </div>
+                        <input type="hidden" id="makhachhang" name="makhachhang" disabled>
 
                         <div class="form-group">
                             <label for="tenkhachhang">Tên khách hàng :</label>
-                            <input type="text" id="tenkhachhang" name="tenkhachhang">
+                            <input type="text" id="tenkhachhang" name="tenkhachhang" disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="diachi">Địa chỉ :</label>
-                            <input type="text" id="diachi" name="diachi">
+                            <input type="text" id="diachi" name="diachi" disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="sdt">SĐT :</label>
-                            <input type="number" id="sdt" name="sdt">
+                            <input type="number" id="sdt" name="sdt" disabled>
                         </div>
                         <div class="form-group">
                             <label for="quoctich">Quốc tịch :</label>
-                            <input type="text" id="quoctich" name="quoctich">
+                            <input type="text" id="quoctich" name="quoctich" disabled>
                         </div>
                         <div class="form-group">
                             <label for="ngaysinh">Ngày sinh :</label>
-                            <input type="text" id="ngaysinh" name="ngaysinh">
+                            <input type="text" id="ngaysinh" name="ngaysinh" disabled>
                         </div>
                         <div class="form-group">
                             <label for="email">Email :</label>
-                            <input type="email" id="email" name="email">
+                            <input type="email" id="email" name="email" disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="gioitinh">Giới tính :</label>
-                            <input type="text" id="gioitinh" name="gioitinh">
+                            <input type="text" id="gioitinh" name="gioitinh" disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="cccd">CCCD :</label>
-                            <input type="number" id="cccd" name="cccd">
+                            <input type="number" id="cccd" name="cccd"disabled>
                         </div>
+                        <div class="form-imgaccount">
+                            <img id="avt-url" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s" alt="Avatar" style="width:200px;height:auto; border-radius:10px;">
+                            <img id="imgcccdtruoc" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg/800px-C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg" alt="CCCD Trước" style="width:auto;height:200px;margin-left: 20px;border-radius:10px;">
+                            <img id="imgcccdsau" src="https://image.plo.vn/w1000/Uploaded/2024/xqeioxdrky/2024_02_11/mau-can-cuoc-tre-tu-6-tuoi-mat-sau-9238.jpg.webp" alt="CCCD Sau" style="width:auto;height:200px;margin-left: 20px;border-radius:10px;">
 
-                        <div class="form-group">
-                            <label for="anhkhachhang">Ảnh khách hàng :</label>
-                            <input type="url" id="avt-url" name="avt-url">
-                        </div>
-                        <div class="form-group">
-                            <label for="anhkhachhang">Ảnh khách hàng :</label>
-                            <input type="url" id="imgcccdtruoc" name="avt-url">
-                        </div>
-                        <div class="form-group">
-                            <label for="anhkhachhang">Ảnh khách hàng :</label>
-                            <input type="url" id="imgcccdsau" name="avt-url">
                         </div>
 
                         <div class="button-group">
-                            <button type="button" onclick="themKH()">Thêm</button>
-                            <button type="button" onclick="editCustomer()">Cập nhật</button>
-                            <button type="button" onclick="deleteCustomer()">Xóa</button>
+                            <button type="button" onclick="deleteCustomer()" style="width: 160px;">Xóa tài khoản</button>
                             <div class="form-search">
-                                <input type="text" id="search-mkh" placeholder="Tìm kiếm Mã Khách Hàng">
                                 <input type="text" id="search-tkh" placeholder="Tìm kiếm Tên Khách Hàng">
+                                <input type="text" id="search-mkh" placeholder="Tìm kiếm Số CCCD">
                                 <input type="text" id="search-diachi" placeholder="Tìm kiếm Theo Địa Chỉ">
                                 <button id="search-button">Tìm Kiếm</button>
 
@@ -105,13 +93,12 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Mã khách hàng</th>
                                 <th>Tên khách hàng</th>
+                                <th>Số CCCD</th>
                                 <th>Địa chỉ</th>
                                 <th>SĐT</th>
                                 <th>Giới tính</th>
                                 <th>Ngày sinh</th>
-                                <th>Ảnh khách hàng</th>
                             </tr>
                         </thead>
                         <tbody id="list-tk">

@@ -42,6 +42,10 @@ function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
     return phoneRegex.test(phone);
 }
+function isValidCCCD(cccd) {
+    const cccdPattern = /^\d{12}$/;
+    return cccdPattern.test(cccd);
+}
 
 
 // Lấy tất cả danh sách nhân viên
@@ -102,24 +106,31 @@ function debounce(func, delay) {
 
 
 // Hiển thị danh sách nhân viên
-function displayNhanVien(nhanVienList) {
+async function displayNhanVien(nhanVienList) {
     const customerList = document.getElementById('customer-list');
     customerList.innerHTML = '';
-    nhanVienList.forEach(nhanVien => {
+
+    for (const nhanVien of nhanVienList) {
         const row = document.createElement('tr');
         row.setAttribute('data-id', nhanVien._id || 'N/A');
         row.onclick = () => showHotelDetailsnhanvien(nhanVien);
 
+        const khachSan = await fetchKhachSan(nhanVien.IdKhachSan);
+        const tenKhachSan = khachSan ? khachSan.tenKhachSan : 'Không tìm thấy';
+
         row.innerHTML = `
-            <td>${nhanVien._id}</td>
-            <td>${nhanVien.IdKhachSan }</td>
+            <td class="hidden">${nhanVien._id}</td>
+            <td>${tenKhachSan}</td> <!-- Hiển thị tên khách sạn -->
             <td>${nhanVien.username}</td>
+            <td>${nhanVien.cccd}</td>
+            <td>${nhanVien.sdt}</td>
             <td><img src="${nhanVien.anhNhanVien}" alt="${nhanVien.anhNhanVien}" style="width:100px;height:auto;"></td>
         `;
 
         customerList.appendChild(row);
-    });
+    }
 }
+
 
 
 document.addEventListener('DOMContentLoaded', fetchNhanVien);
@@ -146,6 +157,7 @@ async function populateHotels() {
     }
 }
 
+
 // Thêm nhân viên
 async function addCustomernhanvien() {
     const manhanvien = document.getElementById('manhanvien').value; 
@@ -157,15 +169,20 @@ async function addCustomernhanvien() {
     const email = document.getElementById('email').value;
     const cccd = document.getElementById('cccd').value;
     const gioLam = document.getElementById('gioLam').value;
-    const khachSan = await fetchKhachSan(makhachsan);
+    const khachSan = await fetchKhachSan(IdKhachSan);
+
+    // Kiểm tra mã khách sạn
     if (!khachSan) {
         alert('Mã khách sạn không tồn tại!');
         return;
     }
+
+    // Kiểm tra mã nhân viên đã tồn tại
     if (manhanvien !== "") {
         alert(`Không thể thêm nhân viên vì mã nhân viên : ${manhanvien} đã tồn tại.`);
         return;
     }
+
     // Kiểm tra nhập liệu
     if (!tennhanvien || !sdt || !anhNhanVien || !password || !gioLam || !email || !cccd || !IdKhachSan) {
         alert('Vui lòng điền đầy đủ thông tin.');
@@ -181,20 +198,41 @@ async function addCustomernhanvien() {
         alert('Vui lòng nhập địa chỉ email hợp lệ.');
         return;
     }
-
-    const newNhanVien = {
-        IdKhachSan,
-        username: tennhanvien,
-        sdt,
-        anhNhanVien,
-        password,
-        gioLam,
-        email,
-        cccd
-    };
+    if (!isValidCCCD(cccd)) {
+        alert('Số CCCD không hợp lệ. Vui lòng nhập đúng số CCCD (12 chữ số).');
+        return;
+    }
 
     try {
-        const response = await fetch(apiNhanVienUrl, {
+        const response = await fetch(apiNhanVienUrl);
+        const employees = await response.json();
+
+        const emailExists = employees.some(employee => employee.email === email);
+        const cccdExists = employees.some(employee => employee.cccd === cccd);
+        
+        if (emailExists) {
+            alert('Email đã được sử dụng cho một nhân viên khác!');
+            return;
+        }
+        if (cccdExists) {
+            alert('CCCD đã được sử dụng cho một nhân viên khác!');
+            return;
+        }
+
+        // Nếu email không tồn tại, tiến hành thêm nhân viên mới
+        const newNhanVien = {
+            IdKhachSan,
+            username: tennhanvien,
+            sdt,
+            anhNhanVien,
+            password,
+            gioLam,
+            email,
+            cccd
+        };
+
+        // Gửi yêu cầu POST để thêm nhân viên mới
+        const addResponse = await fetch(apiNhanVienUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -202,16 +240,18 @@ async function addCustomernhanvien() {
             body: JSON.stringify(newNhanVien)
         });
 
-        if (!response.ok) {
+        if (!addResponse.ok) {
             throw new Error('Network response was not ok');
         }
-        alert(`Thêm nhân viên ${tennhanvien} thành công!`)
+
+        alert(`Thêm nhân viên ${tennhanvien} thành công!`);
         document.getElementById('customer-form').reset();
-        fetchNhanVien();
+        fetchNhanVien();  // Cập nhật danh sách nhân viên sau khi thêm
     } catch (error) {
         console.error('Error adding nhan vien:', error);
     }
 }
+
 const updateButton = document.getElementById("updateButton")
 updateButton.onclick = editCustomernhanvien;
 
@@ -309,6 +349,10 @@ async function editCustomernhanvien() {
         return;
     }
 
+    if (!isValidCCCD(cccd)) {
+        alert('Số CCCD không hợp lệ. Vui lòng nhập đúng số CCCD (12 chữ số).');
+        return;
+    }
     const updatedNhanVien = {
         IdKhachSan,
         username,
@@ -350,9 +394,9 @@ function searchTypeRooms() {
 
     rows.forEach(row => {
         const cells = row.getElementsByTagName('td');
-        const makhachsan = removeDiacritics(cells[1].textContent.toLowerCase());
-        const manhanvien = removeDiacritics(cells[0].textContent.toLowerCase());
-        const tennhanvien = removeDiacritics(cells[2].textContent.toLowerCase());
+        const manhanvien = removeDiacritics(cells[1].textContent.toLowerCase());
+        const makhachsan = removeDiacritics(cells[2].textContent.toLowerCase());
+        const tennhanvien = removeDiacritics(cells[3].textContent.toLowerCase());
 
         const matchesMakhachsan = searchMakhachsan === '' || makhachsan.includes(searchMakhachsan);
         const matchesMaloaiphong = searchManhanvien === '' || manhanvien.includes(searchManhanvien);

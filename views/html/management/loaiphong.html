@@ -30,15 +30,12 @@
                 <h1>Quản lý loại phòng</h1>
                 <div class="form-section">
                     <form id="customer-form">
-                        <div class="form-group">
-                            <label for="maloaiphong">Mã loại phòng :</label>
-                            <input type="text" id="maloaiphong" name="maloaiphong" disabled>
-                        </div>
+                            <input type="hidden" id="maloaiphong" name="maloaiphong" disabled>
 
                         <div class="form-group">
                             <label for="makhachsan">Thông tin khách sạn :</label>
                             <div class="form-maks">
-                                <input type="text" id="makhachsan" class="makhachsan" placeholder="Nhập mã khách sạn" />
+                                <input type="hidden" id="makhachsan" class="makhachsan" placeholder="Nhập mã khách sạn" />
                                 <select type="text" id="tenkhachsan" class="tenkhachsan" placeholder="Tên khách sạn"
                                     autocomplete="off">
                                     <option value="">Chọn khách sạn</option>
@@ -85,8 +82,7 @@
                             <button type="button"
                                 onclick="deleteTyperoom(document.getElementById('maloaiphong').value)">Xóa</button>
                             <div class="form-search">
-                                <input type="text" id="search-maloaiphong" placeholder="Tìm kiếm Mã Loại Phòng">
-                                <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Mã Khách Sạn">
+                                <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Tên Khách Sạn">
                                 <input type="text" id="search-tenloaiphong" placeholder="Tìm kiếm Tên Loại Phòng">
                                 <button id="search-button">Tìm Kiếm</button>
 
@@ -100,9 +96,8 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Mã loại phòng</th>
-                                <th>Mã khách sạn</th>
-                                <th>Tên loại</th>
+                                <th>Tên khách sạn</th>
+                                <th>Tên loại phòng</th>
                                 <th>Số lượng</th>
                                 <th>Ảnh loại phòng</th>
                             </tr>

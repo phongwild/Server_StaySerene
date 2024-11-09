@@ -49,7 +49,7 @@ function displayHotels(hotels) {
         row.setAttribute('data-full-description', hotel.moTaKhachSan);
 
         row.innerHTML = `
-            <td>${shortId}</td> <!-- Hiển thị mã khách sạn rút gọn -->
+            <td class="hidden">${shortId}</td> <!-- Hiển thị mã khách sạn rút gọn -->
             <td>${hotel.tenKhachSan}</td>
             <td>${hotel.diaChi}</td>
             <td>${hotel.sdt}</td>
@@ -117,9 +117,14 @@ async function addCustomer() {
     }
 
     const hotelExists = currentHotels.some(hotel => hotel._id === hotelId);
+    const nameExists = currentHotels.some(hotel => hotel.tenKhachSan === tenKhachSan && hotel.diaChi === diaChi);
     if (hotelExists) {
         alert(`Bạn không thể thêm . Mã khách sạn ${hotelId} đã tồn tại.`);
         document.getElementById('customer-form').reset();
+        return;
+    }
+    if (nameExists) {
+        alert(`Bạn không thể thêm . Tên khách sạn ${tenKhachSan} đã có ở ${diaChi} .`);
         return;
     }
 

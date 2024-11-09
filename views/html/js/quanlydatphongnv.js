@@ -89,8 +89,10 @@ async function populateServices() {
 
 const statusMapping = {
   0: "Đã đặt cọc",
-  1: "Đã trả phòng",
-  2: "Đã hủy"
+  1: "Đã xác nhận đặt phòng",
+  2: "Đã nhận phòng",
+  3: "Đã trả phòng",
+  4: "Đã hủy"
 };
 
 function validateDateTimeFormat(dateTime) {
@@ -132,16 +134,14 @@ async function displayLichSus(lichsus) {
     const dichVuID = lichsu.IdDichVu || "N/A";
     const tongTien = lichsu.total;
 
-    // Lấy thông tin số phòng từ API
     const room = await fetchRoomById(phongID);
-    const soPhong = room ? room.soPhong : "Không có số phòng"; // Kiểm tra xem có phòng không
+    const soPhong = room ? room.soPhong : "Không có số phòng"; 
 
-    // Fetch tên khách hàng
     const customer = await fetchCustomerById(Uid);
     const customerName = customer ? customer.username : "Không tìm thấy tên khách hàng";
 
     row.innerHTML = `
-      <td>${mdp}</td>
+      <td class="hidden">${mdp}</td>
       <td>${customerName}</td> <!-- Thay thế mã khách hàng bằng tên khách hàng -->
       <td>${soPhong}</td>
       <td>${thoiGianDatPhong}</td>
@@ -439,25 +439,20 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
   const searchSoPhong = document.getElementById('search-sophong').value.toLowerCase();
 
   try {
-    // Fetch all booking records
     const response = await fetch(`${apidatphongUrl}/${hotelId}`);
     const bookings = await response.json();
 
     const customerList = document.getElementById("customer-list");
     customerList.innerHTML = "";
 
-    // Filter bookings based on search input
     for (const booking of bookings) {
-      // Fetch customer details by Uid and room details by IdPhong for each booking
       const customer = await fetchCustomerById(booking.Uid);
       const room = await fetchRoomById(booking.IdPhong);
 
-      // Define search parameters
       const matchesMadatphong = searchMadatphong ? booking._id.toLowerCase().includes(searchMadatphong) : true;
       const matchesTenKhachHang = searchTenKhachHang ? (customer && customer.username.toLowerCase().includes(searchTenKhachHang)) : true;
       const matchesSoPhong = searchSoPhong ? (room && room.soPhong.toString().toLowerCase().includes(searchSoPhong)) : true;
 
-      // Check if booking matches search criteria
       if (matchesMadatphong && matchesTenKhachHang && matchesSoPhong) {
         const row = document.createElement("tr");
         row.innerHTML = `
@@ -470,7 +465,6 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
           <td>${statusMapping[booking.status]}</td>
         `;
 
-        // Add click event to populate fields with booking details
         row.onclick = async function () {
           document.getElementById("mdp").value = booking._id;
           document.getElementById("uid").value = booking.Uid;
@@ -483,7 +477,6 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
           document.getElementById("tongTien").value = booking.total;
           document.getElementById("dichVu").value = booking.IdDichVu || "N/A";
 
-          // Populate room and service fields if available
           const roomDetails = await fetchRoomById(booking.IdPhong);
           document.getElementById("soPhong").value = roomDetails ? roomDetails.soPhong : "Phòng không tồn tại";
 

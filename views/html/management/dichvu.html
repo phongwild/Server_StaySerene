@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý Dịch Vụ</title>
     <link rel="stylesheet" href="../css/dichvu.css">
 </head>
+
 <body>
     <div class="container">
         <div class="sidebar">
@@ -22,7 +24,7 @@
 
             </ul>
         </div>
-        
+
         <div class="main-content">
             <h1>Quản lý Dịch Vụ</h1>
             <div class="form-section">
@@ -55,16 +57,7 @@
                         <button type="button" onclick="deleteDichVu()">Xóa</button>
                         <button type="button" onclick="clearForm()">Làm mới</button>
                     </div>
-                    
-                    <div class="search-section">
-                        <h3>Tìm kiếm Dịch Vụ</h3>
-                        <div class="search-bar">
-                            <input type="text" id="search-tenDichVu" placeholder="Nhập tên dịch vụ">
-                            <button type="button" onclick="searchDichVu()">Tìm kiếm</button>
-                        </div>
-                    </div>
-                    
-                    
+
                 </form>
             </div>
 
@@ -72,14 +65,13 @@
                 <h3>Danh sách Dịch Vụ</h3>
                 <table>
                     <thead>
-<tr>
-                            <th>Mã Dịch Vụ</th>
+                        <tr>
                             <th>Tên Dịch Vụ</th>
                             <th>Giá Dịch Vụ</th>
-                            <th>Mô tả Dịch Vụ</th> 
+                            <th>Mô tả Dịch Vụ</th>
                             <th>Ảnh Dịch Vụ</th>
-                            
-                            
+
+
                         </tr>
                     </thead>
                     <tbody id="dichvu-list"></tbody>
@@ -90,4 +82,5 @@
 
     <script src="../js/dichvu.js"></script>
 </body>
+
 </html>

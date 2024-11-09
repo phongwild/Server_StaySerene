@@ -35,17 +35,12 @@ function displayPhanHois(feedbackList) {
 
     feedbackList.forEach((phanhoi) => {
         const row = document.createElement("tr");
-        const maPhanHoi = phanhoi._id || "N/A";
-        const IdDatPhong = phanhoi.IdDatPhong || "N/A";
         const Uid = phanhoi.Uid || "N/A";
         const noiDung = phanhoi.noiDung || "N/A";
-        const thoiGian = formatDate(phanhoi.thoiGian) || "N/A";
+        const thoiGian = phanhoi.thoiGian || "N/A";
         const tenKhachHang = customers[Uid] || "N/A";
 
         row.innerHTML = `
-            <td>${maPhanHoi}</td>
-            <td>${IdDatPhong}</td>
-            <td>${Uid}</td>
             <td>${tenKhachHang}</td>
             <td>${noiDung}</td>
             <td>${thoiGian}</td>
@@ -55,21 +50,6 @@ function displayPhanHois(feedbackList) {
     });
 }
 
-function searchPhanHois() {
-    const searchMaPhanHoi = normalizeString(document.getElementById("search-maphanhoi").value);
-    const searchMaPhong = normalizeString(document.getElementById("search-maphong").value);
-    const searchMaKhachHang = normalizeString(document.getElementById("search-makhachhang").value);
-    const searchTenKhachHang = normalizeString(document.getElementById("search-tenkhachhang").value);
-
-    const filteredPhanHois = phanhois.filter(phanhoi => {
-        return (normalizeString(phanhoi._id).includes(searchMaPhanHoi) || searchMaPhanHoi === "") &&
-               (normalizeString(phanhoi.IdDatPhong).includes(searchMaPhong) || searchMaPhong === "") &&
-               (normalizeString(phanhoi.Uid).includes(searchMaKhachHang) || searchMaKhachHang === "") &&
-               (normalizeString(customers[phanhoi.Uid] || "").includes(searchTenKhachHang) || searchTenKhachHang === "");
-    });
-
-    displayPhanHois(filteredPhanHois); 
-}
 
 function normalizeString(str) {
     if (!str) return "";
@@ -86,7 +66,6 @@ function formatDate(dateString) {
 window.onload = async function() {
     await fetchCustomers();
     await fetchPhanHois();
-    document.getElementById("search-button").addEventListener("click", searchPhanHois);
 };
 
 function confirmLogout(event) {

@@ -383,8 +383,8 @@ function searchRooms() {
     const rows = document.querySelectorAll('#customer-list tr');
 
     rows.forEach(row => {
-        const maphong = removeDiacritics(row.cells[0].textContent.toLowerCase());
-        const loaiphong = removeDiacritics(row.cells[1].textContent.toLowerCase());
+        const maphong = removeDiacritics(row.cells[1].textContent.toLowerCase());
+        const loaiphong = removeDiacritics(row.cells[2].textContent.toLowerCase());
         const sophong = removeDiacritics(row.cells[3].textContent.toLowerCase());
 
         const matchesMãPhong = maphong.includes(maphongSearch);

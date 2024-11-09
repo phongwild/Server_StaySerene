@@ -30,32 +30,24 @@
                 <h1>Quản lý phòng khách sạn</h1>
                 <div class="form-section">
                     <form id="customer-form">
-                        <div class="form-group">
-                            <label for="maphong">Mã phòng :</label>
-                            <input type="text" id="maphong" name="maphong" disabled>
-                        </div>
+                        <input type="hidden" id="maphong" name="maphong" disabled>
                         <div class="form-group">
                             <label for="khachsan">Khách sạn :</label>
                             <div class="form-maks">
-                                <input type="text" id="makhachsan" class="makhachsan" placeholder="Nhập mã khách sạn" disabled/>
+                                <input type="hidden" id="makhachsan" class="makhachsan" placeholder="Nhập mã khách sạn"
+                                    disabled />
                                 <select type="text" id="tenkhachsan" class="tenkhachsan" placeholder="Tên khách sạn"
                                     autocomplete="off">
                                     <option value="">Chọn khách sạn</option>
                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="loaiphong">Loại phòng:</label>
-                            <div class="form-maks">
-                                <input type="text" id="maloaiphong" class="maloaiphong"
-                                    placeholder="Nhập mã loại phòng" disabled/>
                                 <select type="text" id="tenloaiphong" class="tenloaiphong" placeholder="Tên loại phòng"
                                     autocomplete="off">
                                     <option value="">Chọn Loại Phòng</option>
                                 </select>
                             </div>
                         </div>
+
+                        <input type="hidden" id="maloaiphong" class="maloaiphong" />
 
                         <div class="form-group">
                             <label for="phong">Phòng:</label>
@@ -67,7 +59,8 @@
                         </div>
                         <div class="form-group">
                             <label for="tinhTrangPhong">Tình trạng phòng :</label>
-                            <select id="tinhTrangPhong" name="tinhTrangPhong" placeholder="Trạng thái" autocomplete="off">
+                            <select id="tinhTrangPhong" name="tinhTrangPhong" placeholder="Trạng thái"
+                                autocomplete="off">
                                 <option value="0">Hoạt động bình thường</option>
                                 <option value="1">Đã bảo trì</option>
                             </select>
@@ -89,12 +82,12 @@
                             <button type="button" onclick="updateRoom()">Cập nhật</button>
                             <button type="button" onclick="deleteRoom()">Xóa</button>
                             <div class="form-search">
-                                <input type="text" id="search-maphong" placeholder="Tìm kiếm Mã Phòng">
-                                <input type="text" id="search-tenloaiphong" placeholder="Tìm kiếm Tên Loại Phòng">
+                                <input type="text" id="search-maphong" placeholder="Tìm kiếm Tên Loại Phòng">
+                                <input type="text" id="search-tenloaiphong" placeholder="Tìm kiếm Tên Khách Sạn">
                                 <input type="text" id="search-sophong" placeholder="Tìm kiếm Số Phòng">
                                 <button id="searchBtn" type="button">Tìm kiếm</button>
                             </div>
-                            
+
                         </div>
                     </form>
                 </div>
@@ -104,7 +97,6 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Mã phòng</th>
                                 <th>Tên loại phòng</th>
                                 <th>Tên khách sạn</th>
                                 <th>Số phòng</th>
@@ -113,7 +105,7 @@
                         </thead>
                         <tbody id="customer-list">
                             <tr data-id="6707ed79df6d7c9585d8baa" onclick="showHotelDetails(this)">
-                                
+
                             </tr>
                         </tbody>
                     </table>

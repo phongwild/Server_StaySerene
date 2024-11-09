@@ -236,6 +236,23 @@ exports.getAccountById = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+// Lấy tài khoản theo cccd
+exports.getAccountByCccd = async (req, res) => {
+    try {
+        const { cccd } = req.params; 
+        const account = await mdAccount.accountModel.findOne({ cccd: cccd });
+
+        if (!account) {
+            return res.status(404).json({ error: 'Không tìm thấy tài khoản với CCCD đã cho' });
+        }
+
+        res.status(200).json(account);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
 exports.getAccountByIda = async (req, res) => {
     try {
         const accountId = req.params.id;
@@ -642,6 +659,23 @@ exports.getOrderById = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+exports.getOrderRoomByStatus = async (req, res, next) => {
+    try {
+        const status = 3; 
+
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: status });
+
+        if (!orders || orders.length === 0) {
+            return res.status(404).json({ msg: 'Không có đơn đặt phòng nào với trạng thái này' });
+        }
+
+        res.status(200).json(orders);
+    } catch (error) {
+        console.error('Error fetching orders by status:', error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
+
 
 //Xem phòng đã đặt
 exports.showOrderRoom = async (req, res, next) => {
@@ -913,7 +947,7 @@ exports.themNhanVien = async (req, res, next) => {
 
         } = req.body;
         const newHotel = mdNhanVien.NhanVienModel.create({
-            makhachsan: makhachsan,
+            IdKhachSan: IdKhachSan,
             username: username,
             sdt: sdt,
             anhNhanVien: anhNhanVien,
@@ -924,7 +958,7 @@ exports.themNhanVien = async (req, res, next) => {
 
         });
         res.status(201).json({
-            msg: 'Add hotel oke',
+            msg: 'Add nhan vien oke',
             maKhachSan: newHotel._id
         });
     } catch (error) {

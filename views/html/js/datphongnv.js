@@ -2,14 +2,16 @@ const apiTyperoomByIdHotelUrl = 'http://192.168.1.2:3000/api/typeroombyidhotel';
 const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typeroom';
 const apiRoomUrl = 'http://192.168.1.2:3000/api/roombyidhotel';
 const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
-const apiKhachHang = "http://192.168.1.2:3000/api/accountac";
+const apiKhachHang = "http://192.168.1.2:3000/api/accountbycccd";
 
 
 const hotelId = localStorage.getItem('IdKhachSan');
 
 async function fetchBookings() {
     const response = await fetch(`${apidatphongUrl}/${hotelId}`);
-    return await response.json();
+    const bookings = await response.json();
+    return bookings.filter(booking => booking.status !== 4);
+
 }
 
 async function fetchRooms() {
@@ -103,7 +105,7 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
     availableRooms.forEach(room => {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${room._id}</td>
+            <td class="hidden">${room._id}</td>
             <td>${room.soPhong}</td>
             <td>${room.moTaPhong}</td>
             <td>${room.giaPhong}</td>

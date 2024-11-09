@@ -34,7 +34,9 @@ body {
 .sidebar ul li {
     margin-bottom: 10px;
 }
-
+.hidden {
+    display: none;
+}
 .sidebar ul li a {
     color: white;
     text-decoration: none;

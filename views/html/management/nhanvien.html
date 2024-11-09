@@ -29,15 +29,12 @@
             <div class="main-content">
                 <h1>Quản lý Nhân Viên</h1>
                 <div class="form-section">
+                    <input type="hidden" id="manhanvien" name="ID-nv" disabled>
                     <form id="customer-form">
-                        <div class="form-group">
-                            <label for="ID-nv">Mã Nhân Viên :</label>
-                            <input type="text" id="manhanvien" name="ID-nv" disabled>
-                        </div>
                         <div class="form-group">
                             <label for="makhachsan">Thông tin khách sạn :</label>
                             <div class="form-maks">
-                                <input type="text" id="makhachsan" name="ID-ks">
+                                <input type="hidden" id="makhachsan" name="ID-ks">
                                 <select type="text" id="tenkhachsan" class="tenkhachsan" placeholder="Tên khách sạn"
                                     autocomplete="off">
                                     <option value="">Chọn khách sạn</option>
@@ -66,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <label for="motakhachsan">Pass Word :</label>
-                            <input type="password" id="password" name="password" disabled>
+                            <input type="password" id="password" name="password">
                         </div>
                         <div class="form-group">
                             <label for="email">Email :</label>
@@ -82,9 +79,9 @@
                             <button id="updateButton" type="button" onclick="editCustomernhanvien()">Cập nhật</button>
                             <button type="button" onclick="deleteNhanVien()">Xóa</button>
                             <div class="form-search">
-                                <input type="text" id="search-manhanvien" placeholder="Tìm kiếm Mã Nhân viên">
-                                <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Mã Khách Sạn">
-                                <input type="text" id="search-tennhanvien" placeholder="Tìm kiếm Tên nhân viên">
+                                <input type="text" id="search-manhanvien" placeholder="Tìm kiếm Tên khách sạn">
+                                <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Tên nhân viên">
+                                <input type="text" id="search-tennhanvien" placeholder="Tìm kiếm Số CCCD">
                                 <button id="search-button">Tìm Kiếm</button>
                             </div>
                         </div>
@@ -96,9 +93,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Mã Nhân Viên</th>
-                                <th>Mã Khách Sạn</th>
+                                <th>Tên Khách Sạn</th>
                                 <th>Tên Nhân Viên</th>
+                                <th>Số CCCD </th>
+                                <th>Số điện thoại </th>
                                 <th>Ảnh nhân viên </th>
                             </tr>
                         </thead>

@@ -13,10 +13,10 @@
         <div class="sidebar">
             <h2>StaySerene</h2>
             <ul>
-                <li><a href="phanhoinv.html"id="phanhoi">Phản hồi của khách hàng</a></li>
-                <li><a href="chamsocnv.html" id="chamsoc" >Chăm sóc khách hàng</a></li>
+                <li><a href="phanhoinv.html" id="phanhoi">Phản hồi của khách hàng</a></li>
+                <li><a href="chamsocnv.html" id="chamsoc">Chăm sóc khách hàng</a></li>
                 <li><a href="quanlydatphongnv.html" id="lichsu" class="namepage">Lịch sử đặt phòng</a></li>
-                <li><a href="datphong.html" id="datphong" >Đặt Phòng</a></li>
+                <li><a href="datphong.html" id="datphong">Đặt Phòng</a></li>
 
                 <li><a href="#" id="đăng xuất" onclick="confirmLogout(event)">Đăng xuất</a></li>
 
@@ -28,31 +28,36 @@
                 <h1>Lịch Sử Đặt Phòng</h1>
                 <div class="form-section">
                     <form id="customer-form">
+                        <input type="hidden" id="mdp" name="mdp" disabled>
                         <div class="form-group">
-                            <label for="uid">Mã đặt phòng :</label>
-                            <input type="text" id="mdp" name="mdp" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="uid">Mã khách hàng :</label>
                             <div class="form-maks">
-                                <input type="text" id="uid" name="uid" disabled>
-                                <input type="text" id="TenKhachHang" class="TenKhachHang" placeholder="TenKhachHang" disabled>
+                                <div class="form-group">
+                                    <label for="dichVu">Tên khách hàng :</label>
+                                    <div class="form-maks">
+                                        <input type="hidden" id="uid" name="uid" disabled>
+                                        <input type="text" id="TenKhachHang" class="TenKhachHang"
+                                            placeholder="TenKhachHang" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dichVu">Tên dịch vụ :</label>
+                                    <div class="form-maks">
+                                        <input type="hidden" id="dichVu" name="dichVu" disabled>
+                                        <input type="text" id="tenDichVu" class="tenDichVu" placeholder="Tên dịch vụ"
+                                            disabled>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label for="dichVu">Mã dịch vụ :</label>
                             <div class="form-maks">
-                                <input type="text" id="dichVu" name="dichVu" disabled>
-                                <input type="text" id="tenDichVu" class="tenDichVu" placeholder="Tên dịch vụ" disabled>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phong1">Mã phòng :</label>
-                            <div class="form-maks">
-                                <input type="text" id="phong1" name="phong1"disabled >
-                                <input type="text" id="soPhong" name="soPhong" disabled>
+                                <div class="form-group">
+                                    <label for="phong1">Số phòng :</label>
+                                    <div class="form-maks">
+                                        <input type="hidden" id="phong1" name="phong1" disabled>
+                                        <input type="text" id="soPhong" name="soPhong" disabled>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -66,7 +71,7 @@
                         </div>
                         <div class="form-group">
                             <label for="thoiGianTra">Thời gian trả :</label>
-                            <input type="text" id="thoiGianTra" name="thoiGianTra" >
+                            <input type="text" id="thoiGianTra" name="thoiGianTra" disabled>
                         </div>
                         <div class="form-group">
                             <label for="ghiChu">Ghi chú :</label>
@@ -77,8 +82,10 @@
                             <select id="trangThai" name="trangThai" placeholder="Trạng thái" autocomplete="off">
                                 <option value="">Trạng thái đặt phòng</option>
                                 <option value="0">Đã đặt cọc</option>
-                                <option value="1">Đã trả phòng</option>
-                                <option value="2">Đã hủy</option>
+                                <option value="1">Đã xác nhận đặt phòng</option>
+                                <option value="2">Đã nhận phòng</option>
+                                <option value="3">Đã trả phòng</option>
+                                <option value="4">Đã hủy</option>
                             </select>
 
                         </div>
@@ -107,8 +114,7 @@
             <table class="table-section">
                 <thead>
                     <tr>
-                        <th>Mã đặt phòng</th>
-                        <th>Mã khách hàng</th>
+                        <th>Tên khách hàng</th>
                         <th>Phòng</th>
                         <th>Thời gian đặt phòng</th>
                         <th>Thời gian nhận</th>
