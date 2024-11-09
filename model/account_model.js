@@ -18,7 +18,9 @@ const userSchema = new db.mongoose.Schema(
         avt: { type: String, required: false, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s" },
         role: { type: Number, required: false, default:1 },
         token: { type: String, required: false },
-        cccd: {type: String, required: false, default: "0123456789"}
+        cccd: {type: String, required: false, default: "0123456789"},
+        imgcccdtruoc: {type: String, required: false, default: "0123456789"},
+        imgcccdsau: {type: String, required: false, default: "0123456789"}
     },
     {
         collection: 'Account'

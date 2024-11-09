@@ -25,7 +25,7 @@ async function fetchRoomData() {
             const hotel = roomType ? hotels.find(h => h._id === roomType.IdKhachSan) : null;
 
             row.innerHTML = `
-                <td>${room._id || 'N/A'}</td>
+                <td class="hidden">${room._id || 'N/A'}</td>
                 <td>${roomType ? roomType.tenLoaiPhong : 'N/A'}</td>
                 <td>${hotel ? hotel.tenKhachSan : 'N/A'}</td>
                 <td>${room.soPhong || 'N/A'}</td>

@@ -174,7 +174,7 @@ exports.xoaTk = async (req, res, next) => {
 exports.themtk = async (req, res, next) => {
     try {
         console.log(req.body);
-        const { username, diaChi, role, token, sdt, password, quocTich, ngaySinh, email, gioiTinh, cccd, avt_url } = req.body;
+        const { username, diaChi, role, token, sdt, password, quocTich, ngaySinh, email, gioiTinh, cccd, avt_url,imgcccdtruoc,imgcccdsau } = req.body;
         const newAcc = mdAccount.accountModel.create({
             username: username,
             sdt: sdt,
@@ -187,7 +187,9 @@ exports.themtk = async (req, res, next) => {
             cccd: cccd,
             role: role,
             token: token,
-            avt: avt_url
+            avt: avt_url,
+            imgcccdtruoc:imgcccdtruoc,
+            imgcccdsau:imgcccdsau
         });
         res.status(201).json({ msg: 'add acc succ' });
     } catch (error) {
