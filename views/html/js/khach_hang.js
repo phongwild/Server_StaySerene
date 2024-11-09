@@ -77,14 +77,9 @@ async function themKH() {
     const gioiTinh = document.getElementById('gioitinh').value.trim();
     const cccd = document.getElementById('cccd').value.trim();
     const avt_url = document.getElementById('avt-url').value.trim(); 
-    const avt_file = document.getElementById('avt-file').value.trim(); 
-    const newAccountId = document.getElementById('makhachhang').value.trim(); 
-    const checkExitsId = currenUser.some(user => user._id === newAccountId);
-    if (checkExitsId) {
-        alert('Mã tài khoản đã tồn tại.');
-        document.getElementById('customer-form').reset();
-        return;
-    }
+    const imgcccdtruoc = document.getElementById('imgcccdtruoc').value.trim(); // URL của ảnh CCCD mặt trước
+    const imgcccdsau = document.getElementById('imgcccdsau').value.trim(); // URL của ảnh CCCD mặt sau
+
     if (!username || !diaChi || !sdt || !quocTich || !ngaySinh || !email || !gioiTinh || !cccd) {
         alert('Vui lòng điền đầy đủ thông tin.');
         return;
@@ -97,20 +92,16 @@ async function themKH() {
         alert('Số điện thoại phải là 10 số và bắt đầu bằng 0.');
         return;
     }
-    
     if (!isValidEmail(email)) {
         alert('Vui lòng nhập địa chỉ email hợp lệ.');
         return;
     }
 
-    const checkExits = currenUser.some(user => user.email === email);
-    if (checkExits) {
+    const emailExists = currenUser.some(user => user.email === email);
+    if (emailExists) {
         alert('Email đã tồn tại.');
         return;
     }
-    const avatarUrl = avt_url || avt_file;
-    const password = generateRandomString(20); 
-    const token = generateRandomString(20);    
 
     const newCustomer = {
         username,
@@ -121,10 +112,12 @@ async function themKH() {
         email,
         gioiTinh,
         cccd,
-        avt: avatarUrl, 
-        token,           
-        role: '',       
-        password         
+        avt: avt_url || '', // Sử dụng URL avatar nếu có, nếu không để trống
+        token: generateRandomString(20), // Token ngẫu nhiên
+        password: generateRandomString(20), // Mật khẩu ngẫu nhiên
+        role: '', // Đặt role là chuỗi trống nếu chưa xác định
+        imgcccdtruoc, // Ảnh CCCD mặt trước
+        imgcccdsau // Ảnh CCCD mặt sau
     };
 
     try {
@@ -137,17 +130,18 @@ async function themKH() {
         });
 
         if (!res.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Network response was not ok: ${res.statusText}`);
         }
 
         const result = await res.json();
-        console.log(result); 
-        getAPI(); 
-        alert('Tạo tài khoản khách hàng thành công ');
+        console.log('Thêm khách hàng thành công:', result);
+        
+        await getAPI(); 
+        alert('Tạo tài khoản khách hàng thành công!');
         document.getElementById('customer-form').reset();
     } catch (error) {
-        console.error('Error adding customer: ', error);
-        alert('Có lỗi xảy ra khi thêm khách hàng.');
+        console.error('Lỗi khi thêm khách hàng:', error);
+        alert('Có lỗi xảy ra khi thêm khách hàng. Vui lòng thử lại.');
     }
 }
 

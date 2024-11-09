@@ -19,8 +19,8 @@ const userSchema = new db.mongoose.Schema(
         role: { type: Number, required: false, default:1 },
         token: { type: String, required: false },
         cccd: {type: String, required: false, default: "0123456789"},
-        imgcccdtruoc: {type: String, required: false, default: "0123456789"},
-        imgcccdsau: {type: String, required: false, default: "0123456789"}
+        imgcccdtruoc: {type: String, required: false, default: ""},
+        imgcccdsau: {type: String, required: false, default: ""}
     },
     {
         collection: 'Account'
