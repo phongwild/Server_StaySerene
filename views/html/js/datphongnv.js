@@ -70,6 +70,8 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
         alert("Mã khách hàng không tồn tại. Vui lòng kiểm tra lại.");
         return;
     }
+    const customerData = await customerResponse.json();
+    const uid = customerData._id; 
 
     const formattedTimeGet = formatDateForBooking(timeGetInput);
     const formattedTimeCheckout = formatDateForBooking(timeCheckoutInput);
@@ -109,7 +111,7 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
             <td>${room.soPhong}</td>
             <td>${room.moTaPhong}</td>
             <td>${room.giaPhong}</td>
-            <td><button type="button" onclick="bookRoom('${room._id}', '${uidInput}', '${noteInput}', '${room.giaPhong}', '${room.anhPhong}')">Đặt Phòng</button></td>
+            <td><button type="button" onclick="bookRoom('${room._id}', '${uid}', '${noteInput}', '${room.giaPhong}', '${room.anhPhong}')">Đặt Phòng</button></td>
         `;
         customerList.appendChild(row);
     });
