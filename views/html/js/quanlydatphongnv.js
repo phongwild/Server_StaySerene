@@ -139,10 +139,12 @@ async function displayLichSus(lichsus) {
 
     const customer = await fetchCustomerById(Uid);
     const customerName = customer ? customer.username : "Không tìm thấy tên khách hàng";
+    const customerCCCD= customer ? customer.cccd : "Không tìm thấy tên khách hàng";
 
     row.innerHTML = `
       <td class="hidden">${mdp}</td>
       <td>${customerName}</td> <!-- Thay thế mã khách hàng bằng tên khách hàng -->
+      <td>${customerCCCD}</td> <!-- Thay thế mã khách hàng bằng tên khách hàng -->
       <td>${soPhong}</td>
       <td>${thoiGianDatPhong}</td>
       <td>${thoiGianNhan}</td>
@@ -449,15 +451,16 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
       const customer = await fetchCustomerById(booking.Uid);
       const room = await fetchRoomById(booking.IdPhong);
 
-      const matchesMadatphong = searchMadatphong ? booking._id.toLowerCase().includes(searchMadatphong) : true;
-      const matchesTenKhachHang = searchTenKhachHang ? (customer && customer.username.toLowerCase().includes(searchTenKhachHang)) : true;
+      const matchesMadatphong = searchMadatphong ? (customer && customer.username.toLowerCase().includes(searchMadatphong)) : true;
+      const matchesTenKhachHang = searchTenKhachHang ? (customer && customer.cccd.toLowerCase().includes(searchTenKhachHang)) : true;
       const matchesSoPhong = searchSoPhong ? (room && room.soPhong.toString().toLowerCase().includes(searchSoPhong)) : true;
 
       if (matchesMadatphong && matchesTenKhachHang && matchesSoPhong) {
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td>${booking._id}</td>
+          <td class="hidden">${booking._id}</td>
           <td>${customer ? customer.username : "Không tìm thấy tên khách hàng"}</td>
+          <td>${customer ? customer.cccd : "Không tìm thấy tên khách hàng"}</td>
           <td>${room ? room.soPhong : "Không có số phòng"}</td>
           <td>${booking.orderTime}</td>
           <td>${booking.timeGet}</td>
