@@ -573,6 +573,7 @@ exports.OrderRoom = async (req, res, next) => {
             timeCheckout,
             note,
             total,
+            img,
             status
         } = req.body;
         if (!IdPhong || !Uid || !total) {
@@ -587,6 +588,7 @@ exports.OrderRoom = async (req, res, next) => {
             timeCheckout: timeCheckout,
             note: note,
             total: total,
+            img:img,
             status: status
         });
         return res.status(201).json([newOrder])
