@@ -164,7 +164,7 @@ async function displayLichSus(lichsus) {
       document.getElementById("ghiChu").value = ghiChu;
       document.getElementById("trangThai").value = trangThaiValue;
       document.getElementById("tongTien").value = tongTien;
-      document.getElementById("dichVu").value = dichVuID;
+      document.getElementById("cccd").value = customerCCCD;
 
       const room = await fetchRoomById(phongID);
       if (room) {

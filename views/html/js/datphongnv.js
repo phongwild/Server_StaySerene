@@ -1,5 +1,5 @@
 const apiTyperoomByIdHotelUrl = 'http://192.168.1.2:3000/api/typeroombyidhotel';
-const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typeroom';
+const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typerooma';
 const apiRoomUrl = 'http://192.168.1.2:3000/api/roombyidhotel';
 const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
 const apiKhachHang = "http://192.168.1.2:3000/api/accountbycccd";
@@ -13,6 +13,16 @@ async function fetchBookings() {
     return bookings.filter(booking => booking.status !== 4);
 
 }
+async function fetchRoomTypes() {
+    const response = await fetch(`${apiTyperoomUrl}`);
+    return await response.json();
+}
+async function fetchRoomTypeById(idLoaiPhong) {
+    const response = await fetch(`${apiTyperoomUrl}/${idLoaiPhong}`);
+    const roomTypeData = await response.json();
+    return roomTypeData.tenLoaiPhong; 
+}
+
 
 async function fetchRooms() {
     const response = await fetch(`${apiRoomUrl}/${hotelId}`);
@@ -104,17 +114,19 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
     );
     const customerList = document.getElementById("customer-list");
     customerList.innerHTML = ""; 
-    availableRooms.forEach(room => {
+    for (let room of availableRooms) {
+        const roomTypeName = await fetchRoomTypeById(room.IdLoaiPhong); 
+
         const row = document.createElement("tr");
         row.innerHTML = `
             <td class="hidden">${room._id}</td>
             <td>${room.soPhong}</td>
-            <td>${room.moTaPhong}</td>
+            <td>${roomTypeName}</td> <!-- Hiển thị tên loại phòng thay cho moTaPhong -->
             <td>${room.giaPhong}</td>
             <td><button type="button" onclick="bookRoom('${room._id}', '${uid}', '${noteInput}', '${room.giaPhong}', '${room.anhPhong}')">Đặt Phòng</button></td>
         `;
         customerList.appendChild(row);
-    });
+    }
 });
 
 async function bookRoom(roomId, uid, note, giaPhong,img) {

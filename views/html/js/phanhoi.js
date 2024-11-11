@@ -38,7 +38,7 @@ function displayPhanHois(feedbackList) {
         const Uid = phanhoi.Uid || "N/A";
         const noiDung = phanhoi.noiDung || "N/A";
         const thoiGian = phanhoi.thoiGian || "N/A";
-        const tenKhachHang = customers[Uid] || "N/A";
+        const tenKhachHang = customers[Uid] || "Người dùng không tồn tại .";
 
         row.innerHTML = `
             <td>${tenKhachHang}</td>
