@@ -60,9 +60,9 @@ router.get('/orderroom/:id', apiCtrl.getOrderById);
 router.get('/orderroombyidhotel/:id', apiCtrl.showOrderRoomByIdHotel);
 router.put('/orderroom/:id', apiCtrl.editOrderRoom);
 router.get('/available-rooms', apiCtrl.getAvailableRooms);
-router.get('/orderroom/status/0/:id', apiCtrl.getOrderRoomByStatus0);
-router.get('/orderroom/status/1/:id', apiCtrl.getOrderRoomByStatus1);
+router.get('/orderroom/status/01/:id', apiCtrl.getOrderRoomByStatus01);
 router.get('/orderroom/status/2/:id', apiCtrl.getOrderRoomByStatus2);
+router.get('/orderroom/status/3/:id', apiCtrl.getOrderRoomByStatus3);
 
 // Hotel management routes
 router.get('/hotel', apiCtrl.showKhachSan);
@@ -83,6 +83,7 @@ router.put('/nhanvien/:id', apiCtrl.suaNhanVien);
 // Feedback routes
 router.get('/phanhoi', apiCtrl.showPhanHoi);
 router.get('/phanhoibyidhotel/:id', apiCtrl.showPhanHoiByHotelId);
+router.post('/phanhoiuser', apiCtrl.themPhanHoi);
 
 //services management routes
 router.get('/dichvu', apiCtrl.showDichVu);

@@ -781,19 +781,10 @@ exports.getAvailableRooms = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 }
-exports.getOrderRoomByStatus0 = async (req, res, next) => {
+exports.getOrderRoomByStatus01 = async (req, res, next) => {
     try {
         const id = req.params.id;
-        const orders = await mdOrderRoom.orderRoomModel.find({ status: 0, Uid: id });
-        res.status(200).json(orders);
-    } catch (error) {
-        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
-    }
-}
-exports.getOrderRoomByStatus1 = async (req, res, next) => {
-    try {
-        const id = req.params.id;
-        const orders = await mdOrderRoom.orderRoomModel.find({ status: 1, Uid: id });
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: {$in: [0,1]}, Uid: id });
         res.status(200).json(orders);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -803,6 +794,15 @@ exports.getOrderRoomByStatus2 = async (req, res, next) => {
     try {
         const id = req.params.id;
         const orders = await mdOrderRoom.orderRoomModel.find({ status: 2, Uid: id });
+        res.status(200).json(orders);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+exports.getOrderRoomByStatus3 = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: 3, Uid: id });
         res.status(200).json(orders);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -1132,7 +1132,7 @@ exports.themPhanHoi = async (req, res, next) => {
             thoiGian: thoiGian || new Date().toISOString().split('T')[0]
         });
 
-        res.status(201).json({ message: 'Phản hồi đã được thêm thành công', newPhanHoi });
+        res.status(201).json([newPhanHoi]);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
