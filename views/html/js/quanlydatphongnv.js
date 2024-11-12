@@ -219,7 +219,6 @@ async function addOrderroom() {
   }
 
   if (
-    !validateDateTimeFormat(thoiGianDat) ||
     !validateDateTimeFormat(thoiGianNhan) ||
     !validateDateTimeFormat(thoiGianTra)
   ) {
@@ -286,15 +285,6 @@ async function editderroom() {
     !isNotEmpty(trangThai, "Trạng thái")
   ) {
     return; 
-  }
-
-  if (
-    !validateDateTimeFormat(thoiGianDat) ||
-    !validateDateTimeFormat(thoiGianNhan) ||
-    !validateDateTimeFormat(thoiGianTra)
-  ) {
-    alert("Thời gian phải có định dạng hh:mm:ss dd/MM/yyyy");
-    return;
   }
 
   const updatedOrder = {
