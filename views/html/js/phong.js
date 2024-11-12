@@ -26,8 +26,8 @@ async function fetchRoomData() {
 
             row.innerHTML = `
                 <td class="hidden">${room._id || 'N/A'}</td>
-                <td>${roomType ? roomType.tenLoaiPhong : 'N/A'}</td>
-                <td>${hotel ? hotel.tenKhachSan : 'N/A'}</td>
+                <td>${roomType ? roomType.tenLoaiPhong : 'Loại phòng không tồn tại .'}</td>
+                <td>${hotel ? hotel.tenKhachSan : 'Khách sạn không tồn tại .'}</td>
                 <td>${room.soPhong || 'N/A'}</td>
                 <td>${room.tinhTrangPhong === 0 ? 'Hoạt động bình thường' : 'Đã bảo trì'}</td>
             `;

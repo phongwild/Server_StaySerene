@@ -180,7 +180,7 @@ async function addTyperoom() {
     const IdKhachSan = document.getElementById('makhachsan').value.trim();
     const khachSan = await fetchKhachSan(IdKhachSan);
     if (!khachSan) {
-        alert('Mã khách sạn không tồn tại!');
+        alert('Khách sạn không tồn tại!');
         return;
     }
     const newTypeRoom = {
@@ -225,7 +225,7 @@ async function editTyperoom() {
     const IdKhachSan = document.getElementById('makhachsan').value.trim();
     const khachSan = await fetchKhachSan(IdKhachSan);
     if (!khachSan) {
-        alert('Mã khách sạn không tồn tại!');
+        alert('Khách sạn không tồn tại!');
         return;
     }
     const updatedTypeRoom = {

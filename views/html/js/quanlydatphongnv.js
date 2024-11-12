@@ -89,10 +89,9 @@ async function populateServices() {
 
 const statusMapping = {
   0: "Đã đặt cọc",
-  1: "Đã xác nhận đặt phòng",
-  2: "Đã nhận phòng",
-  3: "Đã trả phòng",
-  4: "Đã hủy"
+  1: "Đã nhận phòng",
+  2: "Đã trả phòng",
+  3: "Đã hủy"
 };
 
 function validateDateTimeFormat(dateTime) {
@@ -164,7 +163,7 @@ async function displayLichSus(lichsus) {
       document.getElementById("ghiChu").value = ghiChu;
       document.getElementById("trangThai").value = trangThaiValue;
       document.getElementById("tongTien").value = tongTien;
-      document.getElementById("dichVu").value = dichVuID;
+      document.getElementById("cccd").value = customerCCCD;
 
       const room = await fetchRoomById(phongID);
       if (room) {

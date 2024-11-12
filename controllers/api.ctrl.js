@@ -456,14 +456,14 @@ exports.updatePhong = async (req, res, next) => {
 exports.themLoaiPhong = async (req, res, next) => {
     try {
         console.log(req.body);
-        const { IdKhachSan, tenLoaiPhong, moTaLoaiPhong, anhLoaiPhong, soLuongPhong, dienTich, tienNghi } = req.body;
+        const { IdKhachSan, tenLoaiPhong, moTaLoaiPhong, anhLoaiPhong, soLuongPhong,giaLoaiPhong, tienNghi } = req.body;
         const newTypeRoom = mdLoaiPhong.loaiPhongModel.create({
             IdKhachSan: IdKhachSan,
             tenLoaiPhong: tenLoaiPhong,
             moTaLoaiPhong: moTaLoaiPhong,
             anhLoaiPhong: anhLoaiPhong,
             soLuongPhong: soLuongPhong,
-            dienTich: dienTich,
+            giaLoaiPhong:giaLoaiPhong,
             tienNghi: tienNghi
         });
         return res.status(201).json({ msg: 'Add room type succ' });
@@ -573,6 +573,7 @@ exports.OrderRoom = async (req, res, next) => {
             timeCheckout,
             note,
             total,
+            img,
             status
         } = req.body;
         if (!IdPhong || !Uid || !total) {
@@ -587,6 +588,7 @@ exports.OrderRoom = async (req, res, next) => {
             timeCheckout: timeCheckout,
             note: note,
             total: total,
+            img:img,
             status: status
         });
         return res.status(201).json([newOrder])
