@@ -1,4 +1,5 @@
 var API = "http://192.168.1.2:3000/api/account";
+const apiOrderroombyUid = "http://192.168.1.2:3000/api/orderroombyUid";
 var currenUser = [];
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
@@ -99,26 +100,43 @@ function showKH_detail(row) {
 
 async function deleteCustomer() {
     const uid = document.getElementById('makhachhang').value;
+    const nameCustomer = document.getElementById('tenkhachhang').value;
+
     if (!uid) {
         alert('Vui lòng chọn khách hàng để xóa.');
         return;
     }
-    const confirmDelete = confirm('Bạn có chắc chắn muốn xóa khách hàng này?');
-    if (!confirmDelete) return;
+
     try {
-        const res = await fetch(`${API}/${uid}`, {
+        const orderCheckRes = await fetch(`${apiOrderroombyUid}/${uid}`);
+        const orders = await orderCheckRes.json();
+
+        if (orders.length > 0) {
+            alert(`Khách hàng ${nameCustomer} có đơn đặt phòng, không thể xóa.`);
+            return;
+        }
+
+        const confirmDelete = confirm('Bạn có chắc chắn muốn xóa khách hàng này?');
+        if (!confirmDelete) return;
+
+        const deleteRes = await fetch(`${API}/${uid}`, {
             method: 'DELETE'
         });
-        if (res.ok) {
-            throw new Error('Network response was not ok');
+
+        if (!deleteRes.ok) {
+            throw new Error('Không thể kết nối đến máy chủ để xóa.');
         }
-        alert(`Xoá tài khoảnh thành công, mã khách hàng: ${uid}`);
+
+        alert(`Xóa tài khoản thành công, mã khách hàng: ${uid}`);
         getAPI();
         document.getElementById('customer-form').reset();
+
     } catch (error) {
-        console.error(error);
+        console.error('Error deleting account:', error);
+        alert('Đã xảy ra lỗi khi xóa tài khoản.');
     }
 }
+
 
 
 
