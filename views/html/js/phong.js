@@ -29,7 +29,7 @@ async function fetchRoomData() {
                 <td>${roomType ? roomType.tenLoaiPhong : 'Loại phòng không tồn tại .'}</td>
                 <td>${hotel ? hotel.tenKhachSan : 'Khách sạn không tồn tại .'}</td>
                 <td>${room.soPhong || 'N/A'}</td>
-                <td>${room.tinhTrangPhong === 0 ? 'Hoạt động bình thường' : 'Đã bảo trì'}</td>
+                <td class="hidden">${room.tinhTrangPhong === 0 ? 'Hoạt động bình thường' : 'Đã bảo trì'}</td>
             `;
 
             customerList.appendChild(row);
@@ -193,7 +193,7 @@ async function addRoom() {
             soPhong: soPhong,
             soTang: soTang,
             moTaPhong: moTaPhong,
-            tinhTrangPhong: document.getElementById('tinhTrangPhong').value,
+            tinhTrangPhong: 0,
             anhPhong: anhPhong,
             giaPhong: giaPhong  
         };
@@ -284,7 +284,6 @@ async function updateRoom() {
             soPhong: soPhong,
             soTang: soTang,
             moTaPhong: document.getElementById('moTaPhong').value,
-            tinhTrangPhong: document.getElementById('tinhTrangPhong').value,
             anhPhong: document.getElementById('anhkhachsan').value
         };
 

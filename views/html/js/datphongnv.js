@@ -1,6 +1,7 @@
 const apiTyperoomByIdHotelUrl = 'http://192.168.1.2:3000/api/typeroombyidhotel';
 const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typerooma';
 const apiRoomUrl = 'http://192.168.1.2:3000/api/roombyidhotel';
+const apiRoomUrla = 'http://192.168.1.2:3000/api/rooms';
 const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
 const apiKhachHang = "http://192.168.1.2:3000/api/accountbycccd";
 const apiOrderrooma = "http://192.168.1.2:3000/api/orderrooma";
@@ -11,7 +12,7 @@ const hotelId = localStorage.getItem('IdKhachSan');
 async function fetchBookings() {
     const response = await fetch(`${apidatphongUrl}/${hotelId}`);
     const bookings = await response.json();
-    return bookings.filter(booking => booking.status !== 4);
+    return bookings.filter(booking => booking.status !== 2 && booking.status !== 3);
 
 }
 async function fetchRoomTypes() {
@@ -111,7 +112,7 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
         .map(booking => booking.IdPhong);
 
     const availableRooms = rooms.filter(room => 
-        !bookedRoomIds.includes(room._id) && room.tinhTrangPhong === 0
+        !bookedRoomIds.includes(room._id)
     );
     const customerList = document.getElementById("customer-list");
     customerList.innerHTML = ""; 
@@ -180,6 +181,14 @@ async function bookRoom(roomId, uid, note, giaPhong,img) {
         const data = await response.json();
         alert("Đặt phòng thành công!");
         console.log(data); 
+        await fetch(`${apiRoomUrla}/${roomId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ tinhTrangPhong: 1 })
+        });
+
         location.reload();
 
     } else {
