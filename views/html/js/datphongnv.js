@@ -3,6 +3,7 @@ const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typerooma';
 const apiRoomUrl = 'http://192.168.1.2:3000/api/roombyidhotel';
 const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
 const apiKhachHang = "http://192.168.1.2:3000/api/accountbycccd";
+const apiOrderrooma = "http://192.168.1.2:3000/api/orderrooma";
 
 
 const hotelId = localStorage.getItem('IdKhachSan');
@@ -167,7 +168,7 @@ async function bookRoom(roomId, uid, note, giaPhong,img) {
         status: 0
     };
 
-    const response = await fetch("http://192.168.1.2:3000/api/orderrooma", {
+    const response = await fetch(apiOrderrooma, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

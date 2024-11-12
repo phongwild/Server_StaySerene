@@ -154,12 +154,6 @@ async function addRoom() {
     const maKhachSan = document.getElementById('makhachsan').value;
     const maLoaiPhong = document.getElementById('maloaiphong').value;
 
-    // Kiểm tra điều kiện
-    if (maPhong) {
-        alert('Mã phòng phải trống để thêm phòng mới.');
-        document.getElementById('customer-form').reset();
-        return;
-    }
     if (!maKhachSan) {
         alert('Vui lòng chọn khách sạn.');
         return;

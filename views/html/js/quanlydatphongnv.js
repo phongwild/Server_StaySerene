@@ -2,13 +2,14 @@ const apiUrl = "http://192.168.1.2:3000/api/orderroom";
 const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
 const serviceApiUrl = "http://192.168.1.2:3000/api/dichvu";
 const apiKhachHang = "http://192.168.1.2:3000/api/accounta";
+const apirooma = "http://192.168.1.2:3000/api/roomsa";
 
 const hotelId = localStorage.getItem('IdKhachSan');
 let services = {};
 
 async function fetchRoomById(roomId) {
   try {
-    const response = await fetch(`http://192.168.1.2:3000/api/roomsa/${roomId}`); 
+    const response = await fetch(`${apirooma}/${roomId}`); 
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

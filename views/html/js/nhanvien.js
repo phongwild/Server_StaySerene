@@ -177,12 +177,6 @@ async function addCustomernhanvien() {
         return;
     }
 
-    // Kiểm tra mã nhân viên đã tồn tại
-    if (manhanvien !== "") {
-        alert(`Không thể thêm nhân viên vì mã nhân viên : ${manhanvien} đã tồn tại.`);
-        return;
-    }
-
     // Kiểm tra nhập liệu
     if (!tennhanvien || !sdt || !anhNhanVien || !password || !gioLam || !email || !cccd || !IdKhachSan) {
         alert('Vui lòng điền đầy đủ thông tin.');
