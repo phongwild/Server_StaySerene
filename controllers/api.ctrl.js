@@ -338,7 +338,6 @@ exports.suaPhongwed = async (req, res, next) => {
             return res.status(400).json({ error: "ID phòng không đúng định dạng" });
         }
 
-        // Fetch the current room to get the previous IdLoaiPhong
         const currentRoom = await mdPhong.phongModel.findById(id);
         if (!currentRoom) {
             return res.status(404).json({ error: "Không tìm thấy phòng với ID đã cho" });
@@ -347,7 +346,6 @@ exports.suaPhongwed = async (req, res, next) => {
         const previousIdLoaiPhong = currentRoom.IdLoaiPhong;
         const newIdLoaiPhong = updatedData.IdLoaiPhong;
 
-        // Update soLuongPhong of the previous IdLoaiPhong if the room type has changed
         if (previousIdLoaiPhong.toString() !== newIdLoaiPhong.toString()) {
             await mdLoaiPhong.loaiPhongModel.findByIdAndUpdate(
                 previousIdLoaiPhong,
@@ -360,7 +358,6 @@ exports.suaPhongwed = async (req, res, next) => {
             );
         }
 
-        // Update the room information
         const updatedRoom = await mdPhong.phongModel.findByIdAndUpdate(id, updatedData, { new: true });
         if (!updatedRoom) {
             return res.status(404).json({ error: "Không tìm thấy phòng với ID đã cho" });
