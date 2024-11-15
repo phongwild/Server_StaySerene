@@ -5,8 +5,8 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
-  "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "tenLoaiPhong": "Standard Single Room",
+  "moTaLoaiPhong": "Basic room amenities for one guest.",
   "anhLoaiPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
   "soLuongPhong": 12,
   "giaLoaiPhong": 600000,
@@ -19,12 +19,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Đôi",
-  "moTaLoaiPhong": "Phòng đôi thoải mái cho hai khách.",
+  "tenLoaiPhong": "Double Room",
+  "moTaLoaiPhong": "Comfortable double room for two guests.",
   "anhLoaiPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
   "soLuongPhong": 12,
   "giaLoaiPhong": 800000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Bồn tắm"
+  "tienNghi": "Wi-Fi, TV, Minibar, Bathtub"
 },
 {
   "_id": {
@@ -33,12 +33,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Gia Đình",
-  "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "tenLoaiPhong": "Family Room",
+  "moTaLoaiPhong": "Spacious room suitable for families with children.",
   "anhLoaiPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
   "soLuongPhong": 10,
   "giaLoaiPhong": 1000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
+  "tienNghi": "Wi-Fi, TV, Minibar, Small kitchen"
 },
 {
   "_id": {
@@ -47,12 +47,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Suite Hướng Phố",
-  "moTaLoaiPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "tenLoaiPhong": "Street View Suite Room",
+  "moTaLoaiPhong": "Suite room with a view of the city.",
   "anhLoaiPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
   "soLuongPhong": 8,
   "giaLoaiPhong": 1500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -61,12 +61,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Cao Cấp",
-  "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "tenLoaiPhong": "Deluxe Room",
+  "moTaLoaiPhong": "Premium room with modern amenities.",
   "anhLoaiPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
   "soLuongPhong": 6,
   "giaLoaiPhong": 2000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
+  "tienNghi": "Wi-Fi, TV, Minibar, Safe"
 },
 {
   "_id": {
@@ -75,12 +75,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Premier",
-  "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+  "tenLoaiPhong": "Premier Room",
+  "moTaLoaiPhong": "Premier room with luxurious furnishings.",
   "anhLoaiPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
   "soLuongPhong": 5,
   "giaLoaiPhong": 2500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Máy pha cà phê"
+  "tienNghi": "Wi-Fi, TV, Minibar, Coffee maker"
 },
 {
   "_id": {
@@ -89,12 +89,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Đôi Hạng Sang",
-  "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+  "tenLoaiPhong": "Luxury Double Room",
+  "moTaLoaiPhong": "Spacious room with two large beds.",
   "anhLoaiPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
   "soLuongPhong": 8,
   "giaLoaiPhong": 2800000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -103,12 +103,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Suite",
-  "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "tenLoaiPhong": "Suite Room",
+  "moTaLoaiPhong": "Suite room with many high-end amenities.",
   "anhLoaiPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
   "soLuongPhong": 5,
   "giaLoaiPhong": 3000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, View thành phố"
+  "tienNghi": "Wi-Fi, TV, Minibar, City view"
 },
 {
   "_id": {
@@ -117,12 +117,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Suite Tổng Thống",
-  "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "tenLoaiPhong": "Presidential Suite",
+  "moTaLoaiPhong": "The largest suite, VIP service.",
   "anhLoaiPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
   "soLuongPhong": 3,
   "giaLoaiPhong": 5000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
+  "tienNghi": "Wi-Fi, TV, Minibar, Private pool, Panoramic view"
 },
 {
   "_id": {
@@ -131,12 +131,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  "tenLoaiPhong": "Phòng Hạng V.I.P",
-  "moTaLoaiPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "tenLoaiPhong": "VIP Room",
+  "moTaLoaiPhong": "Special V.I.P room with many amenities.",
   "anhLoaiPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
   "soLuongPhong": 2,
   "giaLoaiPhong": 4500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Sauna, Balcony"
 },
 {
   "_id": {
@@ -145,8 +145,8 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
-  "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "tenLoaiPhong": "Standard Single Room",
+  "moTaLoaiPhong": "Basic room amenities for one guest.",
   "anhLoaiPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
   "soLuongPhong": 10,
   "giaLoaiPhong": 800000,
@@ -159,12 +159,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Đôi Hướng Biển",
-  "moTaLoaiPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+  "tenLoaiPhong": "Ocean View Double Room",
+  "moTaLoaiPhong": "The room has a sea view and is comfortable for two guests.",
   "anhLoaiPhong": "https://annahotel.com.vn/wp-content/uploads/2018/06/105B7708-D713-4DD8-A71B-DDD620254A6F-630x389.jpeg",
   "soLuongPhong": 8,
   "giaLoaiPhong": 1200000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -173,12 +173,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Gia Đình",
-  "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "tenLoaiPhong": "Family Room",
+  "moTaLoaiPhong": "Spacious room suitable for families with children.",
   "anhLoaiPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
   "soLuongPhong": 8,
   "giaLoaiPhong": 2000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
+  "tienNghi": "Wi-Fi, TV, Minibar, Small kitchen"
 },
 {
   "_id": {
@@ -187,12 +187,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Suite Hướng Vườn",
-  "moTaLoaiPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "tenLoaiPhong": "Garden View Suite",
+  "moTaLoaiPhong": "Suite room with a view of the lush garden.",
   "anhLoaiPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
   "soLuongPhong": 9,
   "giaLoaiPhong": 2200000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -201,12 +201,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Cao Cấp",
-  "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "tenLoaiPhong": "Deluxe Room",
+  "moTaLoaiPhong": "Premium room with modern amenities.",
   "anhLoaiPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
   "soLuongPhong": 6,
   "giaLoaiPhong": 2800000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
+  "tienNghi": "Wi-Fi, TV, Minibar, Safe"
 },
 {
   "_id": {
@@ -215,8 +215,8 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Premier",
-  "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+  "tenLoaiPhong": "Premier Room",
+  "moTaLoaiPhong": "Premier room with luxurious furnishings.",
   "anhLoaiPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
   "soLuongPhong": 5,
   "giaLoaiPhong": 3500000,
@@ -229,12 +229,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Đôi Hạng Sang",
-  "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+  "tenLoaiPhong": "Luxury Double Room",
+  "moTaLoaiPhong": "Spacious room with two large beds.",
   "anhLoaiPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
   "soLuongPhong": 10,
   "giaLoaiPhong": 4500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -243,12 +243,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Suite",
-  "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "tenLoaiPhong": "Suite Room",
+  "moTaLoaiPhong": "Suite room with many high-end amenities.",
   "anhLoaiPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
   "soLuongPhong": 7,
   "giaLoaiPhong": 4000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, View thành phố"
+  "tienNghi": "Wi-Fi, TV, Minibar, City view"
 },
 {
   "_id": {
@@ -257,12 +257,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Suite Tổng Thống",
-  "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "tenLoaiPhong": "Presidential Suite",
+  "moTaLoaiPhong": "The largest suite, VIP service.",
   "anhLoaiPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
   "soLuongPhong": 3,
   "giaLoaiPhong": 6000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
+  "tienNghi": "Wi-Fi, TV, Minibar, Private pool, Panoramic view"
 },
 {
   "_id": {
@@ -271,12 +271,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  "tenLoaiPhong": "Phòng Penthouse",
-  "moTaLoaiPhong": "Phòng Penthouse đẳng cấp với tầm nhìn đẹp.",
+  "tenLoaiPhong": "Penthouse Room",
+  "moTaLoaiPhong": "Luxury penthouse with a beautiful view.",
   "anhLoaiPhong": "https://images.kienthuc.net.vn/w730/Uploaded/2024/wpdhnwejw/2024_09_12/6/penthouse-100-ty-nhu-khach-san-5-sao-cua-ha-anh-tuan-Hinh-3.jpg",
   "soLuongPhong": 2,
   "giaLoaiPhong": 10000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, View toàn cảnh"
+  "tienNghi": "Wi-Fi, TV, Minibar, Sauna, Panoramic view"
 },
 {
   "_id": {
@@ -285,8 +285,8 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
-  "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "tenLoaiPhong": "Standard Single Room",
+  "moTaLoaiPhong": "Basic room amenities for one guest.",
   "anhLoaiPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
   "soLuongPhong": 12,
   "giaLoaiPhong": 800000,
@@ -299,12 +299,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Đôi",
-  "moTaLoaiPhong": "Phòng đôi thoải mái cho hai khách.",
+  "tenLoaiPhong": "Double Room",
+  "moTaLoaiPhong": "Comfortable double room for two guests.",
   "anhLoaiPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
   "soLuongPhong": 11,
   "giaLoaiPhong": 1200000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Bồn tắm"
+  "tienNghi": "Wi-Fi, TV, Minibar, Bathtub"
 },
 {
   "_id": {
@@ -313,12 +313,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Gia Đình",
-  "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "tenLoaiPhong": "Family Room",
+  "moTaLoaiPhong": "Spacious room suitable for a family.",
   "anhLoaiPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
   "soLuongPhong": 10,
   "giaLoaiPhong": 1500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
+  "tienNghi": "Wi-Fi, TV, Minibar, Small kitchen"
 },
 {
   "_id": {
@@ -327,12 +327,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Suite Hướng Phố",
-  "moTaLoaiPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "tenLoaiPhong": "City View Suite Room",
+  "moTaLoaiPhong": "Suite room with a view of the city.",
   "anhLoaiPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
   "soLuongPhong": 9,
   "giaLoaiPhong": 1800000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -341,12 +341,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Cao Cấp",
-  "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "tenLoaiPhong": "Luxury Room",
+  "moTaLoaiPhong": "Luxury room with modern amenities.",
   "anhLoaiPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
   "soLuongPhong": 6,
   "giaLoaiPhong": 2500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
+  "tienNghi": "Wi-Fi, TV, Minibar, Safe"
 },
 {
   "_id": {
@@ -355,12 +355,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Premier",
-  "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+  "tenLoaiPhong": "Premier Room",
+  "moTaLoaiPhong": "Premier room with luxurious furnishings.",
   "anhLoaiPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
   "soLuongPhong": 8,
   "giaLoaiPhong": 3200000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Máy pha cà phê"
+  "tienNghi": "Wi-Fi, TV, Minibar, Coffee maker"
 },
 {
   "_id": {
@@ -369,12 +369,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Đôi Hạng Sang",
-  "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+  "tenLoaiPhong": "Luxury Double Room",
+  "moTaLoaiPhong": "Spacious room with two large beds.",
   "anhLoaiPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
   "soLuongPhong": 6,
   "giaLoaiPhong": 3000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -383,12 +383,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Suite",
-  "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "tenLoaiPhong": "Suite Room",
+  "moTaLoaiPhong": "Suite room with many high-end amenities.",
   "anhLoaiPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
   "soLuongPhong": 6,
   "giaLoaiPhong": 3800000,
-  "tienNghi": "Wi-Fi, TV, Minibar, View thành phố"
+  "tienNghi": "Wi-Fi, TV, Minibar, City View"
 },
 {
   "_id": {
@@ -397,12 +397,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Suite Tổng Thống",
-  "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "tenLoaiPhong": "Presidential Suite",
+  "moTaLoaiPhong": "The largest suite, VIP service.",
   "anhLoaiPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
   "soLuongPhong": 5,
   "giaLoaiPhong": 12000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
+  "tienNghi": "Wi-Fi, TV, Minibar, Private pool, Panoramic view"
 },
 {
   "_id": {
@@ -411,12 +411,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebaf"
   },
-  "tenLoaiPhong": "Phòng Hạng V.I.P",
-  "moTaLoaiPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "tenLoaiPhong": "VIP Room",
+  "moTaLoaiPhong": "Special V.I.P room with many amenities.",
   "anhLoaiPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
   "soLuongPhong": 3,
   "giaLoaiPhong": 10000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Sauna, Balcony"
 },
 {
   "_id": {
@@ -425,8 +425,8 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
-  "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "tenLoaiPhong": "Standard Single Room",
+  "moTaLoaiPhong": "Basic room amenities for one guest.",
   "anhLoaiPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
   "soLuongPhong": 10,
   "giaLoaiPhong": 900000,
@@ -439,12 +439,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Đôi",
-  "moTaLoaiPhong": "Phòng đôi thoải mái cho hai khách.",
+  "tenLoaiPhong": "Double Room",
+  "moTaLoaiPhong": "Comfortable double room for two guests.",
   "anhLoaiPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
   "soLuongPhong": 7,
   "giaLoaiPhong": 1200000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Bồn tắm"
+  "tienNghi": "Wi-Fi, TV, Minibar, Bathtub"
 },
 {
   "_id": {
@@ -453,12 +453,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Gia Đình",
-  "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "tenLoaiPhong": "Family Room",
+  "moTaLoaiPhong": "Spacious room suitable for families.",
   "anhLoaiPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
   "soLuongPhong": 9,
   "giaLoaiPhong": 1600000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
+  "tienNghi": "Wi-Fi, TV, Minibar, Small kitchen"
 },
 {
   "_id": {
@@ -467,12 +467,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Suite Hướng Biển",
-  "moTaLoaiPhong": "Phòng suite với tầm nhìn ra biển.",
+  "tenLoaiPhong": "Ocean View Suite",
+  "moTaLoaiPhong": "Suite with a sea view.",
   "anhLoaiPhong": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/81/2019/10/28100332/1P4A1755-1.jpg",
   "soLuongPhong": 8,
   "giaLoaiPhong": 2000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -481,12 +481,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Cao Cấp",
-  "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "tenLoaiPhong": "Deluxe Room",
+  "moTaLoaiPhong": "Deluxe room with modern amenities.",
   "anhLoaiPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
   "soLuongPhong": 6,
   "giaLoaiPhong": 2500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
+  "tienNghi": "Wi-Fi, TV, Minibar, Safe"
 },
 {
   "_id": {
@@ -495,12 +495,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Premier",
-  "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+  "tenLoaiPhong": "Premier Room",
+  "moTaLoaiPhong": "Premier room with luxurious furnishings.",
   "anhLoaiPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
   "soLuongPhong": 6,
   "giaLoaiPhong": 3200000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Máy pha cà phê"
+  "tienNghi": "Wi-Fi, TV, Minibar, Coffee maker"
 },
 {
   "_id": {
@@ -509,12 +509,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Đôi Hạng Sang",
-  "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+  "tenLoaiPhong": "Luxury Double Room",
+  "moTaLoaiPhong": "Luxury Double Room with two large beds",
   "anhLoaiPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
   "soLuongPhong": 5,
   "giaLoaiPhong": 4000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -523,12 +523,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Suite",
-  "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "tenLoaiPhong": "Suite Room",
+  "moTaLoaiPhong": "Suite room with many high-end amenities.",
   "anhLoaiPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
   "soLuongPhong": 5,
   "giaLoaiPhong": 4500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, View biển"
+  "tienNghi": "Wi-Fi, TV, Minibar, Sea view"
 },
 {
   "_id": {
@@ -537,12 +537,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Suite Tổng Thống",
-  "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "tenLoaiPhong": "Presidential Suite",
+  "moTaLoaiPhong": "The largest suite, VIP service.",
   "anhLoaiPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
   "soLuongPhong": 3,
   "giaLoaiPhong": 8000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
+  "tienNghi": "Wi-Fi, TV, Minibar, Private pool, Panoramic view"
 },
 {
   "_id": {
@@ -551,12 +551,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  "tenLoaiPhong": "Phòng Hạng V.I.P",
-  "moTaLoaiPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "tenLoaiPhong": "VIP Room",
+  "moTaLoaiPhong": "Special V.I.P room with many amenities.",
   "anhLoaiPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
   "soLuongPhong": 2,
   "giaLoaiPhong": 8600000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Sauna, Balcony"
 },
 {
   "_id": {
@@ -565,8 +565,8 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Đơn Tiêu Chuẩn",
-  "moTaLoaiPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "tenLoaiPhong": "Standard Single Room",
+  "moTaLoaiPhong": "Basic room amenities for one guest.",
   "anhLoaiPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
   "soLuongPhong": 12,
   "giaLoaiPhong": 800000,
@@ -579,12 +579,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Đôi",
-  "moTaLoaiPhong": "Phòng đôi thoải mái cho hai khách.",
+  "tenLoaiPhong": "Double Room",
+  "moTaLoaiPhong": "Comfortable double room for two guests.",
   "anhLoaiPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
   "soLuongPhong": 10,
   "giaLoaiPhong": 1500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Bồn tắm"
+  "tienNghi": "Wi-Fi, TV, Minibar, Bathtub"
 },
 {
   "_id": {
@@ -593,12 +593,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Gia Đình",
-  "moTaLoaiPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "tenLoaiPhong": "Family Room",
+  "moTaLoaiPhong": "Spacious room suitable for families.",
   "anhLoaiPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
   "soLuongPhong": 9,
   "giaLoaiPhong": 2200000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Bếp nhỏ"
+  "tienNghi": "Wi-Fi, TV, Minibar, Small kitchen"
 },
 {
   "_id": {
@@ -607,12 +607,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Suite Hướng Thành Phố",
-  "moTaLoaiPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "tenLoaiPhong": "City View Suite Room",
+  "moTaLoaiPhong": "Suite room with a view of the city.",
   "anhLoaiPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
   "soLuongPhong": 8,
   "giaLoaiPhong": 3600000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -621,12 +621,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Cao Cấp",
-  "moTaLoaiPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "tenLoaiPhong": "Deluxe Room",
+  "moTaLoaiPhong": "Premium room with modern amenities.",
   "anhLoaiPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
   "soLuongPhong": 5,
   "giaLoaiPhong": 3800000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Két sắt"
+  "tienNghi": "Wi-Fi, TV, Minibar, Safe"
 },
 {
   "_id": {
@@ -635,12 +635,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Premier",
-  "moTaLoaiPhong": "Phòng premier với nội thất sang trọng.",
+  "tenLoaiPhong": "Premier Room",
+  "moTaLoaiPhong": "Premier room with luxurious furnishings.",
   "anhLoaiPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
   "soLuongPhong": 6,
   "giaLoaiPhong": 4600000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Máy pha cà phê"
+  "tienNghi": "Wi-Fi, TV, Minibar, Coffee maker"
 },
 {
   "_id": {
@@ -649,12 +649,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Đôi Hạng Sang",
-  "moTaLoaiPhong": "Phòng rộng rãi với hai giường lớn.",
+  "tenLoaiPhong": "Luxury Double Room",
+  "moTaLoaiPhong": "Spacious room with two large beds.",
   "anhLoaiPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
   "soLuongPhong": 8,
   "giaLoaiPhong": 3500000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Balcony"
 },
 {
   "_id": {
@@ -663,12 +663,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Suite",
-  "moTaLoaiPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "tenLoaiPhong": "Suite Room",
+  "moTaLoaiPhong": "Suite room with many high-end amenities.",
   "anhLoaiPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
   "soLuongPhong": 5,
   "giaLoaiPhong": 3200000,
-  "tienNghi": "Wi-Fi, TV, Minibar, View thành phố"
+  "tienNghi": "Wi-Fi, TV, Minibar, City view"
 },
 {
   "_id": {
@@ -677,12 +677,12 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Suite Tổng Thống",
-  "moTaLoaiPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "tenLoaiPhong": "Presidential Suite",
+  "moTaLoaiPhong": "The largest suite, VIP service.",
   "anhLoaiPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
   "soLuongPhong": 3,
   "giaLoaiPhong": 10000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Hồ bơi riêng, View toàn cảnh"
+  "tienNghi": "Wi-Fi, TV, Minibar, Private pool, Panoramic view"
 },
 {
   "_id": {
@@ -691,10 +691,10 @@
   "IdKhachSan": {
     "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  "tenLoaiPhong": "Phòng Hạng V.I.P",
-  "moTaLoaiPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "tenLoaiPhong": "VIP Room",
+  "moTaLoaiPhong": "Special V.I.P room with many amenities.",
   "anhLoaiPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
   "soLuongPhong": 2,
   "giaLoaiPhong": 8000000,
-  "tienNghi": "Wi-Fi, TV, Minibar, Phòng tắm hơi, Ban công"
+  "tienNghi": "Wi-Fi, TV, Minibar, Sauna, Balcony"
 }]
