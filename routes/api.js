@@ -38,6 +38,7 @@ router.post('/rooms', apiCtrl.themPhong);
 router.get('/roombyidhotel/:id', apiCtrl.getRoomByIdHotel);
 router.delete('/rooms/:id', apiCtrl.xoaPhong);
 router.put('/rooms/:id', apiCtrl.suaPhong);
+router.put('/roomsa/:id', apiCtrl.suaPhong);
 
 // Room type management routes
 router.post('/typeroom', apiCtrl.themLoaiPhong);

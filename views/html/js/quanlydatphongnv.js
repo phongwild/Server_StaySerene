@@ -3,6 +3,7 @@ const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
 const serviceApiUrl = "http://192.168.1.2:3000/api/dichvu";
 const apiKhachHang = "http://192.168.1.2:3000/api/accounta";
 const apirooma = "http://192.168.1.2:3000/api/roomsa";
+const apiroom = "http://192.168.1.2:3000/api/rooms";
 
 const hotelId = localStorage.getItem('IdKhachSan');
 let services = {};
@@ -186,80 +187,6 @@ async function displayLichSus(lichsus) {
 }
 
 
-
-
-
-
-async function addOrderroom() {
-  const mdpValue = document.getElementById("mdp").value;
-
-  if (mdpValue) {
-    alert("Không thể thêm đặt phòng. Mã đặt đã tồn tại.");
-    document.getElementById("customer-form").reset();
-    return;
-  }
-
-  const uid = document.getElementById("uid").value;
-  const phong = document.getElementById("phong1").value; 
-  const dichVu = document.getElementById("dichVu").value;
-  const thoiGianDat = document.getElementById("thoiGianDat").value; 
-  const thoiGianNhan = document.getElementById("thoiGianNhan").value;
-  const thoiGianTra = document.getElementById("thoiGianTra").value;
-  const trangThai = document.getElementById("trangThai").value;
-  const tongTien = document.getElementById("tongTien").value;
-
-  if (
-    !isNotEmpty(uid, "mã khách hàng ") ||
-    !isNotEmpty(thoiGianDat, "Thời gian đặt") ||
-    !isNotEmpty(thoiGianNhan, "Thời gian nhận") ||
-    !isNotEmpty(thoiGianTra, "Thời gian trả") ||
-    !isNotEmpty(trangThai, "Trạng thái")
-  ) {
-    return; 
-  }
-
-  if (
-    !validateDateTimeFormat(thoiGianNhan) ||
-    !validateDateTimeFormat(thoiGianTra)
-  ) {
-    alert("Thời gian phải có định dạng hh:mm:ss dd/MM/yyyy");
-    return;
-  }
-
-  const newOrder = {
-    Uid: uid,
-    IdPhong: phong, 
-    IdDichVu: dichVu || null,
-    orderTime: thoiGianDat,
-    timeGet: thoiGianNhan,
-    timeCheckout: thoiGianTra,
-    note: document.getElementById("ghiChu").value,
-    status: trangThai || 0,
-    total: tongTien,
-  };
-
-  try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newOrder),
-    });
-
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-
-    const result = await response.json();
-    console.log("Order added successfully:", result);
-    fetchLichSus();
-    document.getElementById("customer-form").reset();
-  } catch (error) {
-    console.error("Error adding order:", error);
-  }
-}
-
 async function editderroom() {
   const mdpValue = document.getElementById("mdp").value;
 
@@ -300,6 +227,25 @@ async function editderroom() {
   };
 
   try {
+    if (trangThai === "2" || trangThai === "3") { 
+      await fetch(`${apiroom}/${phong}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ tinhTrangPhong: 0 }),
+      });
+    }
+    if (trangThai === "0" || trangThai === "1") {  
+      await fetch(`${apiroom}/${phong}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ tinhTrangPhong: 1 }),
+      });
+    }
+
     const response = await fetch(`${apiUrl}/${mdpValue}`, {
       method: "PUT",
       headers: {
