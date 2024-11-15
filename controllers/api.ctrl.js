@@ -703,20 +703,17 @@ exports.getOrderById = async (req, res, next) => {
 };
 exports.getOrderRoomByStatus = async (req, res, next) => {
     try {
-        const status = 3; 
+        const status = 2; 
 
         const orders = await mdOrderRoom.orderRoomModel.find({ status: status });
 
-        if (!orders || orders.length === 0) {
-            return res.status(404).json({ msg: 'Không có đơn đặt phòng nào với trạng thái này' });
-        }
-
-        res.status(200).json(orders);
+        res.status(200).json(orders || []);
     } catch (error) {
         console.error('Error fetching orders by status:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+
 
 
 //Xem phòng đã đặt
