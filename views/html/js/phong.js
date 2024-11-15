@@ -225,10 +225,9 @@ async function addRoom() {
             throw new Error('Network response was not ok');
         }
 
-        //alert('Phòng mới đã được thêm thành công!');
+        alert('Phòng mới đã được thêm thành công!');
 
-        //document.getElementById('customer-form').reset();
-        document.getElementById('sophong').value ++;
+        document.getElementById('customer-form').reset();
         fetchRoomData();
 
     } catch (error) {
