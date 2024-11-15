@@ -1,6 +1,6 @@
-const apiUrl = 'http://192.168.10.103:3000/api/messenger';
-const apichamsocUrl = 'http://192.168.10.103:3000/api/messengerbyidhotel';
-const apiUrlAccount = 'http://192.168.10.103:3000/api/accounta';
+const apiUrl = 'http://192.168.1.2:3000/api/messenger';
+const apichamsocUrl = 'http://192.168.1.2:3000/api/messengerbyidhotel';
+const apiUrlAccount = 'http://192.168.1.2:3000/api/accounta';
 const hotelId = localStorage.getItem('IdKhachSan');
 
 let selectedIdKhachSan = null;
@@ -259,6 +259,12 @@ async function sendMessage() {
 
 
 document.querySelector('.message-input button').addEventListener('click', sendMessage);
+document.querySelector('.message-input input').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') { 
+        event.preventDefault(); 
+        sendMessage(); 
+    }
+});
 document.getElementById('searchInput').addEventListener('input', searchItems);
 
 function confirmLogout(event) {

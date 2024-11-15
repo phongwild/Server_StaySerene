@@ -217,7 +217,7 @@ async function editderroom() {
   const updatedOrder = {
     Uid: uid,
     IdPhong: phong, 
-    IdDichVu: dichVu || null,
+    IdDichVu: dichVu || "1111111111",
     orderTime: thoiGianDat,
     timeGet: thoiGianNhan,
     timeCheckout: thoiGianTra,

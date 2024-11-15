@@ -1,57 +1,65 @@
-[
-  {
-    "_id": { "$oid": "6707ed79df6d7c9585d8ebab" },
-    "tenKhachSan": "Sofitel Legend Metropole",
-    "diaChi": "Hà Nội",
-    "sdt": 987654321,
-    "email": "sofitel@example.com",
-    "danhGia": 4.8,
-    "moTaKhachSan": "Historical hotel in the heart of Hanoi.",
-    "anhKhachSan": "https://cf.bstatic.com/xdata/images/hotel/square600/295743264.webp?k=f2a1b257574b427e3abc605f4a092956c80cc3306e4835439b1071d9b93edf27&o=",
-    "__v": 0
+[{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebab"
   },
-  {
-    "_id": { "$oid": "6707ed79df6d7c9585d8ebac" },
-    "tenKhachSan": "Vinpearl Luxury",
-    "diaChi": "Đà Nẵng",
-    "sdt": 987654322,
-    "email": "vinpearl@example.com",
-    "danhGia": 4.6,
-    "moTaKhachSan": "Luxury beachfront resort with all amenities.",
-    "anhKhachSan": "https://alphareal.vn/wp-content/uploads/2016/06/vinpearl-da-nang-resort-villas-1-2.jpg",
-    "__v": 0
+  "tenKhachSan": "Sofitel Legend Metropole",
+  "diaChi": "15 Ngo Quyen, Quận Hoàn Kiếm, Hà Nội, Việt Nam",
+  "sdt": "0987654321",
+  "email": "sofitel@example.com",
+  "danhGia": 4.8,
+  "moTaKhachSan": "Historical hotel in the heart of Hanoi.",
+  "anhKhachSan": "https://cf.bstatic.com/xdata/images/hotel/square600/295743264.webp?k=f2a1b257574b427e3abc605f4a092956c80cc3306e4835439b1071d9b93edf27&o=",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebac"
   },
-  {
-    "_id": { "$oid": "6707ed79df6d7c9585d8ebad" },
-    "tenKhachSan": "InterContinental Saigon",
-    "diaChi": "TP. Hồ Chí Minh",
-    "sdt": 987654323,
-    "email": "intercontinental@example.com",
-    "danhGia": 4.7,
-    "moTaKhachSan": "Located in the heart of Saigon with modern amenities.",
-    "anhKhachSan": "https://pix8.agoda.net/hotelImages/165512/-1/f530da78a63fdf79fa22ee2e412e2c35.jpg?ce=0&s=1024x",
-    "__v": 0
+  "tenKhachSan": "Vinpearl Luxury",
+  "diaChi": "Số 7 Trường Sa, Hòa Hải, Ngũ Hành Sơn, Đà Nẵng, Việt Nam",
+  "sdt": "0987654322",
+  "email": "vinpearl@example.com",
+  "danhGia": 4.6,
+  "moTaKhachSan": "Luxury beachfront resort with all amenities.",
+  "anhKhachSan": "https://alphareal.vn/wp-content/uploads/2016/06/vinpearl-da-nang-resort-villas-1-2.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebad"
   },
-  {
-    "_id": { "$oid": "6707ed79df6d7c9585d8ebae" },
-    "tenKhachSan": "JW Marriott Phu Quoc",
-    "diaChi": "Phú Quốc",
-    "sdt": 987654324,
-    "email": "jwmarriott@example.com",
-    "danhGia": 4.9,
-    "moTaKhachSan": "Elegant and scenic resort on the island of Phu Quoc.",
-    "anhKhachSan": "https://pix8.agoda.net/hotelImages/162/1624474/1624474_17042514130052617370.jpg?ca=6&ce=1&s=1024x",
-    "__v": 0
+  "tenKhachSan": "InterContinental Saigon",
+  "diaChi": "82, Hai Bà Trưng, Q. 1, Tp. Hồ Chí Minh, Việt Nam",
+  "sdt": "0987654323",
+  "email": "intercontinental@example.com",
+  "danhGia": 4.7,
+  "moTaKhachSan": "Located in the heart of Saigon with modern amenities.",
+  "anhKhachSan": "https://pix8.agoda.net/hotelImages/165512/-1/f530da78a63fdf79fa22ee2e412e2c35.jpg?ce=0&s=1024x",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebae"
   },
-  {
-    "_id": { "$oid": "6707ed79df6d7c9585d8ebaf" },
-    "tenKhachSan": "Flamingo Dai Lai Resort",
-    "diaChi": "Vĩnh Phúc",
-    "sdt": 987654325,
-    "email": "flamingo@example.com",
-    "danhGia": 4.5,
-    "moTaKhachSan": "Eco-friendly resort with scenic lake views.",
-    "anhKhachSan": "https://pix8.agoda.net/hotelImages/410128/-1/ac4c925465ac9a12b34082b09dbb4505.jpg?ce=0&s=1024x",
-    "__v": 0
-  }
-]
+  "tenKhachSan": "JW Marriott Phu Quoc",
+  "diaChi": "Bãi Khem, An Thới, Phú Quốc, Kiên Giang, Việt Nam",
+  "sdt": "0987654324",
+  "email": "jwmarriott@example.com",
+  "danhGia": 4.9,
+  "moTaKhachSan": "Elegant and scenic resort on the island of Phu Quoc.",
+  "anhKhachSan": "https://pix8.agoda.net/hotelImages/162/1624474/1624474_17042514130052617370.jpg?ca=6&ce=1&s=1024x",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebaf"
+  },
+  "tenKhachSan": "Flamingo Dai Lai Resort",
+  "diaChi": "Xã Ngọc Thanh, Thị xã Phúc Yên, T. Vĩnh Phúc, Việt Nam",
+  "sdt": "0987654325",
+  "email": "flamingo@example.com",
+  "danhGia": 4.5,
+  "moTaKhachSan": "Eco-friendly resort with scenic lake views.",
+  "anhKhachSan": "https://pix8.agoda.net/hotelImages/410128/-1/ac4c925465ac9a12b34082b09dbb4505.jpg?ce=0&s=1024x",
+  "__v": 0
+}]

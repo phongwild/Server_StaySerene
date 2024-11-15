@@ -225,10 +225,10 @@ async function addRoom() {
             throw new Error('Network response was not ok');
         }
 
-        alert('Phòng mới đã được thêm thành công!');
+        //alert('Phòng mới đã được thêm thành công!');
 
-        document.getElementById('customer-form').reset();
-
+        //document.getElementById('customer-form').reset();
+        document.getElementById('sophong').value ++;
         fetchRoomData();
 
     } catch (error) {
@@ -247,7 +247,7 @@ async function updateRoom() {
     const maLoaiPhong = document.getElementById('maloaiphong').value;
 
     // Kiểm tra điều kiện
-    if (!maPhong) {
+    if (maPhong==="") {
         alert('Vui lòng chọn phòng để cập nhật.');
         document.getElementById('customer-form').reset();
         return;
@@ -280,7 +280,6 @@ async function updateRoom() {
 
         const roomData = {
             IdLoaiPhong: maLoaiPhong,
-            IdKhachSan: maKhachSan,
             soPhong: soPhong,
             soTang: soTang,
             moTaPhong: document.getElementById('moTaPhong').value,
@@ -322,19 +321,17 @@ async function updateRoom() {
 async function deleteRoom() {
     const maPhong = document.getElementById('maphong').value;
 
-    if (!maPhong) {
+    if (maPhong==="") {
         alert('Vui lòng chọn phòng để xóa.');
         return;
     }
 
     if (confirm('Bạn có chắc chắn muốn xóa phòng này?')) {
         try {
-            // Fetch the room to get its `IdLoaiPhong`
             const roomResponse = await fetch(`${apiRoomUrla}/${maPhong}`);
             const room = await roomResponse.json();
             const roomTypeId = room.IdLoaiPhong;
 
-            // Delete the room
             const deleteResponse = await fetch(`${apiRoomUrl}/${maPhong}`, {
                 method: 'DELETE',
                 headers: {
@@ -346,7 +343,6 @@ async function deleteRoom() {
                 throw new Error('Xóa phòng thất bại');
             }
 
-            // Fetch the current `soLuongPhong` for the typeroom and decrease it by 1
             const typeroomResponse = await fetch(`${apiTyperoomUrl}/${roomTypeId}`);
             const typeroom = await typeroomResponse.json();
 

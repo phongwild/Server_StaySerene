@@ -5,7 +5,7 @@ async function login() {
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('http://192.168.10.103:3000/api/nhanvien');
+        const response = await fetch('http://192.168.1.2:3000/api/nhanvien');
         const employees = await response.json();
         const employee = employees.find(emp => emp.email === email && emp.password === password);
 

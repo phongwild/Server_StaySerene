@@ -315,17 +315,40 @@ exports.suaPhong = async (req, res, next) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
+
         if (!mongoose.Types.ObjectId.isValid(id)) {
-            return res.status(400).json({ error: 'ID phòng không đúng định dạng' });
+            return res.status(400).json({ error: "ID phòng không đúng định dạng" });
         }
+
+        const currentRoom = await mdPhong.phongModel.findById(id);
+        if (!currentRoom) {
+            return res.status(404).json({ error: "Không tìm thấy phòng với ID đã cho" });
+        }
+
+        const previousIdLoaiPhong = currentRoom.IdLoaiPhong;
+        const newIdLoaiPhong = updatedData.IdLoaiPhong;
+
+        if (previousIdLoaiPhong.toString() !== newIdLoaiPhong.toString()) {
+            await mdLoaiPhong.loaiPhongModel.findByIdAndUpdate(
+                previousIdLoaiPhong,
+                { $inc: { soLuongPhong: -1 } }
+            );
+
+            await mdLoaiPhong.loaiPhongModel.findByIdAndUpdate(
+                newIdLoaiPhong,
+                { $inc: { soLuongPhong: 1 } }
+            );
+        }
+
         const updatedRoom = await mdPhong.phongModel.findByIdAndUpdate(id, updatedData, { new: true });
         if (!updatedRoom) {
-            return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
+            return res.status(404).json({ error: "Không tìm thấy phòng với ID đã cho" });
         }
+
         res.status(200).json([updatedRoom]);
     } catch (error) {
-        console.error('Lỗi khi cập nhật thông tin phòng:', error);
-        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+        console.error("Lỗi khi cập nhật thông tin phòng:", error);
+        return res.status(500).json({ error: "Lỗi server: " + error.message });
     }
 };
 

@@ -1,390 +1,5160 @@
-[
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6051"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6001"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 101,
-    "soTang": 1,
-    "moTaPhong": "Phòng Đơn Tiêu Chuẩn",
-    "anhPhong": "https://images.pexels.com/photos/3935319/pexels-photo-3935319.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 2000000
+[{
+  "_id": {
+    "$oid": "6737048ef99c126d612f7925"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6052"
-    },
-    "IdLoaiPhong": {
-      "$oid": "67248bc23969b28a9a8156c4"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 102,
-    "soTang": 1,
-    "moTaPhong": "Phòng Đôi",
-    "anhPhong": "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 2500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6053"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6001"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 201,
-    "soTang": 2,
-    "moTaPhong": "Phòng Gia Đình",
-    "anhPhong": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 3000000
+  "soPhong": 101,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370491f99c126d612f792d"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6054"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6001"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 202,
-    "soTang": 2,
-    "moTaPhong": "Phòng Suite Hướng Thành Phố",
-    "anhPhong": "https://images.pexels.com/photos/26139/pexels-photo.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 4000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6055"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6001"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 301,
-    "soTang": 3,
-    "moTaPhong": "Phòng Cao Cấp",
-    "anhPhong": "https://images.pexels.com/photos/26139/pexels-photo.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 5000000
+  "soPhong": 102,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370495f99c126d612f7935"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6056"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6001"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 302,
-    "soTang": 3,
-    "moTaPhong": "Phòng Premier",
-    "anhPhong": "https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 5500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6057"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6001"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 401,
-    "soTang": 4,
-    "moTaPhong": "Phòng Đôi Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/189333/pexels-photo-189333.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 6500000
+  "soPhong": 103,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704acf99c126d612f7942"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6058"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6001"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 402,
-    "soTang": 4,
-    "moTaPhong": "Phòng Suite",
-    "anhPhong": "https://images.pexels.com/photos/358695/pexels-photo-358695.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 7000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6059"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6001"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 501,
-    "soTang": 5,
-    "moTaPhong": "Phòng Suite Tổng Thống",
-    "anhPhong": "https://images.pexels.com/photos/1457848/pexels-photo-1457848.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 10000000
+  "soPhong": 104,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704aff99c126d612f794a"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6060"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6001"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 502,
-    "soTang": 5,
-    "moTaPhong": "Phòng Hạng V.I.P",
-    "anhPhong": "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 12000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6061"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6002"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 601,
-    "soTang": 6,
-    "moTaPhong": "Phòng Đơn Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/210604/pexels-photo-210604.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 7000000
+  "soPhong": 105,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704b1f99c126d612f7952"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6062"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6002"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 602,
-    "soTang": 6,
-    "moTaPhong": "Phòng Đôi Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/2373710/pexels-photo-2373710.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 7500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6063"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6002"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 701,
-    "soTang": 7,
-    "moTaPhong": "Phòng Gia Đình Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 8000000
+  "soPhong": 106,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704b3f99c126d612f795a"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6064"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6002"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 702,
-    "soTang": 7,
-    "moTaPhong": "Phòng Suite Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6065"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6002"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 801,
-    "soTang": 8,
-    "moTaPhong": "Phòng Cao Cấp Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/209067/pexels-photo-209067.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9500000
+  "soPhong": 107,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704b5f99c126d612f7962"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6066"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6002"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 802,
-    "soTang": 8,
-    "moTaPhong": "Phòng Premier Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/2507017/pexels-photo-2507017.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 10000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6067"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6002"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 901,
-    "soTang": 9,
-    "moTaPhong": "Phòng Đôi Cao Cấp Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/271663/pexels-photo-271663.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 11000000
+  "soPhong": 108,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704b7f99c126d612f796a"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6068"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6002"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 902,
-    "soTang": 9,
-    "moTaPhong": "Phòng Suite Tổng Thống Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 12000000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6069"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6003"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1001,
-    "soTang": 10,
-    "moTaPhong": "Phòng Đơn Cao Cấp",
-    "anhPhong": "https://images.pexels.com/photos/26140/pexels-photo-26140.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 8000000
+  "soPhong": 109,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704b8f99c126d612f7972"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6070"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6003"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1002,
-    "soTang": 10,
-    "moTaPhong": "Phòng Đôi Cao Cấp",
-    "anhPhong": "https://images.pexels.com/photos/3650455/pexels-photo-3650455.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 8500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6071"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6003"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1003,
-    "soTang": 11,
-    "moTaPhong": "Phòng Gia Đình Cao Cấp",
-    "anhPhong": "https://images.pexels.com/photos/3935319/pexels-photo-3935319.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9000000
+  "soPhong": 110,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704bbf99c126d612f797a"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6072"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6003"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1004,
-    "soTang": 11,
-    "moTaPhong": "Phòng Suite Cao Cấp",
-    "anhPhong": "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6073"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6003"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1005,
-    "soTang": 12,
-    "moTaPhong": "Phòng Cao Cấp Hạng Sang",
-    "anhPhong": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 10000000
+  "soPhong": 111,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704bdf99c126d612f7982"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6074"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6004"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1101,
-    "soTang": 11,
-    "moTaPhong": "Phòng Đơn Sang Trọng",
-    "anhPhong": "https://images.pexels.com/photos/26139/pexels-photo.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 7500000
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6001"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6075"
-    },
-    "IdLoaiPhong": {
-      "$oid": "6707f2b1676a25b7900e6004"
-    },
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1102,
-    "soTang": 11,
-    "moTaPhong": "Phòng Đôi Sang Trọng",
-    "anhPhong": "https://images.pexels.com/photos/26139/pexels-photo.jpg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 8000000
+  "soPhong": 112,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704d7f99c126d612f7991"
   },
-  {
-    "_id": {
-      "$oid": "6707f2b1676a25b7900e6076"
-    },
-    "IdLoaiPhong": "6707f2b1676a25b7900e6004",
-    "IdKhuyenMai": "6707fq2a4676a25b7900e503a",
-    "soPhong": 1103,
-    "soTang": 12,
-    "moTaPhong": "Phòng Suite Sang Trọng",
-    "anhPhong": "https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg",
-    "tinhTrangPhong": 0,
-    "giaPhong": 9000000
-  }
-]
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 201,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704d9f99c126d612f7999"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 202,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704dbf99c126d612f79a1"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 203,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704ddf99c126d612f79a9"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 204,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704e0f99c126d612f79b1"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 205,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704e2f99c126d612f79b9"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 206,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704e4f99c126d612f79c1"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 207,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704e6f99c126d612f79c9"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 208,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704e8f99c126d612f79d1"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 209,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704eaf99c126d612f79d9"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 210,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704ecf99c126d612f79e1"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 211,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673704eff99c126d612f79e9"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6002"
+  },
+  "soPhong": 212,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737052cf99c126d612f79ff"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 301,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737053ef99c126d612f7a0a"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 302,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370545f99c126d612f7a13"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 303,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737056df99c126d612f7a1b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 304,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737056ff99c126d612f7a23"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 305,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370571f99c126d612f7a2b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 306,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370573f99c126d612f7a33"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 307,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370575f99c126d612f7a3b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 308,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370578f99c126d612f7a43"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 309,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370581f99c126d612f7a4b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6003"
+  },
+  "soPhong": 310,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370596f99c126d612f7a53"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "soPhong": 401,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737059df99c126d612f7a5b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "soPhong": 402,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705a4f99c126d612f7a63"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "soPhong": 403,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705a9f99c126d612f7a6b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "soPhong": 404,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705abf99c126d612f7a73"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "soPhong": 405,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705adf99c126d612f7a7b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "soPhong": 406,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705b0f99c126d612f7a83"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "soPhong": 407,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705b2f99c126d612f7a8b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6004"
+  },
+  "soPhong": 408,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705dbf99c126d612f7a9c"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6005"
+  },
+  "soPhong": 501,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705e0f99c126d612f7aa5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6005"
+  },
+  "soPhong": 502,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705e3f99c126d612f7aad"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6005"
+  },
+  "soPhong": 503,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705e8f99c126d612f7ab6"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6005"
+  },
+  "soPhong": 504,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705ebf99c126d612f7abe"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6005"
+  },
+  "soPhong": 505,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673705f1f99c126d612f7ac6"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6005"
+  },
+  "soPhong": 506,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370601f99c126d612f7ace"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6006"
+  },
+  "soPhong": 601,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370605f99c126d612f7ad6"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6006"
+  },
+  "soPhong": 602,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370607f99c126d612f7ade"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6006"
+  },
+  "soPhong": 603,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370609f99c126d612f7ae6"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6006"
+  },
+  "soPhong": 604,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737060bf99c126d612f7aee"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6006"
+  },
+  "soPhong": 605,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370621f99c126d612f7af6"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6007"
+  },
+  "soPhong": 701,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370626f99c126d612f7afe"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6007"
+  },
+  "soPhong": 702,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370628f99c126d612f7b06"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6007"
+  },
+  "soPhong": 703,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737062af99c126d612f7b0e"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6007"
+  },
+  "soPhong": 704,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737062cf99c126d612f7b16"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6007"
+  },
+  "soPhong": 705,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370632f99c126d612f7b1f"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6007"
+  },
+  "soPhong": 706,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370634f99c126d612f7b27"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6007"
+  },
+  "soPhong": 707,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370636f99c126d612f7b2f"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6007"
+  },
+  "soPhong": 708,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737064af99c126d612f7b37"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6008"
+  },
+  "soPhong": 801,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737064df99c126d612f7b3f"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6008"
+  },
+  "soPhong": 802,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737064ff99c126d612f7b47"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6008"
+  },
+  "soPhong": 803,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370658f99c126d612f7b50"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6008"
+  },
+  "soPhong": 804,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737065bf99c126d612f7b58"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6008"
+  },
+  "soPhong": 805,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737066ef99c126d612f7b60"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6009"
+  },
+  "soPhong": 901,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 5000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370671f99c126d612f7b68"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6009"
+  },
+  "soPhong": 902,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 5000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370674f99c126d612f7b70"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6009"
+  },
+  "soPhong": 903,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 5000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370695f99c126d612f7b89"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6010"
+  },
+  "soPhong": 1001,
+  "soTang": 10,
+  "moTaPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370699f99c126d612f7b91"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6010"
+  },
+  "soPhong": 1002,
+  "soTang": 10,
+  "moTaPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708a4f99c126d612f7c3c"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 101,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708a6f99c126d612f7c44"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 102,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708a8f99c126d612f7c4c"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 103,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708a9f99c126d612f7c54"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 104,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708abf99c126d612f7c5c"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 105,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708aef99c126d612f7c64"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 106,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708b0f99c126d612f7c6c"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 107,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708b2f99c126d612f7c74"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 108,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708b4f99c126d612f7c7c"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 109,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708bdf99c126d612f7c84"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5001"
+  },
+  "soPhong": 110,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708d1f99c126d612f7c8c"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5002"
+  },
+  "soPhong": 201,
+  "soTang": 2,
+  "moTaPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+  "anhPhong": "https://annahotel.com.vn/wp-content/uploads/2018/06/105B7708-D713-4DD8-A71B-DDD620254A6F-630x389.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708d3f99c126d612f7c94"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5002"
+  },
+  "soPhong": 202,
+  "soTang": 2,
+  "moTaPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+  "anhPhong": "https://annahotel.com.vn/wp-content/uploads/2018/06/105B7708-D713-4DD8-A71B-DDD620254A6F-630x389.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708d5f99c126d612f7c9c"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5002"
+  },
+  "soPhong": 203,
+  "soTang": 2,
+  "moTaPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+  "anhPhong": "https://annahotel.com.vn/wp-content/uploads/2018/06/105B7708-D713-4DD8-A71B-DDD620254A6F-630x389.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708d8f99c126d612f7ca4"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5002"
+  },
+  "soPhong": 204,
+  "soTang": 2,
+  "moTaPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+  "anhPhong": "https://annahotel.com.vn/wp-content/uploads/2018/06/105B7708-D713-4DD8-A71B-DDD620254A6F-630x389.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708daf99c126d612f7cac"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5002"
+  },
+  "soPhong": 205,
+  "soTang": 2,
+  "moTaPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+  "anhPhong": "https://annahotel.com.vn/wp-content/uploads/2018/06/105B7708-D713-4DD8-A71B-DDD620254A6F-630x389.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708dcf99c126d612f7cb4"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5002"
+  },
+  "soPhong": 206,
+  "soTang": 2,
+  "moTaPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+  "anhPhong": "https://annahotel.com.vn/wp-content/uploads/2018/06/105B7708-D713-4DD8-A71B-DDD620254A6F-630x389.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708def99c126d612f7cbc"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5002"
+  },
+  "soPhong": 207,
+  "soTang": 2,
+  "moTaPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+  "anhPhong": "https://annahotel.com.vn/wp-content/uploads/2018/06/105B7708-D713-4DD8-A71B-DDD620254A6F-630x389.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708e0f99c126d612f7cc4"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5002"
+  },
+  "soPhong": 208,
+  "soTang": 2,
+  "moTaPhong": "Phòng có tầm nhìn ra biển, thoải mái cho hai khách.",
+  "anhPhong": "https://annahotel.com.vn/wp-content/uploads/2018/06/105B7708-D713-4DD8-A71B-DDD620254A6F-630x389.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708f1f99c126d612f7ccc"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5003"
+  },
+  "soPhong": 301,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708f4f99c126d612f7cd4"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5003"
+  },
+  "soPhong": 302,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708f6f99c126d612f7cdc"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5003"
+  },
+  "soPhong": 303,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708f8f99c126d612f7ce4"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5003"
+  },
+  "soPhong": 304,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708fbf99c126d612f7cec"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5003"
+  },
+  "soPhong": 305,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708fdf99c126d612f7cf4"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5003"
+  },
+  "soPhong": 306,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673708fff99c126d612f7cfc"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5003"
+  },
+  "soPhong": 307,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370901f99c126d612f7d04"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5003"
+  },
+  "soPhong": 308,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình có trẻ em.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370922f99c126d612f7d0c"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5004"
+  },
+  "soPhong": 401,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "anhPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370958f99c126d612f7d24"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5004"
+  },
+  "soPhong": 402,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "anhPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6737099af99c126d612f7d31"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5004"
+  },
+  "soPhong": 403,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "anhPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709b6f99c126d612f7d3e"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5004"
+  },
+  "soPhong": 404,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "anhPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709baf99c126d612f7d46"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5004"
+  },
+  "soPhong": 405,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "anhPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709baf99c126d612f7d4e"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5004"
+  },
+  "soPhong": 406,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "anhPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709bbf99c126d612f7d56"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5004"
+  },
+  "soPhong": 407,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "anhPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709ddf99c126d612f7d65"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5004"
+  },
+  "soPhong": 408,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "anhPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709e3f99c126d612f7d6d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5004"
+  },
+  "soPhong": 409,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra vườn xanh mát.",
+  "anhPhong": "https://pullmanphuquoc.com/wp-content/uploads/sites/225/2022/05/Deluxe-Twin-Garden-View-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709fbf99c126d612f7d75"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5005"
+  },
+  "soPhong": 501,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709fbf99c126d612f7d7d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5005"
+  },
+  "soPhong": 502,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709fbf99c126d612f7d85"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5005"
+  },
+  "soPhong": 503,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709fcf99c126d612f7d8d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5005"
+  },
+  "soPhong": 504,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673709fdf99c126d612f7d95"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5005"
+  },
+  "soPhong": 505,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a02f99c126d612f7d9d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5005"
+  },
+  "soPhong": 506,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a0bf99c126d612f7da5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5006"
+  },
+  "soPhong": 601,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a0cf99c126d612f7dad"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5006"
+  },
+  "soPhong": 602,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a0cf99c126d612f7db5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5006"
+  },
+  "soPhong": 603,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a0cf99c126d612f7dbd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5006"
+  },
+  "soPhong": 604,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a0df99c126d612f7dc5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5006"
+  },
+  "soPhong": 605,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a16f99c126d612f7dcd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 701,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a16f99c126d612f7dd5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 702,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a16f99c126d612f7ddd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 703,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a16f99c126d612f7de5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 704,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a16f99c126d612f7ded"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 705,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a17f99c126d612f7df5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 706,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a17f99c126d612f7dfd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 707,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a17f99c126d612f7e05"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 708,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a17f99c126d612f7e0d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 709,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a17f99c126d612f7e15"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5007"
+  },
+  "soPhong": 710,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a22f99c126d612f7e1d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5008"
+  },
+  "soPhong": 801,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a22f99c126d612f7e25"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5008"
+  },
+  "soPhong": 802,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a22f99c126d612f7e2d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5008"
+  },
+  "soPhong": 803,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a22f99c126d612f7e35"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5008"
+  },
+  "soPhong": 804,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a22f99c126d612f7e3d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5008"
+  },
+  "soPhong": 805,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a22f99c126d612f7e45"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5008"
+  },
+  "soPhong": 806,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a23f99c126d612f7e4d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5008"
+  },
+  "soPhong": 807,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a2bf99c126d612f7e55"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5009"
+  },
+  "soPhong": 901,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 6000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a2bf99c126d612f7e5d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5009"
+  },
+  "soPhong": 902,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 6000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a2bf99c126d612f7e65"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5009"
+  },
+  "soPhong": 903,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 6000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a34f99c126d612f7e6d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5010"
+  },
+  "soPhong": 1001,
+  "soTang": 10,
+  "moTaPhong": "Phòng Penthouse đẳng cấp với tầm nhìn đẹp.",
+  "anhPhong": "https://images.kienthuc.net.vn/w730/Uploaded/2024/wpdhnwejw/2024_09_12/6/penthouse-100-ty-nhu-khach-san-5-sao-cua-ha-anh-tuan-Hinh-3.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a34f99c126d612f7e75"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e5010"
+  },
+  "soPhong": 1002,
+  "soTang": 10,
+  "moTaPhong": "Phòng Penthouse đẳng cấp với tầm nhìn đẹp.",
+  "anhPhong": "https://images.kienthuc.net.vn/w730/Uploaded/2024/wpdhnwejw/2024_09_12/6/penthouse-100-ty-nhu-khach-san-5-sao-cua-ha-anh-tuan-Hinh-3.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5bf99c126d612f7e85"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 101,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5bf99c126d612f7e8d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 102,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5bf99c126d612f7e95"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 103,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5cf99c126d612f7e9d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 104,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5cf99c126d612f7ea5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 105,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5cf99c126d612f7ead"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 106,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5cf99c126d612f7eb5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 107,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5cf99c126d612f7ebd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 108,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5cf99c126d612f7ec5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 109,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a5df99c126d612f7ecd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6021"
+  },
+  "soPhong": 110,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 900000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a66f99c126d612f7ed5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6022"
+  },
+  "soPhong": 201,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a66f99c126d612f7edd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6022"
+  },
+  "soPhong": 202,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a66f99c126d612f7ee5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6022"
+  },
+  "soPhong": 203,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a66f99c126d612f7eed"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6022"
+  },
+  "soPhong": 204,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a66f99c126d612f7ef5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6022"
+  },
+  "soPhong": 205,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a67f99c126d612f7efd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6022"
+  },
+  "soPhong": 206,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a67f99c126d612f7f05"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6022"
+  },
+  "soPhong": 207,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a70f99c126d612f7f0d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6023"
+  },
+  "soPhong": 301,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a71f99c126d612f7f15"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6023"
+  },
+  "soPhong": 302,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a71f99c126d612f7f1d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6023"
+  },
+  "soPhong": 303,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a71f99c126d612f7f25"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6023"
+  },
+  "soPhong": 304,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a71f99c126d612f7f2d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6023"
+  },
+  "soPhong": 305,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a71f99c126d612f7f35"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6023"
+  },
+  "soPhong": 306,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a71f99c126d612f7f3d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6023"
+  },
+  "soPhong": 307,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a71f99c126d612f7f45"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6023"
+  },
+  "soPhong": 308,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a72f99c126d612f7f4d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6023"
+  },
+  "soPhong": 309,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a7af99c126d612f7f55"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6024"
+  },
+  "soPhong": 401,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra biển.",
+  "anhPhong": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/81/2019/10/28100332/1P4A1755-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a7bf99c126d612f7f5d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6024"
+  },
+  "soPhong": 402,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra biển.",
+  "anhPhong": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/81/2019/10/28100332/1P4A1755-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a7bf99c126d612f7f65"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6024"
+  },
+  "soPhong": 403,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra biển.",
+  "anhPhong": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/81/2019/10/28100332/1P4A1755-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a7bf99c126d612f7f6d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6024"
+  },
+  "soPhong": 404,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra biển.",
+  "anhPhong": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/81/2019/10/28100332/1P4A1755-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a7bf99c126d612f7f75"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6024"
+  },
+  "soPhong": 405,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra biển.",
+  "anhPhong": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/81/2019/10/28100332/1P4A1755-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a7bf99c126d612f7f7d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6024"
+  },
+  "soPhong": 406,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra biển.",
+  "anhPhong": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/81/2019/10/28100332/1P4A1755-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a7cf99c126d612f7f85"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6024"
+  },
+  "soPhong": 407,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra biển.",
+  "anhPhong": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/81/2019/10/28100332/1P4A1755-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a7df99c126d612f7f8d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6024"
+  },
+  "soPhong": 408,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra biển.",
+  "anhPhong": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/81/2019/10/28100332/1P4A1755-1.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a86f99c126d612f7f95"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6025"
+  },
+  "soPhong": 501,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a86f99c126d612f7f9d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6025"
+  },
+  "soPhong": 502,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a86f99c126d612f7fa5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6025"
+  },
+  "soPhong": 503,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a86f99c126d612f7fad"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6025"
+  },
+  "soPhong": 504,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a87f99c126d612f7fb5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6025"
+  },
+  "soPhong": 505,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a87f99c126d612f7fbd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6025"
+  },
+  "soPhong": 506,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a90f99c126d612f7fc5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6026"
+  },
+  "soPhong": 601,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a90f99c126d612f7fcd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6026"
+  },
+  "soPhong": 602,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a90f99c126d612f7fd5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6026"
+  },
+  "soPhong": 603,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a90f99c126d612f7fdd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6026"
+  },
+  "soPhong": 604,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a90f99c126d612f7fe5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6026"
+  },
+  "soPhong": 605,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370a91f99c126d612f7fed"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6026"
+  },
+  "soPhong": 606,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aa5f99c126d612f7ff5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6027"
+  },
+  "soPhong": 701,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aa5f99c126d612f7ffd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6027"
+  },
+  "soPhong": 702,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aa5f99c126d612f8005"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6027"
+  },
+  "soPhong": 703,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aa6f99c126d612f800d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6027"
+  },
+  "soPhong": 704,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aa6f99c126d612f8015"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6027"
+  },
+  "soPhong": 705,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aaff99c126d612f801d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6028"
+  },
+  "soPhong": 801,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ab0f99c126d612f8025"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6028"
+  },
+  "soPhong": 802,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ab0f99c126d612f802d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6028"
+  },
+  "soPhong": 803,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ab0f99c126d612f8035"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6028"
+  },
+  "soPhong": 804,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ab2f99c126d612f803d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6028"
+  },
+  "soPhong": 805,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370abcf99c126d612f8045"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6029"
+  },
+  "soPhong": 901,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370abdf99c126d612f804d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6029"
+  },
+  "soPhong": 902,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370abdf99c126d612f8055"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6029"
+  },
+  "soPhong": 903,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ac7f99c126d612f805d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6030"
+  },
+  "soPhong": 1001,
+  "soTang": 10,
+  "moTaPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ac7f99c126d612f8065"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6030"
+  },
+  "soPhong": 1002,
+  "soTang": 10,
+  "moTaPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae2f99c126d612f80ab"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 101,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae2f99c126d612f80b3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 102,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae3f99c126d612f80bb"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 103,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae3f99c126d612f80c3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 104,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae3f99c126d612f80cb"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 105,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae3f99c126d612f80d3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 106,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae3f99c126d612f80db"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 107,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae3f99c126d612f80e3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 108,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae4f99c126d612f80eb"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 109,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae4f99c126d612f80f3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 110,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae5f99c126d612f80fb"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 111,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ae6f99c126d612f8103"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6031"
+  },
+  "soPhong": 112,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aeef99c126d612f810b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 201,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aeef99c126d612f8113"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 202,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aeef99c126d612f811b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 203,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aeef99c126d612f8123"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 204,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aeef99c126d612f812b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 205,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aeff99c126d612f8133"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 206,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aeff99c126d612f813b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 207,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aeff99c126d612f8143"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 208,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370aeff99c126d612f814b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 209,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370af0f99c126d612f8153"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6032"
+  },
+  "soPhong": 210,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b03f99c126d612f815b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6033"
+  },
+  "soPhong": 301,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b04f99c126d612f8163"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6033"
+  },
+  "soPhong": 302,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b04f99c126d612f816b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6033"
+  },
+  "soPhong": 303,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b04f99c126d612f8173"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6033"
+  },
+  "soPhong": 304,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b04f99c126d612f817b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6033"
+  },
+  "soPhong": 305,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b04f99c126d612f8183"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6033"
+  },
+  "soPhong": 306,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b04f99c126d612f818b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6033"
+  },
+  "soPhong": 307,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b05f99c126d612f8193"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6033"
+  },
+  "soPhong": 308,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b05f99c126d612f819b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6033"
+  },
+  "soPhong": 309,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b0df99c126d612f81a3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6034"
+  },
+  "soPhong": 401,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b0df99c126d612f81ab"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6034"
+  },
+  "soPhong": 402,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b0df99c126d612f81b3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6034"
+  },
+  "soPhong": 403,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b0df99c126d612f81bb"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6034"
+  },
+  "soPhong": 404,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b0df99c126d612f81c3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6034"
+  },
+  "soPhong": 405,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b0ef99c126d612f81cb"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6034"
+  },
+  "soPhong": 406,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b0ef99c126d612f81d3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6034"
+  },
+  "soPhong": 407,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b0ff99c126d612f81db"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6034"
+  },
+  "soPhong": 408,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b18f99c126d612f81e3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6035"
+  },
+  "soPhong": 501,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b18f99c126d612f81eb"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6035"
+  },
+  "soPhong": 502,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b18f99c126d612f81f3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6035"
+  },
+  "soPhong": 503,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b18f99c126d612f81fb"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6035"
+  },
+  "soPhong": 504,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b19f99c126d612f8203"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6035"
+  },
+  "soPhong": 505,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b23f99c126d612f820b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6036"
+  },
+  "soPhong": 601,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b24f99c126d612f8213"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6036"
+  },
+  "soPhong": 602,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b24f99c126d612f821b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6036"
+  },
+  "soPhong": 603,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b24f99c126d612f8223"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6036"
+  },
+  "soPhong": 604,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b24f99c126d612f822b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6036"
+  },
+  "soPhong": 605,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b24f99c126d612f8233"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6036"
+  },
+  "soPhong": 606,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 4600000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b2ef99c126d612f823b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6037"
+  },
+  "soPhong": 701,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b2ef99c126d612f8243"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6037"
+  },
+  "soPhong": 702,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b2ef99c126d612f824b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6037"
+  },
+  "soPhong": 703,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b2ef99c126d612f8253"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6037"
+  },
+  "soPhong": 704,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b2ff99c126d612f825b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6037"
+  },
+  "soPhong": 705,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b2ff99c126d612f8263"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6037"
+  },
+  "soPhong": 706,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b2ff99c126d612f826b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6037"
+  },
+  "soPhong": 707,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b2ff99c126d612f8273"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6037"
+  },
+  "soPhong": 708,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b3df99c126d612f827b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6038"
+  },
+  "soPhong": 801,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b3df99c126d612f8283"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6038"
+  },
+  "soPhong": 802,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b3df99c126d612f828b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6038"
+  },
+  "soPhong": 803,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b47f99c126d612f8293"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6038"
+  },
+  "soPhong": 804,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b48f99c126d612f829b"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6038"
+  },
+  "soPhong": 805,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b50f99c126d612f82a3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6039"
+  },
+  "soPhong": 901,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b50f99c126d612f82ab"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6039"
+  },
+  "soPhong": 902,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b51f99c126d612f82b3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6039"
+  },
+  "soPhong": 903,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b59f99c126d612f82bb"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6040"
+  },
+  "soPhong": 1001,
+  "soTang": 10,
+  "moTaPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b5af99c126d612f82c3"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6040"
+  },
+  "soPhong": 1002,
+  "soTang": 10,
+  "moTaPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 8000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b67f99c126d612f834d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 101,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b67f99c126d612f8355"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 102,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b67f99c126d612f835d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 103,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b67f99c126d612f8365"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 104,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b68f99c126d612f836d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 105,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b69f99c126d612f8375"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 106,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b69f99c126d612f837d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 107,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b69f99c126d612f8385"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 108,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b69f99c126d612f838d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 109,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b6af99c126d612f8395"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 110,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b6ef99c126d612f839d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 111,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b70f99c126d612f83a5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6011"
+  },
+  "soPhong": 112,
+  "soTang": 1,
+  "moTaPhong": "Phòng tiện nghi cơ bản dành cho một khách.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/10/phong-don-la-gi-tieu-chuan-cach-phan-loai-va-goi-ten_6172694b42310.jpeg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b85f99c126d612f83ad"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 201,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b85f99c126d612f83b5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 202,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b85f99c126d612f83bd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 203,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b85f99c126d612f83c5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 204,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b85f99c126d612f83cd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 205,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b85f99c126d612f83d5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 206,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b85f99c126d612f83dd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 207,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b86f99c126d612f83e5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 208,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b86f99c126d612f83ed"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 209,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b86f99c126d612f83f5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 210,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b86f99c126d612f83fd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6012"
+  },
+  "soPhong": 211,
+  "soTang": 2,
+  "moTaPhong": "Phòng đôi thoải mái cho hai khách.",
+  "anhPhong": "https://acihome.vn/uploads/15/mau-thiet-ke-noi-that-phong-2-giuong-don-ben-trong-khach-san-3-4-5-sao-1.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b90f99c126d612f8405"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 301,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b90f99c126d612f840d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 302,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b90f99c126d612f8415"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 303,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b90f99c126d612f841d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 304,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b91f99c126d612f8425"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 305,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b91f99c126d612f842d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 306,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b91f99c126d612f8435"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 307,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b91f99c126d612f843d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 308,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b91f99c126d612f8445"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 309,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b92f99c126d612f844d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6013"
+  },
+  "soPhong": 310,
+  "soTang": 3,
+  "moTaPhong": "Phòng rộng rãi phù hợp cho gia đình.",
+  "anhPhong": "https://phunuvietnam.mediacdn.vn/179072216278405120/2024/1/12/trung-quoc-khach-san-2-1705077063214645925980.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b9bf99c126d612f8455"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6014"
+  },
+  "soPhong": 401,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b9bf99c126d612f845d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6014"
+  },
+  "soPhong": 402,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b9cf99c126d612f8465"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6014"
+  },
+  "soPhong": 403,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b9cf99c126d612f846d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6014"
+  },
+  "soPhong": 404,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b9cf99c126d612f8475"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6014"
+  },
+  "soPhong": 405,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b9cf99c126d612f847d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6014"
+  },
+  "soPhong": 406,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b9cf99c126d612f8485"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6014"
+  },
+  "soPhong": 407,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b9df99c126d612f848d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6014"
+  },
+  "soPhong": 408,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370b9ef99c126d612f8495"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6014"
+  },
+  "soPhong": 409,
+  "soTang": 4,
+  "moTaPhong": "Phòng suite với tầm nhìn ra thành phố.",
+  "anhPhong": "https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2024/06/z5562907088184_e1bee626069bea756cd74fbf4e2f7fa8.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 1800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ba6f99c126d612f849d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6015"
+  },
+  "soPhong": 501,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ba6f99c126d612f84a5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6015"
+  },
+  "soPhong": 502,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ba6f99c126d612f84ad"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6015"
+  },
+  "soPhong": 503,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ba6f99c126d612f84b5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6015"
+  },
+  "soPhong": 504,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ba7f99c126d612f84bd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6015"
+  },
+  "soPhong": 505,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370ba7f99c126d612f84c5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6015"
+  },
+  "soPhong": 506,
+  "soTang": 5,
+  "moTaPhong": "Phòng cao cấp với trang bị hiện đại.",
+  "anhPhong": "https://acihome.vn/uploads/15/thiet-ke-toa-nha-khach-san-12-tang-dang-cap-5-sao-ww-hotel-9.JPG",
+  "tinhTrangPhong": 0,
+  "giaPhong": 2500000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bb1f99c126d612f84cd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6016"
+  },
+  "soPhong": 601,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bb1f99c126d612f84d5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6016"
+  },
+  "soPhong": 602,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bb1f99c126d612f84dd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6016"
+  },
+  "soPhong": 603,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bb1f99c126d612f84e5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6016"
+  },
+  "soPhong": 604,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bb1f99c126d612f84ed"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6016"
+  },
+  "soPhong": 605,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bb1f99c126d612f84f5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6016"
+  },
+  "soPhong": 606,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bb1f99c126d612f84fd"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6016"
+  },
+  "soPhong": 607,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bb3f99c126d612f8505"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6016"
+  },
+  "soPhong": 608,
+  "soTang": 6,
+  "moTaPhong": "Phòng premier với nội thất sang trọng.",
+  "anhPhong": "https://dalatprincehotel.com/wp-content/uploads/2022/05/slider-detail-news-1248x624-1.webp",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3200000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bbcf99c126d612f850d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6017"
+  },
+  "soPhong": 701,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bbcf99c126d612f8515"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6017"
+  },
+  "soPhong": 702,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bbcf99c126d612f851d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6017"
+  },
+  "soPhong": 703,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bbcf99c126d612f8525"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6017"
+  },
+  "soPhong": 704,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bbcf99c126d612f852d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6017"
+  },
+  "soPhong": 705,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bbcf99c126d612f8535"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6017"
+  },
+  "soPhong": 706,
+  "soTang": 7,
+  "moTaPhong": "Phòng rộng rãi với hai giường lớn.",
+  "anhPhong": "https://lh4.googleusercontent.com/proxy/tMRDTxY-J9mptswtg98z907vL1k5ff01xViw3GncmxnxpPsW9hc3L7_LNNNFTdIQqJYKYfY1CQ7o7Po9jMjnIncb-CPlZIGsDG8FZ1VAS_U3T4o2dQ-gjTyalQhtQULUgZ8Ww8R1iMQQSf1n5v_pdg98",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bc4f99c126d612f853d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6018"
+  },
+  "soPhong": 801,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bc4f99c126d612f8545"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6018"
+  },
+  "soPhong": 802,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bc4f99c126d612f854d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6018"
+  },
+  "soPhong": 803,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bc4f99c126d612f8555"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6018"
+  },
+  "soPhong": 804,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bc4f99c126d612f855d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6018"
+  },
+  "soPhong": 805,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bc4f99c126d612f8565"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6018"
+  },
+  "soPhong": 806,
+  "soTang": 8,
+  "moTaPhong": "Phòng suite với nhiều tiện ích cao cấp.",
+  "anhPhong": "https://media-cdn.tripadvisor.com/media/photo-s/1a/1b/60/5e/phong-suite-v-i-khong.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 3800000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bcdf99c126d612f856d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6019"
+  },
+  "soPhong": 901,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 12000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bcdf99c126d612f8575"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6019"
+  },
+  "soPhong": 902,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 12000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bcdf99c126d612f857d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6019"
+  },
+  "soPhong": 903,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 12000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bcdf99c126d612f8585"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6019"
+  },
+  "soPhong": 904,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 12000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bcdf99c126d612f858d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6019"
+  },
+  "soPhong": 905,
+  "soTang": 9,
+  "moTaPhong": "Phòng suite rộng nhất, dịch vụ VIP.",
+  "anhPhong": "https://images2.thanhnien.vn/528068263637045248/2023/9/11/biden-16-169441443748282765858.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 12000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bd7f99c126d612f8595"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6020"
+  },
+  "soPhong": 1001,
+  "soTang": 10,
+  "moTaPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bd7f99c126d612f859d"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6020"
+  },
+  "soPhong": 1002,
+  "soTang": 10,
+  "moTaPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67370bd7f99c126d612f85a5"
+  },
+  "IdLoaiPhong": {
+    "$oid": "6707f2b1676a25b7900e6020"
+  },
+  "soPhong": 1003,
+  "soTang": 10,
+  "moTaPhong": "Phòng V.I.P đặc biệt với nhiều tiện nghi.",
+  "anhPhong": "https://dyf.vn/wp-content/uploads/2021/11/noi-that-khach-san-5-sao-2.jpg",
+  "tinhTrangPhong": 0,
+  "giaPhong": 10000000,
+  "__v": 0
+}]
