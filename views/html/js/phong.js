@@ -287,7 +287,7 @@ async function updateRoom() {
         };
 
         try {
-            const response = await fetch(`${apiRoomUrl}/${maPhong}`, {
+            const response = await fetch(`${apiRoomUrla}/${maPhong}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
