@@ -750,10 +750,6 @@ exports.showOrderRoomByIdHotel = async (req, res) => {
             }
         }
 
-        if (validOrders.length === 0) {
-            return res.status(404).json({ error: 'Không tìm thấy đơn đặt phòng cho khách sạn này.' });
-        }
-
         res.status(200).json(validOrders);
     } catch (error) {
         console.error('Lỗi khi lấy đơn đặt phòng theo ID khách sạn:', error);
