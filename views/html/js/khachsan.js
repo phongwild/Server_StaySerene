@@ -1,4 +1,4 @@
-const apiUrl = 'http://192.168.1.2:3000/api/hotel';
+const apiUrl = 'http://192.168.108.95:3000/api/hotel';
 
 // Kiểm tra số điện thoại hợp lệ
 function isValidPhoneNumber(phone) {

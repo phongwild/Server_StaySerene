@@ -1,4 +1,4 @@
-const apiDichVuUrl = 'http://192.168.1.2:3000/api/dichvu';
+const apiDichVuUrl = 'http://192.168.108.95:3000/api/dichvu';
 
 
 async function fetchAllDichVu() {
@@ -49,29 +49,36 @@ async function showDichVuDetails(dv) {
 
 
 async function addDichVu() {
+    const tenDichVu = document.getElementById('tenDichVu').value.trim();
     const giaDichVuValue = parseFloat(document.getElementById('giaDichVu').value.trim());
-    if (isNaN(giaDichVuValue) || giaDichVuValue <= 0) {
-        alert('Giá dịch vụ sai định dạng');
+    const motaDichVu = document.getElementById('motaDichVu').value.trim();
+    const anhDichVu = document.getElementById('anhDichVu').value.trim();
+
+    // Validate
+    if (!tenDichVu) {
+        alert('Tên dịch vụ không được để trống');
         return;
     }
-    if (isNaN(giaDichVuValue) || giaDichVuValue >= 1000000000) {
-        alert('Giá dịch vụ quá lớn');
+    if (isNaN(giaDichVuValue) || giaDichVuValue <= 0 || giaDichVuValue >= 1000000000) {
+        alert('Giá dịch vụ phải là số dương nhỏ hơn 1 tỷ');
+        return;
+    }
+    if (motaDichVu.length > 1000) {
+        alert('Mô tả dịch vụ không được vượt quá 1000 ký tự');
+        return;
+    }
+    if (anhDichVu && !/^https?:\/\/[^\s$.?#].[^\s]*$/.test(anhDichVu)) {
+        alert('URL ảnh dịch vụ không hợp lệ');
         return;
     }
 
-
-    const newDichVu = {
-        tenDichVu: document.getElementById('tenDichVu').value.trim(),
-        giaDichVu: giaDichVuValue,
-        motaDichVu: document.getElementById('motaDichVu').value.trim(),
-        anhDichVu: document.getElementById('anhDichVu').value.trim(),
-    };
+    const newDichVu = { tenDichVu, giaDichVu: giaDichVuValue, motaDichVu, anhDichVu };
 
     try {
         const response = await fetch(apiDichVuUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newDichVu)
+            body: JSON.stringify(newDichVu),
         });
 
         if (!response.ok) {
