@@ -19,12 +19,12 @@ body {
     width: 250px;
     background-color: #2c3e50;
     color: white;
-    padding: 20px;
+    padding: 10px;
     height: 100%; /* Ensure sidebar takes full height */
 }
 
 .sidebar h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .sidebar ul {
@@ -71,12 +71,12 @@ header .header-left {
 }
 
 .main-content h1 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .form-section {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 form {
@@ -89,7 +89,7 @@ form {
     display: flex;
     flex-direction: column;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .form-group label {
@@ -104,7 +104,7 @@ form {
 }
 
 .form-search input {
-    width: 250px;
+    width: 200px;
     padding: 10px;
     border: 1px solid #bdc3c7;
     border-radius: 5px;
@@ -135,14 +135,14 @@ form {
 }
 
 .table-section h3 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     pointer-events: auto; 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 table th,
@@ -165,7 +165,7 @@ table tbody tr:nth-child(even) {
 }
 /* Thêm phong cách mới cho phần tìm kiếm */
 .search-section {
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 15px;
     background-color: #f5f5f5;
     border-radius: 8px;
@@ -203,7 +203,7 @@ table tbody tr:nth-child(even) {
 
 /* Căn chỉnh lại toàn bộ form */
 .form-section {
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -214,7 +214,7 @@ table tbody tr:nth-child(even) {
 .button-group {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .button-group button {
@@ -230,4 +230,43 @@ table tbody tr:nth-child(even) {
 
 .button-group button:hover {
     background-color: #0056b3;
+}
+/* Styling for the search section */
+.search-section {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: 15px;
+    max-width: 400px; /* Đặt chiều rộng tối đa */
+}
+
+#searchInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; /* Bo góc trái */
+    font-size: 16px;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling for the search button */
+.search-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0; /* Bo góc phải */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #0056b3; /* Màu khi hover */
 }
