@@ -166,17 +166,23 @@ async function bookRoom(roomId, uid, note, giaPhong,img) {
     }
     const startDate = new Date(parseDateISO(timeGetInput));
     const endDate = new Date(parseDateISO(timeCheckoutInput));
-
+    const orderTime = new Date(); 
+    const formattedOrderTime = formatDateForBookingod(orderTime);
     const timeDiff = endDate - startDate;  
+    const timeDiffa = startDate - orderTime;  
     const numberOfDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    const numberOfDaysa = Math.ceil(timeDiffa / (1000 * 3600 * 24));
 
     if (numberOfDays <= 0) {
+        alert("Thời gian nhận phòng phải sau thời gian đặt phòng");
+        return;
+    }
+    if (numberOfDaysa <= 0) {
         alert("Ngày trả phải sau ngày nhận.");
         return;
     }
     const total = numberOfDays * giaPhong + giaDichVu;
-    const orderTime = new Date(); 
-    const formattedOrderTime = formatDateForBookingod(orderTime);
+    
 
     const orderData = {
         IdPhong: roomId,

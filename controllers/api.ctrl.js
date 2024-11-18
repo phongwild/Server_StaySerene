@@ -1241,9 +1241,8 @@ exports.themDichVu = async (req, res) => {
     try {
         const { tenDichVu, giaDichVu, motaDichVu, anhDichVu } = req.body;
 
-        // Validate dữ liệu
         if (!tenDichVu || tenDichVu.trim() === '') return res.status(400).json({ error: 'Tên dịch vụ không được để trống' });
-        if (typeof giaDichVu !== 'number' || giaDichVu <= 0 || giaDichVu >= 1000000000) return res.status(400).json({ error: 'Giá dịch vụ phải là số dương nhỏ hơn 1 tỷ' });
+        if (typeof giaDichVu !== 'number' || giaDichVu < 0 || giaDichVu >= 1000000000) return res.status(400).json({ error: 'Giá dịch vụ phải là số dương nhỏ hơn 1 tỷ' });
         if (motaDichVu && motaDichVu.length > 1000) return res.status(400).json({ error: 'Mô tả dịch vụ không được vượt quá 1000 ký tự' });
         if (anhDichVu && !/^(https?:\/\/[^\s$.?#].[^\s]*)$/.test(anhDichVu)) return res.status(400).json({ error: 'URL ảnh dịch vụ không hợp lệ' });
 
