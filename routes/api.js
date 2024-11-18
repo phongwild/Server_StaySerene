@@ -26,7 +26,9 @@ router.get('/accountbycccd/:cccd', apiCtrl.getAccountByCccd);
 router.get('/accounta/:id', apiCtrl.getAccountByIda);
 router.get('/accountac/:id', apiCtrl.getAccountByIdac);
 router.get('/checkusergoogle',apiCtrl.checkExistUserGoogle);
-router.post('/change-pass', apiCtrl.changePass)
+router.post('/change-pass', apiCtrl.changePass);
+router.post('/recovery-pass', apiCtrl.recoveryPass);
+
 
 // Room management routes
 router.get('/rooms', apiCtrl.xemPhong);
@@ -92,7 +94,7 @@ router.get('/dichvu/:id', apiCtrl.showDichVuById);
 router.post('/dichvu', apiCtrl.themDichVu);
 router.delete('/dichvu/:id', apiCtrl.xoaDichVu);
 router.put('/dichvu/:id', apiCtrl.suaDichVu);
-router.get('/dichvu/timkiem', apiCtrl.timKiemDichVu);
+// router.get('/dichvu/timkiem', apiCtrl.timKiemDichVu);
 
 // Customer care routes
 router.get('/messenger', apiCtrl.getChamSoc);

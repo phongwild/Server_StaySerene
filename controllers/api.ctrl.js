@@ -58,6 +58,7 @@ exports.doRegister = async (req, res, next) => {
         return res.status(400).send(error)
     }
 }
+//Password
 exports.changePass = async (req, res, next) => {
     try {
         const { email, oldPassword, newPassword } = req.body;
@@ -71,6 +72,20 @@ exports.changePass = async (req, res, next) => {
         }
         if (oldPassword == newPassword) {
             return res.status(400).send({ error: 'Mật khẩu mới không được trùng với mật khẩu cũ' });
+        }
+        user.password = await bcrypt.hash(newPassword, 8);
+        await user.save();
+        res.status(200).send(user);
+    } catch (error) {
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+}
+exports.recoveryPass = async (req, res, next) => {
+    try {
+        const { _id, newPassword } = req.body;
+        const user = await accountModel.findOne({ _id });
+        if (!user) {
+            return res.status(404).send({ error: 'Không tìm thấy user này' });
         }
         user.password = await bcrypt.hash(newPassword, 8);
         await user.save();
