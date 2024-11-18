@@ -8,7 +8,6 @@ var mdChamSoc = require('../model/chamSoc_model');
 var mdDichVu = require('../model/dichvu_model');
 
 var mdPhanHoi = require('../model/phanhoi_model');
-var mdYeuThich = require('../model/yeuthich_model');
 const { accountModel } = require('../model/account_model');
 
 
