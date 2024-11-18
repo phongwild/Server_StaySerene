@@ -154,7 +154,7 @@ async function addRoom() {
     const maKhachSan = document.getElementById('makhachsan').value;
     const maLoaiPhong = document.getElementById('maloaiphong').value;
 
-    if (!maKhachSan) {
+    if (maKhachSan==="") {
         alert('Vui lòng chọn khách sạn.');
         return;
     }
@@ -353,7 +353,7 @@ async function deleteRoom() {
                 },
                 body: JSON.stringify({ soLuongPhong: updatedRoomCount })
             });
-
+            document.getElementById('customer-form').reset();
             alert('Xóa phòng thành công');
             fetchRoomData();
         } catch (error) {
