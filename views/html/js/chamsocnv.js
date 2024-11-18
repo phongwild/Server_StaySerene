@@ -1,6 +1,6 @@
-const apiUrl = 'http://192.168.108.95:3000/api/messenger';
-const apichamsocUrl = 'http://192.168.108.95:3000/api/messengerbyidhotel';
-const apiUrlAccount = 'http://192.168.108.95:3000/api/accounta';
+const apiUrl = 'http://192.168.1.2:3000/api/messenger';
+const apichamsocUrl = 'http://192.168.1.2:3000/api/messengerbyidhotel';
+const apiUrlAccount = 'http://192.168.1.2:3000/api/accounta';
 const hotelId = localStorage.getItem('IdKhachSan');
 
 let selectedIdKhachSan = null;

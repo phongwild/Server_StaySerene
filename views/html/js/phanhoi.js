@@ -1,5 +1,5 @@
-const apiphanhoiUrl = "http://192.168.108.95:3000/api/phanhoibyidhotel";
-const apikhachhang = "http://192.168.108.95:3000/api/account";
+const apiphanhoiUrl = "http://192.168.1.2:3000/api/phanhoibyidhotel";
+const apikhachhang = "http://192.168.1.2:3000/api/account";
 const hotelId = localStorage.getItem('IdKhachSan');
 
 let customers = {};

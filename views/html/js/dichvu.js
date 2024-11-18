@@ -1,4 +1,4 @@
-const apiDichVuUrl = 'http://192.168.108.95:3000/api/dichvu';
+const apiDichVuUrl = 'http://192.168.1.2:3000/api/dichvu';
 
 
 async function fetchAllDichVu() {
@@ -30,7 +30,7 @@ async function renderDichVu() {
             <td>${dv.tenDichVu}</td>
             <td>${dv.giaDichVu}</td>
             <td>${dv.motaDichVu}</td>
-            <td><img src="${dv.anhDichVu}" alt="${dv.tenDichVu}" width="50"></td>
+            <td ><img src="${dv.anhDichVu}" alt="${dv.tenDichVu}" width="50"></td>
         `;
         dichVuTable.appendChild(row);
     });

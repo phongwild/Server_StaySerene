@@ -1,5 +1,5 @@
-const apiNhanVienUrl = 'http://192.168.108.95:3000/api/nhanvien';
-const apiKhachSanUrl = 'http://192.168.108.95:3000/api/hotela';
+const apiNhanVienUrl = 'http://192.168.1.2:3000/api/nhanvien';
+const apiKhachSanUrl = 'http://192.168.1.2:3000/api/hotela';
 
 async function fetchKhachSan(IdKhachSan) {
     try {

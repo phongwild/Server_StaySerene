@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('http://192.168.108.95:3000/api/admin');
+        const response = await fetch('http://192.168.1.2:3000/api/admin');
         if (!response.ok) {
             throw new Error('Không thể lấy danh sách tài khoản');
         }
