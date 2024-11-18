@@ -163,7 +163,7 @@ exports.xemTk = async (req, res) => {
         const accounts = await mdAccount.accountModel.find();
 
         if (!accounts || accounts.length === 0) {
-            return res.status(404).json({ error: 'Không tồn tại tài khoản' });
+            return res.status(200).json([]);
         }
 
         res.status(200).json(accounts);
@@ -172,6 +172,7 @@ exports.xemTk = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+
 
 
 exports.xoaTk = async (req, res, next) => {
