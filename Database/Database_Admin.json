@@ -1,5 +1,6 @@
 [
     {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb2" },
         "username": "admin1",
         "sdt": "123456789",
         "diaChi": "Hà Nội, Việt Nam",
@@ -14,6 +15,7 @@
         "cccd": "987654321"
     },
     {
+        "_id": { "$oid": "6707ed79df6d7c9585d8ebb3" },
         "username": "admin2",
         "sdt": "987654321",
         "diaChi": "Hồ Chí Minh, Việt Nam",
