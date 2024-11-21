@@ -1,5 +1,5 @@
-const apiUrl = 'http://192.168.1.2:3000/api/typeroom';
-const apiKhachSanUrl = 'http://192.168.1.2:3000/api/hotel';
+const apiUrl = 'http://192.168.1.4:3000/api/typeroom';
+const apiKhachSanUrl = 'http://192.168.1.4:3000/api/hotel';
 
 async function fetchKhachSan(IdKhachSan) {
     try {
@@ -195,8 +195,7 @@ async function addTyperoom() {
 
     const typeRoomExists = await checkTypeRoomExists(newTypeRoom.IdKhachSan, newTypeRoom.tenLoaiPhong);
     if (typeRoomExists) {
-        alert(`Bạn không thể thêm. Mã loại phòng ${newTypeRoom.tenLoaiPhong} đã tồn tại.`);
-        document.getElementById('customer-form').reset();
+        alert(`Bạn không thể thêm. tên loại phòng ${newTypeRoom.tenLoaiPhong} đã tồn tại ở khách sạn này.`);
         return;
     }
 
@@ -221,13 +220,19 @@ async function addTyperoom() {
     document.getElementById('customer-form').reset();
 }
 async function editTyperoom() {
-    if (!validateForm()) return;
     const IdKhachSan = document.getElementById('makhachsan').value.trim();
+    const IdLoaiPhong = document.getElementById('maloaiphong').value.trim();
     const khachSan = await fetchKhachSan(IdKhachSan);
+    if (IdLoaiPhong==="") {
+        alert('Vui lòng chọn loại phòng để cập nhật');
+        return;
+    }
+    if (!validateForm()) return;
     if (!khachSan) {
         alert('Khách sạn không tồn tại!');
         return;
     }
+    
     const updatedTypeRoom = {
         _id: document.getElementById('maloaiphong').value,
         IdKhachSan: document.getElementById('makhachsan').value,
@@ -263,8 +268,9 @@ async function editTyperoom() {
 }
 
 async function deleteTyperoom(id) {
-    if (!id) {
-        console.error('ID is undefined, cannot delete type room.');
+    const IdLoaiPhong = document.getElementById('maloaiphong').value.trim();
+    if (IdLoaiPhong==="") {
+        alert('Vui lòng chọn loại phòng muốn xóa');
         return;
     }
 
@@ -296,6 +302,7 @@ function searchTypeRooms() {
     const searchTenloaiphong = removeDiacritics(document.getElementById('search-tenloaiphong').value.toLowerCase().trim());
 
     const rows = document.querySelectorAll('#typeroom-list tr');
+    let hasResults = false; // Biến kiểm tra có kết quả hay không
 
     rows.forEach(row => {
         const cells = row.getElementsByTagName('td');
@@ -305,9 +312,33 @@ function searchTypeRooms() {
         const matchesMakhachsan = searchMakhachsan === '' || makhachsan.includes(searchMakhachsan);
         const matchesTenloaiphong = searchTenloaiphong === '' || tenloai.includes(searchTenloaiphong);
 
-        row.style.display = (matchesMakhachsan && matchesTenloaiphong) ? '' : 'none';
+        const isMatch = matchesMakhachsan && matchesTenloaiphong;
+        row.style.display = isMatch ? '' : 'none';
+
+        if (isMatch) {
+            hasResults = true; 
+        }
     });
+
+    const list = document.getElementById('typeroom-list');
+    const noResultsRow = document.getElementById('no-results-row');
+
+    if (!hasResults) {
+        if (!noResultsRow) {
+            const row = document.createElement('tr');
+            row.id = 'no-results-row';
+            row.innerHTML = `
+                <td colspan="4" style="text-align: center;">Không tìm thấy loại phòng</td>
+            `;
+            list.appendChild(row);
+        }
+    } else {
+        if (noResultsRow) {
+            noResultsRow.remove();
+        }
+    }
 }
+
 
 // Xóa dấu tiếng Việt
 function removeDiacritics(str) {

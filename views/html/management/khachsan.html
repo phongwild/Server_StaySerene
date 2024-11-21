@@ -28,9 +28,10 @@
                 <h1>Quản lý khách sạn</h1>
                 <div class="form-section">
                     <form id="customer-form">
-                            <input type="hidden" id="makhachsan" name="makhachsan" disabled>
-    
+                        <input style="height: 0px; width: 0px;" type="text" id="makhachsan" name="makhachsan" disabled>
+
                         <div class="form-group">
+
                             <label for="tenkhachsan">Tên khách sạn :</label>
                             <input type="text" id="name" name="name">
                         </div>
@@ -70,8 +71,8 @@
                             <button type="button" onclick="editCustomer()">Cập nhật</button>
                             <button type="button" onclick="deleteCustomer()">Xóa</button>
                             <div class="form-search">
-                                <label for="search">Tìm kiếm:</label>
-                                <input type="text" id="search" name="search">
+                                <label for="search" >Tìm kiếm:</label>
+                                <input type="text" placeholder="Nhập tên khách sạn" id="search" name="search">
                             </div>
                         </div>
                     </form>

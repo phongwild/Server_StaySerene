@@ -1,5 +1,5 @@
-var API = "http://192.168.1.2:3000/api/account";
-const apiOrderroombyUid = "http://192.168.1.2:3000/api/orderroombyUid";
+var API = "http://192.168.1.4:3000/api/account";
+const apiOrderroombyUid = "http://192.168.1.4:3000/api/orderroombyUid";
 var currenUser = [];
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
@@ -140,13 +140,13 @@ async function deleteCustomer() {
 
 
 
-// Hàm tìm kiếm 
 function searchTypeRooms() {
     const searchMakhachhang = removeDiacritics(document.getElementById('search-mkh').value.toLowerCase().trim());
     const searchTenkhachhang = removeDiacritics(document.getElementById('search-tkh').value.toLowerCase().trim());
     const searchDiachi = removeDiacritics(document.getElementById('search-diachi').value.toLowerCase().trim());
 
     const rows = document.querySelectorAll('#list-tk tr');
+    let hasResults = false; // Biến kiểm tra có kết quả hay không
 
     rows.forEach(row => {
         const cells = row.getElementsByTagName('td');
@@ -159,9 +159,35 @@ function searchTypeRooms() {
         const matchesTenkhachhang = searchTenkhachhang === '' || tenkhachhang.includes(searchTenkhachhang);
         const matchesDiachi = searchDiachi === '' || diachi.includes(searchDiachi);
 
-        row.style.display = (matchesMakhachhang && matchesTenkhachhang && matchesDiachi) ? '' : 'none';
+        const isMatch = matchesMakhachhang && matchesTenkhachhang && matchesDiachi;
+        row.style.display = isMatch ? '' : 'none';
+
+        if (isMatch) {
+            hasResults = true; // Nếu tìm thấy kết quả, đặt thành true
+        }
     });
+
+    const list = document.getElementById('list-tk');
+    const noResultsRow = document.getElementById('no-results-row');
+
+    if (!hasResults) {
+        // Nếu không có kết quả, hiển thị dòng thông báo
+        if (!noResultsRow) {
+            const row = document.createElement('tr');
+            row.id = 'no-results-row';
+            row.innerHTML = `
+                <td colspan="7" style="text-align: center;">Không tìm thấy khách hàng nào</td>
+            `;
+            list.appendChild(row);
+        }
+    } else {
+        // Nếu có kết quả, xóa dòng thông báo (nếu có)
+        if (noResultsRow) {
+            noResultsRow.remove();
+        }
+    }
 }
+
 
 
 function removeDiacritics(str) {

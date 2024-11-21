@@ -370,7 +370,7 @@ exports.suaPhongwed = async (req, res, next) => {
 
             await mdLoaiPhong.loaiPhongModel.findByIdAndUpdate(
                 newIdLoaiPhong,
-                { $inc: { soLuongPhong: 1 } }
+                { $inc: { soLuongPhong: +1 } }
             );
         }
 

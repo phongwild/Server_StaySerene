@@ -1,4 +1,4 @@
-const apiUrl = 'http://192.168.1.2:3000/api/hotel';
+const apiUrl = 'http://192.168.1.4:3000/api/hotel';
 
 // Kiểm tra số điện thoại hợp lệ
 function isValidPhoneNumber(phone) {
@@ -70,15 +70,41 @@ document.addEventListener('DOMContentLoaded', fetchHotels);
 function searchHotels() {
     const searchValue = removeDiacritics(document.getElementById('search').value.toLowerCase().trim());
     const rows = document.querySelectorAll('#customer-list tr');
+    let hasResults = false; // Biến kiểm tra có kết quả hay không
 
     rows.forEach(row => {
         const cells = row.getElementsByTagName('td');
-        const hotelId = removeDiacritics(cells[0].textContent.toLowerCase());
         const hotelName = removeDiacritics(cells[1].textContent.toLowerCase());
 
-        row.style.display = hotelId.includes(searchValue) || hotelName.includes(searchValue) ? '' : 'none';
+        const isMatch = hotelName.includes(searchValue);
+        row.style.display = isMatch ? '' : 'none';
+
+        if (isMatch) {
+            hasResults = true; // Nếu tìm thấy kết quả, đặt thành true
+        }
     });
+
+    const list = document.getElementById('customer-list');
+    const noResultsRow = document.getElementById('no-results-row');
+
+    if (!hasResults) {
+        // Nếu không có kết quả, hiển thị dòng thông báo
+        if (!noResultsRow) {
+            const row = document.createElement('tr');
+            row.id = 'no-results-row';
+            row.innerHTML = `
+                <td colspan="7" style="text-align: center;">Không tìm thấy khách sạn nào</td>
+            `;
+            list.appendChild(row);
+        }
+    } else {
+        // Nếu có kết quả, xóa dòng thông báo (nếu có)
+        if (noResultsRow) {
+            noResultsRow.remove();
+        }
+    }
 }
+
 
 // loại bỏ dấu khi tìm kiếm
 function removeDiacritics(str) {
@@ -117,12 +143,7 @@ async function addCustomer() {
     }
 
     const hotelExists = currentHotels.some(hotel => hotel._id === hotelId);
-    const nameExists = currentHotels.some(hotel => hotel.tenKhachSan === tenKhachSan && hotel.diaChi === diaChi);
-    if (hotelExists) {
-        alert(`Bạn không thể thêm . Mã khách sạn ${hotelId} đã tồn tại.`);
-        document.getElementById('customer-form').reset();
-        return;
-    }
+    const nameExists = currentHotels.some(hotel => hotel.tenKhachSan === tenKhachSan && hotel.diaChi === diaChi);   
     if (nameExists) {
         alert(`Bạn không thể thêm . Tên khách sạn ${tenKhachSan} đã có ở ${diaChi} .`);
         return;
@@ -194,7 +215,7 @@ async function fetchHotelDescription(hotelId) {
 async function deleteCustomer() {
     const hotelId = document.getElementById('makhachsan').value; 
 
-    if (!hotelId) {
+    if (hotelId=="") {
         alert('Vui lòng chọn khách sạn để xóa.');
         return; 
     }

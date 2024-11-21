@@ -1,11 +1,11 @@
-const apiTyperoomByIdHotelUrl = 'http://192.168.1.2:3000/api/typeroombyidhotel';
-const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typerooma';
-const apiRoomUrl = 'http://192.168.1.2:3000/api/roombyidhotel';
-const apiRoomUrla = 'http://192.168.1.2:3000/api/rooms';
-const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
-const apiKhachHang = "http://192.168.1.2:3000/api/accountbycccd";
-const apiOrderrooma = "http://192.168.1.2:3000/api/orderrooma";
-const apiDichVuUrl = 'http://192.168.1.2:3000/api/dichvu';
+const apiTyperoomByIdHotelUrl = 'http://192.168.1.4:3000/api/typeroombyidhotel';
+const apiTyperoomUrl = 'http://192.168.1.4:3000/api/typerooma';
+const apiRoomUrl = 'http://192.168.1.4:3000/api/roombyidhotel';
+const apiRoomUrla = 'http://192.168.1.4:3000/api/rooms';
+const apidatphongUrl = "http://192.168.1.4:3000/api/orderroombyidhotel";
+const apiKhachHang = "http://192.168.1.4:3000/api/accountbycccd";
+const apiOrderrooma = "http://192.168.1.4:3000/api/orderrooma";
+const apiDichVuUrl = 'http://192.168.1.4:3000/api/dichvu';
 
 
 
@@ -109,6 +109,22 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
         alert("Thời gian không hợp lệ. Vui lòng kiểm tra lại!");
         return;
     }
+    const startDatea = new Date(parseDateISO(timeGetInput));
+    const endDatea = new Date(parseDateISO(timeCheckoutInput));
+    const orderTime = new Date(); 
+    const timeDiff = endDatea - startDatea;  
+    const timeDiffa = startDatea - orderTime;  
+    const numberOfDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    const numberOfDaysa = Math.ceil(timeDiffa / (1000 * 3600 * 24));
+
+    if (numberOfDays <= 0) {
+        alert("Ngày trả phải sau ngày nhận");
+        return;
+    }
+    if (numberOfDaysa <= 0) {
+        alert("Thời gian nhận phòng phải sau thời gian hiện tại ");
+        return;
+    }
 
     const startDate = parseDateISO(timeGetInput);
     const endDate = parseDateISO(timeCheckoutInput);
@@ -161,7 +177,7 @@ async function bookRoom(roomId, uid, note, giaPhong,img) {
         return;
     }
     if (!formattedTimeGet || !formattedTimeCheckout) {
-        alert("Thời gian không hợp lệ. Vui lòng kiểm tra lại!");
+        alert("Thời gian phải có dạng HH:mm:ss dd:MM:yyyy. Vui lòng kiểm tra lại!");
         return;
     }
     const startDate = new Date(parseDateISO(timeGetInput));
@@ -174,11 +190,11 @@ async function bookRoom(roomId, uid, note, giaPhong,img) {
     const numberOfDaysa = Math.ceil(timeDiffa / (1000 * 3600 * 24));
 
     if (numberOfDays <= 0) {
-        alert("Thời gian nhận phòng phải sau thời gian đặt phòng");
+        alert("Ngày trả phải sau ngày nhận");
         return;
     }
     if (numberOfDaysa <= 0) {
-        alert("Ngày trả phải sau ngày nhận.");
+        alert("Thời gian nhận phòng phải sau thời gian đặt phòng ");
         return;
     }
     const total = numberOfDays * giaPhong + giaDichVu;
