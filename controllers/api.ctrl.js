@@ -801,7 +801,7 @@ exports.editOrderRoom = async (req, res) => {
         }
 
         console.log('Updated order:', updatedOrder);
-        res.status(200).json({ msg: 'Cập nhật đơn đặt phòng thành công', updatedOrder });
+        res.status(200).json([updatedOrder]);
     } catch (error) {
         console.error('Error updating order:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
