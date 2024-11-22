@@ -108,13 +108,6 @@ async function deleteCustomer() {
     }
 
     try {
-        const orderCheckRes = await fetch(`${apiOrderroombyUid}/${uid}`);
-        const orders = await orderCheckRes.json();
-
-        if (orders.length > 0) {
-            alert(`Khách hàng ${nameCustomer} có đơn đặt phòng, không thể xóa.`);
-            return;
-        }
 
         const confirmDelete = confirm('Bạn có chắc chắn muốn xóa khách hàng này?');
         if (!confirmDelete) return;
