@@ -1,10 +1,10 @@
-const apiTyperoomByIdHotelUrl = 'http://192.168.108.95:3000/api/typeroombyidhotel';
-const apiTyperoomUrl = 'http://192.168.108.95:3000/api/typerooma';
-const apiRoomUrl = 'http://192.168.108.95:3000/api/roombyidhotel';
-const apiRoomUrla = 'http://192.168.108.95:3000/api/rooms';
-const apidatphongUrl = "http://192.168.108.95:3000/api/orderroombyidhotel";
-const apiKhachHang = "http://192.168.108.95:3000/api/accountbycccd";
-const apiOrderrooma = "http://192.168.108.95:3000/api/orderrooma";
+const apiTyperoomByIdHotelUrl = 'http://10.62.4.33:3000/api/typeroombyidhotel';
+const apiTyperoomUrl = 'http://10.62.4.33:3000/api/typerooma';
+const apiRoomUrl = 'http://10.62.4.33:3000/api/roombyidhotel';
+const apiRoomUrla = 'http://10.62.4.33:3000/api/rooms';
+const apidatphongUrl = "http://10.62.4.33:3000/api/orderroombyidhotel";
+const apiKhachHang = "http://10.62.4.33:3000/api/accountbycccd";
+const apiOrderrooma = "http://10.62.4.33:3000/api/orderrooma";
 
 
 const hotelId = localStorage.getItem('IdKhachSan');

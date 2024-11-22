@@ -331,19 +331,34 @@ exports.suaPhong = async (req, res, next) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
+
+        // Kiểm tra ID hợp lệ
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({ error: 'ID phòng không đúng định dạng' });
         }
-        const updatedRoom = await mdPhong.phongModel.findByIdAndUpdate(id, updatedData, { new: true });
-        if (!updatedRoom) {
+
+        // Lấy thông tin phòng hiện tại
+        const currentRoom = await mdPhong.phongModel.findById(id);
+        if (!currentRoom) {
             return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
         }
+
+        // Tạo một đối tượng updatedData mới chỉ với trường TinhTrangPhong
+        const roomDataToUpdate = {
+            ...currentRoom.toObject(), // Giữ lại tất cả các trường hiện tại
+            ...updatedData, // Cập nhật các trường cần thiết (như TinhTrangPhong)
+        };
+
+        // Cập nhật phòng với các trường cần thiết
+        const updatedRoom = await mdPhong.phongModel.findByIdAndUpdate(id, roomDataToUpdate, { new: true });
+
         res.status(200).json([updatedRoom]);
     } catch (error) {
         console.error('Lỗi khi cập nhật thông tin phòng:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+
 
 exports.suaPhongwed = async (req, res, next) => {
     try {

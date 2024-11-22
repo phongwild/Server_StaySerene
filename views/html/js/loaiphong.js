@@ -1,5 +1,5 @@
-const apiUrl = 'http://192.168.108.95:3000/api/typeroom';
-const apiKhachSanUrl = 'http://192.168.108.95:3000/api/hotel';
+const apiUrl = 'http://10.62.4.33:3000/api/typeroom';
+const apiKhachSanUrl = 'http://10.62.4.33:3000/api/hotel';
 
 async function fetchKhachSan(IdKhachSan) {
     try {
