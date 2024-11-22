@@ -4,13 +4,41 @@
       "$oid": "6707f9b1df6d7c9585d8ec01"
     },
     "IdDatPhong": {
-      "$oid": "6707ed79df6d7c9585d8ebc1"
+      "$oid": "6707ed79df6d7c9585d8eb99"
     },
     "Uid": {
       "$oid": "6707ed79df6d7c9585d8ebaa"
     },
     "noiDung": "Dịch vụ rất tốt, nhân viên thân thiện!",
-    "thoiGian": "10-10-2024",
+    "thoiGian": "19:06:32 9/10/2024",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6707f9b1df6d7c9585d8ec03"
+    },
+    "IdDatPhong": {
+      "$oid": "6707ed79df6d7c9585d8eb88"
+    },
+    "Uid": {
+      "$oid": "6707ed79df6d7c9585d8ebac"
+    },
+    "noiDung": "Tôi mong có thêm nhiều dịch vụ hơn nữa",
+    "thoiGian": "10:10:00 10/10/2024",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6707f9b1df6d7c9585d8ec04"
+    },
+    "IdDatPhong": {
+      "$oid": "6707ed79df6d7c9585d8eb99"
+    },
+    "Uid": {
+      "$oid": "6707ed79df6d7c9585d8ebaa"
+    },
+    "noiDung": "Cảm ơn các bạn tôi đã có kỳ nghỉ vui vẻ ",
+    "thoiGian": "9:10:00 9/12/2024",
     "__v": 0
   }
 ]

@@ -8,7 +8,6 @@ var mdChamSoc = require('../model/chamSoc_model');
 var mdDichVu = require('../model/dichvu_model');
 
 var mdPhanHoi = require('../model/phanhoi_model');
-var mdYeuThich = require('../model/yeuthich_model');
 const { accountModel } = require('../model/account_model');
 
 
@@ -164,7 +163,7 @@ exports.xemTk = async (req, res) => {
         const accounts = await mdAccount.accountModel.find();
 
         if (!accounts || accounts.length === 0) {
-            return res.status(404).json({ error: 'Không tồn tại tài khoản' });
+            return res.status(200).json([]);
         }
 
         res.status(200).json(accounts);
@@ -173,6 +172,7 @@ exports.xemTk = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+
 
 
 exports.xoaTk = async (req, res, next) => {
@@ -385,7 +385,7 @@ exports.suaPhongwed = async (req, res, next) => {
 
             await mdLoaiPhong.loaiPhongModel.findByIdAndUpdate(
                 newIdLoaiPhong,
-                { $inc: { soLuongPhong: 1 } }
+                { $inc: { soLuongPhong: +1 } }
             );
         }
 
@@ -1257,9 +1257,8 @@ exports.themDichVu = async (req, res) => {
     try {
         const { tenDichVu, giaDichVu, motaDichVu, anhDichVu } = req.body;
 
-        // Validate dữ liệu
         if (!tenDichVu || tenDichVu.trim() === '') return res.status(400).json({ error: 'Tên dịch vụ không được để trống' });
-        if (typeof giaDichVu !== 'number' || giaDichVu <= 0 || giaDichVu >= 1000000000) return res.status(400).json({ error: 'Giá dịch vụ phải là số dương nhỏ hơn 1 tỷ' });
+        if (typeof giaDichVu !== 'number' || giaDichVu < 0 || giaDichVu >= 1000000000) return res.status(400).json({ error: 'Giá dịch vụ phải là số dương nhỏ hơn 1 tỷ' });
         if (motaDichVu && motaDichVu.length > 1000) return res.status(400).json({ error: 'Mô tả dịch vụ không được vượt quá 1000 ký tự' });
         if (anhDichVu && !/^(https?:\/\/[^\s$.?#].[^\s]*)$/.test(anhDichVu)) return res.status(400).json({ error: 'URL ảnh dịch vụ không hợp lệ' });
 

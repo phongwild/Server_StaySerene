@@ -154,7 +154,7 @@ async function addRoom() {
     const maKhachSan = document.getElementById('makhachsan').value;
     const maLoaiPhong = document.getElementById('maloaiphong').value;
 
-    if (!maKhachSan) {
+    if (maKhachSan==="") {
         alert('Vui lòng chọn khách sạn.');
         return;
     }
@@ -177,7 +177,7 @@ async function addRoom() {
 
         const isDuplicate = rooms.some(room => room.soPhong == soPhong && room.IdLoaiPhong === maLoaiPhong);
         if (isDuplicate) {
-            alert('Số phòng và mã loại phòng đã tồn tại. Không thể thêm phòng mới.');
+            alert(`Số phòng ${soPhong} của loại phòng này đã tồn tại. Không thể thêm.`);
             return;
         }
 
@@ -273,7 +273,7 @@ async function updateRoom() {
 
         const isDuplicate = rooms.some(room => room.soPhong == soPhong && room.IdLoaiPhong === maLoaiPhong);
         if (isDuplicate) {
-            alert('Số phòng và mã loại phòng đã tồn tại. Không thể cập nhật.');
+            alert(`Số phòng ${soPhong} của loại phòng này đã tồn tại. Không thể cập nhật.`);
             return;
         }
 
@@ -353,7 +353,7 @@ async function deleteRoom() {
                 },
                 body: JSON.stringify({ soLuongPhong: updatedRoomCount })
             });
-
+            document.getElementById('customer-form').reset();
             alert('Xóa phòng thành công');
             fetchRoomData();
         } catch (error) {
@@ -364,11 +364,12 @@ async function deleteRoom() {
 }
 
 function searchRooms() {
-    const maphongSearch = removeDiacritics(document.getElementById('search-maphong').value.toLowerCase());
-    const loaiphongSearch = removeDiacritics(document.getElementById('search-tenloaiphong').value.toLowerCase());
-    const sophongSearch = removeDiacritics(document.getElementById('search-sophong').value.toLowerCase());
+    const maphongSearch = removeDiacritics(document.getElementById('search-maphong').value.toLowerCase().trim());
+    const loaiphongSearch = removeDiacritics(document.getElementById('search-tenloaiphong').value.toLowerCase().trim());
+    const sophongSearch = removeDiacritics(document.getElementById('search-sophong').value.toLowerCase().trim());
 
     const rows = document.querySelectorAll('#customer-list tr');
+    let hasResults = false; 
 
     rows.forEach(row => {
         const maphong = removeDiacritics(row.cells[1].textContent.toLowerCase());
@@ -383,11 +384,31 @@ function searchRooms() {
             (loaiphongSearch === '' || matchesLoạiPhong) &&
             (sophongSearch === '' || matchesSốPhong)) {
             row.style.display = '';
+            hasResults = true; 
         } else {
             row.style.display = 'none'; 
         }
     });
+
+    const list = document.getElementById('customer-list');
+    const noResultsRow = document.getElementById('no-results-row');
+
+    if (!hasResults) {
+        if (!noResultsRow) {
+            const row = document.createElement('tr');
+            row.id = 'no-results-row';
+            row.innerHTML = `
+                <td colspan="3" style="text-align: center;">Không tìm thấy phòng</td>
+            `;
+            list.appendChild(row);
+        }
+    } else {
+        if (noResultsRow) {
+            noResultsRow.remove();
+        }
+    }
 }
+
 
 document.getElementById('searchBtn').addEventListener('click', function (event) {
     event.preventDefault();

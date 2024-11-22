@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const account_adminSchema = new db.mongoose.Schema(
     {
         username: { type: String, required: true },
-        sdt: { type: Number, required: false, default: 123456789 },
+        sdt: { type: String, required: false, default: 123456789 },
         diaChi: { type: String, required: false, default: "" },
         email: { type: String, required: true },
         password: { type: String, required: true },

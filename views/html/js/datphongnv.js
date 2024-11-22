@@ -25,6 +25,21 @@ async function fetchRoomTypeById(idLoaiPhong) {
     return roomTypeData.tenLoaiPhong; 
 }
 
+async function fetchServices() {
+    try {
+        const response = await fetch(apiDichVuUrl);
+        if (response.ok) {
+            const services = await response.json();
+            return services;
+        } else {
+            console.error("Không thể tải danh sách dịch vụ.");
+            return [];
+        }
+    } catch (error) {
+        console.error("Có lỗi xảy ra khi tải danh sách dịch vụ:", error);
+        return [];
+    }
+}
 
 async function fetchRooms() {
     const response = await fetch(`${apiRoomUrl}/${hotelId}`);
@@ -92,6 +107,22 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
         alert("Thời gian không hợp lệ. Vui lòng kiểm tra lại!");
         return;
     }
+    const startDatea = new Date(parseDateISO(timeGetInput));
+    const endDatea = new Date(parseDateISO(timeCheckoutInput));
+    const orderTime = new Date(); 
+    const timeDiff = endDatea - startDatea;  
+    const timeDiffa = startDatea - orderTime;  
+    const numberOfDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    const numberOfDaysa = Math.ceil(timeDiffa / (1000 * 3600 * 24));
+
+    if (numberOfDays <= 0) {
+        alert("Ngày trả phải sau ngày nhận");
+        return;
+    }
+    if (numberOfDaysa <= 0) {
+        alert("Thời gian nhận phòng phải sau thời gian hiện tại ");
+        return;
+    }
 
     const startDate = parseDateISO(timeGetInput);
     const endDate = parseDateISO(timeCheckoutInput);
@@ -134,32 +165,43 @@ document.getElementById("searchBtn").addEventListener("click", async function() 
 async function bookRoom(roomId, uid, note, giaPhong,img) {
     const timeGetInput = document.getElementById("thoiGianNhan").value;
     const timeCheckoutInput = document.getElementById("thoiGianTra").value;
-
+    const serviceId = document.getElementById("tenDichVu").value;
+    const giaDichVuInput = document.getElementById("giadichVu").value;
+    const giaDichVu = parseFloat(giaDichVuInput.replace(/[^0-9.-]+/g, "")) || 0;
     const formattedTimeGet = formatDateForBooking(timeGetInput);
     const formattedTimeCheckout = formatDateForBooking(timeCheckoutInput);
-
+    if (!serviceId) {
+        alert("Vui lòng chọn dịch vụ.");
+        return;
+    }
     if (!formattedTimeGet || !formattedTimeCheckout) {
-        alert("Thời gian không hợp lệ. Vui lòng kiểm tra lại!");
+        alert("Thời gian phải có dạng HH:mm:ss dd:MM:yyyy. Vui lòng kiểm tra lại!");
         return;
     }
     const startDate = new Date(parseDateISO(timeGetInput));
     const endDate = new Date(parseDateISO(timeCheckoutInput));
-
-    const timeDiff = endDate - startDate;  
-    const numberOfDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-
-    if (numberOfDays <= 0) {
-        alert("Ngày trả phải sau ngày nhận.");
-        return;
-    }
-    const total = numberOfDays * giaPhong;
     const orderTime = new Date(); 
     const formattedOrderTime = formatDateForBookingod(orderTime);
+    const timeDiff = endDate - startDate;  
+    const timeDiffa = startDate - orderTime;  
+    const numberOfDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    const numberOfDaysa = Math.ceil(timeDiffa / (1000 * 3600 * 24));
+
+    if (numberOfDays <= 0) {
+        alert("Ngày trả phải sau ngày nhận");
+        return;
+    }
+    if (numberOfDaysa <= 0) {
+        alert("Thời gian nhận phòng phải sau thời gian đặt phòng ");
+        return;
+    }
+    const total = numberOfDays * giaPhong + giaDichVu;
+    
 
     const orderData = {
         IdPhong: roomId,
         Uid: uid,
-        IdDichVu: "6707ed79df6d7c9585d8ebac", 
+        IdDichVu: serviceId, 
         orderTime: formattedOrderTime,       
         timeGet: formattedTimeGet,           
         timeCheckout: formattedTimeCheckout, 
@@ -216,6 +258,28 @@ document.getElementById('uid').addEventListener('input', async function() {
         nameField.value = "";
     }
 });
+async function populateServiceDropdown() {
+    const serviceDropdown = document.getElementById("tenDichVu");
+    serviceDropdown.innerHTML = '<option value="">Vui lòng chọn dịch vụ</option>'; 
+
+    const services = await fetchServices();
+    services.forEach(service => {
+        const option = document.createElement("option");
+        option.value = service._id; 
+        option.textContent = service.tenDichVu; 
+        option.dataset.giaDichVu = service.giaDichVu; 
+        serviceDropdown.appendChild(option);
+    });
+}
+document.getElementById("tenDichVu").addEventListener("change", function () {
+    const selectedOption = this.options[this.selectedIndex];
+    const giaDichVuInput = document.getElementById("giadichVu");
+    const giaDichVu = selectedOption.dataset.giaDichVu || ""; 
+
+    giaDichVuInput.value = giaDichVu ? `${giaDichVu} VNĐ` : "";
+});
+
+document.addEventListener("DOMContentLoaded", populateServiceDropdown);
 
 function confirmLogout(event) {
     event.preventDefault();

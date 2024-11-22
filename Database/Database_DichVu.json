@@ -1,72 +1,38 @@
 [
     {
-        "_id": { "$oid": "6707ed79df6d7c9585d8ebaa" },
-        "tenDichVu": "Dịch vụ dọn phòng",
-        "giaDichVu": 100000,
-        "motaDichVu": "Dịch vụ dọn dẹp và thay đổi ga trải giường.",
-        "anhDichVu": "https://example.com/images/donphong.jpg"
-    },
-    {
-        "_id": { "$oid": "6707ed79df6d7c9585d8ebab" },
-        "tenDichVu": "Dịch vụ ăn tối tại phòng",
-        "giaDichVu": 200000,
-        "motaDichVu": "Giao đồ ăn tận phòng cho khách hàng.",
-        "anhDichVu": "https://example.com/images/antoin.jpg"
-    },
-    {
-        "_id": { "$oid": "6707ed79df6d7c9585d8ebac" },
-        "tenDichVu": "Dịch vụ lễ tân 24/7",
+        "_id": { "$oid": "6707ed79df6d7c9585d8eb99" },
+        "tenDichVu": "No service required.",
         "giaDichVu": 0,
-        "motaDichVu": "Hỗ trợ khách hàng mọi lúc với đội ngũ lễ tân chuyên nghiệp.",
-        "anhDichVu": "https://example.com/images/letan.jpg"
+        "motaDichVu": "No service required.",
+        "anhDichVu": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb1nbU8atwJ5mD3NURbq7JpRpGqnxCzfrDm7-mbTmzAm9waZk_l0DO82CbQaqO1agexJI&usqp=CAU"
     },
-    {
-        "_id": { "$oid": "6707ed79df6d7c9585d8ebad" },
-        "tenDichVu": "Dịch vụ giữ hành lý",
-        "giaDichVu": 50000,
-        "motaDichVu": "Giữ hành lý an toàn cho khách khi làm thủ tục nhận phòng.",
-        "anhDichVu": "https://example.com/images/giu_hanh_ly.jpg"
-    },
-    {
-        "_id": { "$oid": "6707ed79df6d7c9585d8ebae" },
-        "tenDichVu": "Dịch vụ gym và spa",
-        "giaDichVu": 300000,
-        "motaDichVu": "Truy cập vào phòng gym và spa thư giãn.",
-        "anhDichVu": "https://example.com/images/gym_spa.jpg"
-    },
+
     {
         "_id": { "$oid": "6707ed79df6d7c9585d8ebaf" },
-        "tenDichVu": "Dịch vụ tour du lịch",
-        "giaDichVu": 250000,
-        "motaDichVu": "Tổ chức các tour tham quan địa phương cho khách.",
-        "anhDichVu": "https://example.com/images/tour.jpg"
-    },
-    {
-        "_id": { "$oid": "6707ed79df6d7c9585d8ebb0" },
-        "tenDichVu": "Dịch vụ internet miễn phí",
-        "giaDichVu": 0,
-        "motaDichVu": "Cung cấp internet không dây miễn phí trong khuôn viên khách sạn.",
-        "anhDichVu": "https://example.com/images/internet.jpg"
+        "tenDichVu": "Tourist services",
+        "giaDichVu": 1500000,
+        "motaDichVu": "Organize local sightseeing tours for guests.",
+        "anhDichVu": "https://luanvan24.com/wp-content/uploads/2020/08/hinh-anh-dich-vu-du-lich-la-gi-4.jpg"
     },
     {
         "_id": { "$oid": "6707ed79df6d7c9585d8ebb1" },
-        "tenDichVu": "Dịch vụ đặt vé máy bay",
-        "giaDichVu": 75000,
-        "motaDichVu": "Hỗ trợ khách đặt vé máy bay đi và về.",
-        "anhDichVu": "https://example.com/images/datve.jpg"
+        "tenDichVu": "Flight booking service",
+        "giaDichVu": 100000,
+        "motaDichVu": "Support customers in booking round-trip flight tickets.",
+        "anhDichVu": "https://trangvangamthuc.com/wp-content/uploads/2021/02/dat-ve-may-bay-di-du-lich.jpg"
     },
     {
         "_id": { "$oid": "6707ed79df6d7c9585d8ebb2" },
-        "tenDichVu": "Dịch vụ cho thuê xe",
+        "tenDichVu": "Car rental service",
         "giaDichVu": 300000,
-        "motaDichVu": "Cho thuê xe ô tô hoặc xe máy cho khách.",
-        "anhDichVu": "https://example.com/images/thuexe.jpg"
+        "motaDichVu": "Car or motorcycle rental for customers.",
+        "anhDichVu": "https://lh3.googleusercontent.com/proxy/D7pxothZ0SRGWmg8xbnLQrHlBMtsMaVkNgBT6wjsv-uMpQXnDYcTdSpHlMbyF0JzWWFudPx6Kc39YvCA21IwpNJVGwBq4e0LnoULAjpNInuW6WxA8Ski84BM834HjsAigw2IF_dfRz95r-aQHwIISg"
     },
     {
         "_id": { "$oid": "6707ed79df6d7c9585d8ebb3" },
-        "tenDichVu": "Dịch vụ phục vụ cà phê",
-        "giaDichVu": 60000,
-        "motaDichVu": "Phục vụ cà phê và đồ uống tại quầy bar hoặc trong phòng.",
-        "anhDichVu": "https://example.com/images/cafe.jpg"
+        "tenDichVu": "Shuttle service",
+        "giaDichVu": 500000,
+        "motaDichVu": "Private home or airport shuttle service.",
+        "anhDichVu": "https://cdn-file.alotrip.com/photo/others/dich-vu-dua-don-san-bay-giup-tiet-kiem-thoi-gian-758.jpeg"
     }
 ]
