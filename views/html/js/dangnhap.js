@@ -14,7 +14,6 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         const adminAccount = accounts.find(account => account.email === email && account.password === password);
 
         if (adminAccount) {
-            alert('Đăng nhập thành công!');
             window.location.href = '../management/khachhang.html'; 
         } else {
             alert('Thông tin đăng nhập không chính xác.');
