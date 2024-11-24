@@ -1,4 +1,4 @@
-const apiDichVuUrl = 'http://192.168.1.4:3000/api/dichvu';
+const apiDichVuUrl = 'http://10.62.4.33:3000/api/dichvu';
 
 
 async function fetchAllDichVu() {

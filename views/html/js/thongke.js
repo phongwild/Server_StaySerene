@@ -1,7 +1,7 @@
-const apiHotelUrl = 'http://192.168.1.4:3000/api/hotel';
-const apiTyperoomUrl = 'http://192.168.1.4:3000/api/typeroom';
-const apiRoomUrl = 'http://192.168.1.4:3000/api/rooms';
-const apiOrderRoomUrl = 'http://192.168.1.4:3000/api/orderroom/status3';
+const apiHotelUrl = 'http://10.62.4.33:3000/api/hotel';
+const apiTyperoomUrl = 'http://10.62.4.33:3000/api/typeroom';
+const apiRoomUrl = 'http://10.62.4.33:3000/api/rooms';
+const apiOrderRoomUrl = 'http://10.62.4.33:3000/api/orderroom/status3';
 
 function fetchHotels() {
     fetch(apiHotelUrl)

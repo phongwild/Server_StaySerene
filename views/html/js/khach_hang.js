@@ -1,5 +1,5 @@
-var API = "http://192.168.1.4:3000/api/account";
-const apiOrderroombyUid = "http://192.168.1.4:3000/api/orderroombyUid";
+var API = "http://10.62.4.33:3000/api/account";
+const apiOrderroombyUid = "http://10.62.4.33:3000/api/orderroombyUid";
 var currenUser = [];
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
