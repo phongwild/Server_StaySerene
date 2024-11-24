@@ -141,6 +141,8 @@ async function displayLichSus(lichsus) {
     const customer = await fetchCustomerById(Uid);
     const customerName = customer ? customer.username : "Không tìm thấy tên khách hàng";
     const customerCCCD= customer ? customer.cccd : "Không tìm thấy tên khách hàng";
+    const customerSDT= customer ? customer.sdt : "Không tìm thấy SDT khách hàng";
+    const customerEmail= customer ? customer.email : "Không tìm thấy Email khách hàng";
 
     row.innerHTML = `
       <td class="hidden">${mdp}</td>
@@ -160,6 +162,8 @@ async function displayLichSus(lichsus) {
       document.getElementById("TenKhachHang").value = customerName;
       document.getElementById("phong1").value = phongID;
       document.getElementById("thoiGianDat").value = thoiGianDatPhong;
+      document.getElementById("sdt").value = customerSDT;
+      document.getElementById("email").value = customerEmail;
       document.getElementById("thoiGianNhan").value = thoiGianNhan;
       document.getElementById("thoiGianTra").value = thoiGianTra;
       document.getElementById("ghiChu").value = ghiChu;
