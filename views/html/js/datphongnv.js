@@ -1,11 +1,11 @@
-const apiTyperoomByIdHotelUrl = 'http://192.168.1.2:3000/api/typeroombyidhotel';
-const apiTyperoomUrl = 'http://192.168.1.2:3000/api/typerooma';
-const apiRoomUrl = 'http://192.168.1.2:3000/api/roombyidhotel';
-const apiRoomUrla = 'http://192.168.1.2:3000/api/rooms';
-const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
-const apiKhachHang = "http://192.168.1.2:3000/api/accountbycccd";
-const apiOrderrooma = "http://192.168.1.2:3000/api/orderrooma";
-const apiDichVuUrl = 'http://192.168.1.2:3000/api/dichvu';
+const apiTyperoomByIdHotelUrl = 'http://192.168.10.103:3000/api/typeroombyidhotel';
+const apiTyperoomUrl = 'http://192.168.10.103:3000/api/typerooma';
+const apiRoomUrl = 'http://192.168.10.103:3000/api/roombyidhotel';
+const apiRoomUrla = 'http://192.168.10.103:3000/api/rooms';
+const apidatphongUrl = "http://192.168.10.103:3000/api/orderroombyidhotel";
+const apiKhachHang = "http://192.168.10.103:3000/api/accountbycccd";
+const apiOrderrooma = "http://192.168.10.103:3000/api/orderrooma";
+const apiDichVuUrl = 'http://192.168.10.103:3000/api/dichvu';
 
 
 
