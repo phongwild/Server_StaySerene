@@ -328,7 +328,7 @@ async function editCustomernhanvien() {
     const email = document.getElementById('email').value;
     const gioLam = document.getElementById('gioLam').value;
 
-    if (!NhanVienId) {
+    if (NhanVienId==="") {
         alert('Vui lòng chọn nhân viên cần sửa.');
         return;
     }
@@ -385,6 +385,7 @@ function searchTypeRooms() {
     const searchTennhanvien = removeDiacritics(document.getElementById('search-tennhanvien').value.toLowerCase().trim());
 
     const rows = document.querySelectorAll('#customer-list tr');
+    let hasResults = false; // Biến kiểm tra có kết quả hay không
 
     rows.forEach(row => {
         const cells = row.getElementsByTagName('td');
@@ -393,12 +394,38 @@ function searchTypeRooms() {
         const tennhanvien = removeDiacritics(cells[3].textContent.toLowerCase());
 
         const matchesMakhachsan = searchMakhachsan === '' || makhachsan.includes(searchMakhachsan);
-        const matchesMaloaiphong = searchManhanvien === '' || manhanvien.includes(searchManhanvien);
-        const matchesTenloaiphong = searchTennhanvien === '' || tennhanvien.includes(searchTennhanvien);
+        const matchesManhanvien = searchManhanvien === '' || manhanvien.includes(searchManhanvien);
+        const matchesTennhanvien = searchTennhanvien === '' || tennhanvien.includes(searchTennhanvien);
 
-        row.style.display = (matchesMakhachsan && matchesMaloaiphong && matchesTenloaiphong) ? '' : 'none';
+        const isMatch = matchesMakhachsan && matchesManhanvien && matchesTennhanvien;
+        row.style.display = isMatch ? '' : 'none';
+
+        if (isMatch) {
+            hasResults = true; // Nếu tìm thấy kết quả, đặt thành true
+        }
     });
+
+    const list = document.getElementById('customer-list');
+    const noResultsRow = document.getElementById('no-results-row');
+
+    if (!hasResults) {
+        // Nếu không có kết quả, hiển thị dòng thông báo
+        if (!noResultsRow) {
+            const row = document.createElement('tr');
+            row.id = 'no-results-row';
+            row.innerHTML = `
+                <td colspan="7" style="text-align: center;">Không tìm thấy nhân viên nào</td>
+            `;
+            list.appendChild(row);
+        }
+    } else {
+        // Nếu có kết quả, xóa dòng thông báo (nếu có)
+        if (noResultsRow) {
+            noResultsRow.remove();
+        }
+    }
 }
+
 
 // Xóa dấu tiếng Việt
 function removeDiacritics(str) {

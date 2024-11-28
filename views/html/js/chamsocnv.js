@@ -37,6 +37,11 @@ async function fetchAccountInfo(uid) {
             throw new Error('Mạng không phản hồi đúng');
         }
         const accountData = await response.json();
+        //Lấy token
+        const token = accountData.token;
+        if (token) {
+            localStorage.setItem('token', token);
+        }
         return accountData;
     } catch (error) {
         return null; 
@@ -211,20 +216,23 @@ function searchItems() {
     });
 }
 
+
 async function sendMessage() {
     const messageInput = document.querySelector('.message-input input');
     const messageContent = messageInput.value.trim();
 
+    // Kiểm tra nếu chưa chọn khách hàng hoặc chưa có nội dung tin nhắn
     if (!selectedIdKhachSan || !selectedUid) {
         alert('Vui lòng chọn khách hàng trước khi gửi tin nhắn!');
-        return; 
+        return;
     }
 
     if (!messageContent) {
         alert('Nội dung tin nhắn không thể trống!');
-        return; 
+        return;
     }
 
+    // Tạo đối tượng dữ liệu gửi đến server
     const newChamSoc = {
         noiDungGui: messageContent,
         thoiGianGui: new Date().toISOString(), // Định dạng yyyy-MM-dd'T'HH:mm:ss'Z'
@@ -232,10 +240,13 @@ async function sendMessage() {
         trangThaiKh: 1,
         trangThaiNv: 2,
         Uid: selectedUid,
-        IdKhachSan: selectedIdKhachSan
+        IdKhachSan: selectedIdKhachSan,
+        userTokenFCM: localStorage.getItem('token') // Lấy token FCM từ localStorage
     };
 
+    console.log('Dữ liệu gửi đi:', newChamSoc);
     try {
+        // Gửi yêu cầu tới API server để lưu tin nhắn và gửi thông báo
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
@@ -244,18 +255,25 @@ async function sendMessage() {
             body: JSON.stringify(newChamSoc)
         });
 
+        // Kiểm tra lỗi từ server
         if (!response.ok) {
-            throw new Error('Mạng không phản hồi đúng');
+            const errorMessage = `Lỗi: ${response.status} - ${response.statusText}`;
+            throw new Error(errorMessage);
         }
 
         const result = await response.json();
         console.log('Tin nhắn đã được gửi:', result);
+
+        // Xóa nội dung tin nhắn sau khi gửi
         messageInput.value = '';
+
+        // Cập nhật lại danh sách tin nhắn
         await fetchChamSoc();
     } catch (error) {
-        console.error('Lỗi khi gửi tin nhắn:', error);
+        console.error('Lỗi khi gửi tin nhắn:', error.message);
     }
 }
+
 
 
 document.querySelector('.message-input button').addEventListener('click', sendMessage);

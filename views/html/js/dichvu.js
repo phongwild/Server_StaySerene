@@ -18,7 +18,7 @@ async function fetchAllDichVu() {
 async function renderDichVu() {
     const dichVuList = await fetchAllDichVu();
     const dichVuTable = document.getElementById('dichvu-list');
-    dichVuTable.innerHTML = ''; // Xóa nội dung cũ
+    dichVuTable.innerHTML = ''; 
 
     dichVuList.forEach(dv => {
         const row = document.createElement('tr');
@@ -54,7 +54,6 @@ async function addDichVu() {
     const motaDichVu = document.getElementById('motaDichVu').value.trim();
     const anhDichVu = document.getElementById('anhDichVu').value.trim();
 
-    // Validate
     if (!tenDichVu) {
         alert('Tên dịch vụ không được để trống');
         return;
@@ -103,10 +102,18 @@ async function addDichVu() {
 
 async function editDichVu() {
     const maDichVu = document.getElementById('maDichVu').value.trim();
-    if (!maDichVu) {
+    const tenDichVu = document.getElementById('tenDichVu').value.trim();
+    const motaDichVu = document.getElementById('motaDichVu').value.trim();
+    const anhDichVu = document.getElementById('anhDichVu').value.trim();
+    if (maDichVu=="") {
         alert('Vui lòng chọn dịch vụ để sửa!');
         return;
     }
+    if (!tenDichVu) {
+        alert('Tên dịch vụ không được để trống');
+        return;
+    }
+    
 
     const giaDichVuValue = parseFloat(document.getElementById('giaDichVu').value.trim());
     if (isNaN(giaDichVuValue) || giaDichVuValue < 0) {
@@ -117,7 +124,14 @@ async function editDichVu() {
         alert('Giá dịch vụ quá lớn');
         return;
     }
-
+    if (motaDichVu.length > 1000) {
+        alert('Mô tả dịch vụ không được vượt quá 1000 ký tự');
+        return;
+    }
+    if (anhDichVu && !/^https?:\/\/[^\s$.?#].[^\s]*$/.test(anhDichVu)) {
+        alert('URL ảnh dịch vụ không hợp lệ');
+        return;
+    }
     const updatedDichVu = {
         tenDichVu: document.getElementById('tenDichVu').value.trim(),
         giaDichVu: giaDichVuValue,
@@ -148,8 +162,8 @@ async function editDichVu() {
 
 async function deleteDichVu() {
     const maDichVu = document.getElementById('maDichVu').value.trim();
-    if (!maDichVu) {
-        alert('Vui lòng chọn dịch vụ để xóa!');
+    if (maDichVu=="") {
+        alert('Vui lòng chọn dịch vụ để sửa!');
         return;
     }
 

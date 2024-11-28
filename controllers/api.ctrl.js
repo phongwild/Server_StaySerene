@@ -16,6 +16,7 @@ var mdAccount_admin = require('../model/acount_admin_model');
 var mdNhanVien = require('../model/acconut_nhanvien_model');
 const bcrypt = require("bcrypt");
 const { default: mongoose } = require('mongoose');
+const { getAccessToken } = require('./getAccessToken');
 
 
 //Account
@@ -163,7 +164,7 @@ exports.xemTk = async (req, res) => {
         const accounts = await mdAccount.accountModel.find();
 
         if (!accounts || accounts.length === 0) {
-            return res.status(404).json({ error: 'Không tồn tại tài khoản' });
+            return res.status(200).json([]);
         }
 
         res.status(200).json(accounts);
@@ -172,6 +173,7 @@ exports.xemTk = async (req, res) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+
 
 
 exports.xoaTk = async (req, res, next) => {
@@ -330,19 +332,34 @@ exports.suaPhong = async (req, res, next) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
+
+        // Kiểm tra ID hợp lệ
         if (!mongoose.Types.ObjectId.isValid(id)) {
             return res.status(400).json({ error: 'ID phòng không đúng định dạng' });
         }
-        const updatedRoom = await mdPhong.phongModel.findByIdAndUpdate(id, updatedData, { new: true });
-        if (!updatedRoom) {
+
+        // Lấy thông tin phòng hiện tại
+        const currentRoom = await mdPhong.phongModel.findById(id);
+        if (!currentRoom) {
             return res.status(404).json({ error: 'Không tìm thấy phòng với ID đã cho' });
         }
+
+        // Tạo một đối tượng updatedData mới chỉ với trường TinhTrangPhong
+        const roomDataToUpdate = {
+            ...currentRoom.toObject(), // Giữ lại tất cả các trường hiện tại
+            ...updatedData, // Cập nhật các trường cần thiết (như TinhTrangPhong)
+        };
+
+        // Cập nhật phòng với các trường cần thiết
+        const updatedRoom = await mdPhong.phongModel.findByIdAndUpdate(id, roomDataToUpdate, { new: true });
+
         res.status(200).json([updatedRoom]);
     } catch (error) {
         console.error('Lỗi khi cập nhật thông tin phòng:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+
 
 exports.suaPhongwed = async (req, res, next) => {
     try {
@@ -369,7 +386,7 @@ exports.suaPhongwed = async (req, res, next) => {
 
             await mdLoaiPhong.loaiPhongModel.findByIdAndUpdate(
                 newIdLoaiPhong,
-                { $inc: { soLuongPhong: 1 } }
+                { $inc: { soLuongPhong: +1 } }
             );
         }
 
@@ -785,7 +802,7 @@ exports.editOrderRoom = async (req, res) => {
         }
 
         console.log('Updated order:', updatedOrder);
-        res.status(200).json({ msg: 'Cập nhật đơn đặt phòng thành công', updatedOrder });
+        res.status(200).json([updatedOrder]);
     } catch (error) {
         console.error('Error updating order:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -1048,10 +1065,13 @@ exports.suaNhanVien = async (req, res, next) => {
     }
 }
 
-//Thêm Chăm Sóc
+// Thêm Chăm Sóc
 exports.themChamSoc = async (req, res) => {
     try {
-        const { IdKhachSan, Uid, thoiGianGui, noiDungGui, vaiTro, trangThaiKh, trangThaiNv } = req.body;
+        // Lấy dữ liệu từ request body
+        const { IdKhachSan, Uid, thoiGianGui, noiDungGui, vaiTro, trangThaiKh, trangThaiNv, userTokenFCM } = req.body;
+
+        // Lưu thông tin chăm sóc vào cơ sở dữ liệu
         const newChamSoc = await mdChamSoc.ChamSocModel.create({
             IdKhachSan,
             Uid,
@@ -1059,13 +1079,68 @@ exports.themChamSoc = async (req, res) => {
             noiDungGui,
             vaiTro,
             trangThaiKh,
-            trangThaiNv
+            trangThaiNv,
+            userTokenFCM
         });
-        return res.status(201).json({ message: 'Thêm thành công', newChamSoc });
+
+        // Kiểm tra nếu vaiTro khác "Khách sạn", không gửi thông báo
+        if (vaiTro !== 'Khách sạn') {
+            return res.status(201).json({
+                message: 'Thêm chăm sóc thành công, nhưng không gửi thông báo vì vai trò không phải là "Khách sạn"',
+                data: newChamSoc,
+            });
+        }
+
+        // URL gửi thông báo FCM
+        const fcmUrl = 'https://fcm.googleapis.com/v1/projects/stayserene-f36b5/messages:send';
+        const messageData = {
+            "message": {
+                "token": userTokenFCM, // Token của người nhận
+                "notification": {
+                    "title": "New message!",
+                    "body": `You have a new message: ${noiDungGui}` // Nội dung tin nhắn mới
+                }
+            }
+        };
+
+        // Lấy token truy cập FCM
+        const token = await getAccessToken();
+
+        // Gửi thông báo FCM
+        const response = await fetch(fcmUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`, // Token truy cập FCM
+            },
+            body: JSON.stringify(messageData),
+        });
+
+        // Chờ và lấy dữ liệu trả về từ FCM
+        const resData = await response.json();
+
+        // Kiểm tra kết quả từ FCM
+        if (response.ok) {
+            return res.status(201).json({
+                message: 'Thêm chăm sóc thành công và gửi thông báo thành công',
+                data: resData,
+            });
+        } else {
+            // Nếu có lỗi khi gửi thông báo
+            return res.status(500).json({
+                message: 'Thêm thành công nhưng không thể gửi thông báo',
+                error: resData.error || 'Không có lỗi chi tiết từ FCM',
+            });
+        }
     } catch (error) {
-        return res.status(500).json({ error: 'Server error: ' + error.message });
+        // Bắt lỗi và trả về thông báo lỗi chi tiết
+        return res.status(500).json({
+            error: 'Server error: ' + error.message,
+        });
     }
 };
+
+
 //hien thi cham soc 
 exports.getChamSoc = async (req, res) => {
     try {
@@ -1130,7 +1205,7 @@ exports.suaChamSoc = async (req, res) => {
         if (!updatedChamSoc) {
             return res.status(404).json();
         }
-        res.status(200).json(updateHt);
+        res.status(200).json(updatedChamSoc);
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Lỗi server' });

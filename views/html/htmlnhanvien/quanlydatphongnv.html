@@ -28,7 +28,7 @@
                 <h1>Lịch Sử Đặt Phòng</h1>
                 <div class="form-section">
                     <form id="customer-form">
-                        <input type="hidden" id="mdp" name="mdp" disabled>
+                        <input type="text" style="height: 0px;width: 0px;" id="mdp" name="mdp" disabled>
                         <div class="form-group">
                             <div class="form-maks">
                                 <div class="form-group">
@@ -67,7 +67,14 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label for="sdt">SĐT khách hàng :</label>
+                            <input type="text" id="sdt" name="sdt" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email khách hàng :</label>
+                            <input type="text" id="email" name="email" disabled>
+                        </div>
                         <div class="form-group">
                             <label for="thoiGianDat">Thời gian đặt phòng :</label>
                             <input type="text" id="thoiGianDat" name="thoiGianDat" disabled>
@@ -84,6 +91,8 @@
                             <label for="ghiChu">Ghi chú :</label>
                             <input type="text" id="ghiChu" name="ghiChu" disabled>
                         </div>
+                       
+                        
                         <div class="form-group">
                             <label for="trangThai">Trạng thái :</label>
                             <select id="trangThai" name="trangThai" placeholder="Trạng thái" autocomplete="off">
@@ -93,13 +102,12 @@
                                 <option value="2">Đã trả phòng</option>
                                 <option value="3">Đã hủy</option>
                             </select>
-
                         </div>
-
                         <div class="form-group">
                             <label for="tongTien">Tổng tiền :</label>
                             <input type="text" id="tongTien" name="tongTien" disabled>
                         </div>
+                        
 
                         <div class="button-group">
                             <button type="button" onclick="editderroom()">Cập nhật</button>

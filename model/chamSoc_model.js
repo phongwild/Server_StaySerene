@@ -9,6 +9,7 @@ const chamSocSchema = new db.mongoose.Schema(
         vaiTro: { type: String, required: false },
         trangThaiKh: { type: Number, required: false },
         trangThaiNv: { type: Number, required: false },
+        userTokenFCM: { type: String, required: false }
     },
     {
         collection: 'ChamSoc'

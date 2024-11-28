@@ -141,11 +141,13 @@ async function displayLichSus(lichsus) {
     const customer = await fetchCustomerById(Uid);
     const customerName = customer ? customer.username : "Không tìm thấy tên khách hàng";
     const customerCCCD= customer ? customer.cccd : "Không tìm thấy tên khách hàng";
+    const customerSDT= customer ? customer.sdt : "Không tìm thấy SDT khách hàng";
+    const customerEmail= customer ? customer.email : "Không tìm thấy Email khách hàng";
 
     row.innerHTML = `
       <td class="hidden">${mdp}</td>
-      <td>${customerName}</td> <!-- Thay thế mã khách hàng bằng tên khách hàng -->
-      <td>${customerCCCD}</td> <!-- Thay thế mã khách hàng bằng tên khách hàng -->
+      <td>${customerName}</td>
+      <td>${customerCCCD}</td> 
       <td>${soPhong}</td>
       <td>${thoiGianDatPhong}</td>
       <td>${thoiGianNhan}</td>
@@ -160,6 +162,8 @@ async function displayLichSus(lichsus) {
       document.getElementById("TenKhachHang").value = customerName;
       document.getElementById("phong1").value = phongID;
       document.getElementById("thoiGianDat").value = thoiGianDatPhong;
+      document.getElementById("sdt").value = customerSDT;
+      document.getElementById("email").value = customerEmail;
       document.getElementById("thoiGianNhan").value = thoiGianNhan;
       document.getElementById("thoiGianTra").value = thoiGianTra;
       document.getElementById("ghiChu").value = ghiChu;
@@ -190,8 +194,8 @@ async function displayLichSus(lichsus) {
 async function editderroom() {
   const mdpValue = document.getElementById("mdp").value;
 
-  if (!mdpValue) {
-    alert("Vui lòng chọn đặt phòng để cập nhật.");
+  if (mdpValue=="") {
+    alert("Vui lòng chọn đơn đặt phòng để cập nhật.");
     return;
   }
 
@@ -381,7 +385,9 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
     const bookings = await response.json();
 
     const customerList = document.getElementById("customer-list");
-    customerList.innerHTML = "";
+    customerList.innerHTML = "";  // Clear the existing content
+
+    let hasResults = false; // Variable to track if there are any results
 
     for (const booking of bookings) {
       const customer = await fetchCustomerById(booking.Uid);
@@ -424,12 +430,20 @@ document.getElementById('searchBtn').addEventListener('click', async function() 
         };
 
         customerList.appendChild(row);
+        hasResults = true; 
       }
+    }
+
+    if (!hasResults) {
+      const noResultsRow = document.createElement("tr");
+      noResultsRow.innerHTML = `<td colspan="8" style="text-align: center;">Không tìm thấy đặt phòng</td>`;
+      customerList.appendChild(noResultsRow);
     }
   } catch (error) {
     console.error("Error during search:", error);
   }
 });
+
 
 
 

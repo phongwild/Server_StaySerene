@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('https://propertyx.com.vn/files_upload_editor/Suc-song-moi-cua-thanh-pho-quy-nhon-03-1656906005.webp') no-repeat center center fixed;
+    background: url('https://duan-sungroup.com/wp-content/uploads/2022/12/intercontinental-da-nang-sun-peninsula-resort-la-du-an-nghi-duong-dang-cap-quoc-te.png') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -36,7 +36,8 @@ h2 {
 
 .role-button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
     border: none;
     border-radius: 5px;
     cursor: pointer;
