@@ -17,6 +17,7 @@ var mdNhanVien = require('../model/acconut_nhanvien_model');
 const bcrypt = require("bcrypt");
 const { default: mongoose } = require('mongoose');
 const { getAccessToken } = require('./getAccessToken');
+const moment = require('moment');  
 
 
 //Account
@@ -310,6 +311,7 @@ exports.xemPhong = async (req, res, next) => {
         if (!phong) {
             return res.status(404).json({ error: 'Không tồn tại' });
         }
+        phong.reverse();
         res.status(200).json(phong);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' });
@@ -568,6 +570,7 @@ exports.showLoaiPhong = async (req, res, next) => {
         if (!loaiPhong) {
             return res.status(404).json({ error: 'Không tồn tại' });
         }
+        loaiPhong.reverse();
         res.status(200).json(loaiPhong)
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' });
@@ -766,6 +769,7 @@ exports.showOrderRoomByIdHotel = async (req, res) => {
         const hotelId = req.params.id;
 
         const orders = await mdOrderRoom.orderRoomModel.find();
+        await exports.checkAndUpdateRoomStatus();
 
         const validOrders = [];
 
@@ -778,7 +782,7 @@ exports.showOrderRoomByIdHotel = async (req, res) => {
                 }
             }
         }
-
+        validOrders.reverse();
         res.status(200).json(validOrders);
     } catch (error) {
         console.error('Lỗi khi lấy đơn đặt phòng theo ID khách sạn:', error);
@@ -896,7 +900,7 @@ exports.showKhachSan = async (req, res, next) => {
             moTaKhachSan: hotel.moTaKhachSan,
             anhKhachSan: hotel.anhKhachSan
         }));
-
+        result.reverse();
         res.status(200).json(result);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error });
@@ -993,6 +997,7 @@ exports.showNhanVien = async (req, res, next) => {
         if (!NhanVien) {
             return res.status(404).json({ error: 'Không tồn tại' });
         }
+        NhanVien.reverse();
         res.status(200).json(NhanVien)
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' });
@@ -1286,7 +1291,7 @@ exports.showPhanHoiByHotelId = async (req, res) => {
         if (validFeedbacks.length === 0) {
             return res.status(404).json({ error: 'Không tìm thấy phản hồi cho khách sạn này.' });
         }
-
+        validFeedbacks.reverse();
         res.status(200).json(validFeedbacks);
     } catch (error) {
         console.error('Lỗi khi lấy phản hồi theo ID khách sạn:', error);
@@ -1374,3 +1379,24 @@ exports.showDichVuById = async (req, res) => {
         res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+exports.checkAndUpdateRoomStatus = async () => {
+    try {
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: 0 });
+
+        for (const order of orders) {
+            const timeGet = moment(order.timeGet, 'HH:mm:ss DD/MM/YYYY').add(12, 'hours');
+            const currentTime = moment();  
+
+            if (currentTime.isAfter(timeGet) && order.status === 0) {
+                order.status = 3;  
+                await order.save();  
+                console.log(`Order ${order._id} đã bị hủy do quá thời gian nhận phòng.`);
+            }
+            
+        }
+    } catch (error) {
+        console.error('Lỗi khi kiểm tra và cập nhật trạng thái đơn đặt phòng:', error);
+    }
+};
+
+setInterval(exports.checkAndUpdateRoomStatus, 1000);

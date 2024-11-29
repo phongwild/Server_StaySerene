@@ -1,9 +1,9 @@
-const apiUrl = "http://192.168.10.103:3000/api/orderroom";
-const apidatphongUrl = "http://192.168.10.103:3000/api/orderroombyidhotel";
-const serviceApiUrl = "http://192.168.10.103:3000/api/dichvu";
-const apiKhachHang = "http://192.168.10.103:3000/api/accounta";
-const apirooma = "http://192.168.10.103:3000/api/roomsa";
-const apiroom = "http://192.168.10.103:3000/api/rooms";
+const apiUrl = "http://192.168.1.2:3000/api/orderroom";
+const apidatphongUrl = "http://192.168.1.2:3000/api/orderroombyidhotel";
+const serviceApiUrl = "http://192.168.1.2:3000/api/dichvu";
+const apiKhachHang = "http://192.168.1.2:3000/api/accounta";
+const apirooma = "http://192.168.1.2:3000/api/roomsa";
+const apiroom = "http://192.168.1.2:3000/api/rooms";
 
 const hotelId = localStorage.getItem('IdKhachSan');
 let services = {};
@@ -61,6 +61,19 @@ async function fetchServiceById(serviceId) {
   } catch (error) {
     console.error('Error fetching service by ID:', error);
     return null;
+  }
+}
+async function fetchOrderRoomByIdHotel(hotelId) {
+  try {
+    const response = await fetch(`${apiOrderRoomUrl}/${hotelId}`); 
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const orderRooms = await response.json();
+    return orderRooms;  
+  } catch (error) {
+    console.error('Error fetching order rooms by hotel ID:', error);
+    return null;  
   }
 }
 
@@ -121,6 +134,7 @@ async function fetchLichSus() {
 async function displayLichSus(lichsus) {
   const customerList = document.getElementById("customer-list");
   customerList.innerHTML = "";
+  fetchOrderRoomByIdHotel(hotelId);
 
   for (const lichsu of lichsus) {
     const row = document.createElement("tr");
@@ -373,6 +387,7 @@ document.getElementById('dichVu').addEventListener('input', function () {
 });
 document.addEventListener('DOMContentLoaded', () => {
   populateServices(); 
+  fetchOrderRoomByIdHotel(hotelId);
 });
 
 document.getElementById('searchBtn').addEventListener('click', async function() {
@@ -476,3 +491,4 @@ function confirmLogout(event) {
       window.location.href = "../../welcome.html"; 
   }
 }
+
