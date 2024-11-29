@@ -1104,6 +1104,9 @@ exports.themChamSoc = async (req, res) => {
                 "notification": {
                     "title": "New message!",
                     "body": `You have a new message: ${noiDungGui}` // Nội dung tin nhắn mới
+                },
+                "data": {
+                    "idHotel": IdKhachSan
                 }
             }
         };
