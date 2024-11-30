@@ -1391,6 +1391,20 @@ exports.checkAndUpdateRoomStatus = async () => {
                 order.status = 3;  
                 await order.save();  
                 console.log(`Order ${order._id} đã bị hủy do quá thời gian nhận phòng.`);
+                const roomId = order.IdPhong; 
+                if (roomId) {
+                    const updatedRoom = await mdPhong.phongModel.findByIdAndUpdate(
+                        roomId,
+                        { tinhTrangPhong: 0 },
+                        { new: true }
+                    );
+
+                    if (updatedRoom) {
+                        console.log(`Cập nhật tinhTrangPhong = 0 cho phòng ${updatedRoom._id}`);
+                    } else {
+                        console.warn(`Không tìm thấy phòng với IdPhong: ${roomId}`);
+                    }
+                }
             }
             
         }
