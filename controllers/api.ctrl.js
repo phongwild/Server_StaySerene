@@ -701,16 +701,6 @@ exports.OrderRoom = async (req, res, next) => {
             img: img,
             status: status
         });
-        let notificationRes;
-        try {
-            notificationRes = await sendFcmNotification(userTokenFCM, 'Order room', 'You oder success room!', null);
-        } catch (error) {
-            console.error('Lỗi khi gửi thông báo FCM:', fcmError.message);
-            return res.status(201).json({
-                message: 'Đặt phòng thành công, nhưng không thể gửi thông báo FCM',
-                order: newOrder,
-            });
-        }
         // Trả về kết quả khi đặt phòng và gửi thông báo thành công
         return res.status(201).json([newOrder]);
     } catch (error) {
@@ -1143,7 +1133,7 @@ exports.themChamSoc = async (req, res) => {
         }
         let notifiRes;
         try {
-            notifiRes = await sendFcmNotification(userTokenFCM, '"New message!',`You have a new message: ${noiDungGui}`, IdKhachSan);
+            notifiRes = await sendFcmNotification(userTokenFCM, '"New message!',`Send you a message: ${noiDungGui}`, IdKhachSan);
         } catch (error) {
             console.error('Lỗi khi gửi thông báo FCM:', fcmError.message);
             return res.status(201).json({
