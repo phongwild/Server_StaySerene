@@ -17,7 +17,43 @@ var mdNhanVien = require('../model/acconut_nhanvien_model');
 const bcrypt = require("bcrypt");
 const { default: mongoose } = require('mongoose');
 const { getAccessToken } = require('./getAccessToken');
+const moment = require('moment');
 
+//Hàm push thông báo
+async function sendFcmNotification(userTokenFCM, title, body, idHotel){
+    const fcmUrl = 'https://fcm.googleapis.com/v1/projects/stayserene-f36b5/messages:send';
+    const token = await getAccessToken(); // Hàm lấy access token
+
+    const messageData = {
+        message: {
+            token: userTokenFCM,
+            notification: {
+                title,
+                body,
+            },
+            data: {
+                idHotel
+            }
+        },
+    };
+
+    const response = await fetch(fcmUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(messageData),
+    });
+
+    const resData = await response.json();
+
+    if (!response.ok) {
+        throw new Error(resData.error || 'Không thể gửi thông báo FCM');
+    }
+
+    return resData; // Trả về dữ liệu phản hồi từ FCM
+}
 
 //Account
 exports.doLogin = async (req, res, next) => {
@@ -191,7 +227,7 @@ exports.xoaTk = async (req, res, next) => {
 exports.themtk = async (req, res, next) => {
     try {
         console.log(req.body);
-        const { username, diaChi, role, token, sdt, password, quocTich, ngaySinh, email, gioiTinh, cccd, avt_url,imgcccdtruoc,imgcccdsau } = req.body;
+        const { username, diaChi, role, token, sdt, password, quocTich, ngaySinh, email, gioiTinh, cccd, avt_url, imgcccdtruoc, imgcccdsau } = req.body;
         const newAcc = mdAccount.accountModel.create({
             username: username,
             sdt: sdt,
@@ -205,8 +241,8 @@ exports.themtk = async (req, res, next) => {
             role: role,
             token: token,
             avt: avt_url,
-            imgcccdtruoc:imgcccdtruoc,
-            imgcccdsau:imgcccdsau
+            imgcccdtruoc: imgcccdtruoc,
+            imgcccdsau: imgcccdsau
         });
         res.status(201).json({ msg: 'add acc succ' });
     } catch (error) {
@@ -256,7 +292,7 @@ exports.getAccountById = async (req, res) => {
 // Lấy tài khoản theo cccd
 exports.getAccountByCccd = async (req, res) => {
     try {
-        const { cccd } = req.params; 
+        const { cccd } = req.params;
         const account = await mdAccount.accountModel.findOne({ cccd: cccd });
 
         if (!account) {
@@ -310,6 +346,7 @@ exports.xemPhong = async (req, res, next) => {
         if (!phong) {
             return res.status(404).json({ error: 'Không tồn tại' });
         }
+        phong.reverse();
         res.status(200).json(phong);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' });
@@ -528,14 +565,14 @@ exports.updatePhong = async (req, res, next) => {
 exports.themLoaiPhong = async (req, res, next) => {
     try {
         console.log(req.body);
-        const { IdKhachSan, tenLoaiPhong, moTaLoaiPhong, anhLoaiPhong, soLuongPhong,giaLoaiPhong, tienNghi } = req.body;
+        const { IdKhachSan, tenLoaiPhong, moTaLoaiPhong, anhLoaiPhong, soLuongPhong, giaLoaiPhong, tienNghi } = req.body;
         const newTypeRoom = mdLoaiPhong.loaiPhongModel.create({
             IdKhachSan: IdKhachSan,
             tenLoaiPhong: tenLoaiPhong,
             moTaLoaiPhong: moTaLoaiPhong,
             anhLoaiPhong: anhLoaiPhong,
             soLuongPhong: soLuongPhong,
-            giaLoaiPhong:giaLoaiPhong,
+            giaLoaiPhong: giaLoaiPhong,
             tienNghi: tienNghi
         });
         return res.status(201).json({ msg: 'Add room type succ' });
@@ -568,6 +605,7 @@ exports.showLoaiPhong = async (req, res, next) => {
         if (!loaiPhong) {
             return res.status(404).json({ error: 'Không tồn tại' });
         }
+        loaiPhong.reverse();
         res.status(200).json(loaiPhong)
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' });
@@ -631,7 +669,6 @@ exports.xoaLoaiPhong = async (req, res, next) => {
     }
 };
 
-
 //Đặt phòng
 exports.OrderRoom = async (req, res, next) => {
     try {
@@ -646,7 +683,8 @@ exports.OrderRoom = async (req, res, next) => {
             note,
             total,
             img,
-            status
+            status,
+            userTokenFCM
         } = req.body;
         if (!IdPhong || !Uid || !total) {
             return res.status(404).json({ error: 'Không đủ thông tin' });
@@ -660,10 +698,11 @@ exports.OrderRoom = async (req, res, next) => {
             timeCheckout: timeCheckout,
             note: note,
             total: total,
-            img:img,
+            img: img,
             status: status
         });
-        return res.status(201).json([newOrder])
+        // Trả về kết quả khi đặt phòng và gửi thông báo thành công
+        return res.status(201).json([newOrder]);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
     }
@@ -735,7 +774,7 @@ exports.getOrderById = async (req, res, next) => {
 };
 exports.getOrderRoomByStatus = async (req, res, next) => {
     try {
-        const status = 2; 
+        const status = 2;
 
         const orders = await mdOrderRoom.orderRoomModel.find({ status: status });
 
@@ -766,6 +805,7 @@ exports.showOrderRoomByIdHotel = async (req, res) => {
         const hotelId = req.params.id;
 
         const orders = await mdOrderRoom.orderRoomModel.find();
+        await exports.checkAndUpdateRoomStatus();
 
         const validOrders = [];
 
@@ -778,7 +818,7 @@ exports.showOrderRoomByIdHotel = async (req, res) => {
                 }
             }
         }
-
+        validOrders.reverse();
         res.status(200).json(validOrders);
     } catch (error) {
         console.error('Lỗi khi lấy đơn đặt phòng theo ID khách sạn:', error);
@@ -851,7 +891,7 @@ exports.getAvailableRooms = async (req, res) => {
 exports.getOrderRoomByStatus01 = async (req, res, next) => {
     try {
         const id = req.params.id;
-        const orders = await mdOrderRoom.orderRoomModel.find({ status: {$in: [0,1]}, Uid: id });
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: { $in: [0, 1] }, Uid: id });
         res.status(200).json(orders);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -896,7 +936,7 @@ exports.showKhachSan = async (req, res, next) => {
             moTaKhachSan: hotel.moTaKhachSan,
             anhKhachSan: hotel.anhKhachSan
         }));
-
+        result.reverse();
         res.status(200).json(result);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error });
@@ -993,6 +1033,7 @@ exports.showNhanVien = async (req, res, next) => {
         if (!NhanVien) {
             return res.status(404).json({ error: 'Không tồn tại' });
         }
+        NhanVien.reverse();
         res.status(200).json(NhanVien)
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' });
@@ -1090,51 +1131,21 @@ exports.themChamSoc = async (req, res) => {
                 data: newChamSoc,
             });
         }
-
-        // URL gửi thông báo FCM
-        const fcmUrl = 'https://fcm.googleapis.com/v1/projects/stayserene-f36b5/messages:send';
-        const messageData = {
-            "message": {
-                "token": userTokenFCM, // Token của người nhận
-                "notification": {
-                    "title": "New message!",
-                    "body": `You have a new message: ${noiDungGui}` // Nội dung tin nhắn mới
-                },
-                "data": {
-                    "idHotel": IdKhachSan
-                }
-            }
-        };
-
-        // Lấy token truy cập FCM
-        const token = await getAccessToken();
-
-        // Gửi thông báo FCM
-        const response = await fetch(fcmUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`, // Token truy cập FCM
-            },
-            body: JSON.stringify(messageData),
-        });
-
-        // Chờ và lấy dữ liệu trả về từ FCM
-        const resData = await response.json();
-
-        // Kiểm tra kết quả từ FCM
-        if (response.ok) {
+        let notifiRes;
+        try {
+            notifiRes = await sendFcmNotification(userTokenFCM, '"New message!',`Send you a message: ${noiDungGui}`, IdKhachSan);
+        } catch (error) {
+            console.error('Lỗi khi gửi thông báo FCM:', fcmError.message);
             return res.status(201).json({
-                message: 'Thêm chăm sóc thành công và gửi thông báo thành công',
-                data: resData,
-            });
-        } else {
-            // Nếu có lỗi khi gửi thông báo
-            return res.status(500).json({
-                message: 'Thêm thành công nhưng không thể gửi thông báo',
-                error: resData.error || 'Không có lỗi chi tiết từ FCM',
+                message: 'Gửi thành công, nhưng không thể gửi thông báo FCM',
+                mess: newChamSoc
             });
         }
+        return res.status(201).json({
+            message: 'Gửi thành công và gửi thông báo thành công',
+            mess: newChamSoc,
+            fcmResponse: notifiRes,
+        });
     } catch (error) {
         // Bắt lỗi và trả về thông báo lỗi chi tiết
         return res.status(500).json({
@@ -1289,7 +1300,7 @@ exports.showPhanHoiByHotelId = async (req, res) => {
         if (validFeedbacks.length === 0) {
             return res.status(404).json({ error: 'Không tìm thấy phản hồi cho khách sạn này.' });
         }
-
+        validFeedbacks.reverse();
         res.status(200).json(validFeedbacks);
     } catch (error) {
         console.error('Lỗi khi lấy phản hồi theo ID khách sạn:', error);
@@ -1377,3 +1388,38 @@ exports.showDichVuById = async (req, res) => {
         res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+exports.checkAndUpdateRoomStatus = async () => {
+    try {
+        const orders = await mdOrderRoom.orderRoomModel.find({ status: 0 });
+
+        for (const order of orders) {
+            const timeGet = moment(order.timeGet, 'HH:mm:ss DD/MM/YYYY').add(12, 'hours');
+            const currentTime = moment();
+
+            if (currentTime.isAfter(timeGet) && order.status === 0) {
+                order.status = 3;
+                await order.save();
+                console.log(`Order ${order._id} đã bị hủy do quá thời gian nhận phòng.`);
+                const roomId = order.IdPhong; 
+                if (roomId) {
+                    const updatedRoom = await mdPhong.phongModel.findByIdAndUpdate(
+                        roomId,
+                        { tinhTrangPhong: 0 },
+                        { new: true }
+                    );
+
+                    if (updatedRoom) {
+                        console.log(`Cập nhật tinhTrangPhong = 0 cho phòng ${updatedRoom._id}`);
+                    } else {
+                        console.warn(`Không tìm thấy phòng với IdPhong: ${roomId}`);
+                    }
+                }
+            }
+
+        }
+    } catch (error) {
+        console.error('Lỗi khi kiểm tra và cập nhật trạng thái đơn đặt phòng:', error);
+    }
+};
+
+setInterval(exports.checkAndUpdateRoomStatus, 1000);
