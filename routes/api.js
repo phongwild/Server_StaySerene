@@ -5,7 +5,7 @@ const upload = require('../controllers/fileUpload');
 
 // Home route
 router.get('/', (req, res) => {
-  res.render('api');
+  res.send("Server Stayserene")
 });
 
 // Authentication routes
