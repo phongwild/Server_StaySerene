@@ -1,2 +1,3 @@
 .vercel
 service-account-key.json
+node_module/
