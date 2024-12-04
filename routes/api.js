@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const apiCtrl = require('../controllers/api.ctrl');
-const upload = require('../controllers/fileUpload');
 
 // Home route
 router.get('/', (req, res) => {
-  res.render('api');
+  res.send("Server Stayserene")
 });
 
 // Authentication routes
