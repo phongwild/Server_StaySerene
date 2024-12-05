@@ -500,6 +500,7 @@ exports.getRoomByIdHotel = async (req, res) => {
         if (validRooms.length === 0) {
             return res.status(404).json({ error: 'Không tìm thấy phòng cho khách sạn này.' });
         }
+        validRooms.reverse();
         return res.status(200).json(validRooms);
     } catch (error) {
         console.error('Lỗi khi lấy danh sách phòng theo ID khách sạn:', error);
@@ -805,6 +806,7 @@ exports.showOrderRoom = async (req, res, next) => {
         if (!orderroom) {
             return res.status(404).json({ msg: 'User chưa đặt phòng nào' });
         }
+        orderroom.reverse();
         res.status(200).json(orderroom);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server' + error });
@@ -902,6 +904,7 @@ exports.getOrderRoomByStatus01 = async (req, res, next) => {
     try {
         const id = req.params.id;
         const orders = await mdOrderRoom.orderRoomModel.find({ status: { $in: [0, 1] }, Uid: id });
+        orders.reverse();
         res.status(200).json(orders);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -911,6 +914,7 @@ exports.getOrderRoomByStatus2 = async (req, res, next) => {
     try {
         const id = req.params.id;
         const orders = await mdOrderRoom.orderRoomModel.find({ status: 2, Uid: id });
+        orders.reverse();
         res.status(200).json(orders);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
@@ -920,6 +924,7 @@ exports.getOrderRoomByStatus3 = async (req, res, next) => {
     try {
         const id = req.params.id;
         const orders = await mdOrderRoom.orderRoomModel.find({ status: 3, Uid: id });
+        orders.reverse();
         res.status(200).json(orders);
     } catch (error) {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });

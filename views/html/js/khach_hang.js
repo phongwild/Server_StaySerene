@@ -1,5 +1,5 @@
-var API = "http://192.168.10.103:3000/api/account";
-const apiOrderroombyUid = "http://192.168.10.103:3000/api/orderroombyUid";
+var API = "http://192.168.0.104:3000/api/account";
+const apiOrderroombyUid = "http://192.168.0.104:3000/api/orderroombyUid";
 var currenUser = [];
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
@@ -39,7 +39,7 @@ const showKH = (account) => {
     account.forEach(account => {
         const row = document.createElement('tr');
         row.setAttribute('data-id', account._id || 'N/A');
-        row.setAttribute('onclick', 'showKH_detail(this)');
+        row.addEventListener('click', () => showHotelDetails(row));
 
         row.innerHTML = `
             <td class="hidden">${account._id}</td>
@@ -72,30 +72,13 @@ function generateRandomString(length) {
 }
 
 
-function showKH_detail(row) {
-    const uid = row.getAttribute('data-id');
-    const cells = [...row.getElementsByTagName('td')];
-
-    document.getElementById('makhachhang').value = uid;
-    document.getElementById('tenkhachhang').value = cells[1].innerText;
-    document.getElementById('diachi').value = cells[2].innerText;
-    document.getElementById('sdt').value = cells[4].innerText;
-    document.getElementById('email').value = row.dataset.email;
-    document.getElementById('cccd').value = row.dataset.cccd;
-    document.getElementById('quoctich').value = row.dataset.quocTich;
-    document.getElementById('gioitinh').value = cells[5].innerText;
-    document.getElementById('ngaysinh').value = cells[6].innerText;
-
-    const imgAvt = document.getElementById('avt-url');
-    imgAvt.src = row.dataset.avt || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s';
-
-    const imgCCCDTruoc = document.getElementById('imgcccdtruoc');
-    imgCCCDTruoc.src = row.dataset.imgcccdtruoc || 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg/800px-C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg'; 
-
-    const imgCCCDSau = document.getElementById('imgcccdsau');
-    imgCCCDSau.src = row.dataset.imgcccdsau || 'https://image.plo.vn/w1000/Uploaded/2024/xqeioxdrky/2024_02_11/mau-can-cuoc-tre-tu-6-tuoi-mat-sau-9238.jpg.webp'; 
-
+function showHotelDetails(row) {
+    var customerId = row.getAttribute('data-id');
+    sessionStorage.setItem('customerId', customerId);
+    window.location.href = '../management/khachhangchitiet.html';
 }
+
+
 
 
 async function deleteCustomer() {

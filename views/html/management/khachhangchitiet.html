@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khách hàng chi tiết</title>
+    <link rel="stylesheet" href="../css/khachhang.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>StaySerene</h2>
+            <ul>
+                <li><a href="khachhang.html" id="khachhang" class="namepage">Quản lý khách hàng</a></li>
+                <li><a href="nhanvien.html" id="nhanvien">Quản lý nhân viên</a></li>
+                <li><a href="khachsan.html" id="khachsan">Quản lý khách sạn</a></li>
+                <li><a href="loaiphong.html" id="loaiphong">Quản lý loại phòng</a></li>
+                <li><a href="phong.html" id="phong">Quản lý phòng</a></li>
+                <li><a href="dichvu.html" id="dichvu">Quản lý dịch vụ</a></li>
+                <li><a href="thongke.html" id="thongke">Thống kê</a></li>
+                <li><a href="#" id="đăng xuất" onclick="confirmLogout(event)">Đăng xuất</a></li>
+
+            </ul>
+        </div>
+
+        <div class="main-content" id="main-content">
+            <div class="main-content">
+                <h1>Thông tin khách hàng</h1>
+                <div class="form-section">
+                    <form id="customer-form">
+                        <input type="hidden" id="makhachhang" name="makhachhang" disabled>
+
+                        <div class="form-group">
+                            <label for="tenkhachhang">Tên khách hàng :</label>
+                            <input type="text" id="tenkhachhang" name="tenkhachhang" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="diachi">Địa chỉ :</label>
+                            <input type="text" id="diachi" name="diachi" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sdt">SĐT :</label>
+                            <input type="number" id="sdt" name="sdt" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="quoctich">Quốc tịch :</label>
+                            <input type="text" id="quoctich" name="quoctich" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="ngaysinh">Ngày sinh :</label>
+                            <input type="text" id="ngaysinh" name="ngaysinh" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="email" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gioitinh">Giới tính :</label>
+                            <input type="text" id="gioitinh" name="gioitinh" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cccd">CCCD :</label>
+                            <input type="number" id="cccd" name="cccd"disabled>
+                        </div>
+                        <div class="form-imgaccount">
+                            <img id="avt-url" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s" alt="Avatar" style="width:200px;height:auto; border-radius:10px;">
+                            <img id="imgcccdtruoc" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg/800px-C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg" alt="CCCD Trước" style="width:auto;height:200px;margin-left: 20px;border-radius:10px;">
+                            <img id="imgcccdsau" src="https://image.plo.vn/w1000/Uploaded/2024/xqeioxdrky/2024_02_11/mau-can-cuoc-tre-tu-6-tuoi-mat-sau-9238.jpg.webp" alt="CCCD Sau" style="width:auto;height:200px;margin-left: 20px;border-radius:10px;">
+
+                        </div>
+                    </form>
+                </div>
+                <div class="button-group">
+                    <button type="button" onclick="deleteCustomer()" style="width: 160px;">Xóa tài khoản</button>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <script src="../js/khach_hang_chi_tiet.js"></script>
+</body>
+
+</html>

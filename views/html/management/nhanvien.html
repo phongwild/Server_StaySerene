@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý Nhân Viên</title>
     <link rel="stylesheet" href="../css/nhanvien.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -26,12 +27,10 @@
         </div>
 
         <div class="main-content" id="main-content">
-            <div class="main-content">
-                <h1>Quản lý Nhân Viên</h1>
-                <div class="form-section">
-                    <form id="customer-form">
+            <div class="main-content flex  gap-2 ">
+                <div class="form-section w-[30%]">
+                    <form id="customer-form" class="grid grid-cols-1 mt-4" >
                         <input type="text" style="width: 0px;height: 0px;" id="manhanvien" name="ID-nv" disabled>
-
                         <div class="form-group">
                             <label for="makhachsan">Thông tin khách sạn :</label>
                             <div class="form-maks">
@@ -71,27 +70,26 @@
                             <input type="email" id="email" name="email">
                         </div>
 
-                        <div class="form-group">
-                            <label for="danhgia">Giờ làm :</label>
-                            <input type="text" id="gioLam" name="gioLam">
-                        </div>
-                        <div class="button-group">
+                        
+                        <div class="button-group text-xs flex items-end gap-2">
                             <button type="button" onclick="addCustomernhanvien()">Thêm</button>
                             <button id="updateButton" type="button" onclick="editCustomernhanvien()">Cập nhật</button>
                             <button type="button" onclick="deleteNhanVien()">Xóa</button>
-                            <div class="form-search">
-                                <input type="text" id="search-manhanvien" placeholder="Tìm kiếm Tên khách sạn">
-                                <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Tên nhân viên">
-                                <input type="text" id="search-tennhanvien" placeholder="Tìm kiếm Số CCCD">
-                                <button id="search-button">Tìm Kiếm</button>
-                            </div>
+                            
                         </div>
                     </form>
                 </div>
 
-                <div class="table-section">
-                    <h3>Danh sách nhân viên</h3>
-                    <table>
+                <div class="table-section ">
+                    <div class="button-group">
+                        <div class="form-search mb-2">
+                            <input type="text" id="search-manhanvien" placeholder="Tìm kiếm Tên khách sạn">
+                            <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Tên nhân viên">
+                            <input type="text" id="search-tennhanvien" placeholder="Tìm kiếm Số CCCD">
+                            <button id="search-button" >Tìm Kiếm</button>
+                        </div>
+                    </div>
+                    <table >
                         <thead>
                             <tr>
                                 <th>Tên Khách Sạn</th>
@@ -101,10 +99,8 @@
                                 <th>Ảnh nhân viên </th>
                             </tr>
                         </thead>
-                        <tbody id="customer-list">
-                            <tr>
-                                <td></td>
-                            </tr>
+                        <tbody id="customer-list" >
+                            
                         </tbody>
                     </table>
                 </div>

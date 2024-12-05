@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quan ly khach san</title>
     <link rel="stylesheet" href="../css/khachsan.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="container">
@@ -23,15 +24,11 @@
             </ul>
         </div>
         
-        <div class="main-content" id="main-content">
-            <div class="main-content">
-                <h1>Quản lý khách sạn</h1>
-                <div class="form-section">
-                    <form id="customer-form">
-                        <input style="height: 0px; width: 0px;" type="text" id="makhachsan" name="makhachsan" disabled>
-
+        <div class="main-content "  id="main-content">
+            <div class="main-content flex  gap-2 mt-5">
+                <div class="form-section w-[30%] ">
+                    <form id="" class="grid grid-cols-1 mt-4" >
                         <div class="form-group">
-
                             <label for="tenkhachsan">Tên khách sạn :</label>
                             <input type="text" id="name" name="name">
                         </div>
@@ -52,11 +49,6 @@
                         </div>
     
                         <div class="form-group">
-                            <label for="danhgia">Đánh giá :</label>
-                            <input type="text" id="danhgia" name="danhgia">
-                        </div>
-    
-                        <div class="form-group">
                             <label for="motakhachsan">Mô tả khách sạn :</label>
                             <input type="text" id="motakhachsan" name="motakhachsan">
                         </div>
@@ -65,30 +57,27 @@
                             <label for="anhkhachsan">Ảnh khách sạn :</label>
                             <input type="url" id="anhkhachsan" name="anhkhachsan">
                         </div>
-    
-                        <div class="button-group">
+                        <input style="height: 0px; width: 0px;" type="text" id="makhachsan" name="makhachsan" disabled>
+                        <div class="button-group text-xs flex items-end gap-2">
                             <button type="button" onclick="addCustomer()">Thêm</button>
                             <button type="button" onclick="editCustomer()">Cập nhật</button>
                             <button type="button" onclick="deleteCustomer()">Xóa</button>
-                            <div class="form-search">
-                                <label for="search" >Tìm kiếm:</label>
-                                <input type="text" placeholder="Nhập tên khách sạn" id="search" name="search">
-                            </div>
+                            
                         </div>
                     </form>
                 </div>
     
                 <div class="table-section">
-                    <h3>Danh sách khách sạn</h3>
-                    <table>
+                    <div class="form-search mb-2">
+                        <label for="search" >Tìm kiếm:</label>
+                        <input type="text" placeholder="Nhập tên khách sạn" id="search" name="search">
+                    </div>
+                    <table >
                         <thead>
                             <tr>
                                 <th>Tên khách sạn</th>
                                 <th>Địa chỉ</th>
-                                <th>SĐT</th>
-                                <th>Email</th>
-                                <th>Đánh giá</th>
-                                <th>Mô tả khách sạn</th>
+                                <th>Hotline</th>
                                 <th>Ảnh Khách sạn</th>
                             </tr>
                         </thead>
@@ -97,8 +86,6 @@
                                 <td>Muong Thanh</td>
                                 <td>Hà Nội</td>
                                 <td>987654321</td>
-                                <td>abc@gmail.com</td>
-                                <td>3.5</td>
                                 <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
                                 <td><img src="image-url.jpg" alt="Hotel Image" /></td>
                             </tr>

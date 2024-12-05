@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quan ly loai phong</title>
     <link rel="stylesheet" href="../css/loaiphong.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -26,10 +27,9 @@
         </div>
 
         <div class="main-content" id="main-content">
-            <div class="main-content">
-                <h1>Quản lý loại phòng</h1>
-                <div class="form-section">
-                    <form id="customer-form">
+            <div class="main-content flex  gap-2 mt-5">
+                <div class="form-section w-[30%]">
+                    <form id="customer-form" class="grid grid-cols-1 mt-6">
                             <input type="text" style="width: 0px;height: 0px;" id="maloaiphong" name="maloaiphong" disabled>
 
                         <div class="form-group">
@@ -72,23 +72,24 @@
                         </div>
                         <input type="hidden" id="soluongphong" name="soluongphong" disabled>
                     
-                        <div class="button-group">
+                        <div class="button-group text-xs flex items-end gap-2">
                             <button type="button" onclick="addTyperoom()">Thêm</button>
                             <button type="button" onclick="editTyperoom()">Cập nhật</button>
                             <button type="button"
                                 onclick="deleteTyperoom(document.getElementById('maloaiphong').value)">Xóa</button>
-                            <div class="form-search">
-                                <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Tên Khách Sạn">
-                                <input type="text" id="search-tenloaiphong" placeholder="Tìm kiếm Tên Loại Phòng">
-                                <button id="search-button">Tìm Kiếm</button>
-
-                            </div>
                         </div>
                     </form>
                 </div>
 
                 <div class="table-section">
-                    <h3>Danh sách loại phòng</h3>
+                    <div class="button-group">
+                        <div class="form-search mb-2">
+                            <input type="text" id="search-makhachsan" placeholder="Tìm kiếm Tên Khách Sạn">
+                            <input type="text" id="search-tenloaiphong" placeholder="Tìm kiếm Tên Loại Phòng">
+                            <button id="search-button">Tìm Kiếm</button>
+
+                        </div>
+                    </div>
                     <table>
                         <thead>
                             <tr>

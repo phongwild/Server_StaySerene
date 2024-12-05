@@ -1,5 +1,5 @@
-const apiNhanVienUrl = 'http://192.168.10.103:3000/api/nhanvien';
-const apiKhachSanUrl = 'http://192.168.10.103:3000/api/hotela';
+const apiNhanVienUrl = 'http://192.168.0.104:3000/api/nhanvien';
+const apiKhachSanUrl = 'http://192.168.0.104:3000/api/hotela';
 
 async function fetchKhachSan(IdKhachSan) {
     try {
@@ -119,12 +119,14 @@ async function displayNhanVien(nhanVienList) {
         const tenKhachSan = khachSan ? khachSan.tenKhachSan : 'Không tìm thấy';
 
         row.innerHTML = `
+        <tr>
             <td class="hidden">${nhanVien._id}</td>
             <td>${tenKhachSan}</td> <!-- Hiển thị tên khách sạn -->
             <td>${nhanVien.username}</td>
             <td>${nhanVien.cccd}</td>
             <td>${nhanVien.sdt}</td>
             <td><img src="${nhanVien.anhNhanVien}" alt="${nhanVien.anhNhanVien}" style="width:100px;height:auto;"></td>
+        </tr>
         `;
 
         customerList.appendChild(row);
@@ -160,7 +162,6 @@ async function populateHotels() {
 
 // Thêm nhân viên
 async function addCustomernhanvien() {
-    const manhanvien = document.getElementById('manhanvien').value; 
     const IdKhachSan = document.getElementById('makhachsan').value;
     const tennhanvien = document.getElementById('username').value;
     const sdt = document.getElementById('sdt').value;
@@ -168,7 +169,7 @@ async function addCustomernhanvien() {
     const password = document.getElementById('password').value;
     const email = document.getElementById('email').value;
     const cccd = document.getElementById('cccd').value;
-    const gioLam = document.getElementById('gioLam').value;
+    const gioLam = "full time";
     const khachSan = await fetchKhachSan(IdKhachSan);
 
     // Kiểm tra mã khách sạn
@@ -178,7 +179,7 @@ async function addCustomernhanvien() {
     }
 
     // Kiểm tra nhập liệu
-    if (!tennhanvien || !sdt || !anhNhanVien || !password || !gioLam || !email || !cccd || !IdKhachSan) {
+    if (!tennhanvien || !sdt || !anhNhanVien || !password || !email || !cccd || !IdKhachSan) {
         alert('Vui lòng điền đầy đủ thông tin.');
         return;
     }
@@ -271,7 +272,6 @@ async function showHotelDetailsnhanvien(nhanVien) {
     document.getElementById('cccd').value = cccd;
     document.getElementById('email').value = email;
     document.getElementById('password').value = password;
-    document.getElementById('gioLam').value = gioLam;
     document.getElementById('anhNhanVien').value = anhNhanVien;
 
     // No need to call populateHotels here again
@@ -326,7 +326,7 @@ async function editCustomernhanvien() {
     const cccd = document.getElementById('cccd').value;
     const anhNhanVien = document.getElementById('anhNhanVien').value;
     const email = document.getElementById('email').value;
-    const gioLam = document.getElementById('gioLam').value;
+    const gioLam = "full time";
 
     if (NhanVienId==="") {
         alert('Vui lòng chọn nhân viên cần sửa.');

@@ -1,4 +1,5 @@
-const apiUrl = 'http://192.168.10.103:3000/api/hotel';
+const apiUrl = 'http://192.168.0.104:3000/api/hotel';
+const apiUrla = 'http://192.168.0.104:3000/api/hotela';
 
 // Kiểm tra số điện thoại hợp lệ
 function isValidPhoneNumber(phone) {
@@ -53,9 +54,6 @@ function displayHotels(hotels) {
             <td>${hotel.tenKhachSan}</td>
             <td>${hotel.diaChi}</td>
             <td>${hotel.sdt}</td>
-            <td>${hotel.email}</td>
-            <td>${hotel.danhGia}</td>
-            <td>${moTaKhachSan}</td>
             <td><img src="${hotel.anhKhachSan}" alt="${hotel.tenKhachSan}" style="width:100px;height:auto;"></td>
         `;
 
@@ -118,11 +116,10 @@ async function addCustomer() {
     const diaChi = document.getElementById('diachi').value;
     const sdt = document.getElementById('sdt').value;
     const email = document.getElementById('email').value;
-    const danhGia = document.getElementById('danhgia').value;
     const moTaKhachSan = document.getElementById('motakhachsan').value;
     const anhKhachSan = document.getElementById('anhkhachsan').value;
 
-    if (!tenKhachSan || !diaChi || !sdt || !email || !danhGia || !moTaKhachSan || !anhKhachSan) {
+    if (!tenKhachSan || !diaChi || !sdt || !email || !moTaKhachSan || !anhKhachSan) {
         alert('Vui lòng điền đầy đủ thông tin.');
         return; 
     }
@@ -137,10 +134,7 @@ async function addCustomer() {
         return;
     }
 
-    if (!isValidRating(danhGia)) {
-        alert('Đánh giá phải lớn hơn 0 và nhỏ hơn hoặc bằng 5.');
-        return;
-    }
+
 
     const hotelExists = currentHotels.some(hotel => hotel._id === hotelId);
     const nameExists = currentHotels.some(hotel => hotel.tenKhachSan === tenKhachSan && hotel.diaChi === diaChi);   
@@ -148,7 +142,7 @@ async function addCustomer() {
         alert(`Bạn không thể thêm . Tên khách sạn ${tenKhachSan} đã có ở ${diaChi} .`);
         return;
     }
-
+    const danhGia = 4.5;
     const newHotel = {
         tenKhachSan,
         diaChi,
@@ -182,22 +176,40 @@ async function addCustomer() {
         console.error('Error adding hotel:', error);
     }
 }
+async function getHotelById(hotelId) {
+    try {
+        const response = await fetch(`${apiUrla}/${hotelId}`);
+        if (!response.ok) {
+            throw new Error('Không thể lấy thông tin khách sạn');
+        }
 
-// Hiển thị chi tiết khách sạn khi nhấp vào hàng
+        const hotel = await response.json();
+
+        document.getElementById('makhachsan').value = hotel._id || ''; 
+        document.getElementById('name').value = hotel.tenKhachSan || ''; 
+        document.getElementById('diachi').value = hotel.diaChi || ''; 
+        document.getElementById('sdt').value = hotel.sdt || ''; 
+        document.getElementById('email').value = hotel.email || ''; 
+        document.getElementById('motakhachsan').value = hotel.moTaKhachSan || ''; 
+        document.getElementById('anhkhachsan').value = hotel.anhKhachSan || ''; 
+
+    } catch (error) {
+        console.error('Error fetching hotel by ID:', error);
+    }
+}
+
 function showHotelDetails(row) {
     const hotelId = row.getAttribute('data-id');
-    const cells = row.getElementsByTagName('td');
+    if (!hotelId) {
+        alert('Không tìm thấy ID khách sạn.');
+        return;
+    }
 
-    document.getElementById('makhachsan').value = hotelId; 
-    document.getElementById('name').value = cells[1].innerText; 
-    document.getElementById('diachi').value = cells[2].innerText; 
-    document.getElementById('sdt').value = cells[3].innerText; 
-    document.getElementById('email').value = cells[4].innerText; 
-    document.getElementById('danhgia').value = cells[5].innerText; 
-    const fullDescription = row.getAttribute('data-full-description');
-    document.getElementById('motakhachsan').value = fullDescription;  
-    document.getElementById('anhkhachsan').value = cells[7].getElementsByTagName('img')[0].src; 
+    console.log('Hotel ID:', hotelId); // Kiểm tra ID
+    getHotelById(hotelId);
 }
+
+
 
 // Lấy mô tả khách sạn
 async function fetchHotelDescription(hotelId) {
@@ -248,7 +260,7 @@ async function editCustomer() {
     const diaChi = document.getElementById('diachi').value;
     const sdt = document.getElementById('sdt').value;
     const email = document.getElementById('email').value;
-    const danhGia = document.getElementById('danhgia').value;
+    const danhGia = 4.5;
     const moTaKhachSan = document.getElementById('motakhachsan').value;
     const anhKhachSan = document.getElementById('anhkhachsan').value;
 

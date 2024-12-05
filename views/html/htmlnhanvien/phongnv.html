@@ -14,13 +14,12 @@
         <div class="sidebar">
             <h2>StaySerene</h2>
             <ul>
-                <li><a href="khachhang.html" id="khachhang">Quản lý khách hàng</a></li>
-                <li><a href="nhanvien.html" id="nhanvien">Quản lý nhân viên</a></li>
-                <li><a href="khachsan.html" id="khachsan">Quản lý khách sạn</a></li>
-                <li><a href="loaiphong.html" id="loaiphong">Quản lý loại phòng</a></li>
-                <li><a href="phong.html" id="phong" class="namepage">Quản lý phòng</a></li>
-                <li><a href="dichvu.html" id="dichvu">Quản lý dịch vụ</a></li>
-                <li><a href="thongke.html" id="thongke">Thống kê</a></li>
+                <li><a href="phanhoinv.html"id="phanhoi" >Phản hồi của khách hàng</a></li>
+                <li><a href="chamsocnv.html" id="chamsoc">Chăm sóc khách hàng</a></li>
+                <li><a href="quanlydatphongnv.html" id="lichsu" >Lịch sử đặt phòng</a></li>
+                <li><a href="datphong.html" id="datphong" >Đặt Phòng</a></li>
+                <li><a href="phongnv.html" id="phong" class="namepage">Quản lý phòng</a></li>
+
                 <li><a href="#" id="đăng xuất" onclick="confirmLogout(event)">Đăng xuất</a></li>
 
             </ul>
@@ -32,16 +31,6 @@
                     <div class="">
                         <form id="customer-form" class="">
                             <input type="text" id="maphong" style="width: 0px;height: 0px;" name="maphong" disabled>
-                            <input type="text" id="makhachsan" style="width: 0px;height: 0px;" class="makhachsan"
-                                placeholder="Nhập mã khách sạn" disabled />
-                            <div class="form-group">
-                                <label for="khachsan">Khách sạn :</label>
-                                <select type="text" id="tenkhachsan" class="tenkhachsan" placeholder="Tên khách sạn"
-                                    autocomplete="off">
-                                    <option value="">Chọn khách sạn</option>
-                                </select>
-
-                            </div>
                             <div class="form-group">
                                 <label for="phong">Loại Phòng :</label>
                                 <select type="text" id="tenloaiphong" class="tenloaiphong" placeholder="Tên loại phòng"
@@ -81,8 +70,7 @@
                 </div>
                 <div class="table-section w-[75%] mt-3">
                     <div class="form-search mb-3">
-                        <input type="text" id="search-maphong" placeholder="Tìm kiếm Tên Loại Phòng">
-                        <input type="text" id="search-tenloaiphong" placeholder="Tìm kiếm Tên Khách Sạn">
+                        <input type="text" id="search-loaiphong" placeholder="Tìm kiếm loại phòng">
                         <input type="text" id="search-sophong" placeholder="Tìm kiếm Số Phòng">
                         <button id="searchBtn" type="button">Tìm kiếm</button>
                     </div>
@@ -90,8 +78,8 @@
                         <thead>
                             <tr>
                                 <th>Tên loại phòng</th>
-                                <th>Tên khách sạn</th>
                                 <th>Số phòng</th>
+                                <th>Mô tả</th>
                             </tr>
                         </thead>
                         <tbody id="customer-list">
@@ -107,7 +95,7 @@
         </div>
     </div>
     </div>
-    <script src="../js/phong.js"></script>
+    <script src="../js/phongnv.js"></script>
 
 </body>
 

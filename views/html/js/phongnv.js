@@ -1,41 +1,43 @@
-const apiHotelUrl = 'http://192.168.0.104:3000/api/hotel';
-const apiTyperoomUrl = 'http://192.168.0.104:3000/api/typerooma';
-const apiRoomUrl = 'http://192.168.0.104:3000/api/rooms';
-const apiRoomUrla = 'http://192.168.0.104:3000/api/roomsa';
-const apiTyperoomByHotelUrl = 'http://192.168.0.104:3000/api/typeroombyidhotel';
+const apiHotelUrl = 'http://192.168.1.7:3000/api/hotel';
+const apiTyperoomUrl = 'http://192.168.1.7:3000/api/typerooma';
+const apiRoomUrl = 'http://192.168.1.7:3000/api/rooms';
+const apiRoomUrla = 'http://192.168.1.7:3000/api/roomsa';
+const apiTyperoomByHotelUrl = 'http://192.168.1.7:3000/api/typeroombyidhotel';
+const apiRoomByHotelUrl = 'http://192.168.1.7:3000/api/roombyidhotel';
+const hotelId = localStorage.getItem('IdKhachSan');
 
 async function fetchRoomData() {
     try {
-        const response = await fetch(apiRoomUrl);
+        const response = await fetch(`${apiRoomByHotelUrl}/${hotelId}`);
+        if (!response.ok) throw new Error("Không thể lấy dữ liệu phòng.");
         const rooms = await response.json();
+
         const roomTypes = await fetchTyperoomData();
         const hotels = await fetchHotelData();
 
-        populateSelectOptions(hotels); 
+        const customerList = document.getElementById("customer-list");
+        customerList.innerHTML = "";
 
-        const customerList = document.getElementById('customer-list');
-        customerList.innerHTML = ''; 
+        rooms.forEach((room) => {
+            const row = document.createElement("tr");
+            row.setAttribute("data-id", room._id);
+            row.onclick = () => showRoomDetails(room, roomTypes, hotels);
 
-        rooms.forEach(room => {
-            const row = document.createElement('tr');
-            row.setAttribute('data-id', room._id);
-            row.onclick = () => showRoomDetails(room, roomTypes, hotels); 
-
-            const roomType = roomTypes.find(type => type._id === room.IdLoaiPhong);
-            const hotel = roomType ? hotels.find(h => h._id === roomType.IdKhachSan) : null;
+            const roomType = roomTypes.find((type) => type._id === room.IdLoaiPhong);
 
             row.innerHTML = `
-                <td class="hidden">${room._id || 'N/A'}</td>
-                <td>${roomType ? roomType.tenLoaiPhong : 'Loại phòng không tồn tại .'}</td>
-                <td>${hotel ? hotel.tenKhachSan : 'Khách sạn không tồn tại .'}</td>
-                <td>${room.soPhong || 'N/A'}</td>
-                <td class="hidden">${room.tinhTrangPhong === 0 ? 'Hoạt động bình thường' : 'Đã bảo trì'}</td>
+                <td class="hidden">${room._id || "N/A"}</td>
+                <td>${roomType ? roomType.tenLoaiPhong : "Không tồn tại."}</td>
+                <td>${room.soPhong || "N/A"}</td>
+                <td>${room.moTaPhong || "N/A"}</td>
+                <td class="hidden">${room.tinhTrangPhong === 0 ? "phong trống" : "Đã được đặt"}</td>
             `;
 
             customerList.appendChild(row);
         });
     } catch (error) {
-        console.error('Error fetching room data:', error);
+        console.error("Error fetching room data:", error);
+        alert("Không thể lấy dữ liệu phòng. Vui lòng thử lại.");
     }
 }
 
@@ -55,26 +57,7 @@ async function fetchTyperoomByHotelId(hotelId) {
     }
 }
 
-function populateSelectOptions(hotels) {
-    const hotelSelect = document.getElementById('tenkhachsan');
 
-    hotelSelect.innerHTML = '<option value="">Chọn khách sạn</option>';
-
-    hotels.forEach(hotel => {
-        const option = document.createElement('option');
-        option.value = hotel._id; 
-        option.textContent = hotel.tenKhachSan; 
-        hotelSelect.appendChild(option);
-    });
-
-    hotelSelect.addEventListener('change', async () => {
-        const selectedHotelId = hotelSelect.value;
-        document.getElementById('makhachsan').value = selectedHotelId; 
-
-        const roomTypes = await fetchTyperoomByHotelId(selectedHotelId);
-        populateRoomTypeOptions(roomTypes);
-    });
-}
 
 function populateRoomTypeOptions(roomTypes) {
     const roomTypeSelect = document.getElementById('tenloaiphong');
@@ -103,16 +86,11 @@ async function showRoomDetails(room, roomTypes, hotels) {
     document.getElementById('maphong').value = room._id || '';
 
     const roomType = await fetchRoomTypeById(room.IdLoaiPhong);
-    const hotel = roomType ? hotels.find(h => h._id === roomType.IdKhachSan) : null;
 
-    document.getElementById('makhachsan').value = hotel ? hotel._id : ''; 
     document.getElementById('maloaiphong').value = room.IdLoaiPhong || ''; 
 
-    const hotelSelect = document.getElementById('tenkhachsan');
-    hotelSelect.value = hotel ? hotel._id : ''; 
 
-    if (hotel) {
-        const roomTypesByHotel = await fetchTyperoomByHotelId(hotel._id);
+        const roomTypesByHotel = await fetchTyperoomByHotelId(hotelId);
         populateRoomTypeOptions(roomTypesByHotel); 
 
         const roomTypeSelect = document.getElementById('tenloaiphong');
@@ -123,7 +101,7 @@ async function showRoomDetails(room, roomTypes, hotels) {
             roomTypeSelect.value = '';
             roomTypeSelect.options[roomTypeSelect.selectedIndex].textContent = 'Chọn loại phòng';
         }
-    }
+    
 
     document.getElementById('sophong').value = room.soPhong || '';
     document.getElementById('sotang').value = room.soTang || '';
@@ -148,16 +126,10 @@ async function fetchRoomTypeById(roomTypeId) {
 
 async function addRoom() {
     // Lấy giá trị từ các trường input
-    const maPhong = document.getElementById('maphong').value;
     const soPhong = document.getElementById('sophong').value;
     const soTang = document.getElementById('sotang').value;
-    const maKhachSan = document.getElementById('makhachsan').value;
     const maLoaiPhong = document.getElementById('maloaiphong').value;
 
-    if (maKhachSan==="") {
-        alert('Vui lòng chọn khách sạn.');
-        return;
-    }
     if (!maLoaiPhong) {
         alert('Vui lòng chọn loại phòng.');
         return;
@@ -242,17 +214,12 @@ async function updateRoom() {
     const maPhong = document.getElementById('maphong').value;
     const soPhong = document.getElementById('sophong').value;
     const soTang = document.getElementById('sotang').value;
-    const maKhachSan = document.getElementById('makhachsan').value;
     const maLoaiPhong = document.getElementById('maloaiphong').value;
 
     // Kiểm tra điều kiện
     if (maPhong==="") {
         alert('Vui lòng chọn phòng để cập nhật.');
         document.getElementById('customer-form').reset();
-        return;
-    }
-    if (!maKhachSan) {
-        alert('Vui lòng chọn khách sạn.');
         return;
     }
     if (!maLoaiPhong) {
@@ -364,57 +331,44 @@ async function deleteRoom() {
 }
 
 function searchRooms() {
-    const maphongSearch = removeDiacritics(document.getElementById('search-maphong').value.toLowerCase().trim());
-    const loaiphongSearch = removeDiacritics(document.getElementById('search-tenloaiphong').value.toLowerCase().trim());
-    const sophongSearch = removeDiacritics(document.getElementById('search-sophong').value.toLowerCase().trim());
+    // Lấy giá trị tìm kiếm từ các ô input
+    const sophongSearch = removeDiacritics(document.getElementById("search-sophong").value.toLowerCase().trim());
+    const loaiphongSearch = removeDiacritics(document.getElementById("search-loaiphong").value.toLowerCase().trim());
 
-    const rows = document.querySelectorAll('#customer-list tr');
-    let hasResults = false; 
+    // Lấy tất cả các dòng phòng trong bảng
+    const rows = document.querySelectorAll("#customer-list tr");
+    let hasResults = false;
 
-    rows.forEach(row => {
-        const maphong = removeDiacritics(row.cells[1].textContent.toLowerCase());
-        const loaiphong = removeDiacritics(row.cells[2].textContent.toLowerCase());
-        const sophong = removeDiacritics(row.cells[3].textContent.toLowerCase());
+    rows.forEach((row) => {
+        const sophong = removeDiacritics(row.cells[2].textContent.toLowerCase());
+        const loaiphong = removeDiacritics(row.cells[1].textContent.toLowerCase()); // Loại phòng ở cột thứ 2
 
-        const matchesMãPhong = maphong.includes(maphongSearch);
-        const matchesLoạiPhong = loaiphong.includes(loaiphongSearch);
         const matchesSốPhong = sophong.includes(sophongSearch);
+        const matchesLoạiPhong = loaiphong.includes(loaiphongSearch);
 
-        if ((maphongSearch === '' || matchesMãPhong) &&
-            (loaiphongSearch === '' || matchesLoạiPhong) &&
-            (sophongSearch === '' || matchesSốPhong)) {
-            row.style.display = '';
-            hasResults = true; 
+        if (
+            (sophongSearch === "" || matchesSốPhong) &&
+            (loaiphongSearch === "" || matchesLoạiPhong)
+        ) {
+            row.style.display = "";
+            hasResults = true;
         } else {
-            row.style.display = 'none'; 
+            row.style.display = "none";
         }
     });
 
-    const list = document.getElementById('customer-list');
-    const noResultsRow = document.getElementById('no-results-row');
-
     if (!hasResults) {
-        if (!noResultsRow) {
-            const row = document.createElement('tr');
-            row.id = 'no-results-row';
-            row.innerHTML = `
-                <td colspan="3" style="text-align: center;">Không tìm thấy phòng</td>
-            `;
-            list.appendChild(row);
-        }
-    } else {
-        if (noResultsRow) {
-            noResultsRow.remove();
-        }
+        alert("Không tìm thấy kết quả phù hợp.");
     }
 }
 
-
+// Gán sự kiện cho nút tìm kiếm
 document.getElementById('searchBtn').addEventListener('click', function (event) {
     event.preventDefault();
     searchRooms();
 });
 
+// Hàm loại bỏ dấu tiếng Việt
 function removeDiacritics(str) {
     return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D');
 }

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý Dịch Vụ</title>
     <link rel="stylesheet" href="../css/dichvu.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body>
@@ -25,10 +27,9 @@
             </ul>
         </div>
 
-        <div class="main-content">
-            <h1>Quản lý Dịch Vụ</h1>
-            <div class="form-section">
-                <form id="dichvu-form">
+        <div class="main-content flex  gap-2 ">
+            <div class="form-section w-[25%]">
+                <form id="dichvu-form" class="grid grid-cols-1 mt-4">
                     <input type="text" style="height: 0px;width:0px" id="maDichVu">
 
                     <div class="form-group">
@@ -55,13 +56,11 @@
                         <button type="button" onclick="addDichVu()">Thêm</button>
                         <button type="button" onclick="editDichVu()">Sửa</button>
                         <button type="button" onclick="deleteDichVu()">Xóa</button>
-                        <button type="button" onclick="clearForm()">Làm mới</button>
                     </div>
 
                 </form>
             </div>
-            <div class="table-section">
-                <h3>Danh sách Dịch Vụ</h3>
+            <div class="table-section w-[70%] mt-10">
                 <table>
                     <thead>
                         <tr>
