@@ -9,6 +9,7 @@ const apiDichVuUrl = 'http://192.168.1.7:3000/api/dichvu';
 
 
 
+
 const hotelId = localStorage.getItem('IdKhachSan');
 
 async function fetchBookings() {

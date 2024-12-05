@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 const apiUrl = 'http://192.168.1.7:3000/api/messenger';
 const apichamsocUrl = 'http://192.168.1.7:3000/api/messengerbyidhotel';
 const apiUrlAccount = 'http://192.168.1.7:3000/api/accounta';
+=======
+const apiUrl = 'http://10.62.4.33:3000/api/messenger';
+const apichamsocUrl = 'http://10.62.4.33:3000/api/messengerbyidhotel';
+const apiUrlAccount = 'http://10.62.4.33:3000/api/accounta';
+>>>>>>> test_deploy
 const hotelId = localStorage.getItem('IdKhachSan');
 
 let selectedIdKhachSan = null;

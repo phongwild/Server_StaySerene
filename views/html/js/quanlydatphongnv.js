@@ -5,6 +5,7 @@ const apiKhachHang = "http://192.168.1.7:3000/api/accounta";
 const apirooma = "http://192.168.1.7:3000/api/roomsa";
 const apiroom = "http://192.168.1.7:3000/api/rooms";
 
+
 const hotelId = localStorage.getItem('IdKhachSan');
 let services = {};
 
