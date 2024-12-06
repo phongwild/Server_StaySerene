@@ -1,18 +1,113 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thống kê</title>
     <link rel="stylesheet" href="../css/thongke.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Phần CSS cải tiến */
 
+        /* Tổng quát */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+            background-color: #f4f6f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-section label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-section input,
+        .form-section select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-section .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .form-section button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .form-section button:hover {
+            background-color: #2980b9;
+        }
+
+        .bieudo {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #progressBar {
+            font-size: 14px;
+            color: #34495e;
+        }
+
+        #progressBarFill {
+            background-color: #3498db;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
+        <!-- Sidebar giữ nguyên -->
         <div class="sidebar">
-            <h2 class="font-extrabold text-2xl">StaySerene</h2>
+            <h2>StaySerene</h2>
             <ul>
                 <li><a href="khachhang.html" id="khachhang">Quản lý khách hàng</a></li>
                 <li><a href="nhanvien.html" id="nhanvien">Quản lý nhân viên</a></li>
@@ -22,36 +117,64 @@
                 <li><a href="dichvu.html" id="dichvu">Quản lý dịch vụ</a></li>
                 <li><a href="thongke.html" id="thongke" class="namepage">Thống kê</a></li>
                 <li><a href="#" id="đăng xuất" onclick="confirmLogout(event)">Đăng xuất</a></li>
-
             </ul>
         </div>
-        <div class="main-content" id="main-content">
+
+        <!-- Main content -->
+        <div class="main-content">
             <div class="header">
                 <h1>Thống kê doanh thu</h1>
                 <div class="form-section">
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-end;">
+                        <!-- Chọn ngày -->
+                        <div class="form-group">
+                            <label for="startDate">Ngày bắt đầu:</label>
+                            <input type="date" id="startDate" class="startDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">Ngày kết thúc:</label>
+                            <input type="date" id="endDate" class="endDate">
+                        </div>
+                        <div class="button-group">
+                            <button type="button" onclick="fetchRevenueByDateRange()">Thống kê theo khoảng ngày</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <!-- Dropdown khách sạn -->
+                    <div class="form-group">
+                        <label for="tenKhachsan">Chọn khách sạn:</label>
+                        <select id="tenKhachsan" class="tenKhachsan" >
+                            <option value="">Chọn Khách sạn</option>
+                        </select>
+                    </div>
+                    <!-- Các nút khác -->
                     <div class="button-group">
-                        <form id="customer-form">
-                            <div class="form-group">
-                                <select type="text" id="tenKhachsan" class="tenKhachsan" autocomplete="off">
-                                    <option value="">Chọn Khách sạn</option>
-                                </select>
-                            </div>
-                        </form>
-                        <button type="button" onclick="fetchRevenueByYear()">Thông kê theo năm</button>
-                        <button type="button" onclick="fetchRevenueByQuarter()">Thông kê theo quý</button>
-                        <button type="button" onclick="fetchRevenueByMonth()">Thông kê theo tháng</button>
-                        <button type="button" onclick="fetchRevenueByRoomType()">Thông kê theo loại phòng</button>
+                        <button type="button" onclick="fetchRevenueByYear()">Thống kê theo năm</button>
+                        <button type="button" onclick="fetchRevenueByQuarter()">Thống kê theo quý</button>
+                        <button type="button" onclick="fetchRevenueByMonth()">Thống kê theo tháng</button>
+                        <button type="button" onclick="fetchRevenueByRoomType()">Thống kê theo loại phòng</button>
                         <button type="button" onclick="fetchRevenueBySeason()">Thống kê theo mùa</button>
                         <button type="button" onclick="fetchRevenueByHotel()">Thống kê theo khách sạn</button>
                     </div>
                 </div>
-                <div class="bieudo">
-                    <canvas id="bieudoCot" width="1200px" height="600px"></canvas>
-
+            </div>
+            <!-- Progress bar -->
+            <div id="progressBar" style="display: none; text-align: center; margin-bottom: 20px;">
+                <div style="width: 100%; background-color: #f3f3f3; border-radius: 10px; ">
+                    <div id="progressBarFill"
+                        style="width: 0%; height: 20px; background-color: #3498db; transition: width 0.3s;"></div>
                 </div>
+                <p>Đang tải dữ liệu...</p>
+            </div>
+            <!-- Biểu đồ -->
+            <div class="bieudo">
+                <canvas id="bieudoCot" width="1200px" height="600px"></canvas>
             </div>
         </div>
     </div>
     <script src="../js/thongke.js"></script>
 </body>
+
 </html>

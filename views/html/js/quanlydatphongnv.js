@@ -1,9 +1,9 @@
-const apiUrl = "http://192.168.1.7:3000/api/orderroom";
-const apidatphongUrl = "http://192.168.1.7:3000/api/orderroombyidhotel";
-const serviceApiUrl = "http://192.168.1.7:3000/api/dichvu";
-const apiKhachHang = "http://192.168.1.7:3000/api/accounta";
-const apirooma = "http://192.168.1.7:3000/api/roomsa";
-const apiroom = "http://192.168.1.7:3000/api/rooms";
+const apiUrl = "https://stayserene.vercel.app/api/orderroom";
+const apidatphongUrl = "https://stayserene.vercel.app/api/orderroombyidhotel";
+const serviceApiUrl = "https://stayserene.vercel.app/api/dichvu";
+const apiKhachHang = "https://stayserene.vercel.app/api/accounta";
+const apirooma = "https://stayserene.vercel.app/api/roomsa";
+const apiroom = "https://stayserene.vercel.app/api/rooms";
 
 
 const hotelId = localStorage.getItem('IdKhachSan');

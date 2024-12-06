@@ -1,9 +1,9 @@
-const apiHotelUrl = 'http://192.168.1.7:3000/api/hotel';
-const apiTyperoomUrl = 'http://192.168.1.7:3000/api/typerooma';
-const apiRoomUrl = 'http://192.168.1.7:3000/api/rooms';
-const apiRoomUrla = 'http://192.168.1.7:3000/api/roomsa';
-const apiTyperoomByHotelUrl = 'http://192.168.1.7:3000/api/typeroombyidhotel';
-const apiRoomByHotelUrl = 'http://192.168.1.7:3000/api/roombyidhotel';
+const apiHotelUrl = 'https://stayserene.vercel.app/api/hotel';
+const apiTyperoomUrl = 'https://stayserene.vercel.app/api/typerooma';
+const apiRoomUrl = 'https://stayserene.vercel.app/api/rooms';
+const apiRoomUrla = 'https://stayserene.vercel.app/api/roomsa';
+const apiTyperoomByHotelUrl = 'https://stayserene.vercel.app/api/typeroombyidhotel';
+const apiRoomByHotelUrl = 'https://stayserene.vercel.app/api/roombyidhotel';
 const hotelId = localStorage.getItem('IdKhachSan');
 
 async function fetchRoomData() {

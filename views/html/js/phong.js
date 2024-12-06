@@ -1,8 +1,8 @@
-const apiHotelUrl = 'http://192.168.0.104:3000/api/hotel';
-const apiTyperoomUrl = 'http://192.168.0.104:3000/api/typerooma';
-const apiRoomUrl = 'http://192.168.0.104:3000/api/rooms';
-const apiRoomUrla = 'http://192.168.0.104:3000/api/roomsa';
-const apiTyperoomByHotelUrl = 'http://192.168.0.104:3000/api/typeroombyidhotel';
+const apiHotelUrl = 'https://stayserene.vercel.app/api/hotel';
+const apiTyperoomUrl = 'https://stayserene.vercel.app/api/typerooma';
+const apiRoomUrl = 'https://stayserene.vercel.app/api/rooms';
+const apiRoomUrla = 'https://stayserene.vercel.app/api/roomsa';
+const apiTyperoomByHotelUrl = 'https://stayserene.vercel.app/api/typeroombyidhotel';
 
 async function fetchRoomData() {
     try {

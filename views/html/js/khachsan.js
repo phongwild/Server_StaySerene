@@ -1,5 +1,5 @@
-const apiUrl = 'http://192.168.0.104:3000/api/hotel';
-const apiUrla = 'http://192.168.0.104:3000/api/hotela';
+const apiUrl = 'https://stayserene.vercel.app/api/hotel';
+const apiUrla = 'https://stayserene.vercel.app/api/hotela';
 
 // Kiểm tra số điện thoại hợp lệ
 function isValidPhoneNumber(phone) {

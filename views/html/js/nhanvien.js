@@ -1,5 +1,5 @@
-const apiNhanVienUrl = 'http://192.168.0.104:3000/api/nhanvien';
-const apiKhachSanUrl = 'http://192.168.0.104:3000/api/hotela';
+const apiNhanVienUrl = 'https://stayserene.vercel.app/api/nhanvien';
+const apiKhachSanUrl = 'https://stayserene.vercel.app/api/hotela';
 
 async function fetchKhachSan(IdKhachSan) {
     try {

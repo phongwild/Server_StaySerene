@@ -1,5 +1,5 @@
-const APIa = "http://192.168.0.104:3000/api/accounta";
-const API = "http://192.168.0.104:3000/api/account";
+const APIa = "https://stayserene.vercel.app/api/accounta";
+const API = "https://stayserene.vercel.app/api/account";
 const customerId = sessionStorage.getItem('customerId'); // Lấy thông tin từ sessionStorage
 
 if (customerId) {

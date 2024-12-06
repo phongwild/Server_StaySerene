@@ -1,4 +1,4 @@
-const apiDichVuUrl = 'http://192.168.10.103:3000/api/dichvu';
+const apiDichVuUrl = 'https://stayserene.vercel.app/api/dichvu';
 
 
 async function fetchAllDichVu() {

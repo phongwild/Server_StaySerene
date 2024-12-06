@@ -1,5 +1,5 @@
-const apiphanhoiUrl = "http://10.62.4.33:3000/api/phanhoibyidhotel";
-const apikhachhang = "http://10.62.4.33:3000/api/account";
+const apiphanhoiUrl = "https://stayserene.vercel.app/api/phanhoibyidhotel";
+const apikhachhang = "https://stayserene.vercel.app/api/account";
 const hotelId = localStorage.getItem('IdKhachSan');
 
 let customers = {};

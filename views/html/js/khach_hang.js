@@ -1,5 +1,5 @@
-var API = "http://192.168.0.104:3000/api/account";
-const apiOrderroombyUid = "http://192.168.0.104:3000/api/orderroombyUid";
+var API = "https://stayserene.vercel.app/api/account";
+const apiOrderroombyUid = "https://stayserene.vercel.app/api/orderroombyUid";
 var currenUser = [];
 function isValidPhoneNumber(phone) {
     const phoneRegex = /^0\d{9}$/;
