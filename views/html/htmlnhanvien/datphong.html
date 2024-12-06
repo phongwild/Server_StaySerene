@@ -198,7 +198,6 @@
                 <li><a href="quanlydatphongnv.html" id="lichsu">Lịch sử đặt phòng</a></li>
                 <li><a href="datphong.html" id="datphong" class="namepage">Đặt Phòng</a></li>
                 <li><a href="phongnv.html" id="phong">Quản lý phòng</a></li>
-
                 <li><a href="#" id="đăng xuất" onclick="confirmLogout(event)">Đăng xuất</a></li>
 
             </ul>
@@ -214,7 +213,13 @@
                         <div class="form-group">
                             <label for="thoiGianTra">Thời gian trả :</label>
                             <input type="datetime-local" id="thoiGianTra" name="thoiGianTra">
+                            <div class="button-group">
+                                <div class="form-search">
+                                    <button id="searchBtn" type="button">Tìm kiếm</button>
+                                </div>
+                            </div>
                         </div>
+                        
                         <div class="form-group" id="cccd-section" style="display:none;">
                             <label for="uid">Số CCCD khách hàng :</label>
                             <div class="form-maks">
@@ -265,11 +270,7 @@
                 </div>
                 <p>Đang tải dữ liệu...</p>
             </div>
-            <div class="button-group">
-                <div class="form-search">
-                    <button id="searchBtn" type="button">Tìm kiếm</button>
-                </div>
-            </div>
+
         </div>
 
     </div>
