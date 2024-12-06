@@ -25,6 +25,7 @@ body {
     height: 100%; 
 }
 
+
 .sidebar h2 {
     margin-bottom: 20px;
 }
@@ -126,6 +127,7 @@ form {
     background-color: #3498db;
     color: white;
     cursor: pointer;
+    font-size: 13px;
 }
 
 .button-group button:hover {
