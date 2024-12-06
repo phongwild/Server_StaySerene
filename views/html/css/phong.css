@@ -230,6 +230,7 @@ table tbody tr:nth-child(even) {
     border: 1px solid #ddd;
     background-color: #f9f9f9;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .pagination button.active {

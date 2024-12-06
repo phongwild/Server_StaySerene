@@ -7,7 +7,18 @@
     <title>Danh Sách Đặt Phòng</title>
     <link rel="stylesheet" href="../css/datphong.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #progressBar {
+            font-size: 14px;
+            color: #34495e;
+        }
 
+        #progressBarFill {
+            background-color: #3498db;
+            height: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,23 +30,23 @@
                 <li><a href="chamsocnv.html" id="chamsoc">Chăm sóc khách hàng</a></li>
                 <li><a href="quanlydatphongnv.html" id="lichsu">Lịch sử đặt phòng</a></li>
                 <li><a href="datphong.html" id="datphong" class="namepage">Đặt Phòng</a></li>
-                <li><a href="phongnv.html" id="phong" >Quản lý phòng</a></li>
+                <li><a href="phongnv.html" id="phong">Quản lý phòng</a></li>
 
-                <li><a href="#" id="đăng xuất" onclick="confirmLogout(event)">Đăng xuất</a></li>    
+                <li><a href="#" id="đăng xuất" onclick="confirmLogout(event)">Đăng xuất</a></li>
 
             </ul>
         </div>
         <div class="main-content" id="main-content">
             <div class="header">
-                <div class="form-section" >
+                <div class="form-section">
                     <form id="customer-form">
                         <div class="form-group">
                             <label for="thoiGianNhan">Thời gian nhận :</label>
-                            <input type="datetime-local"  id="thoiGianNhan" name="thoiGianNhan">
+                            <input type="datetime-local" id="thoiGianNhan" name="thoiGianNhan">
                         </div>
                         <div class="form-group">
                             <label for="thoiGianTra">Thời gian trả :</label>
-                            <input type="datetime-local"  id="thoiGianTra" name="thoiGianTra">
+                            <input type="datetime-local" id="thoiGianTra" name="thoiGianTra">
                         </div>
                         <div class="form-group" id="cccd-section" style="display:none;">
                             <label for="uid">Số CCCD khách hàng :</label>
@@ -57,7 +68,7 @@
                             <label for="ghiChu">Ghi chú :</label>
                             <input type="text" id="ghiChu" name="ghiChu">
                         </div>
-                        
+
                     </form>
                 </div>
             </div>
@@ -80,6 +91,13 @@
                     </tr>
                 </tbody>
             </table>
+            <div id="progressBar" style="display: none; text-align: center; margin-bottom: 20px;">
+                <div style="width: 100%; background-color: #f3f3f3; border-radius: 10px; ">
+                    <div id="progressBarFill"
+                        style="width: 0%; height: 20px; background-color: #3498db; transition: width 0.3s;"></div>
+                </div>
+                <p>Đang tải dữ liệu...</p>
+            </div>
             <div class="button-group">
                 <div class="form-search">
 
@@ -89,7 +107,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <script src="../js/base_url.js"></script>
     <script src="../js/datphongnv.js"></script>

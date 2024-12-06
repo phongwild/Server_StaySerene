@@ -3,84 +3,68 @@ const apidatphongUrl = `${base_url}orderroombyidhotel`;
 const serviceApiUrl = `${base_url}dichvu`;
 const apiKhachHang = `${base_url}accounta`;
 const apirooma = `${base_url}roomsa`;
-const apiroom = `${base_url}rooms`;
-
-
 const hotelId = localStorage.getItem('IdKhachSan');
-let services = {};
 
-async function fetchRoomById(roomId) {
-  try {
-    const response = await fetch(`${apirooma}/${roomId}`); 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const room = await response.json();
-    return room; 
-  } catch (error) {
-    console.error('Error fetching room by ID:', error);
-    return null;
-  }
-}
-async function fetchCustomerById(customerId) {
-  try {
-    const response = await fetch(`${apiKhachHang}/${customerId}`);
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const customer = await response.json();
-    return customer;
-  } catch (error) {
-    console.error('Error fetching customer by ID:', error);
-    return null;
-  }
-}
+// Caching dữ liệu để tối ưu
+const cache = {
+  rooms: new Map(),
+  customers: new Map(),
+  services: new Map()
+};
 
-async function fetchAllServices() {
+// Hàm dùng chung để fetch dữ liệu và cache
+async function fetchWithCache(url, cacheMap, key) {
+  if (cacheMap.has(key)) {
+    return cacheMap.get(key);
+  }
   try {
-    const response = await fetch(serviceApiUrl);
+    const response = await fetch(url);
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error(`Lỗi khi gọi API: ${response.status}`);
     }
     const data = await response.json();
-    console.log("Fetched services:", data);
+    cacheMap.set(key, data);
     return data;
   } catch (error) {
-    console.error('Error fetching all services:', error);
-    return [];
-  }
-}
-async function fetchServiceById(serviceId) {
-  try {
-    const response = await fetch(`${serviceApiUrl}/${serviceId}`);
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const service = await response.json();
-    console.log("Fetched service:", service);
-    return service;
-  } catch (error) {
-    console.error('Error fetching service by ID:', error);
+    console.error("Error fetching data:", error);
     return null;
   }
 }
-async function fetchOrderRoomByIdHotel(hotelId) {
-  try {
-    const response = await fetch(`${apiOrderRoomUrl}/${hotelId}`); 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+function showProgressBar() {
+  const progressBar = document.getElementById('progressBar');
+  const progressBarFill = document.getElementById('progressBarFill');
+  progressBar.style.display = 'block';
+  progressBarFill.style.width = '0%';
+
+  let width = 0;
+  const interval = setInterval(() => {
+    if (width >= 90) { // Giới hạn đến 90% khi đang load
+      clearInterval(interval);
+    } else {
+      width += 10;
+      progressBarFill.style.width = width + '%';
     }
-    const orderRooms = await response.json();
-    return orderRooms;  
-  } catch (error) {
-    console.error('Error fetching order rooms by hotel ID:', error);
-    return null;  
-  }
+  }, 300);
 }
 
+function hideProgressBar() {
+  const progressBar = document.getElementById('progressBar');
+  const progressBarFill = document.getElementById('progressBarFill');
+  progressBarFill.style.width = '100%';
+  setTimeout(() => {
+    progressBar.style.display = 'none';
+  }, 500); // Ẩn sau khi hoàn thành
+}
+// Hàm fetch dữ liệu với cache
+async function fetchRoomById(roomId) {
+  return fetchWithCache(`${apirooma}/${roomId}`, cache.rooms, roomId);
+}
 
+async function fetchCustomerById(customerId) {
+  return fetchWithCache(`${apiKhachHang}/${customerId}`, cache.customers, customerId);
+}
 
-
+// Map trạng thái
 const statusMapping = {
   0: "Đã đặt cọc",
   1: "Đã nhận phòng",
@@ -88,214 +72,121 @@ const statusMapping = {
   3: "Đã hủy"
 };
 
-function validateDateTimeFormat(dateTime) {
-  const dateTimePattern = /^\d{2}:\d{2}:\d{2} \d{2}\/\d{2}\/\d{4}$/;
-  return dateTimePattern.test(dateTime);
-}
-function isNotEmpty(value, fieldName) {
-  if (!value) {
-    alert(`${fieldName} không được để trống`);
-    return false;
-  }
-  return true;
-}
-async function fetchLichSus() {
-  try {
-    const response = await fetch(`${apidatphongUrl}/${hotelId}`);
-    const lichsus = await response.json();
-    displayLichSus(lichsus);
-  } catch (error) {
-    console.error("Lỗi khi fetch lichsus:", error);
+// Hàm lấy class CSS cho trạng thái
+function getStatusClass(trangThaiValue) {
+  switch (trangThaiValue) {
+    case 0: return 'status-booked';
+    case 1: return 'status-checked-in';
+    case 2: return 'status-checked-out';
+    case 3: return 'status-cancelled';
+    default: return '';
   }
 }
 
-
+// Hàm hiển thị danh sách đặt phòng
 async function displayLichSus(lichsus) {
   const customerList = document.getElementById("customer-list");
   customerList.innerHTML = "";
-  fetchOrderRoomByIdHotel(hotelId);
 
-  for (const lichsu of lichsus) {
-    const row = document.createElement("tr");
-    const mdp = lichsu._id;
-    const Uid = lichsu.Uid;
-    const phongID = lichsu.IdPhong;
-    const thoiGianDatPhong = lichsu.orderTime;
-    const thoiGianNhan = lichsu.timeGet;
-    const thoiGianTra = lichsu.timeCheckout;
-    const ghiChu = lichsu.note;
-    const trangThaiValue = lichsu.status;
-    const dichVuID = lichsu.IdDichVu || "N/A";
-    const tongTien = lichsu.total;
+  showProgressBar(); // Hiển thị progress bar khi bắt đầu xử lý
 
-    const room = await fetchRoomById(phongID);
-    const soPhong = room ? room.soPhong : "Không có số phòng"; 
+  try {
+    // Fetch dữ liệu song song
+    const roomPromises = lichsus.map(lichsu => fetchRoomById(lichsu.IdPhong));
+    const customerPromises = lichsus.map(lichsu => fetchCustomerById(lichsu.Uid));
 
-    const customer = await fetchCustomerById(Uid);
-    const customerName = customer ? customer.username : "Không tìm thấy tên khách hàng";
-    const customerCCCD= customer ? customer.cccd : "Không tìm thấy tên khách hàng";
-    const customerSDT= customer ? customer.sdt : "Không tìm thấy SDT khách hàng";
-    const customerEmail= customer ? customer.email : "Không tìm thấy Email khách hàng";
+    const rooms = await Promise.all(roomPromises);
+    const customers = await Promise.all(customerPromises);
 
-    row.innerHTML = `
-      <td class="hidden">${mdp}</td>
-      <td>${customerName}</td>
-      <td>${customerCCCD}</td> 
-      <td>${soPhong}</td>
-      <td>${thoiGianDatPhong}</td>
-      <td>${thoiGianNhan}</td>
-      <td>${thoiGianTra}</td>
-      <td style="background-color: ${getStatusColor(trangThaiValue)};color:white">${statusMapping[trangThaiValue]}</td>
-    `;
+    lichsus.forEach((lichsu, index) => {
+      const room = rooms[index];
+      const customer = customers[index];
 
-    row.onclick = async function () {
-      let itemInfo = {
-        mdp:mdp,
-        Uid:Uid,
-        TenKhachHang: customerName,
-        phongID:phongID,
-        cccd: customerCCCD,
-        dichVuID: dichVuID,
-        sdt: customerSDT,
-        email: customerEmail,
-        thoiGianDat: thoiGianDatPhong,
-        thoiGianNhan: thoiGianNhan,
-        thoiGianTra: thoiGianTra,
-        ghiChu: ghiChu,
-        trangThai: trangThaiValue,
-        tongTien: tongTien
-      };
-      localStorage.setItem('itemInfo', JSON.stringify(itemInfo));
-      window.location.href = '../htmlnhanvien/lichsuchitiet.html';
-    };
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${customer ? customer.username : "Không tìm thấy tên khách hàng"}</td>
+        <td>${customer ? customer.cccd : "Không tìm thấy CCCD"}</td>
+        <td>${room ? room.soPhong : "Không có số phòng"}</td>
+        <td>${lichsu.orderTime}</td>
+        <td>${lichsu.timeGet}</td>
+        <td>${lichsu.timeCheckout}</td>
+        <td class="${getStatusClass(lichsu.status)}">${statusMapping[lichsu.status]}</td>
+      `;
 
-    customerList.appendChild(row);
+      row.onclick = () => handleRowClick(lichsu, customer, room);
+      customerList.appendChild(row);
+    });
+  } catch (error) {
+    console.error("Lỗi khi hiển thị danh sách:", error);
+  } finally {
+    hideProgressBar(); // Ẩn progress bar sau khi hoàn thành
   }
 }
-function getStatusColor(trangThaiValue) {
-  if (trangThaiValue === 1) {
-    return 'green';
-  } else if (trangThaiValue === 2) {
-    return 'blue';
-  } else if (trangThaiValue === 0) {
-    return '#FFA500';
-  } else if (trangThaiValue === 3) {
-    return 'red';
-  }
-  return 'black';  // Default color if value is not 0, 1, 2, or 3
+
+
+// Hàm xử lý khi click vào dòng đặt phòng
+function handleRowClick(lichsu, customer, room) {
+  const itemInfo = {
+    mdp: lichsu._id,
+    Uid: lichsu.Uid,
+    TenKhachHang: customer.username,
+    phongID: lichsu.IdPhong,
+    cccd: customer.cccd,
+    dichVuID: lichsu.IdDichVu || "N/A",
+    sdt: customer.sdt,
+    email: customer.email,
+    thoiGianDat: lichsu.orderTime,
+    thoiGianNhan: lichsu.timeGet,
+    thoiGianTra: lichsu.timeCheckout,
+    ghiChu: lichsu.note,
+    trangThai: lichsu.status,
+    tongTien: lichsu.total
+  };
+  localStorage.setItem('itemInfo', JSON.stringify(itemInfo));
+  window.location.href = '../htmlnhanvien/lichsuchitiet.html';
 }
 
-
-function removeVietnameseTones(str) {
-  return str
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/đ/g, 'd')
-    .replace(/Đ/g, 'D');
-}
-
-function filterTable() {
-  const searchInput = removeVietnameseTones(
-    document.getElementById("search").value.toLowerCase()
-  );
-  const rows = document.querySelectorAll("#customer-list tr");
-
-  rows.forEach((row) => {
-    const cells = row.getElementsByTagName("td");
-    if (cells.length > 1) {
-      const serviceText = removeVietnameseTones(cells[1].innerText.toLowerCase());
-
-      row.style.display = serviceText.includes(searchInput) ? "" : "none";
-    }
-  });
-}
-
-
-window.onload = function () {
-  fetchLichSus();
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  populateServices(); 
-  fetchOrderRoomByIdHotel(hotelId);
-});
-
-document.getElementById('searchBtn').addEventListener('click', async function() {
+// Hàm tìm kiếm
+function filterLichSus() {
   const searchMadatphong = document.getElementById('search-madatphong').value.toLowerCase();
   const searchTenKhachHang = document.getElementById('search-tenkhachhang').value.toLowerCase();
   const searchSoPhong = document.getElementById('search-sophong').value.toLowerCase();
 
+  const filteredLichsus = previousLichsus.filter(lichsu => {
+    const customer = cache.customers.get(lichsu.Uid);
+    const room = cache.rooms.get(lichsu.IdPhong);
+
+    const matchesMadatphong = searchMadatphong ? (customer && customer.username.toLowerCase().includes(searchMadatphong)) : true;
+    const matchesTenKhachHang = searchTenKhachHang ? (customer && customer.cccd.toLowerCase().includes(searchTenKhachHang)) : true;
+    const matchesSoPhong = searchSoPhong ? (room && room.soPhong.toString().toLowerCase().includes(searchSoPhong)) : true;
+
+    return matchesMadatphong && matchesTenKhachHang && matchesSoPhong;
+  });
+
+  displayLichSus(filteredLichsus);
+}
+
+// Hàm fetch lịch sử đặt phòng
+async function fetchLichSus() {
   try {
+    showProgressBar(); // Hiển thị progress bar
+
     const response = await fetch(`${apidatphongUrl}/${hotelId}`);
-    const bookings = await response.json();
+    if (!response.ok) throw new Error('Network response was not ok');
 
-    const customerList = document.getElementById("customer-list");
-    customerList.innerHTML = "";  // Clear the existing content
-
-    let hasResults = false; // Variable to track if there are any results
-
-    for (const booking of bookings) {
-      const customer = await fetchCustomerById(booking.Uid);
-      const room = await fetchRoomById(booking.IdPhong);
-
-      const matchesMadatphong = searchMadatphong ? (customer && customer.username.toLowerCase().includes(searchMadatphong)) : true;
-      const matchesTenKhachHang = searchTenKhachHang ? (customer && customer.cccd.toLowerCase().includes(searchTenKhachHang)) : true;
-      const matchesSoPhong = searchSoPhong ? (room && room.soPhong.toString().toLowerCase().includes(searchSoPhong)) : true;
-
-      if (matchesMadatphong && matchesTenKhachHang && matchesSoPhong) {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td class="hidden">${booking._id}</td>
-          <td>${customer ? customer.username : "Không tìm thấy tên khách hàng"}</td>
-          <td>${customer ? customer.cccd : "Không tìm thấy tên khách hàng"}</td>
-          <td>${room ? room.soPhong : "Không có số phòng"}</td>
-          <td>${booking.orderTime}</td>
-          <td>${booking.timeGet}</td>
-          <td>${booking.timeCheckout}</td>
-          <td style="background-color: ${getStatusColor(booking.status)};color:white">${statusMapping[booking.status]}</td>
-        `;
-        row.onclick = async function () {
-          let itemInfo = {
-            mdp: booking._id,
-            Uid: booking.Uid,
-            TenKhachHang: customer.username,
-            phongID: booking.IdPhong,
-            cccd: customer.cccd,
-            dichVuID: booking.IdDichVu || "N/A",
-            sdt: customer.sdt,
-            email: customer.email,
-            thoiGianDat: booking.orderTime,
-            thoiGianNhan: booking.timeGet,
-            thoiGianTra: booking.timeCheckout,
-            ghiChu: booking.note,
-            trangThai: booking.status,
-            tongTien: booking.total
-          };
-          localStorage.setItem('itemInfo', JSON.stringify(itemInfo));
-          window.location.href = '../htmlnhanvien/lichsuchitiet.html';
-        };
-
-        customerList.appendChild(row);
-        hasResults = true; 
-      }
-    }
-
-    if (!hasResults) {
-      const noResultsRow = document.createElement("tr");
-      noResultsRow.innerHTML = `<td colspan="8" style="text-align: center;">Không tìm thấy đặt phòng</td>`;
-      customerList.appendChild(noResultsRow);
-    }
+    const lichsus = await response.json();
+    previousLichsus = lichsus; // Lưu vào bộ nhớ để tìm kiếm
+    displayLichSus(lichsus);
   } catch (error) {
-    console.error("Error during search:", error);
-  }
-});
-
-function confirmLogout(event) {
-  event.preventDefault();
-  const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?"); 
-
-  if (userConfirmed) {
-      window.location.href = "../../welcome.html"; 
+    console.error("Lỗi khi fetch lịch sử đặt phòng:", error);
+  } finally {
+    hideProgressBar(); // Ẩn progress bar sau khi hoàn thành
   }
 }
 
+
+// Xử lý khi nhấn nút tìm kiếm
+document.getElementById('searchBtn').addEventListener('click', filterLichSus);
+
+// Chạy khi tải trang
+document.addEventListener('DOMContentLoaded', fetchLichSus);

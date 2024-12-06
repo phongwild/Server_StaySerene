@@ -14,10 +14,10 @@
         <div class="sidebar">
             <h2 class="font-extrabold text-2xl">StaySerene</h2>
             <ul>
-                <li><a href="phanhoinv.html"id="phanhoi" >Phản hồi của khách hàng</a></li>
+                <li><a href="phanhoinv.html" id="phanhoi">Phản hồi của khách hàng</a></li>
                 <li><a href="chamsocnv.html" id="chamsoc">Chăm sóc khách hàng</a></li>
-                <li><a href="quanlydatphongnv.html" id="lichsu" >Lịch sử đặt phòng</a></li>
-                <li><a href="datphong.html" id="datphong" >Đặt Phòng</a></li>
+                <li><a href="quanlydatphongnv.html" id="lichsu">Lịch sử đặt phòng</a></li>
+                <li><a href="datphong.html" id="datphong">Đặt Phòng</a></li>
                 <li><a href="phongnv.html" id="phong" class="namepage">Quản lý phòng</a></li>
 
                 <li><a href="#" id="đăng xuất" onclick="confirmLogout(event)">Đăng xuất</a></li>
@@ -25,74 +25,78 @@
             </ul>
         </div>
 
-        <div class="main-content mt-5" id="main-content">
-            <div class="main-content flex gap-10">
-                <div class="form-section w-[25%] ">
-                    <div class="">
-                        <form id="customer-form" class="">
-                            <input type="text" id="maphong" style="width: 0px;height: 0px;" name="maphong" disabled>
-                            <div class="form-group">
-                                <label for="phong">Loại Phòng :</label>
-                                <select type="text" id="tenloaiphong" class="tenloaiphong" placeholder="Tên loại phòng"
-                                    autocomplete="off">
-                                    <option value="">Chọn Loại Phòng</option>
-                                </select>
-                            </div>
-
-                            <input type="hidden" id="maloaiphong" class="maloaiphong" />
-
-                            <div class="form-group">
-                                <label for="phong">Phòng:</label>
-                                <div class="form-maks">
-                                    <input type="number" id="sophong" class="sophong" placeholder="Nhập Số phòng" />
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="phong">Tầng:</label>
-                                    <input type="number" id="sotang" class="soTang" placeholder="Số tầng">
-                                    </input>
-                            </div>
-                            <input type="hidden" id="tinhTrangPhong" name="tinhTrangPhong" placeholder="Trạng thái">
-
+        <div class="main-content mt-5 px-6 py-4 bg-gray-100 rounded-lg shadow-md flex gap-6">
+            <!-- Form Section -->
+            <div class="form-section bg-white rounded-lg shadow-md p-6 w-2/5">
+                <h2 class="text-xl font-bold mb-4 text-gray-700">Quản lý Phòng</h2>
+                <form id="customer-form" class="space-y-4">
+                    <input type="text" id="maphong" style="width: 0px; height: 0px;" name="maphong" disabled>
+                    <div class="form-group">
+                        <label for="tenloaiphong" class="block text-gray-700 font-medium mb-2">Loại Phòng:</label>
+                        <select id="tenloaiphong" class="w-full p-2 border border-gray-300 rounded-lg"
+                            autocomplete="off">
+                            <option value="">Chọn Loại Phòng</option>
+                        </select>
                     </div>
-                    <input type="hidden" id="moTaPhong" name="moTaPhong" disabled>
-                    <input type="hidden" id="anhkhachsan" name="anhkhachsan" disabled>
-
-                    <div class="button-group">
-                        <button type="button" onclick="addRoom()">Thêm</button>
-                        <button type="button" onclick="updateRoom()">Cập nhật</button>
-                        <button type="button" onclick="deleteRoom()">Xóa</button>
-
-
+        
+                    <div class="form-group">
+                        <label for="sophong" class="block text-gray-700 font-medium mb-2">Phòng:</label>
+                        <input type="number" id="sophong" class="w-full p-2 border border-gray-300 rounded-lg"
+                            placeholder="Nhập Số phòng" />
                     </div>
-                    </form>
+        
+                    <div class="form-group">
+                        <label for="sotang" class="block text-gray-700 font-medium mb-2">Tầng:</label>
+                        <input type="number" id="sotang" class="w-full p-2 border border-gray-300 rounded-lg"
+                            placeholder="Số tầng" />
+                    </div>
+        
+                    <div class="button-group flex gap-4">
+                        <button type="button" onclick="addRoom()"
+                            class="w-1/3 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Thêm</button>
+                        <button type="button" onclick="updateRoom()"
+                            class="w-1/3 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Cập nhật</button>
+                        <button type="button" onclick="deleteRoom()"
+                            class="w-1/3 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
+                    </div>
+                </form>
+            </div>
+        
+            <!-- Table Section -->
+            <div class="table-section bg-white rounded-lg shadow-md p-6 w-3/5">
+                <h2 class="text-xl font-bold mb-4 text-gray-700">Danh sách Phòng</h2>
+        
+                <!-- Search -->
+                <div class="form-search mb-4 flex gap-4">
+                    <input type="text" id="search-loaiphong" placeholder="Tìm kiếm loại phòng"
+                        class="w-1/2 p-2 border border-gray-300 rounded-lg">
+                    <input type="text" id="search-sophong" placeholder="Tìm kiếm Số Phòng"
+                        class="w-1/2 p-2 border border-gray-300 rounded-lg">
+                    <button id="searchBtn" type="button"
+                        class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Tìm kiếm</button>
                 </div>
-                <div class="table-section w-[75%] mt-3">
-                    <div class="form-search mb-3">
-                        <input type="text" id="search-loaiphong" placeholder="Tìm kiếm loại phòng">
-                        <input type="text" id="search-sophong" placeholder="Tìm kiếm Số Phòng">
-                        <button id="searchBtn" type="button">Tìm kiếm</button>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tên loại phòng</th>
-                                <th>Số phòng</th>
-                                <th>Mô tả</th>
-                            </tr>
-                        </thead>
-                        <tbody id="customer-list">
-                            <tr data-id="6707ed79df6d7c9585d8baa" onclick="showHotelDetails(this)">
-
-                            </tr>
-                            <div id="pagination" class="pagination"></div>
-
-                        </tbody>
-                    </table>
-                </div>
+        
+                <!-- Table -->
+                <table class="w-full border border-gray-300 rounded-lg text-center">
+                    <thead class="bg-blue-500 text-white">
+                        <tr>
+                            <th class="py-2 px-4">Tên loại phòng</th>
+                            <th class="py-2 px-4">Số phòng</th>
+                            <th class="py-2 px-4">Mô tả</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-list" class="divide-y divide-gray-200">
+                        <tr data-id="6707ed79df6d7c9585d8baa" onclick="showHotelDetails(this)">
+                            <!-- Dữ liệu sẽ được thêm ở đây qua JavaScript -->
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <!-- Pagination -->
+                <div id="pagination" class="pagination mt-4 flex justify-center items-center gap-2"></div>
             </div>
         </div>
+        
     </div>
     </div>
     <script src="../js/base_url.js"></script>

@@ -1,23 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cham soc</title>
     <link rel="stylesheet" href="../css/chamsoc.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Danh sách người dùng */
+        .chat-container .sidebar {
+            width: 25%;
+            background: #ffffff;
+            /* Màu trắng tinh tế */
+            border-right: 1px solid #e5e7eb;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto;
+        }
 
+        .chat-container .sidebar .search-bar {
+            padding: 10px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-container .sidebar .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .chat-container .sidebar .chat-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chat-container .sidebar .chat-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-container .sidebar .chat-list li:hover {
+            background: #e5e7eb;
+        }
+
+        .chat-container .sidebar .chat-list img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Khu vực tin nhắn */
+        .chat-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .chat-area .chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tin nhắn */
+        .chat-area .chat-messages .message {
+            max-width: 70%;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .chat-area .chat-messages .message.customer {
+            background: white;
+            color: #333;
+            align-self: flex-start;
+            border: 1px solid #3b82f6;
+        }
+
+        .chat-area .chat-messages .message.hotel {
+            background: #3b82f6;
+            color: white;
+            align-self: flex-end;
+        }
+
+        /* Thời gian */
+        .chat-area .chat-messages .message .time {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        /* Input tin nhắn */
+        .message-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .message-input input {
+            flex-grow: 1;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        .message-input button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #3b82f6;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .message-input button:hover {
+            background: #2563eb;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <div class="sidebar" id="sidebar1">
             <h2 class="font-extrabold text-2xl">StaySerene</h2>
             <ul>
-                
-                <li><a href="phanhoinv.html"id="phanhoi">Phản hồi của khách hàng</a></li>
+
+                <li><a href="phanhoinv.html" id="phanhoi">Phản hồi của khách hàng</a></li>
                 <li><a href="chamsocnv.html" id="chamsoc" class="namepage">Chăm sóc khách hàng</a></li>
-                <li><a href="quanlydatphongnv.html" id="lichsu" >Lịch sử đặt phòng</a></li>
-                <li><a href="datphong.html" id="datphong" >Đặt Phòng</a></li>
+                <li><a href="quanlydatphongnv.html" id="lichsu">Lịch sử đặt phòng</a></li>
+                <li><a href="datphong.html" id="datphong">Đặt Phòng</a></li>
                 <li><a href="phongnv.html" id="phong">Quản lý phòng</a></li>
 
 
@@ -25,7 +169,7 @@
             </ul>
 
         </div>
-        
+
         <div class="chat-container">
             <!-- Sidebar section -->
             <div class="sidebar">
@@ -36,7 +180,7 @@
                     <!-- Chat user list here -->
                 </ul>
             </div>
-        
+
             <!-- Chat area section -->
             <div class="chat-area">
                 <div class="chat-messages">
@@ -52,4 +196,5 @@
     <script src="../js/base_url.js"></script>
     <script src="../js/chamsocnv.js"></script>
 </body>
+
 </html>

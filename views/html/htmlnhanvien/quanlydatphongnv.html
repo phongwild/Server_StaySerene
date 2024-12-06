@@ -7,7 +7,184 @@
     <title>Danh Sách Đặt Phòng</title>
     <link rel="stylesheet" href="../css/lichsu.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tổng thể */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            /* Nền tổng thể nhẹ nhàng */
+        }
 
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            background-color: white;
+            border-radius: 12px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* Bóng đổ hiện đại */
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header .form-search {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .header input[type="text"] {
+            padding: 12px 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            width: 30%;
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #f9fafb;
+            /* Nền nhẹ */
+            transition: border 0.3s;
+        }
+
+        .header input[type="text"]:focus {
+            border: 1px solid #3b82f6;
+            /* Màu xanh khi focus */
+        }
+
+        /* Nút tìm kiếm */
+        .header button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            width: 150px;
+            /* Khoảng cách giữa icon và text */
+            background-color: #3b82f6;
+            /* Màu xanh hiện đại */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            /* Hiệu ứng hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Đổ bóng nhẹ */
+        }
+
+        .header button:hover {
+            background-color: #2563eb;
+            /* Màu xanh đậm hơn khi hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            /* Đổ bóng rõ hơn */
+        }
+
+        .header button:active {
+            background-color: #1e40af;
+            /* Màu xanh đậm khi bấm giữ */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            /* Đổ bóng nhỏ lại */
+        }
+
+        .header button svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+            /* Màu icon */
+        }
+
+
+        /* Table Section */
+        .table-section {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .table-section thead {
+            background-color: #f3f4f6;
+            /* Nền nhạt */
+            text-align: left;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .table-section th {
+            padding: 12px 15px;
+            font-size: 14px;
+            /* Xanh đậm hơn */
+            font-weight: bold;
+        }
+
+        .table-section tbody tr {
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+
+        .table-section tbody tr:hover {
+            background-color: #f9fafb;
+            /* Màu nhạt khi hover */
+        }
+
+        .table-section td {
+            padding: 12px 15px;
+            font-size: 14px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        #progressBar {
+            font-size: 14px;
+            color: #34495e;
+        }
+
+        #progressBarFill {
+            background-color: #3498db;
+            height: 20px;
+            border-radius: 10px;
+        }
+
+        .status-booked {
+            background-color: #FFD580;
+            /* Cam nhạt */
+            color: #805500;
+            /* Nâu đậm */
+        }
+
+        .status-checked-in {
+            background-color: #A4D3A2;
+            /* Xanh lá pastel */
+            color: #2E7D32;
+            /* Xanh lá đậm */
+        }
+
+        .status-checked-out {
+            background-color: #ADD8E6;
+            /* Xanh dương nhạt */
+            color: #0D47A1;
+            /* Xanh dương đậm */
+        }
+
+        .status-cancelled {
+            background-color: #FFB6B6;
+            /* Đỏ nhạt */
+            color: #B22222;
+            /* Đỏ đậm */
+        }
+    </style>
 </head>
 
 <body>
@@ -36,7 +213,15 @@
                                 <input type="text" id="search-madatphong" placeholder="Tìm kiếm Tên khách hàng">
                                 <input type="text" id="search-tenkhachhang" placeholder="Tìm kiếm Số CCCD">
                                 <input type="text" id="search-sophong" placeholder="Tìm kiếm số Phòng">
-                                <button id="searchBtn" type="button">Tìm kiếm</button>
+                                <button id="searchBtn" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path
+                                            d="M10 2a8 8 0 106.32 13.906l4.387 4.387a1 1 0 101.414-1.414l-4.387-4.387A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z">
+                                        </path>
+                                    </svg>
+                                    Tìm kiếm
+                                </button>
+
                             </div>
                         </div>
                     </form>
@@ -58,7 +243,15 @@
                 <tbody id="customer-list">
 
                 </tbody>
+                <!-- Progress bar -->
             </table>
+            <div id="progressBar" style="display: none; text-align: center; margin-bottom: 20px;">
+                <div style="width: 100%; background-color: #f3f3f3; border-radius: 10px; ">
+                    <div id="progressBarFill"
+                        style="width: 0%; height: 20px; background-color: #3498db; transition: width 0.3s;"></div>
+                </div>
+                <p>Đang tải dữ liệu...</p>
+            </div>
         </div>
     </div>
     <script src="../js/base_url.js"></script>

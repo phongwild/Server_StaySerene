@@ -58,136 +58,83 @@ async function fetchChamSoc() {
         const chamSocList = await response.json();
 
         if (JSON.stringify(previousChamSocList) !== JSON.stringify(chamSocList)) {
-            previousChamSocList = chamSocList; 
+            previousChamSocList = chamSocList;
 
-            const grouped = {};
+            // Tải toàn bộ thông tin tài khoản trước
+            const uniqueUids = [...new Set(chamSocList.map(cs => cs.Uid))];
+            const accounts = await Promise.all(uniqueUids.map(fetchAccountInfo));
 
-            chamSocList.forEach(chamSoc => {
-                const key = `${chamSoc.IdKhachSan}-${chamSoc.Uid}`;
-                
-                if (!grouped[key]) {
-                    grouped[key] = [];
-                }
-                grouped[key].push(chamSoc);
-            });
+            const grouped = chamSocList.reduce((acc, cs) => {
+                const key = `${cs.IdKhachSan}-${cs.Uid}`;
+                if (!acc[key]) acc[key] = [];
+                acc[key].push(cs);
+                return acc;
+            }, {});
 
             const chatList = document.querySelector('.chat-list');
-            chatList.innerHTML = ''; 
+            chatList.innerHTML = '';
 
-            const sortedGroups = Object.values(grouped).map(records => {
-                const latestRecord = records.reduce((latest, current) => {
-                    return new Date(current.thoiGianGui) > new Date(latest.thoiGianGui) ? current : latest;
-                });
-                return latestRecord;
-            });
+            const sortedGroups = Object.values(grouped).map(records => 
+                records.reduce((latest, current) =>
+                    new Date(current.thoiGianGui) > new Date(latest.thoiGianGui) ? current : latest
+                )
+            ).sort((a, b) => new Date(b.thoiGianGui) - new Date(a.thoiGianGui));
 
-            sortedGroups.sort((a, b) => new Date(b.thoiGianGui) - new Date(a.thoiGianGui));
-
-            for (const latestRecord of sortedGroups) {
-                const accountInfo = await fetchAccountInfo(latestRecord.Uid);
-
-                if (accountInfo) {
+            sortedGroups.forEach(latestRecord => {
+                const account = accounts.find(acc => acc && acc._id === latestRecord.Uid);
+                if (account) {
                     const listItem = document.createElement('li');
-                    listItem.style.border = 'none'; 
+                    listItem.style = `border: ${latestRecord.trangThaiNv === 1 ? '2px solid red' : 
+                        latestRecord.trangThaiNv === 2 ? '2px solid blue' : '1px solid #ccc'}; 
+                        padding: 10px; margin: 5px 0; display: flex; align-items: center;`;
 
-                    if (latestRecord.trangThaiNv === 1) {
-                        listItem.style.border = '2px solid red'; 
-                    } else if (latestRecord.trangThaiNv === 2) {
-                        listItem.style.border = '2px solid blue'; 
-                    } else {
-                        listItem.style.border = '1px solid #ccc';
-                    }
-
-                    listItem.style.borderRadius = '5px'; 
-                    listItem.style.padding = '10px'; 
-                    listItem.style.margin = '5px 0'; 
-                    listItem.style.display = 'flex'; 
-                    listItem.style.alignItems = 'center'; 
-
-                    const userImage = document.createElement('img');
-                    userImage.src = accountInfo.avt; 
-                    userImage.alt = 'Hình ảnh người dùng';
-                    userImage.style.width = '40px'; 
-                    userImage.style.height = '40px';
-                    userImage.style.borderRadius = '50%'; 
-                    userImage.style.marginRight = '10px'; 
-
-                    const usernameText = document.createElement('span');
-                    usernameText.textContent = accountInfo.username; 
-
-                    listItem.appendChild(userImage);
-                    listItem.appendChild(usernameText);
-                    chatList.appendChild(listItem);
-
+                    listItem.innerHTML = `
+                        <img src="${account.avt}" alt="Hình ảnh" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                        <span>${account.username}</span>
+                    `;
                     listItem.addEventListener('click', () => {
-                        listItem.style.border = '2px solid blue'; 
+                        listItem.style.border = '2px solid blue';
+                        selectedIdKhachSan = latestRecord.IdKhachSan; // Đảm bảo giá trị được cập nhật
+                        selectedUid = latestRecord.Uid;              // Cập nhật UID của khách hàng
                         displayChamSoc(latestRecord.IdKhachSan, latestRecord.Uid);
                     });
+                    
+
+                    chatList.appendChild(listItem);
                 }
-            }
+            });
         }
     } catch (error) {
         console.error('Lỗi khi lấy bản ghi chăm sóc:', error);
     }
 }
+
 setInterval(fetchChamSoc, 1000); 
 
 async function displayChamSoc(idKhachSan, uid) {
-    selectedIdKhachSan = idKhachSan;
-    selectedUid = uid;
-    
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error('Mạng không phản hồi đúng');
-        }
-        const chamSocList = await response.json();
-        const filteredChamSoc = chamSocList.filter(cs => cs.IdKhachSan === idKhachSan && cs.Uid === uid);
+    if (!idKhachSan || !uid) return;
 
-        if (JSON.stringify(filteredChamSoc) !== JSON.stringify(previousChamSocForSelected)) {
-            previousChamSocForSelected = filteredChamSoc;
+    try {
+        const response = await fetch(`${apiUrl}?IdKhachSan=${idKhachSan}&Uid=${uid}`);
+        if (!response.ok) throw new Error('Mạng không phản hồi đúng');
+
+        const chamSocList = await response.json();
+        if (JSON.stringify(chamSocList) !== JSON.stringify(previousChamSocForSelected)) {
+            previousChamSocForSelected = chamSocList;
 
             const chatMessages = document.querySelector('.chat-messages');
-            chatMessages.innerHTML = ''; 
-
-            for (const cs of filteredChamSoc) {
-                await updateTrangThaiNv(cs._id);  
-
-                const messageItem = document.createElement('div');
-                messageItem.style.padding = '10px';
-                messageItem.style.marginBottom = '5px'; 
-                messageItem.style.maxWidth = '70%'; 
-                messageItem.style.display = 'flex'; 
-                messageItem.style.flexDirection = 'column'; 
-
-                const contentText = document.createElement('div');
-                contentText.textContent = cs.noiDungGui; 
-
-                const timeText = document.createElement('div');
-                timeText.textContent = new Date(cs.thoiGianGui).toLocaleString(); 
-                timeText.style.fontSize = '0.8em'; 
-                timeText.style.color = '#bdc3c7'; 
-                timeText.style.marginTop = '10px'; 
-
-                if (cs.vaiTro === 'Khách hàng') {
-                    messageItem.style.border = '2px solid #3498db'; 
-                    messageItem.style.backgroundColor = 'white'; 
-                    messageItem.style.color = '#3498db'; 
-                    messageItem.style.alignSelf = 'flex-start'; 
-                    messageItem.style.borderRadius = '20px'; 
-                } else if (cs.vaiTro === 'Khách sạn') {
-                    messageItem.style.border = '2px solid #3498db'; 
-                    messageItem.style.backgroundColor = '#3498db'; 
-                    messageItem.style.color = 'white'; 
-                    messageItem.style.alignSelf = 'flex-end'; 
-                    messageItem.style.borderRadius = '20px'; 
-                    timeText.style.alignSelf = 'flex-end'; 
-                }
-
-                messageItem.appendChild(contentText);
-                messageItem.appendChild(timeText);
-                chatMessages.appendChild(messageItem);
-            }
+            chatMessages.innerHTML = chamSocList.map(cs => `
+                <div style="
+                    padding: 10px; margin-bottom: 5px; max-width: 70%; 
+                    display: flex; flex-direction: column; border-radius: 20px; 
+                    background-color: ${cs.vaiTro === 'Khách hàng' ? 'white' : '#3498db'}; 
+                    color: ${cs.vaiTro === 'Khách hàng' ? '#3498db' : 'white'};
+                    align-self: ${cs.vaiTro === 'Khách hàng' ? 'flex-start' : 'flex-end'};
+                ">
+                    <div>${cs.noiDungGui}</div>
+                    <div style="font-size: 0.8em; color: #bdc3c7; margin-top: 10px;">${new Date(cs.thoiGianGui).toLocaleString()}</div>
+                </div>
+            `).join('');
 
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
@@ -195,6 +142,7 @@ async function displayChamSoc(idKhachSan, uid) {
         console.error('Lỗi khi hiển thị chăm sóc:', error);
     }
 }
+
 setInterval(() => displayChamSoc(selectedIdKhachSan, selectedUid), 1000);
 
 function removeAccents(str) {
