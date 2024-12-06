@@ -486,27 +486,33 @@ exports.showRoomByTypeRoomId = async (req, res, next) => {
 exports.getRoomByIdHotel = async (req, res) => {
     try {
         const hotelId = req.params.id;
-        const rooms = await mdPhong.phongModel.find();
 
-        const validRooms = [];
+        // Lấy tất cả loại phòng liên quan đến khách sạn (chỉ 1 query)
+        const roomTypes = await mdLoaiPhong.loaiPhongModel.find({ IdKhachSan: hotelId });
 
-        for (const room of rooms) {
-            const roomType = await mdLoaiPhong.loaiPhongModel.findById(room.IdLoaiPhong);
-
-            if (roomType && roomType.IdKhachSan.toString() === hotelId) {
-                validRooms.push(room);
-            }
+        if (roomTypes.length === 0) {
+            return res.status(404).json({ error: 'Không tìm thấy loại phòng cho khách sạn này.' });
         }
+
+        // Tạo danh sách ID loại phòng hợp lệ
+        const validRoomTypeIds = roomTypes.map(type => type._id.toString());
+
+        // Lấy tất cả phòng có IdLoaiPhong khớp với danh sách ID loại phòng hợp lệ
+        const validRooms = await mdPhong.phongModel.find({
+            IdLoaiPhong: { $in: validRoomTypeIds }
+        }).sort({ _id: -1 }); // Sắp xếp giảm dần nếu cần
+
         if (validRooms.length === 0) {
             return res.status(404).json({ error: 'Không tìm thấy phòng cho khách sạn này.' });
         }
-        validRooms.reverse();
+
         return res.status(200).json(validRooms);
     } catch (error) {
         console.error('Lỗi khi lấy danh sách phòng theo ID khách sạn:', error);
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+
 
 exports.themPhong = async (req, res, next) => {
     try {

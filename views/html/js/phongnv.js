@@ -5,42 +5,124 @@ const apiRoomUrla = `${base_url}roomsa`;
 const apiTyperoomByHotelUrl = `${base_url}typeroombyidhotel`;
 const apiRoomByHotelUrl = `${base_url}roombyidhotel`;
 const hotelId = localStorage.getItem('IdKhachSan');
+let allRooms = []; // Lưu toàn bộ dữ liệu phòng
+let currentPage = 1;
+const itemsPerPage = 10; // Số lượng phòng hiển thị mỗi trang
 
+// async function fetchRoomData() {
+//     try {
+//         const response = await fetch(`${apiRoomByHotelUrl}/${hotelId}`);
+//         if (!response.ok) throw new Error("Không thể lấy dữ liệu phòng.");
+//         const rooms = await response.json();
+
+//         const roomTypes = await fetchTyperoomData();
+//         const hotels = await fetchHotelData();
+
+//         const customerList = document.getElementById("customer-list");
+//         customerList.innerHTML = "";
+
+//         rooms.forEach((room) => {
+//             const row = document.createElement("tr");
+//             row.setAttribute("data-id", room._id);
+//             row.onclick = () => showRoomDetails(room, roomTypes, hotels);
+
+//             const roomType = roomTypes.find((type) => type._id === room.IdLoaiPhong);
+
+//             row.innerHTML = `
+//                 <td class="hidden">${room._id || "N/A"}</td>
+//                 <td>${roomType ? roomType.tenLoaiPhong : "Không tồn tại."}</td>
+//                 <td>${room.soPhong || "N/A"}</td>
+//                 <td>${room.moTaPhong || "N/A"}</td>
+//                 <td class="hidden">${room.tinhTrangPhong === 0 ? "phong trống" : "Đã được đặt"}</td>
+//             `;
+
+//             customerList.appendChild(row);
+//         });
+//     } catch (error) {
+//         console.error("Error fetching room data:", error);
+//         alert("Không thể lấy dữ liệu phòng. Vui lòng thử lại.");
+//     }
+// }
 async function fetchRoomData() {
     try {
-        const response = await fetch(`${apiRoomByHotelUrl}/${hotelId}`);
-        if (!response.ok) throw new Error("Không thể lấy dữ liệu phòng.");
-        const rooms = await response.json();
-
-        const roomTypes = await fetchTyperoomData();
-        const hotels = await fetchHotelData();
-
-        const customerList = document.getElementById("customer-list");
-        customerList.innerHTML = "";
-
-        rooms.forEach((room) => {
-            const row = document.createElement("tr");
-            row.setAttribute("data-id", room._id);
-            row.onclick = () => showRoomDetails(room, roomTypes, hotels);
-
-            const roomType = roomTypes.find((type) => type._id === room.IdLoaiPhong);
-
-            row.innerHTML = `
-                <td class="hidden">${room._id || "N/A"}</td>
-                <td>${roomType ? roomType.tenLoaiPhong : "Không tồn tại."}</td>
-                <td>${room.soPhong || "N/A"}</td>
-                <td>${room.moTaPhong || "N/A"}</td>
-                <td class="hidden">${room.tinhTrangPhong === 0 ? "phong trống" : "Đã được đặt"}</td>
-            `;
-
-            customerList.appendChild(row);
+        const response = await fetch(`${apiRoomByHotelUrl}/${hotelId}`, {
+            mode: 'no-cors'
         });
+        if (!response.ok) throw new Error("Không thể lấy dữ liệu phòng.");
+        allRooms = await response.json(); // Lưu toàn bộ dữ liệu vào biến
+
+        renderRoomData(); // Hiển thị dữ liệu cho trang đầu tiên
+        setupPagination(); // Thiết lập giao diện phân trang
     } catch (error) {
         console.error("Error fetching room data:", error);
         alert("Không thể lấy dữ liệu phòng. Vui lòng thử lại.");
     }
 }
+function renderRoomData() {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const roomsToDisplay = allRooms.slice(startIndex, endIndex); // Chỉ lấy dữ liệu của trang hiện tại
 
+    const customerList = document.getElementById("customer-list");
+    customerList.innerHTML = "";
+
+    roomsToDisplay.forEach((room) => {
+        const row = document.createElement("tr");
+        row.setAttribute("data-id", room._id);
+        row.onclick = () => showRoomDetails(room);
+
+        row.innerHTML = `
+            <td class="hidden">${room._id || "N/A"}</td>
+            <td>${room.tenLoaiPhong || "Không tồn tại."}</td>
+            <td>${room.soPhong || "N/A"}</td>
+            <td>${room.moTaPhong || "N/A"}</td>
+            <td class="hidden">${room.tinhTrangPhong === 0 ? "Phòng trống" : "Đã được đặt"}</td>
+        `;
+
+        customerList.appendChild(row);
+    });
+}
+function setupPagination() {
+    const pagination = document.getElementById("pagination");
+    pagination.innerHTML = "";
+
+    const totalPages = Math.ceil(allRooms.length / itemsPerPage); // Tổng số trang
+
+    // Nút Previous
+    const prevButton = document.createElement("button");
+    prevButton.textContent = "Previous";
+    prevButton.disabled = currentPage === 1;
+    prevButton.onclick = () => {
+        currentPage--;
+        renderRoomData();
+        setupPagination();
+    };
+    pagination.appendChild(prevButton);
+
+    // Các nút số trang
+    for (let i = 1; i <= totalPages; i++) {
+        const pageButton = document.createElement("button");
+        pageButton.textContent = i;
+        pageButton.className = currentPage === i ? "active" : "";
+        pageButton.onclick = () => {
+            currentPage = i;
+            renderRoomData();
+            setupPagination();
+        };
+        pagination.appendChild(pageButton);
+    }
+
+    // Nút Next
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Next";
+    nextButton.disabled = currentPage === totalPages;
+    nextButton.onclick = () => {
+        currentPage++;
+        renderRoomData();
+        setupPagination();
+    };
+    pagination.appendChild(nextButton);
+}
 
 async function fetchTyperoomData() {
     const response = await fetch(apiTyperoomUrl);
