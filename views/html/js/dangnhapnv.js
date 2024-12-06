@@ -5,7 +5,7 @@ async function login() {
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('https://stayserene.vercel.app/api/nhanvien');
+        const response = await fetch(`${base_url}nhanvien`);
         const employees = await response.json();
         const employee = employees.find(emp => emp.email === email && emp.password === password);
 

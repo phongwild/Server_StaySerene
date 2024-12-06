@@ -1,6 +1,6 @@
-const apiUrl = 'https://stayserene.vercel.app/api/messenger';
-const apichamsocUrl = 'https://stayserene.vercel.app/api/messengerbyidhotel';
-const apiUrlAccount = 'https://stayserene.vercel.app/api/accounta';
+const apiUrl = `${base_url}messenger`;
+const apichamsocUrl = `${base_url}messengerbyidhotel`;
+const apiUrlAccount = `${base_url}accounta`;
 const hotelId = localStorage.getItem('IdKhachSan');
 
 let selectedIdKhachSan = null;

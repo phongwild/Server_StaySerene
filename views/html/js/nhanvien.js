@@ -1,5 +1,5 @@
-const apiNhanVienUrl = 'https://stayserene.vercel.app/api/nhanvien';
-const apiKhachSanUrl = 'https://stayserene.vercel.app/api/hotela';
+const apiNhanVienUrl = `${base_url}nhanvien`;
+const apiKhachSanUrl = `${base_url}hotela`;
 
 async function fetchKhachSan(IdKhachSan) {
     try {

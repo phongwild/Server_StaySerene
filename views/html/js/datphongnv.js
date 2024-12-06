@@ -1,11 +1,11 @@
-const apiTyperoomByIdHotelUrl = 'https://stayserene.vercel.app/api/typeroombyidhotel';
-const apiTyperoomUrl = 'https://stayserene.vercel.app/api/typerooma';
-const apiRoomUrl = 'https://stayserene.vercel.app/api/roombyidhotel';
-const apiRoomUrla = 'https://stayserene.vercel.app/api/rooms';
-const apidatphongUrl = "https://stayserene.vercel.app/api/orderroombyidhotel";
-const apiKhachHang = "https://stayserene.vercel.app/api/accountbycccd";
-const apiOrderrooma = "https://stayserene.vercel.app/api/orderrooma";
-const apiDichVuUrl = 'https://stayserene.vercel.app/api/dichvu';
+const apiTyperoomByIdHotelUrl = `${base_url}typeroombyidhotel`;
+const apiTyperoomUrl = `${base_url}typerooma`;
+const apiRoomUrl = `${base_url}roombyidhotel`;
+const apiRoomUrla = `http://10.62.4.33:3000/api/rooms`
+const apidatphongUrl = `${base_url}orderroombyidhotel`;
+const apiKhachHang = `${base_url}accountbycccd`;
+const apiOrderrooma = `${base_url}orderrooma`;
+const apiDichVuUrl = `${base_url}dichvu`;
 
 const hotelId = localStorage.getItem('IdKhachSan');
 

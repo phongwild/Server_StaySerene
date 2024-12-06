@@ -1,4 +1,4 @@
-const apiDichVuUrl = 'https://stayserene.vercel.app/api/dichvu';
+const apiDichVuUrl = `${base_url}dichvu`;
 
 
 async function fetchAllDichVu() {

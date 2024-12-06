@@ -1,5 +1,5 @@
-const APIa = "https://stayserene.vercel.app/api/accounta";
-const API = "https://stayserene.vercel.app/api/account";
+const APIa = `${base_url}accounta`;
+const API = `${base_url}account`;
 const customerId = sessionStorage.getItem('customerId'); // Lấy thông tin từ sessionStorage
 
 if (customerId) {

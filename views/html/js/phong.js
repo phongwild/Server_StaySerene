@@ -1,8 +1,8 @@
-const apiHotelUrl = 'https://stayserene.vercel.app/api/hotel';
-const apiTyperoomUrl = 'https://stayserene.vercel.app/api/typerooma';
-const apiRoomUrl = 'https://stayserene.vercel.app/api/rooms';
-const apiRoomUrla = 'https://stayserene.vercel.app/api/roomsa';
-const apiTyperoomByHotelUrl = 'https://stayserene.vercel.app/api/typeroombyidhotel';
+const apiHotelUrl = `'${base_url}hotel'`;
+const apiTyperoomUrl = `${base_url}typerooma`;
+const apiRoomUrl = `${base_url}rooms`;
+const apiRoomUrla = `${base_url}roomsa`;
+const apiTyperoomByHotelUrl = `'${base_url}typeroombyidhotel`;
 
 async function fetchRoomData() {
     try {

@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('https://stayserene.vercel.app/api/admin');
+        const response = await fetch(`${base_url}admin`);
         if (!response.ok) {
             throw new Error('Không thể lấy danh sách tài khoản');
         }
