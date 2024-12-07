@@ -115,7 +115,7 @@ async function displayChamSoc(idKhachSan, uid) {
     if (!idKhachSan || !uid) return;
 
     try {
-        const response = await fetch(`${apiUrl}?IdKhachSan=${idKhachSan}&Uid=${uid}`);
+        const response = await fetch(`${apiUrl}/${idKhachSan}/${uid}`);
         if (!response.ok) throw new Error('Mạng không phản hồi đúng');
 
         const chamSocList = await response.json();
