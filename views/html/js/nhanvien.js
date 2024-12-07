@@ -273,6 +273,8 @@ async function showHotelDetailsnhanvien(nhanVien) {
     document.getElementById('email').value = email;
     document.getElementById('password').value = password;
     document.getElementById('anhNhanVien').value = anhNhanVien;
+    document.getElementById("cccd").disabled = true;
+    document.getElementById("tenkhachsan").disabled = true;
 
     // No need to call populateHotels here again
     const selectElement = document.getElementById('tenkhachsan');

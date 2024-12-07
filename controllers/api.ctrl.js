@@ -764,6 +764,30 @@ exports.getAllOrders = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+exports.getAllOrderthongke = async (req, res, next) => {
+    try {
+        const orders = await mdOrderRoom.orderRoomModel.find();
+
+        if (!orders || orders.length === 0) {
+            return res.status(404).json({ msg: 'Không có đơn đặt phòng nào' });
+        }
+
+        // Modify total based on status
+        const modifiedOrders = orders.map(order => {
+            if (order.status === 0 || order.status === 1 || order.status === 3) {
+                order.total = order.total * 0.1;  // 10% of total
+            } else if (order.status === 2) {
+                order.total = order.total;  // 100% of total
+            }
+            return order;
+        });
+
+        res.status(200).json(modifiedOrders);
+    } catch (error) {
+        console.error('Error fetching orders:', error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
 exports.getOrderById = async (req, res, next) => {
     try {
         const orderId = req.params.id;
@@ -791,7 +815,51 @@ exports.getOrderRoomByStatus = async (req, res, next) => {
         return res.status(500).json({ error: 'Lỗi server: ' + error.message });
     }
 };
+exports.getTotalByUid = async (req, res) => {
+    try {
+        const { Uid } = req.params; // Lấy Uid từ params
 
+        // Kiểm tra nếu Uid là một ObjectId hợp lệ
+        if (!mongoose.Types.ObjectId.isValid(Uid)) {
+            return res.status(400).json({ msg: 'Uid không hợp lệ' });
+        }
+
+        // Sử dụng new mongoose.Types.ObjectId() khi khởi tạo ObjectId
+        const result = await mdOrderRoom.orderRoomModel.aggregate([
+            {
+                $match: { Uid: new mongoose.Types.ObjectId(Uid) } // Lọc các đơn đặt phòng theo Uid
+            },
+            {
+                $addFields: {
+                    adjustedTotal: {
+                        $cond: {
+                            if: { $in: ["$status", [0, 1, 3]] }, // Nếu status là 0, 1 hoặc 3
+                            then: { $multiply: ["$total", 0.1] }, // Lấy 10% tổng tiền
+                            else: { $multiply: ["$total", 1] } // Nếu status là 2, lấy 100% tổng tiền
+                        }
+                    }
+                }
+            },
+            {
+                $group: {
+                    _id: "$Uid", // Nhóm theo Uid
+                    totalAmount: { $sum: "$adjustedTotal" } // Tính tổng tổng tiền đã điều chỉnh
+                }
+            }
+        ]);
+
+        // Kiểm tra nếu không có kết quả
+        if (result.length === 0) {
+            return res.status(404).json({ msg: 'Không tìm thấy đơn đặt phòng của người dùng này' });
+        }
+
+        // Trả về kết quả
+        res.status(200).json(result[0]);
+    } catch (error) {
+        console.error('Lỗi khi lấy tổng tiền theo Uid:', error);
+        return res.status(500).json({ error: 'Lỗi server: ' + error.message });
+    }
+};
 
 
 //Xem phòng đã đặt

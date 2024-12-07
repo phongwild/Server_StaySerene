@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Management</title>
-    <link rel="stylesheet" href="../css/phong.css">
+    <link rel="stylesheet" href="../css/phongnv.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -31,6 +31,7 @@
                 <h2 class="text-xl font-bold mb-4 text-gray-700">Quản lý Phòng</h2>
                 <form id="customer-form" class="space-y-4">
                     <input type="text" id="maphong" style="width: 0px; height: 0px;" name="maphong" disabled>
+                    <input type="text" id="maloaiphong" style="width: 0px; height: 0px;" name="maloaiphong" disabled>
                     <div class="form-group">
                         <label for="tenloaiphong" class="block text-gray-700 font-medium mb-2">Loại Phòng:</label>
                         <select id="tenloaiphong" class="w-full p-2 border border-gray-300 rounded-lg"
@@ -51,13 +52,13 @@
                             placeholder="Số tầng" />
                     </div>
         
-                    <div class="button-group flex gap-4">
+                    <div class="button-group flex gap-20">
                         <button type="button" onclick="addRoom()"
-                            class="w-1/3 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Thêm</button>
+                            class=" bg-blue-500 text-white rounded-lg hover:bg-blue-600">Thêm</button>
                         <button type="button" onclick="updateRoom()"
-                            class="w-1/3 px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Cập nhật</button>
+                            class=" bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Cập nhật</button>
                         <button type="button" onclick="deleteRoom()"
-                            class="w-1/3 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
+                            class=" bg-red-500 text-white rounded-lg hover:bg-red-600">Xóa</button>
                     </div>
                 </form>
             </div>
@@ -66,15 +67,6 @@
             <div class="table-section bg-white rounded-lg shadow-md p-6 w-3/5">
                 <h2 class="text-xl font-bold mb-4 text-gray-700">Danh sách Phòng</h2>
         
-                <!-- Search -->
-                <div class="form-search mb-4 flex gap-4">
-                    <input type="text" id="search-loaiphong" placeholder="Tìm kiếm loại phòng"
-                        class="w-1/2 p-2 border border-gray-300 rounded-lg">
-                    <input type="text" id="search-sophong" placeholder="Tìm kiếm Số Phòng"
-                        class="w-1/2 p-2 border border-gray-300 rounded-lg">
-                    <button id="searchBtn" type="button"
-                        class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Tìm kiếm</button>
-                </div>
         
                 <!-- Table -->
                 <table class="w-full border border-gray-300 rounded-lg text-center">

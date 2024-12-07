@@ -1,7 +1,7 @@
 const apiHotelUrl = `${base_url}hotel`;
 const apiTyperoomUrl = `${base_url}typeroom`;
 const apiRoomUrl = `${base_url}rooms`;
-const apiOrderRoomUrl = `${base_url}orderroom/status3`;
+const apiOrderRoomUrl = `${base_url}orderroomthongke`;
 
 function fetchHotels() {
     fetch(apiHotelUrl)

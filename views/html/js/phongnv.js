@@ -160,6 +160,7 @@ async function showRoomDetails(room, roomTypes, hotels) {
     }
 
     document.getElementById('maphong').value = room._id || '';
+    document.getElementById('maloaiphong').value = room.IdLoaiPhong || '';
 
     // Populate room type options
     populateRoomTypeOptions(roomTypes);
@@ -325,9 +326,7 @@ async function updateRoom() {
         const roomData = {
             IdLoaiPhong: maLoaiPhong,
             soPhong: soPhong,
-            soTang: soTang,
-            moTaPhong: document.getElementById('moTaPhong').value,
-            anhPhong: document.getElementById('anhkhachsan').value
+            soTang: soTang
         };
 
         try {
@@ -352,12 +351,12 @@ async function updateRoom() {
 
         } catch (error) {
             console.error('Lỗi khi cập nhật thông tin phòng:', error);
-            alert('Không thể cập nhật thông tin phòng. Vui lòng kiểm tra dữ liệu và thử lại.');
+            alert('Không thể cập nhật thông tin phòng.');
         }
 
     } catch (error) {
         console.error('Lỗi khi thêm phòng:', error);
-        alert('Không thể thêm phòng. Vui lòng kiểm tra dữ liệu và thử lại.');
+        alert('Không thể cập nhật thông tin phòng. Vui lòng kiểm tra dữ liệu và thử lại.');
     }
 
 }
@@ -406,49 +405,6 @@ async function deleteRoom() {
             alert('Không thể xóa phòng. Vui lòng thử lại.');
         }
     }
-}
-
-function searchRooms() {
-    // Lấy giá trị tìm kiếm từ các ô input
-    const sophongSearch = removeDiacritics(document.getElementById("search-sophong").value.toLowerCase().trim());
-    const loaiphongSearch = removeDiacritics(document.getElementById("search-loaiphong").value.toLowerCase().trim());
-
-    // Lấy tất cả các dòng phòng trong bảng
-    const rows = document.querySelectorAll("#customer-list tr");
-    let hasResults = false;
-
-    rows.forEach((row) => {
-        const sophong = removeDiacritics(row.cells[2].textContent.toLowerCase());
-        const loaiphong = removeDiacritics(row.cells[1].textContent.toLowerCase()); // Loại phòng ở cột thứ 2
-
-        const matchesSốPhong = sophong.includes(sophongSearch);
-        const matchesLoạiPhong = loaiphong.includes(loaiphongSearch);
-
-        if (
-            (sophongSearch === "" || matchesSốPhong) &&
-            (loaiphongSearch === "" || matchesLoạiPhong)
-        ) {
-            row.style.display = "";
-            hasResults = true;
-        } else {
-            row.style.display = "none";
-        }
-    });
-
-    if (!hasResults) {
-        alert("Không tìm thấy kết quả phù hợp.");
-    }
-}
-
-// Gán sự kiện cho nút tìm kiếm
-document.getElementById('searchBtn').addEventListener('click', function (event) {
-    event.preventDefault();
-    searchRooms();
-});
-
-// Hàm loại bỏ dấu tiếng Việt
-function removeDiacritics(str) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D');
 }
 
 

@@ -56,15 +56,18 @@ router.put('/typerooma/:id', apiCtrl.suaLoaiPhong);
 router.post('/orderroom', apiCtrl.OrderRoom);
 router.post('/orderrooma', apiCtrl.OrderRooma);
 router.get('/orderroom', apiCtrl.getAllOrders);
+router.get('/orderroomthongke', apiCtrl.getAllOrderthongke);
 router.get('/orderroom/status3', apiCtrl.getOrderRoomByStatus);
 router.get('/orderroombyUid/:Uid', apiCtrl.showOrderRoom);
 router.get('/orderroom/:id', apiCtrl.getOrderById);
 router.get('/orderroombyidhotel/:id', apiCtrl.showOrderRoomByIdHotel);
 router.put('/orderroom/:id', apiCtrl.editOrderRoom);
 router.get('/available-rooms', apiCtrl.getAvailableRooms);
-router.get('/orderroom/status/01/:id', apiCtrl.getOrderRoomByStatus01);
-router.get('/orderroom/status/2/:id', apiCtrl.getOrderRoomByStatus2);
-router.get('/orderroom/status/3/:id', apiCtrl.getOrderRoomByStatus3);
+router.get('/orderroom/status/01/:Uid', apiCtrl.getOrderRoomByStatus01);
+router.get('/orderroom/status/2/:Uid', apiCtrl.getOrderRoomByStatus2);
+router.get('/orderroom/status/3/:Uid', apiCtrl.getOrderRoomByStatus3);
+router.get('/orderroom/total/:Uid', apiCtrl.getTotalByUid);
+
 
 // Hotel management routes
 router.get('/hotel', apiCtrl.showKhachSan);

@@ -1,8 +1,8 @@
-const apiHotelUrl = `'${base_url}hotel'`;
+const apiHotelUrl = `${base_url}hotel`;
 const apiTyperoomUrl = `${base_url}typerooma`;
 const apiRoomUrl = `${base_url}rooms`;
 const apiRoomUrla = `${base_url}roomsa`;
-const apiTyperoomByHotelUrl = `'${base_url}typeroombyidhotel`;
+const apiTyperoomByHotelUrl = `${base_url}typeroombyidhotel`;
 
 async function fetchRoomData() {
     try {

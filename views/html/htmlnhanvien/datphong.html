@@ -14,8 +14,8 @@
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #f5f7fa;
+            /* Nền tổng thể nhẹ nhàng */
         }
 
         .container {
@@ -27,152 +27,122 @@
         .main-content {
             flex-grow: 1;
             background-color: white;
-            padding: 30px;
-            margin: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* Bóng đổ hiện đại */
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            overflow-y: auto;
         }
 
-        /* Header Section */
+        /* Header */
         .header {
+            margin-bottom: 20px;
+        }
+
+        .header .form-search {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            border-bottom: 2px solid #f3f4f6;
-            padding-bottom: 20px;
+            gap: 15px;
+            align-items: center;
         }
 
-        .form-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            width: 100%;
-        }
-
-        .form-group {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-size: 14px;
-            font-weight: bold;
-            color: #374151;
-        }
-
-        .form-group input,
-        .form-group select {
-            padding: 10px;
-            border: 1px solid #d1d5db;
+        .header input[type="text"] {
+            padding: 12px 15px;
+            border: 1px solid #e5e7eb;
             border-radius: 8px;
+            width: 30%;
+            box-sizing: border-box;
             font-size: 14px;
             background-color: #f9fafb;
-            transition: border 0.3s, box-shadow 0.3s;
+            /* Nền nhẹ */
+            transition: border 0.3s;
         }
 
-        .form-group input:focus,
-        .form-group select:focus {
-            border-color: #2563eb;
-            box-shadow: 0 0 4px rgba(37, 99, 235, 0.3);
+        .header input[type="text"]:focus {
+            border: 1px solid #3b82f6;
+            /* Màu xanh khi focus */
         }
 
-        /* Bảng */
+        /* Nút tìm kiếm */
+        .header button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            width: 150px;
+            /* Khoảng cách giữa icon và text */
+            background-color: #3b82f6;
+            /* Màu xanh hiện đại */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            /* Hiệu ứng hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Đổ bóng nhẹ */
+        }
+
+        .header button:hover {
+            background-color: #2563eb;
+            /* Màu xanh đậm hơn khi hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            /* Đổ bóng rõ hơn */
+        }
+
+        .header button:active {
+            background-color: #1e40af;
+            /* Màu xanh đậm khi bấm giữ */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            /* Đổ bóng nhỏ lại */
+        }
+
+        .header button svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+            /* Màu icon */
+        }
+
+
+        /* Table Section */
         .table-section {
             width: 100%;
-            /* Đảm bảo bảng chiếm toàn bộ chiều rộng */
             border-collapse: collapse;
-            /* Loại bỏ viền giữa các ô */
-            border-radius: 8px;
-            /* Bo góc bảng */
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            /* Bóng đổ nhẹ */
             margin-top: 20px;
-            /* Khoảng cách với phần trên */
+            padding-left: 50px;
         }
 
         .table-section thead {
             background-color: #f3f4f6;
-            /* Nền sáng cho header */
+            /* Nền nhạt */
             text-align: left;
+            border-bottom: 2px solid #e5e7eb;
         }
 
         .table-section th {
-            padding: 15px 20px;
-            /* Cung cấp không gian cho tiêu đề */
-            font-size: 16px;
-            font-weight: bold;
-            color: #374151;
-            border-bottom: 2px solid #d1d5db;
-            /* Viền dưới cho tiêu đề */
-        }
-
-        .table-section tbody td {
-            padding: 12px 20px;
-            /* Cung cấp không gian cho các ô dữ liệu */
             font-size: 14px;
-            color: #4b5563;
-            border-bottom: 1px solid #e5e7eb;
-            /* Viền dưới nhẹ cho các ô dữ liệu */
+            /* Xanh đậm hơn */
+            font-weight: bold;
         }
 
-        /* Thêm khoảng cách giữa các dòng khi hover */
+        .table-section tbody tr {
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+
         .table-section tbody tr:hover {
             background-color: #f9fafb;
+            /* Màu nhạt khi hover */
         }
 
-        /* Đảm bảo các cột có chiều rộng đồng đều */
-        .table-section td,
-        .table-section th {
-            width: 35%;
-            /* Cung cấp chiều rộng đều cho các cột */
-        }
-
-        /* Bảng khi không có dữ liệu */
-        .table-section tbody tr.empty-row td {
-            text-align: center;
-            font-style: italic;
-            color: #888;
-        }
-
-        /* Button Group */
-        .button-group {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-        }
-
-        .button-group button {
-            padding: 10px 20px;
+        .table-section td {
+            padding: 12px 15px;
             font-size: 14px;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        #searchBtn {
-            background-color: #3b82f6;
-        }
-
-        #searchBtn:hover {
-            background-color: #2563eb;
-            transform: scale(1.05);
-        }
-
-        /* Progress Bar */
-        #progressBar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px 0;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         #progressBar {
@@ -184,6 +154,34 @@
             background-color: #3498db;
             height: 20px;
             border-radius: 10px;
+        }
+
+        .status-booked {
+            background-color: #FFD580;
+            /* Cam nhạt */
+            color: #805500;
+            /* Nâu đậm */
+        }
+
+        .status-checked-in {
+            background-color: #A4D3A2;
+            /* Xanh lá pastel */
+            color: #2E7D32;
+            /* Xanh lá đậm */
+        }
+
+        .status-checked-out {
+            background-color: #ADD8E6;
+            /* Xanh dương nhạt */
+            color: #0D47A1;
+            /* Xanh dương đậm */
+        }
+
+        .status-cancelled {
+            background-color: #FFB6B6;
+            /* Đỏ nhạt */
+            color: #B22222;
+            /* Đỏ đậm */
         }
     </style>
 </head>
@@ -236,9 +234,9 @@
                                 <input type="text" id="giadichVu" name="giadichVu" placeholder="Giá dịch vụ" disabled>
                             </div>
                         </div>
-                        <div class="form-group" id="ghichu-section" style="display:none;">
+                        <div class="form-group" id="ghichu-section" style="display:none;margin-top: 20px;">
                             <label for="ghiChu">Ghi chú :</label>
-                            <input type="text" id="ghiChu" name="ghiChu">
+                            <input type="text" id="ghiChu" name="ghiChu" style="width: 100%;">
                         </div>
 
                     </form>

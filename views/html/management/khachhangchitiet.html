@@ -29,7 +29,7 @@
 
         <div class="main-content" id="main-content">
             <div class="main-content">
-                <h1>Thông tin khách hàng</h1>
+                <h1></h1>
                 <div class="form-section">
                     <form id="customer-form">
                         <input type="hidden" id="makhachhang" name="makhachhang" disabled>
@@ -70,13 +70,36 @@
                             <label for="cccd">CCCD :</label>
                             <input type="number" id="cccd" name="cccd"disabled>
                         </div>
-                        <div class="form-imgaccount" style="display: flex; justify-content: space-between;">
-                            <img id="avt-url" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s" alt="Avatar" style="width:200px;height:auto; border-radius:10px;">
-                            <img id="imgcccdtruoc" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg/800px-C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg" alt="CCCD Trước" style="width:auto;height:200px;margin-left: 20px;border-radius:10px;">
-                            <img id="imgcccdsau" src="https://image.plo.vn/w1000/Uploaded/2024/xqeioxdrky/2024_02_11/mau-can-cuoc-tre-tu-6-tuoi-mat-sau-9238.jpg.webp" alt="CCCD Sau" style="width:auto;height:200px;margin-left: 20px;border-radius:10px;">
-
+                        <div class=" flex-1">
+                            <div class="form-section flex space-x-4 w-full">
+                                <div class="form-group flex-1">
+                                    <label for="phongdangdat">Số lượng phòng đang đặt :</label>
+                                    <input type="text" id="phongdangdat" name="phongdangdat" class="w-full" disabled>
+                                </div>  
+                            
+                                <div class="form-group flex-1">
+                                    <label for="phongdatra">Số lượng phòng đã trả :</label>
+                                    <input type="text" id="phongdatra" name="phongdatra" class="w-full" disabled>
+                                </div>  
+                            
+                                <div class="form-group flex-1">
+                                    <label for="phongdahuy">Số lượng phòng đã hủy :</label>
+                                    <input type="text" id="phongdahuy" name="phongdahuy" class="w-full" disabled>
+                                </div>  
+                            
+                                <div class="form-group flex-1">
+                                    <label for="tongtotal">Tổng số tiền đã chi trả :</label>
+                                    <input type="text" id="tongtotal" name="tongtotal" class="w-full" disabled>
+                                </div>  
+                            </div>                            
                         </div>
                     </form>
+                </div>
+                <div class="form-imgaccount" style="display: flex; justify-content: space-between;">
+                    <img id="avt-url" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq2k2sI1nZyFTtoaKSXxeVzmAwIPchF4tjwg&s" alt="Avatar" style="width:200px;height:auto; border-radius:10px;">
+                    <img id="imgcccdtruoc" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg/800px-C%C4%83n_c%C6%B0%E1%BB%9Bc_c%C3%B4ng_d%C3%A2n_g%E1%BA%AFn_ch%C3%ADp_m%E1%BA%B7t_tr%C6%B0%E1%BB%9Bc.jpg" alt="CCCD Trước" style="width:auto;height:200px;margin-left: 20px;border-radius:10px;">
+                    <img id="imgcccdsau" src="https://image.plo.vn/w1000/Uploaded/2024/xqeioxdrky/2024_02_11/mau-can-cuoc-tre-tu-6-tuoi-mat-sau-9238.jpg.webp" alt="CCCD Sau" style="width:auto;height:200px;margin-left: 20px;border-radius:10px;">
+
                 </div>
                 <div class="button-group">
                     <button type="button" onclick="deleteCustomer()" style="width: 160px;">Xóa tài khoản</button>

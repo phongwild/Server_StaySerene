@@ -103,6 +103,7 @@ header .header-left {
 form {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 50px;
 }
 
 .form-group {
@@ -183,8 +184,8 @@ table td {
     border: 1px solid #bdc3c7;
     padding: 10px;
     text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
     
 }
 

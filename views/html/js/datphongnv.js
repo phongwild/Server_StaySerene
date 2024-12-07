@@ -205,7 +205,7 @@ async function bookRoom(roomId, note, giaPhong, img) {
 
     // Kiểm tra các trường bắt buộc
     if (!timeGetInput || !timeCheckoutInput || !uidInput) {
-        showAlert("Vui lòng điền đầy đủ các trường: Thời gian nhận, Thời gian trả, và số CCCD");
+        showAlert("Vui lòng điền đầy đủ số CCCD");
         return;
     }
 
