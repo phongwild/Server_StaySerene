@@ -7,6 +7,35 @@
     <title>Quản lý khách hàng</title>
     <link rel="stylesheet" href="../css/khachhang.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tổng thể */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            /* Nền tổng thể nhẹ nhàng */
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            background-color: white;
+            border-radius: 12px;
+            margin: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* Bóng đổ hiện đại */
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,53 +56,51 @@
         </div>
 
         <div class="main-content" id="main-content">
-            <div class="main-content">
-                <div class="form-section">
-                    <form id="customer-form">
+            <div class="form-section">
+                <form id="customer-form">
 
-                        <div class="button-group">
-                            <div class="form-search">
-                                <input type="text" id="search-tkh" placeholder="Tìm kiếm Tên Khách Hàng">
-                                <input type="text" id="search-mkh" placeholder="Tìm kiếm Số CCCD">
-                                <input type="text" id="search-diachi" placeholder="Tìm kiếm Theo Địa Chỉ">
-                                <button id="search-button">Tìm Kiếm</button>
+                    <div class="button-group">
+                        <div class="form-search">
+                            <input type="text" id="search-tkh" placeholder="Tìm kiếm Tên Khách Hàng">
+                            <input type="text" id="search-mkh" placeholder="Tìm kiếm Số CCCD">
+                            <input type="text" id="search-diachi" placeholder="Tìm kiếm Theo Địa Chỉ">
+                            <button id="search-button">Tìm Kiếm</button>
 
-                            </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
+            </div>
 
-                <div class="table-section">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tên khách hàng</th>
-                                <th>Số CCCD</th>
-                                <th>Địa chỉ</th>
-                                <th>SĐT</th>
-                                <th>Giới tính</th>
-                                <th>Ngày sinh</th>
-                            </tr>
-                        </thead>
-                        <tbody id="list-tk">
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="table-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên khách hàng</th>
+                            <th>Số CCCD</th>
+                            <th>Địa chỉ</th>
+                            <th>SĐT</th>
+                            <th>Giới tính</th>
+                            <th>Ngày sinh</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list-tk">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
     <script src="../js/base_url.js"></script>
     <script src="../js/khach_hang.js"></script>
-    
+
 </body>
 
 </html>

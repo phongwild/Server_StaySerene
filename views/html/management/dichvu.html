@@ -7,7 +7,163 @@
     <title>Quản lý Dịch Vụ</title>
     <link rel="stylesheet" href="../css/dichvu.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            /* Nền tổng thể nhẹ nhàng */
+        }
 
+        /* Main Content */
+        .main-content {
+            display: flex;
+            gap: 20px;
+            /* Khoảng cách giữa form và bảng */
+            background-color: #f9f9f9;
+            /* Nền sáng */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Đổ bóng */
+            align-items: stretch;
+            /* Cân chỉnh chiều cao giữa các phần */
+            box-sizing: border-box;
+            /* Đảm bảo padding không ảnh hưởng kích thước */
+        }
+
+        /* Form Section */
+        .form-section {
+            flex: 1 1 25%;
+            /* Chiếm 25% chiều ngang */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Đổ bóng nhẹ */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            /* Sắp xếp nội dung theo cột */
+            justify-content: space-between;
+            /* Cân đối khoảng cách trong form */
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Button Group */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .button-group button {
+            flex: 1;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .button-group button:nth-child(1) {
+            background-color: #4CAF50;
+            /* Xanh lá */
+        }
+
+        .button-group button:nth-child(2) {
+            background-color: #FFC107;
+            /* Vàng */
+        }
+
+        .button-group button:nth-child(3) {
+            background-color: #F44336;
+            /* Đỏ */
+        }
+
+        .button-group button:hover {
+            opacity: 0.9;
+        }
+
+        /* Table Section */
+        .table-section {
+            flex: 1 1 75%;
+            /* Chiếm 75% chiều ngang */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Đổ bóng nhẹ */
+            padding: 20px;
+            overflow-x: auto;
+            /* Cuộn ngang nếu bảng quá rộng */
+        }
+
+        .table-section table {
+            width: 100%;
+            border-collapse: collapse;
+            /* Loại bỏ khoảng trống giữa các ô */
+            margin-top: 10px;
+        }
+
+        .table-section th,
+        .table-section td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+            /* Viền giữa các ô */
+        }
+
+        .table-section th {
+            background-color: #007BFF;
+            /* Màu nền header */
+            color: #fff;
+            /* Chữ trắng */
+            font-weight: bold;
+        }
+
+        .table-section tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .table-section tbody tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+        .table-section tbody tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+        .table-section img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,9 +182,8 @@
 
             </ul>
         </div>
-
-        <div class="main-content flex  gap-2 ">
-            <div class="form-section w-[25%]">
+        <div class="main-content flex gap-4">
+            <div class="form-section">
                 <form id="dichvu-form" class="grid grid-cols-1 mt-4">
                     <input type="text" style="height: 0px;width:0px" id="maDichVu">
 
@@ -57,10 +212,10 @@
                         <button type="button" onclick="editDichVu()">Sửa</button>
                         <button type="button" onclick="deleteDichVu()">Xóa</button>
                     </div>
-
                 </form>
             </div>
-            <div class="table-section w-[70%] mt-10">
+
+            <div class="table-section">
                 <table>
                     <thead>
                         <tr>
@@ -68,18 +223,16 @@
                             <th>Giá Dịch Vụ</th>
                             <th>Mô tả Dịch Vụ</th>
                             <th>Ảnh Dịch Vụ</th>
-
-
                         </tr>
                     </thead>
                     <tbody id="dichvu-list"></tbody>
                 </table>
             </div>
         </div>
-    </div>
-    <script src="../js/base_url.js"></script>
-    <script src="../js/dichvu.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <script src="../js/base_url.js"></script>
+        <script src="../js/dichvu.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </body>
 
