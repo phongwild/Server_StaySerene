@@ -89,7 +89,7 @@ exports.doRegister = async (req, res, next) => {
         user.password = await bcrypt.hash(req.body.password, salt);
         const token = await user.generateAuthToken();
         let new_u = await user.save()
-        return res.status(201).json({ status: 1, msg: 'Đăng ký thành công', token });
+        return res.status(201).json([new_u]);
     } catch (error) {
         return res.status(400).send(error)
     }
