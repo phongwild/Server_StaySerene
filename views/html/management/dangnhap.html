@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Nhập Quản lý</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/dangnhap.css">
 </head>
+
 <body>
     <div class="login-container">
         <div class="login-card">
+            <div class="back-arrow" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            
             <div class="login-icon">
-                <img src="https://imgcdn.stablediffusionweb.com/2024/5/17/6dff8475-0950-43ab-9e73-37d3b307ac48.jpg" alt="User Icon">
+                <img src="https://imgcdn.stablediffusionweb.com/2024/5/17/6dff8475-0950-43ab-9e73-37d3b307ac48.jpg"
+                    alt="User Icon">
             </div>
             <h2>Quản Lý Đăng Nhập</h2>
             <form id="loginForm">
@@ -19,7 +27,7 @@
                     <input type="email" id="Email" name="Email" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Mật Khẩu</label>
+                    <label for="password">Mật Khẩu :</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 <button type="submit">ĐĂNG NHẬP</button>
@@ -29,4 +37,5 @@
     <script src="../js/base_url.js"></script>
     <script src="../js/dangnhap.js"></script>
 </body>
+
 </html>

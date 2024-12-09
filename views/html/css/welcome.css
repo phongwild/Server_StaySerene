@@ -1,52 +1,101 @@
-body {
-    font-family: Arial, sans-serif;
-    background: url('https://duan-sungroup.com/wp-content/uploads/2022/12/intercontinental-da-nang-sun-peninsula-resort-la-du-an-nghi-duong-dang-cap-quoc-te.png') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Reset cơ bản */
+body, h1, h2, a {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://duan-sungroup.com/wp-content/uploads/2022/12/intercontinental-da-nang-sun-peninsula-resort-la-du-an-nghi-duong-dang-cap-quoc-te.png') no-repeat center center fixed;    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Container chính */
 .container {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
     text-align: center;
+    max-width: 600px;
+    width: 90%;
+    backdrop-filter: blur(15px); /* Mờ đẹp sang trọng */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Thêm đường viền nhẹ */
 }
 
 h1 {
-    margin-bottom: 10px;
-}
-
-p {
+    font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #ffffff, #d3d3d3); /* Trắng sang xám nhẹ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: #c1d9e8;
 }
 
+/* Style nút */
 .role-selection {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Style nút */
+.role-selection {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .role-button {
-    padding: 10px 20px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
     text-decoration: none;
-
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #3498db; /* Viền sáng */
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .role-button:hover {
-    background-color: #0056b3;
+    transform: scale(1.1);
+    background: #3498db;
+    color: #fff; /* Chuyển sang trắng khi hover */
+    border-color: #2980b9; /* Viền đậm hơn khi hover */
+    cursor: pointer;
+}
+
+
+
+/* Responsive cho di động */
+@media (max-width: 480px) {
+    .role-selection {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .role-button {
+        width: 100%;
+        text-align: center;
+    }
 }

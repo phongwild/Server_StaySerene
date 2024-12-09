@@ -1,81 +1,143 @@
-body {
+/* Reset cơ bản */
+body, h1, h2, form, input, button {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+/* Container chính */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .login-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
     text-align: center;
-    width: 300px;
+    max-width: 400px;
+    width: 90%;
+    backdrop-filter: blur(10px); /* Hiệu ứng mờ cho khung card */
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Icon người dùng */
 .login-icon img {
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 h2 {
-    margin: 20px 0;
-    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e3f2fd;
 }
 
+/* Input và nhãn */
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
-.input-group label {
+label {
     display: block;
     margin-bottom: 5px;
-    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #dfe9f3;
 }
 
-.input-group input {
-    width: 93%;
-    padding: 10px;
-    border: 1px solid #ddd;
+input {
+    width: 100%;
+    padding: 10px 15px;
     border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
+input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Nút đăng nhập */
 button {
     width: 100%;
-    padding: 10px;
-    background: #4facfe;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(to right, #a8e6cf, #61a3ff); /* Gradient xanh ngọc - xanh dương */
     border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
+    border-radius: 10px; /* Bo góc mềm mại */
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(97, 163, 255, 0.4); /* Bóng đổ dịu */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(to right, #8fd9c8, #4682ff); /* Hover pastel nhẹ nhàng */
+    box-shadow: 0px 8px 20px rgba(97, 163, 255, 0.5); /* Bóng đổ nổi hơn */
+    transform: translateY(-3px); /* Hiệu ứng nhấn nổi */
 }
 
-.login-footer {
-    margin-top: 15px;
+button:active {
+    transform: translateY(0); /* Hiệu ứng "nhấn" */
+    box-shadow: 0px 4px 10px rgba(97, 163, 255, 0.4); /* Bóng giảm nhẹ */
+}
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.login-footer a {
-    color: #4facfe;
-    text-decoration: none;
+.back-arrow:hover {
+    color: #3498db; /* Màu khi hover */
+    transform: scale(1.2); /* Phóng to khi hover */
 }
 
-.login-footer a:hover {
-    text-decoration: underline;
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+    }
 }

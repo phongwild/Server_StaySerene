@@ -52,7 +52,7 @@ router.delete('/typeroom/:id', apiCtrl.xoaLoaiPhong);
 router.put('/typeroom/:id', apiCtrl.suaLoaiPhong);
 router.put('/typerooma/:id', apiCtrl.suaLoaiPhong);
 
-// Booking management routes
+// Booking management routes 
 router.post('/orderroom', apiCtrl.OrderRoom);
 router.post('/orderrooma', apiCtrl.OrderRooma);
 router.get('/orderroom', apiCtrl.getAllOrders);
