@@ -3,26 +3,6 @@ const apiTyperoomUrl = `${base_url}typeroom`;
 const apiRoomUrl = `${base_url}rooms`;
 const apiOrderRoomUrl = `${base_url}orderroomthongke`;
 
-function fetchHotels() {
-    fetch(apiHotelUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const selectElement = document.getElementById('tenKhachsan');
-            data.forEach(hotel => {
-                const option = document.createElement('option');
-                option.value = hotel._id;
-                option.textContent = hotel.tenKhachSan;
-                selectElement.appendChild(option);
-            });
-        })
-        .catch(error => console.error('There was a problem with the fetch operation:', error));
-}
-
 function showProgressBar() {
     const progressBar = document.getElementById('progressBar');
     const progressBarFill = document.getElementById('progressBarFill');
@@ -145,7 +125,6 @@ function fetchRevenueByDateRange() {
         return;
     }
 
-    // Hiển thị progress bar
     showProgressBar();
 
     fetch(apiOrderRoomUrl)
@@ -156,22 +135,19 @@ function fetchRevenueByDateRange() {
             return response.json();
         })
         .then(data => {
-            // Lọc dữ liệu theo khoảng thời gian
             const filteredOrders = data.filter(order => {
-                const orderDate = new Date(formatOrderTime(order.orderTime)); // Chuyển thành đối tượng Date
-                const start = new Date(startDate);
+                const orderDate = new Date(formatOrderTime(order.orderTime)); 
                 const end = new Date(endDate);
 
                 return orderDate >= start && orderDate <= end &&
                     (!selectedHotelId || order.IdKhachSan === selectedHotelId);
             });
 
-            // Tính tổng doanh thu theo ngày
             const revenueByDate = {};
 
             filteredOrders.forEach(order => {
                 const orderDate = new Date(formatOrderTime(order.orderTime));
-                const dateKey = orderDate.toISOString().split('T')[0]; // yyyy-mm-dd
+                const dateKey = orderDate.toISOString().split('T')[0]; 
                 const totalRevenue = order.total || 0;
 
                 if (!revenueByDate[dateKey]) {
@@ -793,17 +769,16 @@ function fetchRevenueByYearks() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    fetchHotels();
     fetchRevenueByHotel();
     const hotelSelect = document.getElementById('tenKhachsan');
     hotelSelect.addEventListener('change', function () {
         fetchRevenueByYearks();
     });
-    // Gán sự kiện cho nút thống kê theo khoảng ngày
+
     document.getElementById('startDate').addEventListener('change', validateDateInputs);
     document.getElementById('endDate').addEventListener('change', validateDateInputs);
 });
-// Kiểm tra tính hợp lệ của ngày bắt đầu và kết thúc
+
 function validateDateInputs() {
     const startDate = document.getElementById('startDate').value;
     const endDate = document.getElementById('endDate').value;
