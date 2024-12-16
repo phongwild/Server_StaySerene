@@ -1,46 +1,6 @@
 [
     {
         "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb99"
-        },
-        "IdPhong": {
-            "$oid": "6737048ef99c126d612f7925"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebaa"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "10:00:00 01/03/2023",
-        "timeGet": "14:00:00 01/03/2023",
-        "timeCheckout": "10:00:00 03/03/2023",
-        "note": "Ocean view",
-        "total": 1200000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb98"
-        },
-        "IdPhong": {
-            "$oid": "673708a4f99c126d612f7c3c"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebaa"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "10:00:00 01/03/2023",
-        "timeGet": "14:00:00 01/03/2023",
-        "timeCheckout": "10:00:00 03/03/2023",
-        "note": "Ocean view",
-        "total": 1200000,
-        "status": 2
-    },
-    {
-        "_id": {
             "$oid": "6707ed79df6d7c9585d8eb97"
         },
         "IdPhong": {
@@ -77,66 +37,6 @@
         "timeCheckout": "10:00:00 03/03/2023",
         "note": "Ocean view",
         "total": 1200000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb88"
-        },
-        "IdPhong": {
-            "$oid": "67370a66f99c126d612f7ed5"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebac"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "09:30:00 15/06/2023",
-        "timeGet": "14:00:00 15/06/2023",
-        "timeCheckout": "10:00:00 18/06/2023",
-        "note": "Close to elevator",
-        "total": 1800000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb87"
-        },
-        "IdPhong": {
-            "$oid": "673708a4f99c126d612f7c3c"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebac"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "09:30:00 15/06/2023",
-        "timeGet": "14:00:00 15/06/2023",
-        "timeCheckout": "10:00:00 18/06/2023",
-        "note": "Close to elevator",
-        "total": 1800000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb89"
-        },
-        "IdPhong": {
-            "$oid": "67370b67f99c126d612f834d"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebac"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "09:30:00 15/06/2023",
-        "timeGet": "14:00:00 15/06/2023",
-        "timeCheckout": "10:00:00 18/06/2023",
-        "note": "Close to elevator",
-        "total": 1800000,
         "status": 2
     },
     {
@@ -221,46 +121,6 @@
     },
     {
         "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb68"
-        },
-        "IdPhong": {
-            "$oid": "67370bbcf99c126d612f850d"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebb8"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "14:30:00 12/09/2023",
-        "timeGet": "14:00:00 12/09/2023",
-        "timeCheckout": "10:00:00 14/09/2023",
-        "note": "Corner room",
-        "total": 1200000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb69"
-        },
-        "IdPhong": {
-            "$oid": "67370ae3f99c126d612f80cb"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebb8"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "14:30:00 12/09/2023",
-        "timeGet": "14:00:00 12/09/2023",
-        "timeCheckout": "10:00:00 14/09/2023",
-        "note": "Corner room",
-        "total": 1200000,
-        "status": 2
-    },
-    {
-        "_id": {
             "$oid": "6707ed79df6d7c9585d8ebcd"
         },
         "IdPhong": {
@@ -285,46 +145,6 @@
         },
         "IdPhong": {
             "$oid": "67370a0df99c126d612f7dc5"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebb6"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "15:00:00 08/02/2024",
-        "timeGet": "14:00:00 08/02/2024",
-        "timeCheckout": "10:00:00 10/02/2024",
-        "note": "Double room",
-        "total": 1200000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb57"
-        },
-        "IdPhong": {
-            "$oid": "67370bbcf99c126d612f850d"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebb6"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "15:00:00 08/02/2024",
-        "timeGet": "14:00:00 08/02/2024",
-        "timeCheckout": "10:00:00 10/02/2024",
-        "note": "Double room",
-        "total": 1200000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb59"
-        },
-        "IdPhong": {
-            "$oid": "67370a70f99c126d612f7f0d"
         },
         "Uid": {
             "$oid": "6707ed79df6d7c9585d8ebb6"
@@ -401,46 +221,6 @@
     },
     {
         "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb29"
-        },
-        "IdPhong": {
-            "$oid": "67370bcdf99c126d612f856d"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebae"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "13:45:00 22/04/2024",
-        "timeGet": "14:00:00 22/12/2024",
-        "timeCheckout": "10:00:00 26/12/2024",
-        "note": "Smoking room",
-        "total": 2400000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebcf"
-        },
-        "IdPhong": {
-            "$oid": "6737060bf99c126d612f7aee"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebba"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "11:00:00 20/04/2024",
-        "timeGet": "14:00:00 20/01/2025",
-        "timeCheckout": "10:00:00 25/01/2025",
-        "note": "VIP guest",
-        "total": 3000000,
-        "status": 2
-    },
-    {
-        "_id": {
             "$oid": "6707ed79df6d7c9585d8eb79"
         },
         "IdPhong": {
@@ -513,46 +293,6 @@
             "$oid": "66ed87d195b16c4ceaeee6d6"
         },
         "orderTime": "17:45:00 05/05/2024",
-        "timeGet": "14:00:00 06/10/2025",
-        "timeCheckout": "10:00:00 09/10/2025",
-        "note": "King size bed",
-        "total": 1800000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb44"
-        },
-        "IdPhong": {
-            "$oid": "673708fdf99c126d612f7cf4"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebb2"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "17:45:00 05/06/2024",
-        "timeGet": "14:00:00 06/10/2025",
-        "timeCheckout": "10:00:00 09/10/2025",
-        "note": "King size bed",
-        "total": 1800000,
-        "status": 2
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8eb45"
-        },
-        "IdPhong": {
-            "$oid": "67370b9bf99c126d612f8455"
-        },
-        "Uid": {
-            "$oid": "6707ed79df6d7c9585d8ebb2"
-        },
-        "IdDichVu": {
-            "$oid": "66ed87d195b16c4ceaeee6d6"
-        },
-        "orderTime": "17:45:00 05/06/2024",
         "timeGet": "14:00:00 06/10/2025",
         "timeCheckout": "10:00:00 09/10/2025",
         "note": "King size bed",
