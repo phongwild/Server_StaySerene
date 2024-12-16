@@ -1,172 +1,338 @@
-[
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebaa"
-        },
-        "username": "user1",
-        "sdt": "0123456789",
-        "diaChi": "Hà Nội",
-        "email": "user1@gmail.com",
-        "password": "$2b$10$ZQKSOwQ6OS0Oe9nBnPrN3uJfD/i4c7IrFEF4j5YyZwKxUeU1Rh8w2",
-        "ngaySinh": "1990-01-01",
-        "gioiTinh": "Nam",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/men/1.jpg",
-        "role": 1,
-        "token": "token_example_1",
-        "cccd": "123456789012"
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebac"
-        },
-        "username": "user2",
-        "sdt": "0987654321",
-        "diaChi": "Đà Nẵng",
-        "email": "user2@gmail.com",
-        "password": "$2b$10$h1jE8gSH5H5K2JRuLPH9TuCOtKxECq04/EX8cAfAEklw2WmseDGOO",
-        "ngaySinh": "1992-02-02",
-        "gioiTinh": "Nữ",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/women/2.jpg",
-        "role": 2,
-        "token": "token_example_2",
-        "cccd": "234567890123"
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebae"
-        },
-        "username": "user3",
-        "sdt": "0912345678",
-        "diaChi": "TP.HCM",
-        "email": "user3@gmail.com",
-        "password": "$2b$10$ZbH2Sw9p5tGpR8qJD3HQOuONF0q.bRBz6AZpODcbU5jH0G9wEp0yO",
-        "ngaySinh": "1995-03-03",
-        "gioiTinh": "Nam",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/men/3.jpg",
-        "role": 1,
-        "token": "token_example_3",
-        "cccd": "345678901234"
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebb0"
-        },
-        "username": "user4",
-        "sdt": "0978563412",
-        "diaChi": "Nha Trang",
-        "email": "user4@gmail.com",
-        "password": "$2b$10$AqZa5t5.0zZGGd6.R6ZnK.MqN1bka9gH5Rz0JW.B1w5J1zj8gMHmG",
-        "ngaySinh": "1994-04-04",
-        "gioiTinh": "Nữ",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/women/4.jpg",
-        "role": 2,
-        "token": "token_example_4",
-        "cccd": "456789012345"
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebb2"
-        },
-        "username": "user5",
-        "sdt": "0123456780",
-        "diaChi": "Cần Thơ",
-        "email": "user5@gmail.com",
-        "password": "$2b$10$AsU.gxg5H6f3exjClQ2M4O2rH/ytW0S7Fojmnv33H/UspGfPaW5FG",
-        "ngaySinh": "1993-05-05",
-        "gioiTinh": "Nam",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/men/5.jpg",
-        "role": 1,
-        "token": "token_example_5",
-        "cccd": "567890123456"
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebb4"
-        },
-        "username": "user6",
-        "sdt": "0987654312",
-        "diaChi": "Hải Phòng",
-        "email": "user6@gmail.com",
-        "password": "$2b$10$H4ejY3XQWq1IQJHzkaXGdeNstcGfPhHkBGp/rq8KqexLyP7IVuBbi",
-        "ngaySinh": "1991-06-06",
-        "gioiTinh": "Nữ",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/women/6.jpg",
-        "role": 2,
-        "token": "token_example_6",
-        "cccd": "678901234567"
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebb6"
-        },
-        "username": "user7",
-        "sdt": "0919876543",
-        "diaChi": "Hưng Yên",
-        "email": "user7@gmail.com",
-        "password": "$2b$10$S89JCr8kZMkNf6EqOePWhuLQkL.4x7kl5MyeSBUMtVx/3bGQ8S4M.",
-        "ngaySinh": "1989-07-07",
-        "gioiTinh": "Nam",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/men/7.jpg",
-        "role": 1,
-        "token": "token_example_7",
-        "cccd": "789012345678"
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebb8"
-        },
-        "username": "user8",
-        "sdt": "0987654320",
-        "diaChi": "Nam Định",
-        "email": "user8@gmail.com",
-        "password": "$2b$10$Y3P6hkuNLPrCZy1bXb6sM.9Fxkv8mE30S6Z2WSnTkVRpe6GhtwD1y",
-        "ngaySinh": "1990-08-08",
-        "gioiTinh": "Nữ",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/women/8.jpg",
-        "role": 2,
-        "token": "token_example_8",
-        "cccd": "890123456789"
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebba"
-        },
-        "username": "user9",
-        "sdt": "0912345679",
-        "diaChi": "Quảng Ninh",
-        "email": "user9@gmail.com",
-        "password": "$2b$10$AqZa5t5.0zZGGd6.R6ZnK.MqN1bka9gH5Rz0JW.B1w5J1zj8gMHmG",
-        "ngaySinh": "1988-09-09",
-        "gioiTinh": "Nam",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/men/9.jpg",
-        "role": 1,
-        "token": "token_example_9",
-        "cccd": "901234567890"
-    },
-    {
-        "_id": {
-            "$oid": "6707ed79df6d7c9585d8ebad"
-        },
-        "username": "user10",
-        "sdt": "0987654310",
-        "diaChi": "Thái Bình",
-        "email": "user10@gmail.com",
-        "password": "$2b$10$H4ejY3XQWq1IQJHzkaXGdeNstcGfPhHkBGp/rq8KqexLyP7IVuBbi",
-        "ngaySinh": "1992-10-10",
-        "gioiTinh": "Nữ",
-        "quocTich": "Việt Nam",
-        "avt": "https://randomuser.me/api/portraits/women/10.jpg",
-        "role": 2,
-        "token": "token_example_10",
-        "cccd": "012345678901"
-    }
-]
+[{
+  "_id": {
+    "$oid": "675166a8636bfd91306a0697"
+  },
+  "Uid": "",
+  "username": "Phong",
+  "sdt": "0336941567",
+  "diaChi": "Ha Noi",
+  "email": "phong2k4zero@gmail.com",
+  "password": "$2b$10$DC.YsS/mO.yOINmc99at5e63S89iBtz4nSVYI9KeL5LldatkAIcNS",
+  "ngaySinh": "19/10/2004",
+  "gioiTinh": "Male",
+  "quocTich": "Vietnam",
+  "avt": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/images%2F_avatar.1733414396807.jpg?alt=media&token=79505461-23ad-4426-ab73-2aac1e41239a",
+  "role": 1,
+  "cccd": "01204045282",
+  "imgcccdtruoc": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_front_id.1733387934126.null?alt=media&token=caa3b131-f558-4ea3-a6a7-af903fad10ab",
+  "imgcccdsau": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_back_id.1733387934127.null?alt=media&token=50e70956-9bb1-4d0d-a2ad-4c759480f188",
+  "token": "fedFnh0rSD-SczTn-PlYs-:APA91bGgwT6XzHiJWjH8malniBJsiPhVqPsj2eNi-T8YZKyOSYBNQAzFvxiTVbra8QLe_HNF5K43unrp2c1WqG6gGH2Np5q2Ew-x95HdLDlxpIIrozks-A8",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67547acd32c23b6889e47cba"
+  },
+  "Uid": "",
+  "username": "Quân",
+  "sdt": "0987654321",
+  "diaChi": "Ha Noi",
+  "email": "quan123@gmail.com",
+  "password": "$2b$10$DC.YsS/mO.yOINmc99at5e63S89iBtz4nSVYI9KeL5LldatkAIcNS",
+  "ngaySinh": "05/12/2024",
+  "gioiTinh": "Male",
+  "quocTich": "Japan",
+  "avt": "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/462701378_1354294842601657_6220501355445662684_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGb7msa1kjgsV47Cz0S8HO_37iwtWhiTtbfuLC1aGJO1oGdslIVZdwaD1PbRAHZ_GpR2NrXvwLpNJKFVKXmqecf&_nc_ohc=UQEgmhn-ugkQ7kNvgFOpF6W&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=A_So-59a4swqY8LOQ3_Za83&oh=00_AYDxMrQSle2auZtOg2hmrGeIfKGBJNp9Cwz8qxbLbBfuvg&oe=675A5326",
+  "role": 1,
+  "cccd": "001303045678",
+  "imgcccdtruoc": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_front_id.1733387934126.null?alt=media&token=caa3b131-f558-4ea3-a6a7-af903fad10ab",
+  "imgcccdsau": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_back_id.1733387934127.null?alt=media&token=50e70956-9bb1-4d0d-a2ad-4c759480f188",
+  "token": "d0sB1EoDTS2Ia0WjibO0Uo:APA91bH_Hkb6NHKiGY0clbDI6JuXW9xUCd6tVLnfczgPB4FqVawM_1nj_Ineko2o-1UUifDPehwkEhN-St08PGNnm0kpxu4Lxp_HutzhNqOe5KjR2nKge3A",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67547b6132c23b6889e47cbb"
+  },
+  "Uid": "",
+  "username": "Giang",
+  "sdt": "0987654321",
+  "diaChi": "Ha Noi",
+  "email": "huonggiang@gmail.com",
+  "password": "$2b$10$DC.YsS/mO.yOINmc99at5e63S89iBtz4nSVYI9KeL5LldatkAIcNS",
+  "ngaySinh": "05/12/2024",
+  "gioiTinh": "Female",
+  "quocTich": "Japan",
+  "avt": "https://ttpj.com.vn/wp-content/uploads/2024/10/avatar-fb-96kcK42b.jpg",
+  "role": 1,
+  "cccd": "021303142678",
+  "imgcccdtruoc": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_front_id.1733387934126.null?alt=media&token=caa3b131-f558-4ea3-a6a7-af903fad10ab",
+  "imgcccdsau": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_back_id.1733387934127.null?alt=media&token=50e70956-9bb1-4d0d-a2ad-4c759480f188",
+  "token": "djEkDLzJReqM666VtBQu5N:APA91bHJyYOu-pLgPNvo4iF2x3V0j6IQEVP5fc-ZrJ0IcME00mFDJGlxBEeP_yZYHsG4dywzNaWhokdyOMie6gW_DBhNXBAXqJebHUUfCtZQmuv-aX7YgSs",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6755ae7f55d3bcd6722b7ece"
+  },
+  "Uid": "",
+  "username": "Văn Hoàng",
+  "sdt": "0987654321",
+  "diaChi": "Hà Nội ",
+  "email": "phong2hello@gmail.com",
+  "password": "$2b$10$uGk8KcJMc4sWvT5AzyGQcOl75ENdobINHZQO5MdWrntnNWcMmzhjm",
+  "ngaySinh": "08/12/2024",
+  "gioiTinh": "Male",
+  "quocTich": "",
+  "avt": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/images%2F_avatar.1733668467240.jpg?alt=media&token=11122cf0-f5bd-4d0b-85b5-ac571a19e94a",
+  "role": 1,
+  "cccd": "0004045382",
+  "imgcccdtruoc": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_front_id.1733668467340.null?alt=media&token=39b3ba3f-c71a-456f-884d-8fcdc8bb16cb",
+  "imgcccdsau": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_back_id.1733668467341.null?alt=media&token=42a1b436-8b19-42c6-9d36-f86015ba4615",
+  "token": "d0sB1EoDTS2Ia0WjibO0Uo:APA91bH_Hkb6NHKiGY0clbDI6JuXW9xUCd6tVLnfczgPB4FqVawM_1nj_Ineko2o-1UUifDPehwkEhN-St08PGNnm0kpxu4Lxp_HutzhNqOe5KjR2nKge3A",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "675654d734c2cc1dfa0918eb"
+  },
+  "Uid": "112046431661682552564",
+  "username": "Di",
+  "sdt": "0987654321",
+  "diaChi": "",
+  "email": "phongwild2004@gmail.com",
+  "password": "$2b$10$4k0MMT4SsLPDA6FGPwiguuOEYbItUmIWdplVuG/pj8E3HFjHjU40a",
+  "ngaySinh": "24/09/2024",
+  "gioiTinh": "Female",
+  "quocTich": "Vietnam",
+  "avt": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/images%2F_avatar.1733712844197.jpg?alt=media&token=987235bb-981a-4f0b-98db-6413a4305eae",
+  "role": 1,
+  "cccd": "5321123142",
+  "imgcccdtruoc": "",
+  "imgcccdsau": "",
+  "token": "d0sB1EoDTS2Ia0WjibO0Uo:APA91bH_Hkb6NHKiGY0clbDI6JuXW9xUCd6tVLnfczgPB4FqVawM_1nj_Ineko2o-1UUifDPehwkEhN-St08PGNnm0kpxu4Lxp_HutzhNqOe5KjR2nKge3A",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "675a96f9c28977650b408966"
+  },
+  "Uid": "101096186796876250001",
+  "username": "Trần Anh Phong",
+  "sdt": "",
+  "diaChi": "",
+  "email": "phongtaph31865@fpt.edu.vn",
+  "password": "$2b$10$QTGZ.vzs/OnzOgTpSfuWVeVu4xD07fPBvC6Jt/Xvo1gTRoMaMfr16",
+  "ngaySinh": "",
+  "gioiTinh": "",
+  "quocTich": "",
+  "avt": "https://lh3.googleusercontent.com/a/ACg8ocKam1vek0VWaJe5s-62-eDtfY9GBMz5mCAU3XcqsXc8Mxt7Sno",
+  "role": 1,
+  "cccd": "",
+  "imgcccdtruoc": "",
+  "imgcccdsau": "",
+  "token": "fXi5A_tLQZKV-yR_0obLMV:APA91bEBNJrzVlqn4GHfV1hiK-YadIF3CuH5pHLDXgY-vLz_bCBxphKKyaWQDUTb-hwcIMuW2oGd3oO6OpHAlG--tsGf_60L2FUSzwPMwkRYCya5Nsga-p4",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6760221f720aa8ddf3254771"
+  },
+  "Uid": "",
+  "username": "Đặt phòng tại khách sạn",
+  "sdt": "0336941567",
+  "diaChi": "Ha Noi",
+  "email": "accountdemo@gmail.com",
+  "password": "$2b$10$DC.YsS/mO.yOINmc99at5e63S89iBtz4nSVYI9KeL5LldatkAIcNS",
+  "ngaySinh": "17/12/2024",
+  "gioiTinh": "Male",
+  "quocTich": "Vietnam",
+  "avt": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/images%2F_avatar.1733414396807.jpg?alt=media&token=79505461-23ad-4426-ab73-2aac1e41239a",
+  "role": 1,
+  "cccd": "123456789012",
+  "imgcccdtruoc": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_front_id.1733387934126.null?alt=media&token=caa3b131-f558-4ea3-a6a7-af903fad10ab",
+  "imgcccdsau": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_back_id.1733387934127.null?alt=media&token=50e70956-9bb1-4d0d-a2ad-4c759480f188",
+  "token": "eb7m_-NrRzqV81tnIzs6do:APA91bHc9LJyRvEskWT6_3ngFFvToWzzXJqI4OI5KihrjY0dcVL0IXgxQy1JT2v6W1SlUktW2NNFZnJycRqFmK3j502Bv-DHQ7PJnk5q7J_rjHKqz2O-FPc",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebaa"
+  },
+  "username": "user1",
+  "sdt": "0123456789",
+  "diaChi": "Hà Nội",
+  "email": "user1@gmail.com",
+  "password": "$2b$10$ZQKSOwQ6OS0Oe9nBnPrN3uJfD/i4c7IrFEF4j5YyZwKxUeU1Rh8w2",
+  "ngaySinh": "1990-01-01",
+  "gioiTinh": "Nam",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/men/1.jpg",
+  "role": 1,
+  "token": "token_example_1",
+  "cccd": "123456789012"
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebac"
+  },
+  "username": "user2",
+  "sdt": "0987654321",
+  "diaChi": "Đà Nẵng",
+  "email": "user2@gmail.com",
+  "password": "$2b$10$h1jE8gSH5H5K2JRuLPH9TuCOtKxECq04/EX8cAfAEklw2WmseDGOO",
+  "ngaySinh": "1992-02-02",
+  "gioiTinh": "Nữ",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/women/2.jpg",
+  "role": 2,
+  "token": "token_example_2",
+  "cccd": "234567890123"
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebae"
+  },
+  "username": "user3",
+  "sdt": "0912345678",
+  "diaChi": "TP.HCM",
+  "email": "user3@gmail.com",
+  "password": "$2b$10$ZbH2Sw9p5tGpR8qJD3HQOuONF0q.bRBz6AZpODcbU5jH0G9wEp0yO",
+  "ngaySinh": "1995-03-03",
+  "gioiTinh": "Nam",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/men/3.jpg",
+  "role": 1,
+  "token": "token_example_3",
+  "cccd": "345678901234"
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebb0"
+  },
+  "username": "user4",
+  "sdt": "0978563412",
+  "diaChi": "Nha Trang",
+  "email": "user4@gmail.com",
+  "password": "$2b$10$AqZa5t5.0zZGGd6.R6ZnK.MqN1bka9gH5Rz0JW.B1w5J1zj8gMHmG",
+  "ngaySinh": "1994-04-04",
+  "gioiTinh": "Nữ",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/women/4.jpg",
+  "role": 2,
+  "token": "token_example_4",
+  "cccd": "456789012345"
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebb2"
+  },
+  "username": "user5",
+  "sdt": "0123456780",
+  "diaChi": "Cần Thơ",
+  "email": "user5@gmail.com",
+  "password": "$2b$10$AsU.gxg5H6f3exjClQ2M4O2rH/ytW0S7Fojmnv33H/UspGfPaW5FG",
+  "ngaySinh": "1993-05-05",
+  "gioiTinh": "Nam",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/men/5.jpg",
+  "role": 1,
+  "token": "token_example_5",
+  "cccd": "567890123456"
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebb4"
+  },
+  "username": "user6",
+  "sdt": "0987654312",
+  "diaChi": "Hải Phòng",
+  "email": "user6@gmail.com",
+  "password": "$2b$10$H4ejY3XQWq1IQJHzkaXGdeNstcGfPhHkBGp/rq8KqexLyP7IVuBbi",
+  "ngaySinh": "1991-06-06",
+  "gioiTinh": "Nữ",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/women/6.jpg",
+  "role": 2,
+  "token": "token_example_6",
+  "cccd": "678901234567"
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebb6"
+  },
+  "username": "user7",
+  "sdt": "0919876543",
+  "diaChi": "Hưng Yên",
+  "email": "user7@gmail.com",
+  "password": "$2b$10$S89JCr8kZMkNf6EqOePWhuLQkL.4x7kl5MyeSBUMtVx/3bGQ8S4M.",
+  "ngaySinh": "1989-07-07",
+  "gioiTinh": "Nam",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/men/7.jpg",
+  "role": 1,
+  "token": "token_example_7",
+  "cccd": "789012345678"
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebb8"
+  },
+  "username": "user8",
+  "sdt": "0987654320",
+  "diaChi": "Nam Định",
+  "email": "user8@gmail.com",
+  "password": "$2b$10$Y3P6hkuNLPrCZy1bXb6sM.9Fxkv8mE30S6Z2WSnTkVRpe6GhtwD1y",
+  "ngaySinh": "1990-08-08",
+  "gioiTinh": "Nữ",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/women/8.jpg",
+  "role": 2,
+  "token": "token_example_8",
+  "cccd": "890123456789"
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebba"
+  },
+  "username": "user9",
+  "sdt": "0912345679",
+  "diaChi": "Quảng Ninh",
+  "email": "user9@gmail.com",
+  "password": "$2b$10$AqZa5t5.0zZGGd6.R6ZnK.MqN1bka9gH5Rz0JW.B1w5J1zj8gMHmG",
+  "ngaySinh": "1988-09-09",
+  "gioiTinh": "Nam",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/men/9.jpg",
+  "role": 1,
+  "token": "token_example_9",
+  "cccd": "901234567890"
+},
+{
+  "_id": {
+    "$oid": "6707ed79df6d7c9585d8ebad"
+  },
+  "username": "user10",
+  "sdt": "0987654310",
+  "diaChi": "Thái Bình",
+  "email": "user10@gmail.com",
+  "password": "$2b$10$H4ejY3XQWq1IQJHzkaXGdeNstcGfPhHkBGp/rq8KqexLyP7IVuBbi",
+  "ngaySinh": "1992-10-10",
+  "gioiTinh": "Nữ",
+  "quocTich": "Việt Nam",
+  "avt": "https://randomuser.me/api/portraits/women/10.jpg",
+  "role": 2,
+  "token": "token_example_10",
+  "cccd": "012345678901"
+},
+{
+  "_id": {
+    "$oid": "6760322223a3ddcb0030c192"
+  },
+  "Uid": "",
+  "username": "Demo Account 2",
+  "sdt": "0987654321",
+  "diaChi": "Hà Nội ",
+  "email": "phong246hello@gmail.com",
+  "password": "$2b$10$UF.aa9xb7KVMyvfiK5vD/ux8JA56ctaz9iaeSrzoaO/qqQ60ChL1O",
+  "ngaySinh": "17/12/2024",
+  "gioiTinh": "Male",
+  "quocTich": "",
+  "avt": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/images%2F_avatar.1734357528079.jpg?alt=media&token=d17f815e-072f-4ff8-9596-a84beb1bf27c",
+  "role": 1,
+  "cccd": "001204045382",
+  "imgcccdtruoc": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_front_id.1734357528199.null?alt=media&token=fc9efd75-a616-4061-8da2-9bae09e48803",
+  "imgcccdsau": "https://firebasestorage.googleapis.com/v0/b/stayserene-f36b5.appspot.com/o/id-card%2F_back_id.1734357528199.null?alt=media&token=9a67d7e6-3c45-4f11-9789-eb5b7e4672c7",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzYwMzIyMjIzYTNkZGNiMDAzMGMxOTIiLCJ1c2VybmFtZSI6IkRlbW8gQWNjb3VudCAyIiwiaWF0IjoxNzM0MzU3NTM4fQ.myBYBSxUi_RwqFEOtBZV4AjKAsB3mwlUUmzi8PWRbNQ",
+  "__v": 0
+}]
