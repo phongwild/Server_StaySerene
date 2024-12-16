@@ -328,6 +328,8 @@ async function editCustomernhanvien() {
     const cccd = document.getElementById('cccd').value;
     const anhNhanVien = document.getElementById('anhNhanVien').value;
     const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const sdt = document.getElementById('sdt').value;
     const gioLam = "full time";
 
     if (NhanVienId==="") {
@@ -335,8 +337,12 @@ async function editCustomernhanvien() {
         return;
     }
 
-    if (!username || !cccd || !anhNhanVien || !email || !gioLam) {
+    if (!username || !cccd || !anhNhanVien || !email || !gioLam || !password || !sdt) {
         alert('Vui lòng điền đầy đủ thông tin.');
+        return;
+    }
+    if (!isValidPhoneNumber(sdt)) {
+        alert('Số điện thoại phải là 10 số và bắt đầu bằng 0.');
         return;
     }
 
@@ -356,6 +362,8 @@ async function editCustomernhanvien() {
         anhNhanVien,
         email,
         gioLam,
+        sdt,
+        password
     };
 
     try {
