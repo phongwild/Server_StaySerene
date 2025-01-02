@@ -25,7 +25,7 @@ async function fetchRoomData() {
 async function renderRoomData() {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const roomsToDisplay = allRooms.slice(startIndex, endIndex); // Chỉ lấy dữ liệu của trang hiện tại
+    const roomsToDisplay = allRooms.slice(startIndex, endIndex); 
 
     const roomTypes = await fetchTyperoomData();
     const hotels = await fetchHotelData();
@@ -105,23 +105,36 @@ async function fetchTyperoomByHotelId() {
     }
 }
 
-
-
-function populateRoomTypeOptions(roomTypes) {
+function setupRoomTypeChangeListener() {
     const roomTypeSelect = document.getElementById('tenloaiphong');
-    roomTypeSelect.innerHTML = '<option value="">Chọn loại phòng</option>';
-
-    roomTypes.forEach(type => {
-        const option = document.createElement('option');
-        option.value = type._id;
-        option.textContent = type.tenLoaiPhong;
-        roomTypeSelect.appendChild(option);
-    });
+    const maLoaiPhongInput = document.getElementById('maloaiphong');
 
     roomTypeSelect.addEventListener('change', () => {
-        const selectedRoomTypeId = roomTypeSelect.value;
-        document.getElementById('maloaiphong').value = selectedRoomTypeId;
+        const selectedRoomTypeId = roomTypeSelect.value; // Lấy giá trị IdLoaiPhong từ select
+        maLoaiPhongInput.value = selectedRoomTypeId || ''; // Gán giá trị vào input
     });
+}
+
+async function populateRoomTypeOptions() {
+    try {
+        const roomTypes = await fetchTyperoomByHotelId();
+        const roomTypeSelect = document.getElementById('tenloaiphong');
+        roomTypeSelect.innerHTML = '<option value="">Chọn loại phòng</option>';
+
+        roomTypes.forEach(type => {
+            const option = document.createElement('option');
+            option.value = type._id; 
+            option.textContent = type.tenLoaiPhong;
+            roomTypeSelect.appendChild(option);
+        });
+
+        console.log('Danh sách loại phòng:', roomTypes);
+
+        setupRoomTypeChangeListener();
+    } catch (error) {
+        console.error('Lỗi khi hiển thị danh sách loại phòng:', error);
+        alert('Không thể lấy danh sách loại phòng. Vui lòng thử lại.');
+    }
 }
 
 
@@ -130,64 +143,43 @@ async function fetchHotelData() {
     return response.json();
 }
 
-// async function showRoomDetails(room, roomTypes, hotels) {
-//     document.getElementById('maphong').value = room._id || '';
 
-//     //document.getElementById('maloaiphong').value = room.IdLoaiPhong || '';
-
-//     populateRoomTypeOptions(hotels);
-
-//     const roomTypeSelect = document.getElementById('tenloaiphong');
-//     if (roomTypes) {
-//         roomTypeSelect.value = room.IdLoaiPhong;
-//         roomTypeSelect.options[roomTypeSelect.selectedIndex].textContent = roomTypes.tenLoaiPhong;
-//     } else {
-//         roomTypeSelect.value = '';
-//         roomTypeSelect.options[roomTypeSelect.selectedIndex].textContent = 'Chọn loại phòng';
-//     }
-
-
-//     document.getElementById('sophong').value = room.soPhong || '';
-//     document.getElementById('sotang').value = room.soTang || '';
-//     document.getElementById('moTaPhong').value = room.moTaPhong || '';
-//     document.getElementById('tinhTrangPhong').value = room.tinhTrangPhong || '0';
-//     document.getElementById('anhkhachsan').value = room.anhPhong || '';
-// }
 async function showRoomDetails(room, roomTypes, hotels) {
     if (!room || !roomTypes || !hotels) {
-        console.error("Missing required data for room details.");
+        console.error("Thiếu dữ liệu để hiển thị thông tin phòng.");
         return;
     }
 
+    // Điền dữ liệu phòng vào các trường input
     document.getElementById('maphong').value = room._id || '';
     document.getElementById('maloaiphong').value = room.IdLoaiPhong || '';
-
-    // Populate room type options
-    populateRoomTypeOptions(roomTypes);
-
-    const roomTypeSelect = document.getElementById('tenloaiphong');
-    if (roomTypeSelect) {
-        if (room.IdLoaiPhong) {
-            roomTypeSelect.value = room.IdLoaiPhong;
-            const selectedRoomType = roomTypes.find(type => type._id === room.IdLoaiPhong);
-            if (selectedRoomType) {
-                roomTypeSelect.options[roomTypeSelect.selectedIndex].textContent = selectedRoomType.tenLoaiPhong;
-            } else {
-                roomTypeSelect.options[roomTypeSelect.selectedIndex].textContent = "Loại phòng không hợp lệ";
-            }
-        } else {
-            roomTypeSelect.value = '';
-        }
-    } else {
-        console.error("Element #tenloaiphong không tồn tại.");
-    }
-
     document.getElementById('sophong').value = room.soPhong || '';
     document.getElementById('sotang').value = room.soTang || '';
-    document.getElementById('moTaPhong').value = room.moTaPhong || '';
-    document.getElementById('tinhTrangPhong').value = room.tinhTrangPhong || '0';
-    document.getElementById('anhkhachsan').value = room.anhPhong || '';
+
+    // Lọc loại phòng theo khách sạn
+    const filteredRoomTypes = roomTypes.filter(type => type.IdKhachSan === hotelId);
+
+    // Hiển thị danh sách loại phòng trong select
+    const roomTypeSelect = document.getElementById('tenloaiphong');
+    roomTypeSelect.innerHTML = '<option value="">Chọn loại phòng</option>';
+
+    // Thêm các loại phòng thuộc khách sạn vào select
+    filteredRoomTypes.forEach(type => {
+        const option = document.createElement('option');
+        option.value = type._id; 
+        option.textContent = type.tenLoaiPhong; 
+        roomTypeSelect.appendChild(option);
+    });
+
+    // Đặt giá trị select theo IdLoaiPhong của phòng
+    if (room.IdLoaiPhong) {
+        roomTypeSelect.value = room.IdLoaiPhong;
+    } else {
+        roomTypeSelect.value = '';
+    }
 }
+
+
 
 async function fetchRoomTypeById(roomTypeId) {
     try {
@@ -408,8 +400,10 @@ async function deleteRoom() {
 }
 
 
-window.onload = fetchRoomData;
-function confirmLogout(event) {
+window.onload = async () => {
+    await fetchRoomData();
+    await populateRoomTypeOptions();
+};function confirmLogout(event) {
     event.preventDefault();
     const userConfirmed = confirm("Bạn có chắc chắn muốn đăng xuất?");
 

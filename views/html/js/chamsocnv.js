@@ -9,9 +9,9 @@ let lastMessageTimestamp = null;
 let previousChamSocList = []; 
 let previousChamSocForSelected = [];
 
-async function updateTrangThaiNv(uid) {
+async function updateTrangThaiNv(id) {
     try {
-        const response = await fetch(`${apiUrl}/${uid}`, {
+        const response = await fetch(`${apiUrl}/${id}`, {
             method: 'PUT', 
             headers: {
                 'Content-Type': 'application/json'
@@ -137,6 +137,11 @@ async function displayChamSoc(idKhachSan, uid) {
             `).join('');
 
             chatMessages.scrollTop = chatMessages.scrollHeight;
+            for (const cs of chamSocList) {
+                if (cs.trangThaiNv !== 2) { 
+                    await updateTrangThaiNv(cs._id);
+                }
+            }
         }
     } catch (error) {
         console.error('Lỗi khi hiển thị chăm sóc:', error);

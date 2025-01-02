@@ -106,7 +106,6 @@
 
 <body>
     <div class="container">
-        <!-- Sidebar giữ nguyên -->
         <div class="sidebar">
             <h2 class="font-extrabold text-2xl">StaySerene</h2>
             <ul>
@@ -143,14 +142,12 @@
                 </div>
 
                 <div class="form-section">
-                    <!-- Dropdown khách sạn -->
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <label for="tenKhachsan">Chọn khách sạn:</label>
                         <select id="tenKhachsan" class="tenKhachsan" >
                             <option value="">Chọn Khách sạn</option>
                         </select>
                     </div>
-                    <!-- Các nút khác -->
                     <div class="button-group">
                         <button type="button" onclick="fetchRevenueByYear()">Thống kê theo năm</button>
                         <button type="button" onclick="fetchRevenueByQuarter()">Thống kê theo quý</button>
